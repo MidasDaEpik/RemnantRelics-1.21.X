@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "remnantrelics:wither_armor_trim_smithing_template",
+      "required": false
+    }
+  ]
+}

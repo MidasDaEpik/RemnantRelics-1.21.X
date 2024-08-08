@@ -1,0 +1,7 @@
+{
+  "asset_id": "remnantrelics:wither",
+  "description": {
+    "translate": "trim_pattern.remnantrelics.wither"
+  },
+  "template_item": "remnantrelics:wither_armor_trim_smithing_template"
+}

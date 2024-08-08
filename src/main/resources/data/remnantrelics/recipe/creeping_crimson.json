@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "remnantrelics:blueprint_scroll_witherblades"
+  },
+  "base": {
+    "item": "remnantrelics:firestorm_katana"
+  },
+  "addition": {
+    "item": "remnantrelics:witherblade"
+  },
+  "result": {
+    "id": "remnantrelics:creeping_crimson"
+  }
+}

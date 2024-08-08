@@ -1,0 +1,105 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/client/gui/Gui$HeartType",
+      "name": "REMNANTRELICS_HEART_FROSTBITE",
+      "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "HEART_FROSTBITE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_ELDER",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_ELDER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_WIND",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_WIND"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_BLAZE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_BLAZE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_GOLD",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_GOLD"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_WARPED_RAPIER",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_WARPED_RAPIER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_WITHERBLADE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_WITHERBLADE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_CREEPING_CRIMSON",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_CREEPING_CRIMSON"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_SOULEATING_SLASHER",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_SOULEATING_SLASHER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_WARPING_WITHER",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_WARPING_WITHER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_SCULK",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "field": "RARITY_SCULK"
+      }
+    }
+  ]
+}
+
+

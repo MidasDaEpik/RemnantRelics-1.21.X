@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:netherrack"
+    },
+    "S": {
+      "item": "remnantrelics:wither_armor_trim_smithing_template"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:wither_armor_trim_smithing_template",
+    "count": 2
+  }
+}

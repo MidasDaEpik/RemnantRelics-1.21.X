@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "remnantrelics:elder_chestplate",
+      "required": false
+    }
+  ]
+}

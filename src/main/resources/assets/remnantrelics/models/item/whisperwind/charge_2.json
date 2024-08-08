@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "remnantrelics:item/whisperwind/charge_2"
+    }
+}

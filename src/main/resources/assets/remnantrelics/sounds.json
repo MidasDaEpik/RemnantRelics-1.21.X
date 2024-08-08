@@ -1,0 +1,50 @@
+{
+  "item_firestorm_katana_ability": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/firestorm_katana/ability"
+      }
+    ],
+    "subtitle": "subtitles.item.firestorm_katana.ability"
+  },
+  "item_warped_rapier_ability": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/warped_rapier/ability"
+      }
+    ],
+    "subtitle": "subtitles.item.warped_rapier.ability"
+  },
+  "item_witherblade_wither": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/witherblade/wither"
+      }
+    ],
+    "subtitle": "subtitles.item.witherblade.wither"
+  },
+  "item_witherblade_aura": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/witherblade/aura"
+      }
+    ],
+    "subtitle": "subtitles.item.witherblade.aura"
+  },
+  "item_witherblade_absorption": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/witherblade/absorption"
+      }
+    ],
+    "subtitle": "subtitles.item.witherblade.absorption"
+  },
+  "item_witherblade_teleport": {
+    "sounds": [
+      {
+        "name": "remnantrelics:item/witherblade/teleport"
+      }
+    ],
+    "subtitle": "subtitles.item.witherblade.teleport"
+  }
+}

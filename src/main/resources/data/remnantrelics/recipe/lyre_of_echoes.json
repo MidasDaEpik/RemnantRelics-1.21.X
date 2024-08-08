@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BEB",
+    "SSS",
+    "BEB"
+  ],
+  "key": {
+    "E": {
+      "item": "remnantrelics:echo_gem"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:lyre_of_echoes"
+  }
+}

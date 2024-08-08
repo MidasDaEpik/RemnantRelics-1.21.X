@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GG ",
+    "GA ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "remnantrelics:ancient_weapon_fragment"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:piglin_waraxe"
+  }
+}

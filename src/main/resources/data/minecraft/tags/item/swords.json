@@ -1,0 +1,45 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "remnantrelics:cutlass",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:charybdis",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:firestorm_katana",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:obsidian_bulwark",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:warped_rapier",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:witherblade",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:creeping_crimson",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:souleating_slasher",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:warping_wither",
+    "required": false
+    },
+    {
+      "id": "remnantrelics:scylla",
+      "required": false
+    }
+  ]
+}

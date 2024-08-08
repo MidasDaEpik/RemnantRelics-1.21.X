@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "remnantrelics:blueprint_scroll_elder"
+  },
+  "base": {
+    "item": "minecraft:diamond_chestplate"
+  },
+  "addition": {
+    "item": "remnantrelics:elder_spine"
+  },
+  "result": {
+    "id": "remnantrelics:elder_chestplate"
+  }
+}

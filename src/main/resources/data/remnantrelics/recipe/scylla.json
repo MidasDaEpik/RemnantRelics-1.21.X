@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    " E ",
+    " B "
+  ],
+  "key": {
+    "E": {
+      "item": "remnantrelics:echo_gem"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:scylla"
+  }
+}

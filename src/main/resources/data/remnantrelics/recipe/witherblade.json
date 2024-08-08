@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " N ",
+    " S "
+  ],
+  "key": {
+    "A": {
+      "item": "remnantrelics:ancient_weapon_fragment"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:witherblade"
+  }
+}

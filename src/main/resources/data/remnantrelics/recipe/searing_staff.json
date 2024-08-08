@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    " R ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "remnantrelics:ancient_weapon_fragment"
+    },
+    "B": {
+      "item": "remnantrelics:blaze_core"
+    },
+    "R": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:searing_staff"
+  }
+}

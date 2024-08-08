@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "remnantrelics:blueprint_scroll_witherblades"
+  },
+  "base": {
+    "item": "remnantrelics:warped_rapier"
+  },
+  "addition": {
+    "item": "remnantrelics:witherblade"
+  },
+  "result": {
+    "id": "remnantrelics:warping_wither"
+  }
+}
