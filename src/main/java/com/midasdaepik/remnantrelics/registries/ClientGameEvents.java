@@ -1,6 +1,7 @@
 package com.midasdaepik.remnantrelics.registries;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.api.distmarker.Dist;
@@ -14,7 +15,7 @@ public class ClientGameEvents {
     public static void onPlayerHeartTypeEvent(PlayerHeartTypeEvent pEvent) {
         LivingEntity pLivingEntity = pEvent.getEntity();
         if (pLivingEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() == Items.WHISPERWIND.get()) {
-            pEvent.setType(EnumExtensions.HEART_FROSTBITE.getValue());
+            pEvent.setType(Gui.HeartType.FROZEN);
         }
     }
 }
