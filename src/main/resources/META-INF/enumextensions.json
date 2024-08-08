@@ -5,7 +5,7 @@
       "name": "REMNANTRELICS_HEART_FROSTBITE",
       "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/ClientEnumExtensions",
         "field": "HEART_FROSTBITE"
       }
     },

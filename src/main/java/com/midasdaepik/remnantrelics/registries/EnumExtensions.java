@@ -1,25 +1,12 @@
 package com.midasdaepik.remnantrelics.registries;
 
-import net.minecraft.client.gui.Gui;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 
 import java.util.function.UnaryOperator;
 
 public class EnumExtensions {
-    public static final EnumProxy<Gui.HeartType> HEART_FROSTBITE = new EnumProxy<>(
-            Gui.HeartType.class, ResourceLocation.withDefaultNamespace("hud/heart/frozen_full"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_full_blinking"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_half"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_half_blinking"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_hardcore_full"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_hardcore_full_blinking"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_hardcore_half"),
-            ResourceLocation.withDefaultNamespace("hud/heart/frozen_hardcore_half_blinking")
-    );
-
     public static final EnumProxy<Rarity> RARITY_ELDER = new EnumProxy<>(
             Rarity.class, -1, "remnantrelics:elder", (UnaryOperator<Style>) style -> style.withColor(13550515)
     );
