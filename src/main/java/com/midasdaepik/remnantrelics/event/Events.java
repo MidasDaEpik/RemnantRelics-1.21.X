@@ -1,6 +1,7 @@
-package com.midasdaepik.remnantrelics.registries;
+package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.registries.Items;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;

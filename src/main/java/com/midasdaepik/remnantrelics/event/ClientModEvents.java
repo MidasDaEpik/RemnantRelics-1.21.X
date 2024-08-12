@@ -1,10 +1,12 @@
-package com.midasdaepik.remnantrelics.registries;
+package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateModel;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateRetractedModel;
 import com.midasdaepik.remnantrelics.entity.renderer.FirestormRenderer;
 import com.midasdaepik.remnantrelics.entity.renderer.SonicBlastRenderer;
+import com.midasdaepik.remnantrelics.registries.Entities;
+import com.midasdaepik.remnantrelics.registries.ItemProperties;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;

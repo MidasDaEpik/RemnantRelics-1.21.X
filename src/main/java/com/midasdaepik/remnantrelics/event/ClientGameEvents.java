@@ -1,6 +1,7 @@
-package com.midasdaepik.remnantrelics.registries;
+package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.registries.Items;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
