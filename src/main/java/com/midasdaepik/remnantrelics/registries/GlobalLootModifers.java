@@ -1,6 +1,8 @@
 package com.midasdaepik.remnantrelics.registries;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.loot.AddLootModifer;
+import com.midasdaepik.remnantrelics.loot.AddMultipleLootModifier;
 import com.mojang.serialization.MapCodec;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;

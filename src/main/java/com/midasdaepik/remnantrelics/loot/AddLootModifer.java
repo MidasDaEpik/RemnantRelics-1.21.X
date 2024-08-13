@@ -1,4 +1,4 @@
-package com.midasdaepik.remnantrelics.registries;
+package com.midasdaepik.remnantrelics.loot;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.MapCodec;
