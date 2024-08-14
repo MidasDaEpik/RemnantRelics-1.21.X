@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 @Mod(RemnantRelics.MOD_ID)
 public class RemnantRelics {
     public static final String MOD_ID = "remnantrelics";
-    private static final Logger LOGGER = LoggerFactory.getLogger(RemnantRelics.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(RemnantRelics.class);
 
     public RemnantRelics(IEventBus eventBus) {
         ArmorMaterials.register(eventBus);
