@@ -1,5 +1,6 @@
 package com.midasdaepik.remnantrelics.entity.custom;
 
+import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.Entities;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -75,7 +76,7 @@ public class SonicBlast extends Projectile {
     protected void onHitEntity(EntityHitResult pResult) {
         super.onHitEntity(pResult);
         if (!this.level().isClientSide) {
-            pResult.getEntity().hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("remnantrelics:sonic_boom"))), this.getOwner()), this.AttackDamage);
+            pResult.getEntity().hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "sonic_boom"))), this.getOwner()), this.AttackDamage);
         }
     }
 

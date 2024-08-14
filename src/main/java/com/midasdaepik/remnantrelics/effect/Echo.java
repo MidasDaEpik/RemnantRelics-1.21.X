@@ -1,5 +1,6 @@
 package com.midasdaepik.remnantrelics.effect;
 
+import com.midasdaepik.remnantrelics.RemnantRelics;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -26,13 +27,8 @@ public class Echo extends MobEffect {
     @Override
     public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity.level() instanceof ServerLevel pServerLevel) {
-            if (pLivingEntity instanceof Player) {
-                if (!((Player) pLivingEntity).isCreative()) {
-                    pLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("remnantrelics:echo")))), (pAmplifier + 1) * 4);
-                }
-            } else {
-                pLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("remnantrelics:echo")))), (pAmplifier + 1) * 4);
-            }
+            pLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "echo")))), (pAmplifier + 1) * 4);
+
             pServerLevel.sendParticles(ParticleTypes.SCULK_CHARGE_POP, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.4, 0.4, 0.4, 0);
             pServerLevel.sendParticles(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.4, 0.4, 0.4, 0);
             pServerLevel.sendParticles(ParticleTypes.SONIC_BOOM, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
