@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "remnantrelics:ancient_tablet_forging",
+      "required": false
+    },
+    {
+      "id": "remnantrelics:ancient_tablet_infusion",
+      "required": false
+    },
+    {
+      "id": "remnantrelics:ancient_tablet_refining",
+      "required": false
+    }
+  ]
+}

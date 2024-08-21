@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:map",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.remnantrelics.witherblades.title"
+    },
+    "description": {
+      "translate": "advancements.remnantrelics.witherblades.description"
+    }
+  },
+  "parent": "remnantrelics:root",
+  "criteria": {
+    "ancient_tablet_forging": {
+      "trigger": "minecraft:impossible"
+    },
+    "ancient_tablet_infusion": {
+      "trigger": "minecraft:impossible"
+    },
+    "ancient_tablet_refining": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "ancient_tablet_forging"
+    ],
+    [
+      "ancient_tablet_infusion"
+    ],
+    [
+      "ancient_tablet_refining"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

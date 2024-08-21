@@ -16,13 +16,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(RecipeCraftingHolder.class)
 public interface RecipeCraftingHolderMixin {
     @Inject(method = "setRecipeUsed(Lnet/minecraft/world/level/Level;Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/item/crafting/RecipeHolder;)Z", at = @At("HEAD"), cancellable = true)
-    private void restrictCustomRecipe(Level level, ServerPlayer player, RecipeHolder<?> recipe, CallbackInfoReturnable<Boolean> cir) {
-        RemnantRelics.LOGGER.info("YIPEEE MIXIN WORKS");
-        if (recipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "firestorm_katana"))) {
-            ServerAdvancementManager advancementManager = player.server.getAdvancements();
-            AdvancementHolder advancementHolder = advancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "unlock/test"));
-            if (advancementHolder != null && !player.getAdvancements().getOrStartProgress(advancementHolder).isDone()) {
-                cir.setReturnValue(false);
+    private void restrictCustomRecipe(Level pLevel, ServerPlayer pPlayer, RecipeHolder<?> pRecipe, CallbackInfoReturnable<Boolean> pReturn) {
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "firestorm_katana"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "unlock/test"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
             }
         }
     }

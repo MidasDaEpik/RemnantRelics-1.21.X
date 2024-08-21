@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "template": {
-    "item": "remnantrelics:blueprint_scroll_witherblades"
+    "item": "remnantrelics:witherblade_upgrade_smithing_template"
   },
   "base": {
     "item": "remnantrelics:obsidian_bulwark"

@@ -119,7 +119,7 @@ public class Charybdis extends SwordItem {
         final Vec3 _center = new Vec3(pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ());
         List<Entity> pFoundTarget = pLevel.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
         for (Entity pEntityIterator : pFoundTarget) {
-            if (!(pEntityIterator == pLivingEntity) && (pEntityIterator instanceof LivingEntity || pEntityIterator instanceof Projectile || pEntityIterator instanceof ItemEntity)) {
+            if (pLevel instanceof ServerLevel && !(pEntityIterator == pLivingEntity) && (pEntityIterator instanceof LivingEntity || pEntityIterator instanceof Projectile || pEntityIterator instanceof ItemEntity)) {
                 double dX = pLivingEntity.getX() - pEntityIterator.getX();
                 double dY = pLivingEntity.getY() - pEntityIterator.getY();
                 double dZ = pLivingEntity.getZ() - pEntityIterator.getZ();
@@ -195,7 +195,8 @@ public class Charybdis extends SwordItem {
                 float YRange = Mth.nextFloat(RandomSource.create(), -1.25f, 0.75f);
                 float PullSpeed = Mth.nextFloat(RandomSource.create(), -10.0f, -4.0f);
 
-                pClientLevel.addParticle(new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0f,0.2f,0.4f), Mth.nextFloat(RandomSource.create(), 0.75f, 1.5f)), pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
+                pClientLevel.addParticle(ParticleTypes.UNDERWATER, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
+                //pClientLevel.addParticle(new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0f,0.2f,0.4f), Mth.nextFloat(RandomSource.create(), 0.75f, 1.5f)), pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
             }
         }
     }

@@ -26,6 +26,12 @@
   "item.remnantrelics.blueprint_scroll_witherblades": "Ancient Scroll",
   "item.remnantrelics.blueprint_scroll_witherblades_desc": "Witherblade Blueprints",
 
+  "item.remnantrelics.ancient_tablet_forging": "Ancient Tablet - Forging",
+
+  "item.remnantrelics.ancient_tablet_infusion": "Ancient Tablet - Infusion",
+
+  "item.remnantrelics.ancient_tablet_refining": "Ancient Tablet - Refining",
+
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 
   "item.remnantrelics.ancient_weapon_fragment": "Ancient Weapon Fragment",
@@ -220,5 +226,22 @@
 
 
 
-  "creativetab.remnantrelics.items": "§6Remnant Relics"
+  "creativetab.remnantrelics.items": "§6Remnant Relics",
+
+
+
+  "advancements.remnantrelics.root.title": "Remnant Relics",
+  "advancements.remnantrelics.root.description": "Relics and knowledge from an age long past",
+
+  "advancements.remnantrelics.ancient_tablet_forging.title": "Ancient Tablet - Forging",
+  "advancements.remnantrelics.ancient_tablet_forging.description": "Learn the ancient nether forging techniques",
+
+  "advancements.remnantrelics.ancient_tablet_infusion.title": "Ancient Tablet - Infusion",
+  "advancements.remnantrelics.ancient_tablet_infusion.description": "Learn how to infuse magic into weapons",
+
+  "advancements.remnantrelics.ancient_tablet_refining.title": "Ancient Tablet - Refining",
+  "advancements.remnantrelics.ancient_tablet_refining.description": "Learn to refine weapons to handle magic",
+
+  "advancements.remnantrelics.witherblades.title": "The Witherblades",
+  "advancements.remnantrelics.witherblades.description": "Gain the collective knowledge of the ancient nether civilizations"
 }

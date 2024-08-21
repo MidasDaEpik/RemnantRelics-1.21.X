@@ -78,7 +78,7 @@ public class WarpedRapier extends SwordItem {
 
     @Override
     public int getUseDuration(ItemStack pItemstack, LivingEntity pEntity) {
-        return 200;
+        return 30;
     }
 
     @Override
@@ -95,15 +95,13 @@ public class WarpedRapier extends SwordItem {
     @Override
     public void releaseUsing(ItemStack pItemStack, Level pLevel, LivingEntity pLivingEntity, int pTimeLeft) {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
-        if (pTimeUsing >= 30) {
+        if (pTimeUsing >= 20) {
             if (pLevel instanceof ServerLevel pServerLevel) {
                 pServerLevel.sendParticles(ParticleTypes.REVERSE_PORTAL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.5, 0.5, 0.5, 0.02);
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
-            }
 
-            if (!pLevel.isClientSide()) {
-                pLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
             BlockHitResult raytrace = ItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
@@ -115,10 +113,8 @@ public class WarpedRapier extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.REVERSE_PORTAL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.5, 0.5, 0.5, 0.02);
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
-            }
 
-            if (!pLevel.isClientSide()) {
-                pLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
             pItemStack.hurtAndBreak(3, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);

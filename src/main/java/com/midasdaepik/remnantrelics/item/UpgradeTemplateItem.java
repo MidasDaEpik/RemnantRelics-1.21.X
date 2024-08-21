@@ -9,12 +9,12 @@ import net.minecraft.world.item.SmithingTemplateItem;
 
 import java.util.List;
 
-public class BlueprintScroll extends SmithingTemplateItem {
-    private static final Component BLUEPRINT_SCROLL_WITHERBLADES = Component.translatable("item.remnantrelics.blueprint_scroll_witherblades_desc").withStyle(ChatFormatting.GRAY);
-    private static final Component BLUEPRINT_SCROLL_WITHERBLADES_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_witherblades.applies_to").withStyle(ChatFormatting.BLUE);
-    private static final Component BLUEPRINT_SCROLL_WITHERBLADES_INGREDIENTS = Component.translatable("smithing_template.blueprint_scroll_witherblades.ingredients").withStyle(ChatFormatting.BLUE);
-    private static final Component BLUEPRINT_SCROLL_WITHERBLADES_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.base_slot_description");
-    private static final Component BLUEPRINT_SCROLL_WITHERBLADES_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.additions_slot_description");
+public class UpgradeTemplateItem extends SmithingTemplateItem {
+    private static final Component WITHERBLADE_UPGRADE = Component.translatable("item.remnantrelics.blueprint_scroll_witherblades_desc").withStyle(ChatFormatting.GRAY);
+    private static final Component WITHERBLADE_UPGRADE_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_witherblades.applies_to").withStyle(ChatFormatting.BLUE);
+    private static final Component WITHERBLADE_UPGRADE_INGREDIENTS = Component.translatable("smithing_template.blueprint_scroll_witherblades.ingredients").withStyle(ChatFormatting.BLUE);
+    private static final Component WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.base_slot_description");
+    private static final Component WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.additions_slot_description");
 
     private static final Component BLUEPRINT_SCROLL_ELDER = Component.translatable("item.remnantrelics.blueprint_scroll_elder_desc").withStyle(ChatFormatting.GRAY);
     private static final Component BLUEPRINT_SCROLL_ELDER_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_elder.applies_to").withStyle(ChatFormatting.BLUE);
@@ -43,24 +43,24 @@ public class BlueprintScroll extends SmithingTemplateItem {
     private static final ResourceLocation EMPTY_SLOT_NETHER_STAR = ResourceLocation.parse("remnantrelics:item/empty_slot_nether_star");
     private static final ResourceLocation EMPTY_SLOT_ELDER_SPINE = ResourceLocation.parse("remnantrelics:item/empty_slot_elder_spine");
 
-    public BlueprintScroll(Component pAppliesTo, Component pIngredients, Component pUpgradeDescription, Component pBaseSlotDescription, Component pAdditionsSlotDescription, List<ResourceLocation> pBaseSlotEmptyIcons, List<ResourceLocation> pAdditonalSlotEmptyIcons) {
+    public UpgradeTemplateItem(Component pAppliesTo, Component pIngredients, Component pUpgradeDescription, Component pBaseSlotDescription, Component pAdditionsSlotDescription, List<ResourceLocation> pBaseSlotEmptyIcons, List<ResourceLocation> pAdditonalSlotEmptyIcons) {
         super(pAppliesTo, pIngredients, pUpgradeDescription, pBaseSlotDescription, pAdditionsSlotDescription, pBaseSlotEmptyIcons, pAdditonalSlotEmptyIcons);
     }
 
-    public static BlueprintScroll createScrollWitherblades() {
-        return new BlueprintScroll(BLUEPRINT_SCROLL_WITHERBLADES_APPLIES_TO, BLUEPRINT_SCROLL_WITHERBLADES_INGREDIENTS, BLUEPRINT_SCROLL_WITHERBLADES, BLUEPRINT_SCROLL_WITHERBLADES_BASE_SLOT_DESCRIPTION, BLUEPRINT_SCROLL_WITHERBLADES_ADDITIONS_SLOT_DESCRIPTION, createBlueprintScrollWitherbladesIconList(), createBlueprintScrollWitherbladesMaterialList());
+    public static UpgradeTemplateItem createWitherbladeUpgradeTemplate() {
+        return new UpgradeTemplateItem(WITHERBLADE_UPGRADE_APPLIES_TO, WITHERBLADE_UPGRADE_INGREDIENTS, WITHERBLADE_UPGRADE, WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION, WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createWitherbladeUpgradeIconList(), createWitherbladeUpgradeMaterialList());
     }
 
-    private static List<ResourceLocation> createBlueprintScrollWitherbladesIconList() {
+    private static List<ResourceLocation> createWitherbladeUpgradeIconList() {
         return List.of(EMPTY_SLOT_SWORD);
     }
 
-    private static List<ResourceLocation> createBlueprintScrollWitherbladesMaterialList() {
+    private static List<ResourceLocation> createWitherbladeUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_NETHER_STAR);
     }
 
-    public static BlueprintScroll createScrollElder() {
-        return new BlueprintScroll(BLUEPRINT_SCROLL_ELDER_APPLIES_TO, BLUEPRINT_SCROLL_ELDER_INGREDIENTS, BLUEPRINT_SCROLL_ELDER, BLUEPRINT_SCROLL_ELDER_BASE_SLOT_DESCRIPTION, BLUEPRINT_SCROLL_ELDER_ADDITIONS_SLOT_DESCRIPTION, createBlueprintScrollElderIconList(), createBlueprintScrollElderMaterialList());
+    public static UpgradeTemplateItem createScrollElder() {
+        return new UpgradeTemplateItem(BLUEPRINT_SCROLL_ELDER_APPLIES_TO, BLUEPRINT_SCROLL_ELDER_INGREDIENTS, BLUEPRINT_SCROLL_ELDER, BLUEPRINT_SCROLL_ELDER_BASE_SLOT_DESCRIPTION, BLUEPRINT_SCROLL_ELDER_ADDITIONS_SLOT_DESCRIPTION, createBlueprintScrollElderIconList(), createBlueprintScrollElderMaterialList());
     }
 
     private static List<ResourceLocation> createBlueprintScrollElderIconList() {

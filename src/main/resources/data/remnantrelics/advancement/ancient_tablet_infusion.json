@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:map",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.remnantrelics.ancient_tablet_refining.title"
+    },
+    "description": {
+      "translate": "advancements.remnantrelics.ancient_tablet_refining.description"
+    }
+  },
+  "parent": "remnantrelics:ancient_tablet_forging",
+  "criteria": {
+    "activate_item": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "activate_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

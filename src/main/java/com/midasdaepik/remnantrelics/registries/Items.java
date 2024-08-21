@@ -13,7 +13,7 @@ public class Items {
             DeferredRegister.createItems(RemnantRelics.MOD_ID);
 
     public static final DeferredItem<Item> BLUEPRINT_SCROLL_ELDER = ITEMS.register("blueprint_scroll_elder",
-            BlueprintScroll::createScrollElder);
+            UpgradeTemplateItem::createScrollElder);
 
     public static final DeferredItem<Item> CUTLASS = ITEMS.register("cutlass",
             () -> new Cutlass(new Item.Properties()));
@@ -29,8 +29,17 @@ public class Items {
     public static final DeferredItem<Item> WHISPERWIND = ITEMS.register("whisperwind",
             () -> new Whisperwind(new Item.Properties()));
 
-    public static final DeferredItem<Item> BLUEPRINT_SCROLL_WITHERBLADES = ITEMS.register("blueprint_scroll_witherblades",
-            BlueprintScroll::createScrollWitherblades);
+    public static final DeferredItem<Item> WITHERBLADE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("witherblade_upgrade_smithing_template",
+            UpgradeTemplateItem::createWitherbladeUpgradeTemplate);
+
+    public static final DeferredItem<Item> ANCIENT_TABLET_FORGING = ITEMS.register("ancient_tablet_forging",
+            AncientKnowledgeItem::createAncientTabletForging);
+
+    public static final DeferredItem<Item> ANCIENT_TABLET_INFUSION = ITEMS.register("ancient_tablet_infusion",
+            AncientKnowledgeItem::createAncientTabletInfusion);
+
+    public static final DeferredItem<Item> ANCIENT_TABLET_REFINING = ITEMS.register("ancient_tablet_refining",
+            AncientKnowledgeItem::createAncientTabletRefining);
 
     public static final DeferredItem<Item> ANCIENT_WEAPON_FRAGMENT = ITEMS.register("ancient_weapon_fragment",
             () -> new Item(new Item.Properties().fireResistant().stacksTo(16).rarity(Rarity.UNCOMMON)));
