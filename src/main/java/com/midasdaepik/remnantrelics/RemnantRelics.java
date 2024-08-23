@@ -14,6 +14,8 @@ public class RemnantRelics {
     public static final Logger LOGGER = LoggerFactory.getLogger(RemnantRelics.class);
 
     public RemnantRelics(IEventBus eventBus) {
+        Tags.initTags();
+
         ArmorMaterials.register(eventBus);
         CreativeTabs.register(eventBus);
         DataComponents.register(eventBus);
