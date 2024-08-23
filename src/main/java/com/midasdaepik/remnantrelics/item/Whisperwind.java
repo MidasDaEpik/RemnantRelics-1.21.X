@@ -53,7 +53,7 @@ public class Whisperwind extends ProjectileWeaponItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemstack, LivingEntity pEntity) {
+    public int getUseDuration(ItemStack pItemstack, LivingEntity pLivingEntity) {
         return 72000;
     }
 

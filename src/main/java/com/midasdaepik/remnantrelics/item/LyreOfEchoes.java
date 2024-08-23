@@ -35,7 +35,7 @@ public class LyreOfEchoes extends Item {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemStack, LivingEntity pEntity) {
+    public int getUseDuration(ItemStack pItemStack, LivingEntity pLivingEntity) {
         return 72000;
     }
 

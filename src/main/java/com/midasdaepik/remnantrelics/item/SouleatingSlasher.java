@@ -86,7 +86,12 @@ public class SouleatingSlasher extends SwordItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemstack, LivingEntity pEntity) {
+    public boolean canDisableShield(ItemStack pItemStack, ItemStack pShieldItem, LivingEntity pLivingEntity, LivingEntity pAttacker) {
+        return true;
+    }
+
+    @Override
+    public int getUseDuration(ItemStack pItemstack, LivingEntity pLivingEntity) {
         return 20;
     }
 

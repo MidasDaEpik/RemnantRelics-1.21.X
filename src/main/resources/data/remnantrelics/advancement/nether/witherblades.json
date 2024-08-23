@@ -1,0 +1,85 @@
+{
+  "display": {
+    "icon": {
+      "id": "remnantrelics:witherblade",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.remnantrelics.witherblades.title"
+    },
+    "description": {
+      "translate": "advancements.remnantrelics.witherblades.description"
+    },
+    "frame": "goal",
+    "hidden": true
+  },
+  "parent": "minecraft:nether/summon_wither",
+  "criteria": {
+    "ancient_tablet_forging": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "remnantrelics:nether/ancient_tablet_forging": true
+            }
+          },
+          "periodic_tick": 80
+        }
+      }
+    },
+    "ancient_tablet_infusion": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "remnantrelics:nether/ancient_tablet_infusion": true
+            }
+          },
+          "periodic_tick": 80
+        }
+      }
+    },
+    "ancient_tablet_refining": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "remnantrelics:nether/ancient_tablet_refining": true
+            },
+            "stats": []
+          },
+          "periodic_tick": 80
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ancient_tablet_forging"
+    ],
+    [
+      "ancient_tablet_infusion"
+    ],
+    [
+      "ancient_tablet_refining"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "remnantrelics:witherblade_upgrade_smithing_template",
+      "remnantrelics:creeping_crimson",
+      "remnantrelics:creeping_crimson_reverse",
+      "remnantrelics:souleating_slasher",
+      "remnantrelics:souleating_slasher_reverse",
+      "remnantrelics:warping_wither",
+      "remnantrelics:warping_wither_reverse"
+    ]
+  },
+  "sends_telemetry_event": true
+}

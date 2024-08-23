@@ -77,7 +77,7 @@ public class WarpedRapier extends SwordItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemstack, LivingEntity pEntity) {
+    public int getUseDuration(ItemStack pItemstack, LivingEntity pLivingEntity) {
         return 30;
     }
 

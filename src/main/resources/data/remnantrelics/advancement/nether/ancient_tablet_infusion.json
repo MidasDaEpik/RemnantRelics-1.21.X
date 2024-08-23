@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "remnantrelics:ancient_tablet_infusion",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.remnantrelics.ancient_tablet_infusion.title"
+    },
+    "description": {
+      "translate": "advancements.remnantrelics.ancient_tablet_infusion.description"
+    }
+  },
+  "parent": "minecraft:nether/find_fortress",
+  "criteria": {
+    "activate_item": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "activate_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "remnantrelics:firestorm_katana",
+      "remnantrelics:searing_staff"
+    ]
+  },
+  "sends_telemetry_event": true
+}

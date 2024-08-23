@@ -1,17 +1,17 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:map",
+      "id": "remnantrelics:ancient_tablet_forging",
       "count": 1
     },
     "title": {
-      "translate": "advancements.remnantrelics.ancient_tablet_refining.title"
+      "translate": "advancements.remnantrelics.ancient_tablet_forging.title"
     },
     "description": {
-      "translate": "advancements.remnantrelics.ancient_tablet_refining.description"
+      "translate": "advancements.remnantrelics.ancient_tablet_forging.description"
     }
   },
-  "parent": "remnantrelics:ancient_tablet_forging",
+  "parent": "minecraft:nether/loot_bastion",
   "criteria": {
     "activate_item": {
       "trigger": "minecraft:impossible"

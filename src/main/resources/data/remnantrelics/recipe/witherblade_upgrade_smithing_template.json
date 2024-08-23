@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Wnw",
+    "nNn",
+    "MnT"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "W": {
+      "item": "minecraft:wither_rose"
+    },
+    "w": {
+      "item": "minecraft:weeping_vines"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "T": {
+      "item": "minecraft:twisting_vines"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:witherblade_upgrade_smithing_template"
+  }
+}

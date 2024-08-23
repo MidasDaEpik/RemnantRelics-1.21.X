@@ -23,14 +23,33 @@
   "item.remnantrelics.whisperwind": "Whisperwind",
   "item.remnantrelics.whisperwind.shift_desc_1": "§7Has increased draw speed but decreased range, and damage.",
 
-  "item.remnantrelics.blueprint_scroll_witherblades": "Ancient Scroll",
-  "item.remnantrelics.blueprint_scroll_witherblades_desc": "Witherblade Blueprints",
+  "item.remnantrelics.witherblade_upgrade_smithing_template": "Smithing Template",
+  "item.remnantrelics.witherblade_upgrade_smithing_template_desc": "Witherblade Upgrade",
 
   "item.remnantrelics.ancient_tablet_forging": "Ancient Tablet - Forging",
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_2": "§8Consumed on Use",
+
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_3": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_4": "§d Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.ancient_tablet_infusion": "Ancient Tablet - Infusion",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_2": "§8Consumed on Use",
+
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_3": "§7Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_4": "§d Firestorm Katana",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_5": "§d Searing Staff",
+
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_6": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_7": "§d Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.ancient_tablet_refining": "Ancient Tablet - Refining",
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_2": "§8Consumed on Use",
+
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_3": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_4": "§d Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 
@@ -174,10 +193,10 @@
 
 
 
-  "smithing_template.blueprint_scroll_witherblades.applies_to": "Witherblade Precursors",
-  "smithing_template.blueprint_scroll_witherblades.ingredients": "Nether Star",
-  "smithing_template.blueprint_scroll_witherblades.base_slot_description": "Add Crimson Blazeblade, Warped Rapier, or Obsidian Bulwark",
-  "smithing_template.blueprint_scroll_witherblades.additions_slot_description": "Add Nether Star",
+  "smithing_template.witherblade_upgrade_smithing_template.applies_to": "Witherblade Precursors",
+  "smithing_template.witherblade_upgrade_smithing_template.ingredients": "Witherblade",
+  "smithing_template.witherblade_upgrade_smithing_template.base_slot_description": "Add Crimson Blazeblade, Warped Rapier, or Obsidian Bulwark",
+  "smithing_template.witherblade_upgrade_smithing_template.additions_slot_description": "Add Witherblade",
 
   "smithing_template.blueprint_scroll_elder.applies_to": "Cutlass, Diamond Chestplate",
   "smithing_template.blueprint_scroll_elder.ingredients": "Elder Spine",

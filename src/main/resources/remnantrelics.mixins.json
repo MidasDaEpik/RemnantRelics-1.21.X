@@ -3,6 +3,9 @@
   "package" : "com.midasdaepik.remnantrelics.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "DualWieldingMixin",
+    "FirstPersonItemMixin",
+    "ItemUseMixin",
     "RecipeCraftingHolderMixin"
   ],
   "injectors": {

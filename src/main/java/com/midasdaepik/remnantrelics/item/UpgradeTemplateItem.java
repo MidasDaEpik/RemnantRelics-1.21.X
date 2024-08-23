@@ -10,11 +10,11 @@ import net.minecraft.world.item.SmithingTemplateItem;
 import java.util.List;
 
 public class UpgradeTemplateItem extends SmithingTemplateItem {
-    private static final Component WITHERBLADE_UPGRADE = Component.translatable("item.remnantrelics.blueprint_scroll_witherblades_desc").withStyle(ChatFormatting.GRAY);
-    private static final Component WITHERBLADE_UPGRADE_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_witherblades.applies_to").withStyle(ChatFormatting.BLUE);
-    private static final Component WITHERBLADE_UPGRADE_INGREDIENTS = Component.translatable("smithing_template.blueprint_scroll_witherblades.ingredients").withStyle(ChatFormatting.BLUE);
-    private static final Component WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.base_slot_description");
-    private static final Component WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_witherblades.additions_slot_description");
+    private static final Component WITHERBLADE_UPGRADE = Component.translatable("item.remnantrelics.witherblade_upgrade_smithing_template_desc").withStyle(ChatFormatting.GRAY);
+    private static final Component WITHERBLADE_UPGRADE_APPLIES_TO = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.applies_to").withStyle(ChatFormatting.BLUE);
+    private static final Component WITHERBLADE_UPGRADE_INGREDIENTS = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.ingredients").withStyle(ChatFormatting.BLUE);
+    private static final Component WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.base_slot_description");
+    private static final Component WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.additions_slot_description");
 
     private static final Component BLUEPRINT_SCROLL_ELDER = Component.translatable("item.remnantrelics.blueprint_scroll_elder_desc").withStyle(ChatFormatting.GRAY);
     private static final Component BLUEPRINT_SCROLL_ELDER_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_elder.applies_to").withStyle(ChatFormatting.BLUE);

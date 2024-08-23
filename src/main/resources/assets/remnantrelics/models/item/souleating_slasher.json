@@ -1,6 +1,18 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "remnantrelics:item/souleating_slasher"
+  "parent": "item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "remnantrelics:item/souleating_slasher_handheld"
+  },
+  "perspectives": {
+    "head": {
+      "parent": "remnantrelics:item/souleating_slasher_gui"
+    },
+    "gui": {
+      "parent": "remnantrelics:item/souleating_slasher_gui"
+    },
+    "fixed": {
+      "parent": "remnantrelics:item/souleating_slasher_gui"
     }
+  }
 }

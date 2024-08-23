@@ -1,14 +1,13 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.DataComponents;
 import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.ServerAdvancementManager;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +22,7 @@ public class AncientKnowledgeItem extends Item {
     private final Integer KnowledgeTypeKey;
 
     public AncientKnowledgeItem(Properties pProperties, Integer pKnowledgeTypeKey) {
-        super(pProperties.stacksTo(64));
+        super(pProperties.stacksTo(1));
         this.KnowledgeTypeKey = pKnowledgeTypeKey;
     }
 
@@ -44,36 +43,30 @@ public class AncientKnowledgeItem extends Item {
         if (pPlayer instanceof ServerPlayer pServerPlayer) {
             ServerAdvancementManager pAdvancementManager = pServerPlayer.server.getAdvancements();
             if (this.KnowledgeTypeKey == 1) {
-                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "ancient_tablet_forging"));
-                AdvancementHolder pAdvancementHolderFragment = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "witherblades"));
+                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_forging"));
                 if (pAdvancementHolder != null && !pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                    pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).grantProgress("activate_item");
-                    if (pAdvancementHolderFragment != null) {
-                        pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolderFragment).grantProgress("ancient_tablet_forging");
-                    }
+                    pServerPlayer.getAdvancements().award(pAdvancementHolder, "activate_item");
+                    pPlayer.awardStat(Stats.ITEM_USED.get(this));
                     pPlayer.getItemInHand(pHand).consume(1, pPlayer);
+                    pPlayer.getCooldowns().addCooldown(this, 40);
                     return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
                 }
             } else if (this.KnowledgeTypeKey == 2) {
-                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "ancient_tablet_infusion"));
-                AdvancementHolder pAdvancementHolderFragment = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "witherblades"));
+                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_infusion"));
                 if (pAdvancementHolder != null && !pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                    pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).grantProgress("activate_item");
-                    if (pAdvancementHolderFragment != null) {
-                        pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolderFragment).grantProgress("ancient_tablet_infusion");
-                    }
+                    pServerPlayer.getAdvancements().award(pAdvancementHolder, "activate_item");
+                    pPlayer.awardStat(Stats.ITEM_USED.get(this));
                     pPlayer.getItemInHand(pHand).consume(1, pPlayer);
+                    pPlayer.getCooldowns().addCooldown(this, 40);
                     return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
                 }
             } else if (this.KnowledgeTypeKey == 3) {
-                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "ancient_tablet_refining"));
-                AdvancementHolder pAdvancementHolderFragment = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "witherblades"));
+                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_refining"));
                 if (pAdvancementHolder != null && !pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                    pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).grantProgress("activate_item");
-                    if (pAdvancementHolderFragment != null) {
-                        pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolderFragment).grantProgress("ancient_tablet_refining");
-                    }
+                    pServerPlayer.getAdvancements().award(pAdvancementHolder, "activate_item");
+                    pPlayer.awardStat(Stats.ITEM_USED.get(this));
                     pPlayer.getItemInHand(pHand).consume(1, pPlayer);
+                    pPlayer.getCooldowns().addCooldown(this, 40);
                     return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
                 }
             }
@@ -84,21 +77,28 @@ public class AncientKnowledgeItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_2"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_3"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_4"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_5"));
-        } else {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_1", pItemStack.getOrDefault(DataComponents.CHALICE_STATE, true) ? "§cAssimilation" : "§aDischarge"));
-            if (ItemUtil.ItemKeys.isHoldingSpace()) {
-                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_levels", "§a" + ItemUtil.getLevelForExperience(pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue()), "§a" + ItemUtil.getLevelForExperience(pItemStack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue())));
-            } else {
-                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2", "§a" + pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue(), "§a" + pItemStack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue()));
-                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_info"));
-            }
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
+        if (this.KnowledgeTypeKey == 1) {
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_forging.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_forging.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_forging.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_forging.shift_desc_4"));
+        } else if (this.KnowledgeTypeKey == 2) {
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_5"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_6"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_infusion.shift_desc_7"));
+        } else if (this.KnowledgeTypeKey == 3) {
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_4"));
         }
         super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }

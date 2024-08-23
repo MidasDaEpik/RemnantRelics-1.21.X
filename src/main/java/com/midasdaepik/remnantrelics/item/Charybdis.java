@@ -85,7 +85,7 @@ public class Charybdis extends SwordItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemStack, LivingEntity pEntity) {
+    public int getUseDuration(ItemStack pItemStack, LivingEntity pLivingEntity) {
         return 400;
     }
 

@@ -1,5 +1,5 @@
 {
-  "type": "remnantrelics:add_multiple",
+  "type": "remnantrelics:add",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
@@ -7,10 +7,8 @@
     },
     {
       "condition": "minecraft:random_chance",
-      "chance": 0.35
+      "chance": 0.2
     }
   ],
-  "item": "remnantrelics:ancient_weapon_fragment",
-  "min_count" : 1,
-  "max_count" : 2
+  "item": "remnantrelics:ancient_tablet_refining"
 }

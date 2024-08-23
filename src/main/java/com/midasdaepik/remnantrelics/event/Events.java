@@ -13,10 +13,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 
 @EventBusSubscriber(modid = RemnantRelics.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class Events {
@@ -45,7 +47,7 @@ public class Events {
             if (pEntity instanceof PiglinBrute pPiglinBrute) {
                 if (pPiglinBrute.getMainHandItem().getItem() == net.minecraft.world.item.Items.GOLDEN_AXE && Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
                     pPiglinBrute.setItemSlot(EquipmentSlot.MAINHAND, Items.PIGLIN_WARAXE.toStack());
-                    pPiglinBrute.setDropChance(EquipmentSlot.MAINHAND, 0.25f);
+                    pPiglinBrute.setDropChance(EquipmentSlot.MAINHAND, 0.2f);
                 }
             }
         }

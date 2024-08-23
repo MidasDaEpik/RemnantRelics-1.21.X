@@ -26,8 +26,8 @@ public class Effects {
 
     public static final Holder<MobEffect> UNWIELDY = EFFECTS.register("unwieldy",
             () -> new Unwieldy(MobEffectCategory.HARMFUL,11384036)
-                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID,"unwieldy"), (double)-0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID,"unwieldy"), (double)-0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID,"unwieldy"), (double)-0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID,"unwieldy"), (double)-0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
     public static final Holder<MobEffect> ECHO = EFFECTS.register("echo",
