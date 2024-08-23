@@ -73,11 +73,11 @@ public class Firestorm extends Projectile {
     protected void AttackTick() {
         if (this.level() instanceof ServerLevel pServerLevel) {
             if (this.WitherSpore) {
-                pServerLevel.sendParticles(ParticleTypes.CRIMSON_SPORE, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.25, 1.25, 1.25, 0.02);
-                pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.25, 1.25, 1.25, 0.02);
+                pServerLevel.sendParticles(ParticleTypes.CRIMSON_SPORE, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
+                pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
             } else {
-                pServerLevel.sendParticles(ParticleTypes.FLAME, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.25, 1.25, 1.25, 0.02);
-                pServerLevel.sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.25, 1.25, 1.25, 0.02);
+                pServerLevel.sendParticles(ParticleTypes.FLAME, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
+                pServerLevel.sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
             }
 
             if (this.Duration % 20 == 0) {

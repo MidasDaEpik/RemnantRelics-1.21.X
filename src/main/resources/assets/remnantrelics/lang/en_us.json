@@ -60,7 +60,7 @@
   "item.remnantrelics.blaze_core": "Blaze Core",
 
   "item.remnantrelics.firestorm_katana": "Firestorm Katana",
-  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
+  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit,",
   "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
   "item.remnantrelics.firestorm_katana.shift_desc_3": "§814s Cooldown",
 
@@ -112,8 +112,10 @@
   "item.remnantrelics.catalyst_chalice.lore_desc_2_levels": "§7Stored Experience: %1$s/%2$s §aLevels",
 
   "item.remnantrelics.catalyst_chalice.shift_desc_1": "§6[Shift + Right-Click] §7switches between modes.",
+
   "item.remnantrelics.catalyst_chalice.shift_desc_2": "§7Mode: §cAssimilation",
   "item.remnantrelics.catalyst_chalice.shift_desc_3": "§6[Right-Click] §7stores experience in the chalice.",
+
   "item.remnantrelics.catalyst_chalice.shift_desc_4": "§7Mode: §aDischarge",
   "item.remnantrelics.catalyst_chalice.shift_desc_5": "§6[Right-Click] §7releases experience from the chalice.",
 

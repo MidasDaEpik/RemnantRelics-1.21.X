@@ -182,21 +182,20 @@ public class Charybdis extends SwordItem {
         }
 
         if (pLevel instanceof ServerLevel pServerLevel) {
-            pServerLevel.sendParticles(ParticleTypes.BUBBLE, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, 4, 4, 1, 4, 0);
+            pServerLevel.sendParticles(ParticleTypes.BUBBLE, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, 3, 4, 1, 4, 0);
 
             ItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y + 0.25, pLivingEntity.getEyePosition().z, 12);
             ItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y - 0.75, pLivingEntity.getEyePosition().z, 12);
         }
 
         if (pLevel instanceof ClientLevel pClientLevel) {
-            for (int loop = 0; loop <= 3; loop++) {
+            for (int loop = 0; loop <= 1; loop++) {
                 int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
                 float XZRange = Mth.nextFloat(RandomSource.create(), 2, 12);
                 float YRange = Mth.nextFloat(RandomSource.create(), -1.25f, 0.75f);
-                float PullSpeed = Mth.nextFloat(RandomSource.create(), -10.0f, -4.0f);
+                float PullSpeed = Mth.nextFloat(RandomSource.create(), 1.0f, 0.4f);
 
-                pClientLevel.addParticle(ParticleTypes.UNDERWATER, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
-                //pClientLevel.addParticle(new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0f,0.2f,0.4f), Mth.nextFloat(RandomSource.create(), 0.75f, 1.5f)), pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
+                pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
             }
         }
     }
