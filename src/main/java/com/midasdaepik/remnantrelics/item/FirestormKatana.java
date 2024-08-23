@@ -15,6 +15,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -46,7 +48,7 @@ public class FirestormKatana extends SwordItem {
             }
 
             public float getAttackDamageBonus() {
-                return 5f;
+                return 4f;
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
@@ -66,7 +68,7 @@ public class FirestormKatana extends SwordItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  4, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.6, AttributeModifier.Operation.ADD_VALUE),
@@ -80,22 +82,29 @@ public class FirestormKatana extends SwordItem {
     @Override
     public boolean hurtEnemy(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (pAttacker instanceof Player pPlayer) {
-            if (pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-                pTarget.setRemainingFireTicks(EnchantmentHelper.getEnchantmentLevel(this.getEnchantmentHolder(Enchantments.FIRE_ASPECT, pAttacker.level()), pAttacker) * 3 + 4);
+            if (!pPlayer.getCooldowns().isOnCooldown(this) && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
+                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 200, 20, false);
+                    firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
+                    pAttacker.level().addFreshEntity(firestorm);
+
+                    pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, Sounds.ITEM_FIRESTORM_KATANA_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+
+                    pPlayer.getCooldowns().addCooldown(this, 280);
+                    pPlayer.getCooldowns().addCooldown(Items.CREEPING_CRIMSON.get(), 280);
+                }
             }
         } else {
-            pTarget.setRemainingFireTicks(EnchantmentHelper.getEnchantmentLevel(this.getEnchantmentHolder(ResourceLocation.withDefaultNamespace("fire_aspect"), pAttacker.level()), pAttacker) * 3 + 4);
+            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 200, 20, false);
+                firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
+                pAttacker.level().addFreshEntity(firestorm);
+
+                pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, Sounds.ITEM_FIRESTORM_KATANA_ABILITY.get(), SoundSource.HOSTILE, 1f, 1f,0);
+            }
         }
 
         return super.hurtEnemy(pItemStack, pTarget, pAttacker);
-    }
-
-    public static Holder<Enchantment> getEnchantmentHolder(ResourceKey<Enchantment> pEnchantment, Level level) {
-        return level.registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(pEnchantment).orElse(null);
-    }
-
-    public static Holder<Enchantment> getEnchantmentHolder(ResourceLocation pEnchantment, Level level) {
-        return level.registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(pEnchantment).orElse(null);
     }
 
     @Override
@@ -122,10 +131,8 @@ public class FirestormKatana extends SwordItem {
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (ItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.firestorm_katana.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.firestorm_katana.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.firestorm_katana.shift_desc_3"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.firestorm_katana.shift_desc_4"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

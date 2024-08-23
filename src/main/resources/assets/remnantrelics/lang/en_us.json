@@ -60,11 +60,9 @@
   "item.remnantrelics.blaze_core": "Blaze Core",
 
   "item.remnantrelics.firestorm_katana": "Firestorm Katana",
-  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Burns targets hit.",
-
-  "item.remnantrelics.firestorm_katana.shift_desc_2": "§6[Right-Click] §7summons a slow moving firestorm,",
-  "item.remnantrelics.firestorm_katana.shift_desc_3": "§7applying §8Weakness I§7, and setting alight entities caught in it.",
-  "item.remnantrelics.firestorm_katana.shift_desc_4": "§820s Cooldown",
+  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
+  "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
+  "item.remnantrelics.firestorm_katana.shift_desc_3": "§814s Cooldown",
 
   "item.remnantrelics.searing_staff": "Searing Staff",
   "item.remnantrelics.searing_staff.shift_desc_1": "§6[Right-Click] §7summons 3 fireballs around the player,",
@@ -101,7 +99,7 @@
   "item.remnantrelics.warping_wither.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
 
   "item.remnantrelics.warping_wither.shift_desc_2": "§6[Right-Click] §7teleports the user a short distance forward,",
-  "item.remnantrelics.warping_wither.shift_desc_3": "§7afflicting §3Slowness IV §7and damaging entities near the target location.",
+  "item.remnantrelics.warping_wither.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
   "item.remnantrelics.warping_wither.shift_desc_4": "§87s Cooldown",
 
   "item.remnantrelics.echo_gem": "Echo Gem",

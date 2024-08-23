@@ -38,7 +38,7 @@ public class CreepingCrimson extends SwordItem {
             }
 
             public float getAttackDamageBonus() {
-                return 6f;
+                return 5f;
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
@@ -58,7 +58,7 @@ public class CreepingCrimson extends SwordItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  6, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.6, AttributeModifier.Operation.ADD_VALUE),
@@ -73,8 +73,8 @@ public class CreepingCrimson extends SwordItem {
     public boolean hurtEnemy(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (pAttacker instanceof Player pPlayer) {
             if (!pPlayer.getCooldowns().isOnCooldown(this) && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
-                    Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 120, 20, true);
+                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 160, 20, true);
                     firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                     pAttacker.level().addFreshEntity(firestorm);
 
@@ -85,8 +85,8 @@ public class CreepingCrimson extends SwordItem {
                 }
             }
         } else {
-            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
-                Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 120, 20, true);
+            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                Firestorm firestorm = new Firestorm(pAttacker.level(), pAttacker, 160, 20, true);
                 firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                 pAttacker.level().addFreshEntity(firestorm);
 
