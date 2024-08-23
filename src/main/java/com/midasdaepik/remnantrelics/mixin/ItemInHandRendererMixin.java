@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ItemInHandRenderer.class)
-public class FirstPersonItemMixin {
+public class ItemInHandRendererMixin {
     @Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
     private void hideOffhandItem(LivingEntity pLivingEntity, ItemStack pItemStack, ItemDisplayContext pItemDisplayContext, boolean pLeftHanded, PoseStack pPoseStack, MultiBufferSource pBuffer, int pSeed, CallbackInfo pCallbackInfo) {
         if (pLivingEntity instanceof AbstractClientPlayer) {

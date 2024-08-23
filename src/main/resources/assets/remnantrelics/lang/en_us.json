@@ -1,5 +1,5 @@
 {
-  "item.remnantrelics.shift_desc_info": "§7[Shift] §8to show extra information",
+  "item.remnantrelics.shift_desc_info": "§7Hold §6[Shift] §7to show extra information",
   "item.remnantrelics.empty": " ",
 
   "item.remnantrelics.two_handed": "§7This weapon's capabilities are reduced if any items are in the user's offhand.",
@@ -12,7 +12,7 @@
   "item.remnantrelics.elder_spine": "Elder Spine",
 
   "item.remnantrelics.charybdis": "Charybdis",
-  "item.remnantrelics.charybdis.shift_desc_1": "§fRight-Click §7conjures a maelstrom around the user,",
+  "item.remnantrelics.charybdis.shift_desc_1": "§6[Right-Click] §7conjures a maelstrom around the user,",
   "item.remnantrelics.charybdis.shift_desc_2": "§7dealing damage to targets near the center.",
   "item.remnantrelics.charybdis.shift_desc_3": "§82x Use Time Cooldown",
 
@@ -27,29 +27,29 @@
   "item.remnantrelics.witherblade_upgrade_smithing_template_desc": "Witherblade Upgrade",
 
   "item.remnantrelics.ancient_tablet_forging": "Ancient Tablet - Forging",
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_1": "§6[Right-Click] §7to analyze the contents of the tablet.",
   "item.remnantrelics.ancient_tablet_forging.shift_desc_2": "§8Consumed on Use",
 
   "item.remnantrelics.ancient_tablet_forging.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_4": "§d Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_forging.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.ancient_tablet_infusion": "Ancient Tablet - Infusion",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_1": "§6[Right-Click] §7to analyze the contents of the tablet.",
   "item.remnantrelics.ancient_tablet_infusion.shift_desc_2": "§8Consumed on Use",
 
   "item.remnantrelics.ancient_tablet_infusion.shift_desc_3": "§7Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_4": "§d Firestorm Katana",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_5": "§d Searing Staff",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_4": "§5 Firestorm Katana",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_5": "§5 Searing Staff",
 
   "item.remnantrelics.ancient_tablet_infusion.shift_desc_6": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_7": "§d Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_infusion.shift_desc_7": "§5 Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.ancient_tablet_refining": "Ancient Tablet - Refining",
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_1": "§fRight-Click §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_1": "§6[Right-Click] §7to analyze the contents of the tablet.",
   "item.remnantrelics.ancient_tablet_refining.shift_desc_2": "§8Consumed on Use",
 
   "item.remnantrelics.ancient_tablet_refining.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_4": "§d Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_refining.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 
@@ -62,22 +62,22 @@
   "item.remnantrelics.firestorm_katana": "Firestorm Katana",
   "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Burns targets hit.",
 
-  "item.remnantrelics.firestorm_katana.shift_desc_2": "§fRight-Click §7summons a slow moving firestorm,",
+  "item.remnantrelics.firestorm_katana.shift_desc_2": "§6[Right-Click] §7summons a slow moving firestorm,",
   "item.remnantrelics.firestorm_katana.shift_desc_3": "§7applying §8Weakness I§7, and setting alight entities caught in it.",
   "item.remnantrelics.firestorm_katana.shift_desc_4": "§820s Cooldown",
 
   "item.remnantrelics.searing_staff": "Searing Staff",
-  "item.remnantrelics.searing_staff.shift_desc_1": "§fRight-Click §7summons 3 fireballs around the player,",
+  "item.remnantrelics.searing_staff.shift_desc_1": "§6[Right-Click] §7summons 3 fireballs around the player,",
   "item.remnantrelics.searing_staff.shift_desc_2": "§7which can be hit to be launched in any direction.",
   "item.remnantrelics.searing_staff.shift_desc_3": "§8(Fireballs automatically fire downwards after 20 Seconds)",
   "item.remnantrelics.searing_staff.shift_desc_4": "§88s Cooldown",
 
   "item.remnantrelics.obsidian_bulwark": "Obsidian Bulwark",
-  "item.remnantrelics.obsidian_bulwark.shift_desc_1": "§fRight-Click §7grants the user an §6Absorption §7shield.",
+  "item.remnantrelics.obsidian_bulwark.shift_desc_1": "§6[Right-Click] §7grants the user an §6Absorption §7shield.",
   "item.remnantrelics.obsidian_bulwark.shift_desc_2": "§815s Cooldown",
 
   "item.remnantrelics.warped_rapier": "Warped Rapier",
-  "item.remnantrelics.warped_rapier.shift_desc_1": "§fRight-Click §7teleports the user a short distance forward.",
+  "item.remnantrelics.warped_rapier.shift_desc_1": "§6[Right-Click] §7teleports the user a short distance forward.",
   "item.remnantrelics.warped_rapier.shift_desc_2": "§88s Cooldown",
 
   "item.remnantrelics.witherblade": "Witherblade",
@@ -92,7 +92,7 @@
   "item.remnantrelics.souleating_slasher.shift_desc_1": "§7Has a chance to create withering explosions on hit,",
   "item.remnantrelics.souleating_slasher.shift_desc_2": "§7inflicting §8Wither II §7on nearby entities.",
 
-  "item.remnantrelics.souleating_slasher.shift_desc_3": "§fRight-Click §7grants the user an §6Absorption §7shield,",
+  "item.remnantrelics.souleating_slasher.shift_desc_3": "§6[Right-Click] §7grants the user an §6Absorption §7shield,",
   "item.remnantrelics.souleating_slasher.shift_desc_4": "§7and consumes the §8Wither §7effect of nearby entities,",
   "item.remnantrelics.souleating_slasher.shift_desc_5": "§7damaging them to increase the users' §6Absorption §7shield.",
   "item.remnantrelics.souleating_slasher.shift_desc_6": "§820s Cooldown",
@@ -100,7 +100,7 @@
   "item.remnantrelics.warping_wither": "Warping Wither",
   "item.remnantrelics.warping_wither.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
 
-  "item.remnantrelics.warping_wither.shift_desc_2": "§fRight-Click §7teleports the user a short distance forward,",
+  "item.remnantrelics.warping_wither.shift_desc_2": "§6[Right-Click] §7teleports the user a short distance forward,",
   "item.remnantrelics.warping_wither.shift_desc_3": "§7afflicting §3Slowness IV §7and damaging entities near the target location.",
   "item.remnantrelics.warping_wither.shift_desc_4": "§87s Cooldown",
 
@@ -110,14 +110,14 @@
   "item.remnantrelics.catalyst_chalice.lore_desc_1": "§7Mode: %1$s",
   "item.remnantrelics.catalyst_chalice.lore_desc_2": "§7Stored Experience: %1$s/%2$s §aPoints",
 
-  "item.remnantrelics.catalyst_chalice.lore_desc_2_info": "§7[Space] §8to show levels",
+  "item.remnantrelics.catalyst_chalice.lore_desc_2_info": "§7Hold §6[Shift] §7to show levels",
   "item.remnantrelics.catalyst_chalice.lore_desc_2_levels": "§7Stored Experience: %1$s/%2$s §aLevels",
 
-  "item.remnantrelics.catalyst_chalice.shift_desc_1": "§fShift Right-Click §7switches between modes.",
+  "item.remnantrelics.catalyst_chalice.shift_desc_1": "§6[Shift + Right-Click] §7switches between modes.",
   "item.remnantrelics.catalyst_chalice.shift_desc_2": "§7Mode: §cAssimilation",
-  "item.remnantrelics.catalyst_chalice.shift_desc_3": "§fRight-Click §7stores experience in the chalice.",
+  "item.remnantrelics.catalyst_chalice.shift_desc_3": "§6[Right-Click] §7stores experience in the chalice.",
   "item.remnantrelics.catalyst_chalice.shift_desc_4": "§7Mode: §aDischarge",
-  "item.remnantrelics.catalyst_chalice.shift_desc_5": "§fRight-Click §7releases experience from the chalice.",
+  "item.remnantrelics.catalyst_chalice.shift_desc_5": "§6[Right-Click] §7releases experience from the chalice.",
 
   "item.remnantrelics.scylla": "Scylla",
   "item.remnantrelics.scylla.shift_desc_1": "§7Inflicts §3Echo §7on targets,",
@@ -127,7 +127,7 @@
   "item.remnantrelics.sonic_recurve.shift_desc_1": "§7???",
 
   "item.remnantrelics.lyre_of_echoes": "Lyre of Echoes",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§fRight-Click §7charges a sonic blast,",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Right-Click] §7charges a sonic blast,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a long line in front of the user,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer the charge.",
 

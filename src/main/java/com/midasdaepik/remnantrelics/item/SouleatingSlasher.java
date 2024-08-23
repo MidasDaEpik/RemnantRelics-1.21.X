@@ -110,24 +110,24 @@ public class SouleatingSlasher extends SwordItem {
     public boolean hurtEnemy(ItemStack pItemstack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (pAttacker instanceof Player pLivingEntity) {
             if (pLivingEntity.getAttackStrengthScale(0) >= 0.9F) {
-                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 7) == 1) {
+                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
                     final Vec3 _center = new Vec3(pTarget.getX(), pTarget.getY(), pTarget.getZ());
-                    List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+                    List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(3d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
                     for (LivingEntity pEntityIterator : pFoundTarget) {
                         if (!(pEntityIterator == pAttacker)) {
-                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
+                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 160, 0));
                         }
                     }
                     pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
                 }
             }
         } else {
-            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
                 final Vec3 _center = new Vec3(pTarget.getX(), pTarget.getY(), pTarget.getZ());
-                List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+                List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(3d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
                 for (LivingEntity pEntityIterator : pFoundTarget) {
                     if (!(pEntityIterator == pAttacker)) {
-                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 160, 0));
                     }
                 }
                 pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
@@ -144,6 +144,8 @@ public class SouleatingSlasher extends SwordItem {
             if (pLevel instanceof ServerLevel pServerLevel) {
                 pServerLevel.sendParticles(ParticleTypes.SOUL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.5, 0.5, 0.5, 0.02);
                 pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.3, 0.3, 0.3, 0.1);
+
+                ItemUtil.ParticleSphere(pServerLevel, ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1.6);
             }
 
             pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
