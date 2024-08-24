@@ -1,6 +1,18 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "remnantrelics:item/piglin_waraxe"
+  "parent": "item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "remnantrelics:item/piglin_waraxe_handheld"
+  },
+  "perspectives": {
+    "head": {
+      "parent": "remnantrelics:item/piglin_waraxe_gui"
+    },
+    "gui": {
+      "parent": "remnantrelics:item/piglin_waraxe_gui"
+    },
+    "fixed": {
+      "parent": "remnantrelics:item/piglin_waraxe_gui"
     }
+  }
 }

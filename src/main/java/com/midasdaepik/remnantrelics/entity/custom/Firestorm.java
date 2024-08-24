@@ -83,8 +83,8 @@ public class Firestorm extends Projectile {
             if (this.Duration % 20 == 0) {
                 pServerLevel.playSeededSound(null, this.getX(), this.getY() + 0.25, this.getZ(), SoundEvents.BLAZE_SHOOT, SoundSource.NEUTRAL, 1f, 0.9f,0);
 
-                final Vec3 _center = new Vec3(this.getX(), this.getY() + 0.25, this.getZ());
-                List<LivingEntity> pFoundTarget = pServerLevel.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(5d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+                final Vec3 AABBCenter = new Vec3(this.getX(), this.getY() + 0.25, this.getZ());
+                List<LivingEntity> pFoundTarget = pServerLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(5d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
                 for (LivingEntity pEntityIterator : pFoundTarget) {
                     if (pEntityIterator != this.getOwner()) {
                         if (this.WitherSpore) {

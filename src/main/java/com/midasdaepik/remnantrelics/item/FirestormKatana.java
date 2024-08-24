@@ -108,26 +108,6 @@ public class FirestormKatana extends SwordItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        if (!pLevel.isClientSide) {
-            Firestorm firestorm = new Firestorm(pLevel, pPlayer, 300, 40, false);
-            firestorm.setPos(pPlayer.getEyePosition().x, pPlayer.getEyePosition().y, pPlayer.getEyePosition().z);
-            firestorm.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.2f, 0.5f, 0.1f);
-            pLevel.addFreshEntity(firestorm);
-        }
-
-        pPlayer.level().playSeededSound(null, pPlayer.getEyePosition().x, pPlayer.getEyePosition().y, pPlayer.getEyePosition().z, Sounds.ITEM_FIRESTORM_KATANA_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
-
-        pPlayer.getItemInHand(pUsedHand).hurtAndBreak(4, pPlayer, pUsedHand == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
-
-        pPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-        pPlayer.getCooldowns().addCooldown(this, 400);
-        pPlayer.getCooldowns().addCooldown(Items.CREEPING_CRIMSON.get(), 400);
-        return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
-    }
-
-    @Override
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (ItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.firestorm_katana.shift_desc_1"));

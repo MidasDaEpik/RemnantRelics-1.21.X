@@ -25,9 +25,9 @@ public class Events {
     @SubscribeEvent
     public static void onLivingDamageEventPost(LivingDamageEvent.Post pEvent) {
         LivingEntity pLivingEntity = pEvent.getEntity();
-        if (pLivingEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() == Items.ELDER_CHESTPLATE.get()) {
+        if (pLivingEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() == Items.ELDER_CHESTPLATE.get() && pLivingEntity.level() instanceof ServerLevel pServerLevel) {
             Entity pDamageSourceEntity = pEvent.getSource().getEntity();
-            if (pDamageSourceEntity instanceof LivingEntity pDamageSourceLivingEntity && !pDamageSourceLivingEntity.isInvulnerable() && pLivingEntity.level() instanceof ServerLevel pServerLevel) {
+            if (pDamageSourceEntity instanceof LivingEntity pDamageSourceLivingEntity && !pDamageSourceLivingEntity.isInvulnerable()) {
                 if (pLivingEntity instanceof Player pPlayer) {
                     if (!pPlayer.getCooldowns().isOnCooldown(Items.ELDER_CHESTPLATE.get())) {
                         pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.8f);

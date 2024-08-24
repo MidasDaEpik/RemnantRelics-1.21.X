@@ -1,23 +1,31 @@
 package com.midasdaepik.remnantrelics.item;
 
+import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.entity.custom.SonicBlast;
 import com.midasdaepik.remnantrelics.registries.EnumExtensions;
 import com.midasdaepik.remnantrelics.registries.ItemUtil;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LyreOfEchoes extends Item {
     public LyreOfEchoes(Properties pProperties) {
@@ -52,12 +60,27 @@ public class LyreOfEchoes extends Item {
         }
 
         if (pTimeUsing >= 60) {
-            if (!pLevel.isClientSide) {
-                int pDamage = pTimeUsing / 12 + 10;
-                SonicBlast sonicBlast = new SonicBlast(pLevel, pLivingEntity, pTimeUsing * 2 + 30, pDamage);
-                sonicBlast.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
-                sonicBlast.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.2f, 1f, 0.0f);
-                pLevel.addFreshEntity(sonicBlast);
+            //Vec3 AABBCenter = new Vec3(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
+            double AABBCenterX = pLivingEntity.getEyePosition().x + pLivingEntity.getLookAngle().x;
+            double AABBCenterY = pLivingEntity.getEyePosition().y + pLivingEntity.getLookAngle().y;
+            double AABBCenterZ = pLivingEntity.getEyePosition().z + pLivingEntity.getLookAngle().z;
+            Set<LivingEntity> pFoundTarget = new HashSet<>(Set.of());
+            for (int Loop = 1; Loop <= pTimeUsing / 5 + 20; Loop++) {
+                pFoundTarget.addAll(new HashSet<>(pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenterX, AABBCenterY, AABBCenterZ, AABBCenterX, AABBCenterY, AABBCenterZ).inflate(1d))));
+
+                if (pLevel instanceof ServerLevel pServerLevel && Loop % 4 == 0) {
+                    pServerLevel.sendParticles(ParticleTypes.SONIC_BOOM, AABBCenterX, AABBCenterY, AABBCenterZ, 1, 0, 0, 0, 0);
+                }
+
+                //AABBCenter.add(pLivingEntity.getLookAngle().x * 0.5d, pLivingEntity.getLookAngle().y * 0.5d, pLivingEntity.getLookAngle().z * 0.5d);
+                AABBCenterX += pLivingEntity.getLookAngle().x * 0.5;
+                AABBCenterY += pLivingEntity.getLookAngle().y * 0.5;
+                AABBCenterZ += pLivingEntity.getLookAngle().z * 0.5;
+            }
+
+            int pDamage = pTimeUsing / 12 + 10;
+            for (LivingEntity pEntityIterator : pFoundTarget) {
+                pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "sonic_boom"))), pLivingEntity), pDamage);
             }
 
             pLivingEntity.setDeltaMovement(pLivingEntity.getDeltaMovement().x - pLivingEntity.getLookAngle().x * pTimeUsing * 0.006, pLivingEntity.getDeltaMovement().y - pLivingEntity.getLookAngle().y * pTimeUsing * 0.006, pLivingEntity.getDeltaMovement().z - pLivingEntity.getLookAngle().z * pTimeUsing * 0.006);

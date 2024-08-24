@@ -39,7 +39,10 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Charybdis extends SwordItem {
     public Charybdis(Properties pProperties) {
@@ -116,12 +119,12 @@ public class Charybdis extends SwordItem {
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pItemStack, int pTimeLeft) {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
 
-        final Vec3 _center = new Vec3(pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ());
-        List<Entity> pFoundTarget = pLevel.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+        final Vec3 AABBCenter = new Vec3(pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ());
+        Set<Entity> pFoundTarget = new HashSet<>(pLevel.getEntitiesOfClass(Entity.class, new AABB(AABBCenter, AABBCenter).inflate(12d, 8d, 12d), e -> true));
         for (Entity pEntityIterator : pFoundTarget) {
             if (pLevel instanceof ServerLevel && !(pEntityIterator == pLivingEntity) && (pEntityIterator instanceof LivingEntity || pEntityIterator instanceof Projectile || pEntityIterator instanceof ItemEntity)) {
                 double dX = pLivingEntity.getX() - pEntityIterator.getX();
-                double dY = pLivingEntity.getY() - pEntityIterator.getY();
+                double dY = (pLivingEntity.getY() - pEntityIterator.getY()) * 1.5;
                 double dZ = pLivingEntity.getZ() - pEntityIterator.getZ();
 
                 if (dX >= 0) {
@@ -174,7 +177,7 @@ public class Charybdis extends SwordItem {
             }
         }
 
-        List<LivingEntity> pFoundTarget2 = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+        List<LivingEntity> pFoundTarget2 = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
         for (LivingEntity pEntityIterator : pFoundTarget2) {
             if (!(pEntityIterator == pLivingEntity) && pTimeUsing % 20 == 0) {
                 pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "whirlpool"))), pLivingEntity), 12);
@@ -189,13 +192,13 @@ public class Charybdis extends SwordItem {
         }
 
         if (pLevel instanceof ClientLevel pClientLevel) {
-            for (int loop = 0; loop <= 1; loop++) {
+            for (int Loop = 1; Loop <= 2; Loop++) {
                 int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
-                float XZRange = Mth.nextFloat(RandomSource.create(), 2, 12);
-                float YRange = Mth.nextFloat(RandomSource.create(), -1.25f, 0.75f);
+                float XZRange = Mth.nextFloat(RandomSource.create(), 2.0f, 12.0f);
+                float YRange = Mth.nextFloat(RandomSource.create(), -1.75f, 1.25f);
                 float PullSpeed = Mth.nextFloat(RandomSource.create(), 1.0f, 0.4f);
 
-                pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed, YRange * PullSpeed, Math.sin(XZDegrees) * XZRange * PullSpeed);
+                pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), YRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), Math.sin(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f));
             }
         }
     }
