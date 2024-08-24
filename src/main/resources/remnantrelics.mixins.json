@@ -1,15 +1,17 @@
 {
-  "required" : true,
-  "package" : "com.midasdaepik.remnantrelics.mixin",
+  "required": true,
+  "package": "com.midasdaepik.remnantrelics.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "PlayerRendererMixin",
-    "ItemInHandRendererMixin",
     "ItemUseMixin",
     "RecipeCraftingHolderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "minVersion": "0.8"
+  "minVersion": "0.8",
+  "client": [
+    "ItemInHandRendererMixin",
+    "PlayerRendererMixin"
+  ]
 }

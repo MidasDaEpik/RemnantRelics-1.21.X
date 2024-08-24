@@ -19,7 +19,7 @@ public class ItemInHandRendererMixin {
     @Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
     private void hideOffhandItem(LivingEntity pLivingEntity, ItemStack pItemStack, ItemDisplayContext pItemDisplayContext, boolean pLeftHanded, PoseStack pPoseStack, MultiBufferSource pBuffer, int pSeed, CallbackInfo pCallbackInfo) {
         if (pLivingEntity instanceof AbstractClientPlayer) {
-            if (pLivingEntity.getMainHandItem().is(Tags.DUAL_WIELDED_WEAPONS) || pLivingEntity.getOffhandItem().is(Tags.DUAL_WIELDED_WEAPONS)) {
+            if (pLivingEntity.getMainHandItem().is(Tags.DUAL_WIELDED_WEAPONS) || pLivingEntity.getOffhandItem().is(Tags.DUAL_WIELDED_WEAPONS) || (pLivingEntity.isUsingItem() && pLivingEntity.getUseItem().is(Tags.HIDE_OFFHAND_WHILE_USING_ITEMS))) {
                 HumanoidArm pOffhandArm = pLivingEntity.getMainArm() == HumanoidArm.RIGHT ? HumanoidArm.LEFT : HumanoidArm.RIGHT;
                 if (pLeftHanded == (pOffhandArm == HumanoidArm.LEFT)) {
                     pCallbackInfo.cancel();
