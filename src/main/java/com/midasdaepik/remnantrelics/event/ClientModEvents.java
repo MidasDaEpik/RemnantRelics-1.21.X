@@ -7,13 +7,16 @@ import com.midasdaepik.remnantrelics.entity.renderer.FirestormRenderer;
 import com.midasdaepik.remnantrelics.entity.renderer.SonicBlastRenderer;
 import com.midasdaepik.remnantrelics.registries.Entities;
 import com.midasdaepik.remnantrelics.registries.ItemProperties;
+import com.midasdaepik.remnantrelics.registries.Items;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.item.component.DyedItemColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 @EventBusSubscriber(modid = RemnantRelics.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientModEvents {
@@ -34,5 +37,13 @@ public class ClientModEvents {
     public static void layerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions pEvent) {
         pEvent.registerLayerDefinition(ElderChestplateModel.LAYER_LOCATION, ElderChestplateModel::createBodyLayer);
         pEvent.registerLayerDefinition(ElderChestplateRetractedModel.LAYER_LOCATION, ElderChestplateRetractedModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterColorHandlersEventItem(RegisterColorHandlersEvent.Item pEvent) {
+        pEvent.register(
+                (pItemStack, pTintIndex) ->  pTintIndex == 1 ? DyedItemColor.getOrDefault(pItemStack, 6448520) : -1,
+                Items.ELDER_CHESTPLATE
+        );
     }
 }

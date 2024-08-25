@@ -33,7 +33,8 @@ public class ArmorMaterials {
                     SoundEvents.ARMOR_EQUIP_TURTLE,
                     () -> Ingredient.of(Items.PRISMARINE_CRYSTALS),
                     List.of(
-                            new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "elder"))
+                            new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "elder")),
+                            new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "elder"), "_overlay", true)
                     ),
                     1.5f,
                     0f

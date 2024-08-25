@@ -1,7 +1,8 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantrelics:item/elder_chestplate"
+    "layer0": "remnantrelics:item/elder_chestplate",
+    "layer1": "remnantrelics:item/elder_chestplate_overlay"
   },
   "overrides": [
     {
