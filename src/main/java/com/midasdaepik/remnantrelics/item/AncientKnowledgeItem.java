@@ -38,6 +38,10 @@ public class AncientKnowledgeItem extends Item {
         return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_GOLD.getValue()), 3);
     }
 
+    public static AncientKnowledgeItem createResearchersMemoirSculk() {
+        return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_SCULK.getValue()), 4);
+    }
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         if (pPlayer instanceof ServerPlayer pServerPlayer) {
@@ -62,6 +66,15 @@ public class AncientKnowledgeItem extends Item {
                 }
             } else if (this.KnowledgeTypeKey == 3) {
                 AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_refining"));
+                if (pAdvancementHolder != null && !pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                    pServerPlayer.getAdvancements().award(pAdvancementHolder, "activate_item");
+                    pPlayer.awardStat(Stats.ITEM_USED.get(this));
+                    pPlayer.getItemInHand(pHand).consume(1, pPlayer);
+                    pPlayer.getCooldowns().addCooldown(this, 40);
+                    return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
+                }
+            } else if (this.KnowledgeTypeKey == 4) {
+                AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "adventure/researchers_memoir_sculk"));
                 if (pAdvancementHolder != null && !pServerPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
                     pServerPlayer.getAdvancements().award(pAdvancementHolder, "activate_item");
                     pPlayer.awardStat(Stats.ITEM_USED.get(this));
@@ -99,6 +112,14 @@ public class AncientKnowledgeItem extends Item {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_refining.shift_desc_4"));
+        } else if (this.KnowledgeTypeKey == 4) {
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_5"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_6"));
         }
         super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }

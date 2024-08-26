@@ -1,7 +1,6 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.entity.custom.SonicBlast;
 import com.midasdaepik.remnantrelics.registries.EnumExtensions;
 import com.midasdaepik.remnantrelics.registries.ItemUtil;
 import net.minecraft.core.particles.ParticleTypes;

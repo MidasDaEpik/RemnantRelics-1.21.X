@@ -102,13 +102,24 @@
   "item.remnantrelics.warping_wither.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
   "item.remnantrelics.warping_wither.shift_desc_4": "§87s Cooldown",
 
+  "item.remnantrelics.researchers_notes_sculk": "Researcher's Notes - Sculk",
+
+  "item.remnantrelics.researchers_memoir_sculk": "Researcher's Memoir - Sculk",
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_1": "§6[Right-Click] §7to analyze the contents of the memoir.",
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_2": "§8Consumed on Use",
+
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_3": "§7Unlocked Recipes:",
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_4": "§5 Catalyst Chalice",
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_5": "§5 Scylla",
+  "item.remnantrelics.researchers_memoir_sculk.shift_desc_6": "§5 Lyre Of Echoes",
+
   "item.remnantrelics.echo_gem": "Echo Gem",
 
   "item.remnantrelics.catalyst_chalice": "Catalyst Chalice",
   "item.remnantrelics.catalyst_chalice.lore_desc_1": "§7Mode: %1$s",
   "item.remnantrelics.catalyst_chalice.lore_desc_2": "§7Stored Experience: %1$s/%2$s §aPoints",
 
-  "item.remnantrelics.catalyst_chalice.lore_desc_2_info": "§7Hold §6[Shift] §7to show levels",
+  "item.remnantrelics.catalyst_chalice.lore_desc_2_info": "§7Hold §6[Space] §7to show levels",
   "item.remnantrelics.catalyst_chalice.lore_desc_2_levels": "§7Stored Experience: %1$s/%2$s §aLevels",
 
   "item.remnantrelics.catalyst_chalice.shift_desc_1": "§6[Shift + Right-Click] §7switches between modes.",
@@ -129,7 +140,7 @@
   "item.remnantrelics.lyre_of_echoes": "Lyre of Echoes",
   "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Right-Click] §7charges a sonic blast,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a long line in front of the user,",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer the charge.",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer it is charged.",
 
   "item.remnantrelics.hexed_dice": "Hexed Dice",
   "item.remnantrelics.hexed_dice.shift_desc_1": "§7Right-Click to roll the dice for a random temporary effect:",
@@ -249,9 +260,6 @@
 
 
 
-  "advancements.remnantrelics.root.title": "Remnant Relics",
-  "advancements.remnantrelics.root.description": "Relics and knowledge from an age long past",
-
   "advancements.remnantrelics.ancient_tablet_forging.title": "Ancient Tablet - Forging",
   "advancements.remnantrelics.ancient_tablet_forging.description": "Learn the ancient nether forging techniques",
 
@@ -262,5 +270,11 @@
   "advancements.remnantrelics.ancient_tablet_refining.description": "Learn to refine weapons to handle magic",
 
   "advancements.remnantrelics.witherblades.title": "The Witherblades",
-  "advancements.remnantrelics.witherblades.description": "Gain the collective knowledge of the ancient nether civilizations"
+  "advancements.remnantrelics.witherblades.description": "Gain the collective knowledge of the ancient nether civilizations",
+
+  "advancements.remnantrelics.all_witherblades.title": "I Am... Inevitable",
+  "advancements.remnantrelics.all_witherblades.description": "Obtain all 3 witherblades",
+
+  "advancements.remnantrelics.researchers_memoir_sculk.title": "Researcher's Memoir - Sculk",
+  "advancements.remnantrelics.researchers_memoir_sculk.description": "Study the works of a long departed ancient city researcher"
 }

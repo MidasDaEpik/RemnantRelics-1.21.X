@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "remnantrelics:item/researchers_memoir_sculk"
+    }
+}

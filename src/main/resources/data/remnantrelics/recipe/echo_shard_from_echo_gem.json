@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "remnantrelics:echo_gem"
+    }
+  ],
+  "result": {
+    "id": "minecraft:echo_shard",
+    "count": 9
+  }
+}
+

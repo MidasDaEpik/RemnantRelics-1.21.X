@@ -57,6 +57,9 @@ public class CreativeTabs {
                         pOutput.accept(Items.SOULEATING_SLASHER.get());
                         pOutput.accept(Items.WARPING_WITHER.get());
 
+                        pOutput.accept(Items.RESEARCHERS_NOTES_SCULK.get());
+                        pOutput.accept(Items.RESEARCHERS_MEMOIR_SCULK.get());
+
                         pOutput.accept(Items.ECHO_GEM.get());
 
                         pOutput.accept(Items.CATALYST_CHALICE.get());
