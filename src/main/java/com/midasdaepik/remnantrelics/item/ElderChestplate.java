@@ -54,47 +54,6 @@ public class ElderChestplate extends ArmorItem {
     }
 
     @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            @Override
-            @OnlyIn(Dist.CLIENT)
-            public HumanoidModel getHumanoidArmorModel(LivingEntity pLivingEntity, ItemStack pItemStack, EquipmentSlot pEquipmentSlot, HumanoidModel pDefaultModel) {
-                if (pLivingEntity instanceof Player pPlayer && pPlayer.getCooldowns().isOnCooldown(pItemStack.getItem())) {
-                    HumanoidModel pArmorModel = new HumanoidModel(new ModelPart(Collections.emptyList(), Map.of(
-                            "body", new ElderChestplateRetractedModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateRetractedModel.LAYER_LOCATION)).Body,
-                            "left_arm", new ElderChestplateRetractedModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateRetractedModel.LAYER_LOCATION)).LeftArm,
-                            "right_arm", new ElderChestplateRetractedModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateRetractedModel.LAYER_LOCATION)).RightArm,
-                            "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())
-                    )));
-                    pArmorModel.crouching = pDefaultModel.crouching;
-                    pArmorModel.riding = pDefaultModel.riding;
-                    pArmorModel.swimAmount = pDefaultModel.swimAmount;
-                    pArmorModel.young = pDefaultModel.young;
-                    return pArmorModel;
-                } else {
-                    HumanoidModel pArmorModel = new HumanoidModel(new ModelPart(Collections.emptyList(), Map.of(
-                            "body", new ElderChestplateModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateModel.LAYER_LOCATION)).Body,
-                            "left_arm", new ElderChestplateModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateModel.LAYER_LOCATION)).LeftArm,
-                            "right_arm", new ElderChestplateModel(Minecraft.getInstance().getEntityModels().bakeLayer(ElderChestplateModel.LAYER_LOCATION)).RightArm,
-                            "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-                            "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())
-                    )));
-                    pArmorModel.crouching = pLivingEntity.isShiftKeyDown();
-                    pArmorModel.riding = pDefaultModel.riding;
-                    pArmorModel.young = pLivingEntity.isBaby();
-                    pArmorModel.swimAmount = pDefaultModel.swimAmount;
-                    return pArmorModel;
-                }
-            }
-        });
-    }
-
-    @Override
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (ItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.elder_chestplate.shift_desc_1"));
