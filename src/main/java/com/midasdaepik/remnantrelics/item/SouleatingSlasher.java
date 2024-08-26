@@ -118,7 +118,7 @@ public class SouleatingSlasher extends SwordItem {
                             pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
                         }
                     }
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 0.8f,0);
                 }
             }
         } else {
@@ -130,7 +130,7 @@ public class SouleatingSlasher extends SwordItem {
                         pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
                     }
                 }
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
+                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 0.8f,0);
             }
         }
 

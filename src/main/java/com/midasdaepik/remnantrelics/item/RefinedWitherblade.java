@@ -24,39 +24,39 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class Witherblade extends SwordItem {
-    public Witherblade(Properties pProperties) {
+public class RefinedWitherblade extends SwordItem {
+    public RefinedWitherblade(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 604;
+                return 1207;
             }
 
             public float getSpeed() {
-                return 5f;
+                return 7f;
             }
 
             public float getAttackDamageBonus() {
-                return 4.5f;
+                return 6f;
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
-                return BlockTags.INCORRECT_FOR_IRON_TOOL;
+                return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
             }
 
             public int getEnchantmentValue() {
-                return 6;
+                return 10;
             }
 
             public Ingredient getRepairIngredient() {
-                return Ingredient.of(Items.BLACKSTONE);
+                return Ingredient.of(Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(Witherblade.createAttributes()).rarity(EnumExtensions.RARITY_WITHERBLADE.getValue()));
+        }, pProperties.fireResistant().attributes(RefinedWitherblade.createAttributes()).rarity(EnumExtensions.RARITY_WITHERBLADE.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  4.5, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  6, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.4, AttributeModifier.Operation.ADD_VALUE),
@@ -68,14 +68,14 @@ public class Witherblade extends SwordItem {
     public boolean hurtEnemy(ItemStack pItemstack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (pAttacker instanceof Player pPlayer) {
             if (pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
-                    pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, false, true));
+                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 1, false, true));
                     pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
                 }
             }
         } else {
-            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
-                pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, false, true));
+            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 1, false, true));
                 pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
             }
         }
@@ -84,9 +84,9 @@ public class Witherblade extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pItemstack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (ItemUtil.ItemKeys.isHoldingShift()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.witherblade.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.refined_witherblade.shift_desc_1"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

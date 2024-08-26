@@ -31,12 +31,6 @@ public class CreativeTabs {
 
                         pOutput.accept(Items.WHISPERWIND.get());
 
-                        pOutput.accept(Items.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
-
-                        pOutput.accept(Items.ANCIENT_TABLET_FORGING.get());
-                        pOutput.accept(Items.ANCIENT_TABLET_INFUSION.get());
-                        pOutput.accept(Items.ANCIENT_TABLET_REFINING.get());
-
                         pOutput.accept(Items.ANCIENT_WEAPON_FRAGMENT.get());
 
                         pOutput.accept(Items.PIGLIN_WARAXE.get());
@@ -50,9 +44,17 @@ public class CreativeTabs {
 
                         pOutput.accept(Items.WARPED_RAPIER.get());
 
+                        pOutput.accept(Items.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
+
+                        pOutput.accept(Items.ANCIENT_TABLET_FORGING.get());
+                        pOutput.accept(Items.ANCIENT_TABLET_INFUSION.get());
+                        pOutput.accept(Items.ANCIENT_TABLET_REFINING.get());
+
                         pOutput.accept(Items.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
                         pOutput.accept(Items.WITHERBLADE.get());
+                        pOutput.accept(Items.REFINED_WITHERBLADE.get());
+
                         pOutput.accept(Items.CREEPING_CRIMSON.get());
                         pOutput.accept(Items.SOULEATING_SLASHER.get());
                         pOutput.accept(Items.WARPING_WITHER.get());

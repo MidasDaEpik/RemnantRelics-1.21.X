@@ -29,18 +29,6 @@ public class Items {
     public static final DeferredItem<Item> WHISPERWIND = ITEMS.register("whisperwind",
             () -> new Whisperwind(new Item.Properties()));
 
-    public static final DeferredItem<Item> WITHERBLADE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("witherblade_upgrade_smithing_template",
-            UpgradeTemplateItem::createWitherbladeUpgradeTemplate);
-
-    public static final DeferredItem<Item> ANCIENT_TABLET_FORGING = ITEMS.register("ancient_tablet_forging",
-            AncientKnowledgeItem::createAncientTabletForging);
-
-    public static final DeferredItem<Item> ANCIENT_TABLET_INFUSION = ITEMS.register("ancient_tablet_infusion",
-            AncientKnowledgeItem::createAncientTabletInfusion);
-
-    public static final DeferredItem<Item> ANCIENT_TABLET_REFINING = ITEMS.register("ancient_tablet_refining",
-            AncientKnowledgeItem::createAncientTabletRefining);
-
     public static final DeferredItem<Item> ANCIENT_WEAPON_FRAGMENT = ITEMS.register("ancient_weapon_fragment",
             () -> new Item(new Item.Properties().fireResistant().stacksTo(16).rarity(Rarity.UNCOMMON)));
 
@@ -60,11 +48,24 @@ public class Items {
     public static final DeferredItem<Item> WARPED_RAPIER = ITEMS.register("warped_rapier",
             () -> new WarpedRapier(new Item.Properties()));
 
+    public static final DeferredItem<Item> WITHERBLADE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("witherblade_upgrade_smithing_template",
+            UpgradeTemplateItem::createWitherbladeUpgradeTemplate);
+
+    public static final DeferredItem<Item> ANCIENT_TABLET_FORGING = ITEMS.register("ancient_tablet_forging",
+            AncientKnowledgeItem::createAncientTabletForging);
+    public static final DeferredItem<Item> ANCIENT_TABLET_INFUSION = ITEMS.register("ancient_tablet_infusion",
+            AncientKnowledgeItem::createAncientTabletInfusion);
+    public static final DeferredItem<Item> ANCIENT_TABLET_REFINING = ITEMS.register("ancient_tablet_refining",
+            AncientKnowledgeItem::createAncientTabletRefining);
+
     public static final DeferredItem<Item> WITHER_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("wither_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:wither")));
 
     public static final DeferredItem<Item> WITHERBLADE = ITEMS.register("witherblade",
             () -> new Witherblade(new Item.Properties()));
+    public static final DeferredItem<Item> REFINED_WITHERBLADE = ITEMS.register("refined_witherblade",
+            () -> new RefinedWitherblade(new Item.Properties()));
+
     public static final DeferredItem<Item> CREEPING_CRIMSON = ITEMS.register("creeping_crimson",
             () -> new CreepingCrimson(new Item.Properties()));
     public static final DeferredItem<Item> SOULEATING_SLASHER = ITEMS.register("souleating_slasher",

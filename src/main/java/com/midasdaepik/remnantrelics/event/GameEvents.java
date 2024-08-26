@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -46,6 +47,11 @@ public class GameEvents {
                 if (pPiglinBrute.getMainHandItem().getItem() == net.minecraft.world.item.Items.GOLDEN_AXE && Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
                     pPiglinBrute.setItemSlot(EquipmentSlot.MAINHAND, Items.PIGLIN_WARAXE.toStack());
                     pPiglinBrute.setDropChance(EquipmentSlot.MAINHAND, 0.2f);
+                }
+            } else if (pEntity instanceof WitherSkeleton pWitherSkeleton) {
+                if (pWitherSkeleton.getMainHandItem().getItem() == net.minecraft.world.item.Items.STONE_SWORD && Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
+                    pWitherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, Items.WITHERBLADE.toStack());
+                    pWitherSkeleton.setDropChance(EquipmentSlot.MAINHAND, 0.15f);
                 }
             }
         }

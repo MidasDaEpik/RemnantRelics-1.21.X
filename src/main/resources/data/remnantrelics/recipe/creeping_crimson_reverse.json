@@ -4,7 +4,7 @@
     "item": "remnantrelics:witherblade_upgrade_smithing_template"
   },
   "base": {
-    "item": "remnantrelics:witherblade"
+    "item": "remnantrelics:refined_witherblade"
   },
   "addition": {
     "item": "remnantrelics:firestorm_katana"

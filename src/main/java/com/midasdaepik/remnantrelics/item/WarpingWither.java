@@ -107,14 +107,14 @@ public class WarpingWither extends SwordItem {
         if (pAttacker instanceof Player pLivingEntity) {
             if (pLivingEntity.getAttackStrengthScale(0) >= 0.9F) {
                 if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
-                    pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                    pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 2));
+                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1.2f,0);
                 }
             }
         } else {
             if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
-                pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
+                pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 2));
+                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1.2f,0);
             }
         }
 

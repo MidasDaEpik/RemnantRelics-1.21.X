@@ -23,6 +23,31 @@
   "item.remnantrelics.whisperwind": "Whisperwind",
   "item.remnantrelics.whisperwind.shift_desc_1": "§7Has increased draw speed but decreased range, and damage.",
 
+  "item.remnantrelics.ancient_weapon_fragment": "Ancient Weapon Fragment",
+
+  "item.remnantrelics.piglin_waraxe": "Piglin Waraxe",
+
+  "item.remnantrelics.blaze_core": "Blaze Core",
+
+  "item.remnantrelics.firestorm_katana": "Firestorm Katana",
+  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit,",
+  "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
+  "item.remnantrelics.firestorm_katana.shift_desc_3": "§814s Cooldown",
+
+  "item.remnantrelics.searing_staff": "Searing Staff",
+  "item.remnantrelics.searing_staff.shift_desc_1": "§6[Right-Click] §7summons 3 fireballs around the player,",
+  "item.remnantrelics.searing_staff.shift_desc_2": "§7which can be hit to be launched in any direction.",
+  "item.remnantrelics.searing_staff.shift_desc_3": "§8(Fireballs automatically fire downwards after 20 Seconds)",
+  "item.remnantrelics.searing_staff.shift_desc_4": "§88s Cooldown",
+
+  "item.remnantrelics.obsidian_bulwark": "Obsidian Bulwark",
+  "item.remnantrelics.obsidian_bulwark.shift_desc_1": "§6[Right-Click] §7grants the user an §6Absorption §7shield.",
+  "item.remnantrelics.obsidian_bulwark.shift_desc_2": "§815s Cooldown",
+
+  "item.remnantrelics.warped_rapier": "Warped Rapier",
+  "item.remnantrelics.warped_rapier.shift_desc_1": "§6[Right-Click] §7teleports the user a short distance forward.",
+  "item.remnantrelics.warped_rapier.shift_desc_2": "§88s Cooldown",
+
   "item.remnantrelics.witherblade_upgrade_smithing_template": "Smithing Template",
   "item.remnantrelics.witherblade_upgrade_smithing_template_desc": "Witherblade Upgrade",
 
@@ -53,33 +78,11 @@
 
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 
-  "item.remnantrelics.ancient_weapon_fragment": "Ancient Weapon Fragment",
-
-  "item.remnantrelics.piglin_waraxe": "Piglin Waraxe",
-
-  "item.remnantrelics.blaze_core": "Blaze Core",
-
-  "item.remnantrelics.firestorm_katana": "Firestorm Katana",
-  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit,",
-  "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
-  "item.remnantrelics.firestorm_katana.shift_desc_3": "§814s Cooldown",
-
-  "item.remnantrelics.searing_staff": "Searing Staff",
-  "item.remnantrelics.searing_staff.shift_desc_1": "§6[Right-Click] §7summons 3 fireballs around the player,",
-  "item.remnantrelics.searing_staff.shift_desc_2": "§7which can be hit to be launched in any direction.",
-  "item.remnantrelics.searing_staff.shift_desc_3": "§8(Fireballs automatically fire downwards after 20 Seconds)",
-  "item.remnantrelics.searing_staff.shift_desc_4": "§88s Cooldown",
-
-  "item.remnantrelics.obsidian_bulwark": "Obsidian Bulwark",
-  "item.remnantrelics.obsidian_bulwark.shift_desc_1": "§6[Right-Click] §7grants the user an §6Absorption §7shield.",
-  "item.remnantrelics.obsidian_bulwark.shift_desc_2": "§815s Cooldown",
-
-  "item.remnantrelics.warped_rapier": "Warped Rapier",
-  "item.remnantrelics.warped_rapier.shift_desc_1": "§6[Right-Click] §7teleports the user a short distance forward.",
-  "item.remnantrelics.warped_rapier.shift_desc_2": "§88s Cooldown",
-
   "item.remnantrelics.witherblade": "Witherblade",
   "item.remnantrelics.witherblade.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
+
+  "item.remnantrelics.refined_witherblade": "Refined Witherblade",
+  "item.remnantrelics.refined_witherblade.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
 
   "item.remnantrelics.creeping_crimson": "§4Creeping Crimson",
   "item.remnantrelics.creeping_crimson.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
@@ -96,7 +99,7 @@
   "item.remnantrelics.souleating_slasher.shift_desc_6": "§820s Cooldown",
 
   "item.remnantrelics.warping_wither": "Warping Wither",
-  "item.remnantrelics.warping_wither.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
+  "item.remnantrelics.warping_wither.shift_desc_1": "§7Has a chance to inflict §8Wither III §7on targets.",
 
   "item.remnantrelics.warping_wither.shift_desc_2": "§6[Right-Click] §7teleports the user a short distance forward,",
   "item.remnantrelics.warping_wither.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
