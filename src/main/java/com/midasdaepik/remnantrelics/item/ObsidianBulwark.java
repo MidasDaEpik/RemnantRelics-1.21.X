@@ -35,7 +35,7 @@ public class ObsidianBulwark extends SwordItem {
     public ObsidianBulwark(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 1170;
+                return 563;
             }
 
             public float getSpeed() {
@@ -47,7 +47,7 @@ public class ObsidianBulwark extends SwordItem {
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
-                return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+                return BlockTags.INCORRECT_FOR_GOLD_TOOL;
             }
 
             public int getEnchantmentValue() {
@@ -125,7 +125,7 @@ public class ObsidianBulwark extends SwordItem {
                 pLivingEntity.setAbsorptionAmount(AbsorptionShield);
             }
 
-            pItemStack.hurtAndBreak(10, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+            pItemStack.hurtAndBreak(8, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
 
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));

@@ -6,19 +6,13 @@ import com.midasdaepik.remnantrelics.registries.EnumExtensions;
 import com.midasdaepik.remnantrelics.registries.ItemUtil;
 import com.midasdaepik.remnantrelics.registries.Items;
 import com.midasdaepik.remnantrelics.registries.Sounds;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -27,10 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,7 +30,7 @@ public class FirestormKatana extends SwordItem {
     public FirestormKatana(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 1366;
+                return 528;
             }
 
             public float getSpeed() {
@@ -52,7 +42,7 @@ public class FirestormKatana extends SwordItem {
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
-                return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+                return BlockTags.INCORRECT_FOR_IRON_TOOL;
             }
 
             public int getEnchantmentValue() {

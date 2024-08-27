@@ -37,7 +37,7 @@ public class WarpedRapier extends SwordItem {
     public WarpedRapier(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 1660;
+                return 641;
             }
 
             public float getSpeed() {
@@ -49,7 +49,7 @@ public class WarpedRapier extends SwordItem {
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
-                return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+                return BlockTags.INCORRECT_FOR_IRON_TOOL;
             }
 
             public int getEnchantmentValue() {
