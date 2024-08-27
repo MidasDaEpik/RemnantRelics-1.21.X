@@ -3,6 +3,7 @@
   "package": "com.midasdaepik.remnantrelics.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "EnderDragonMixin",
     "ItemUseMixin",
     "RecipeCraftingHolderMixin"
   ],
@@ -12,6 +13,7 @@
   "minVersion": "0.8",
   "client": [
     "ItemInHandRendererMixin",
+    "LevelRendererMixin",
     "PlayerRendererMixin"
   ]
 }

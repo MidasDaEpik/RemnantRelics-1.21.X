@@ -88,6 +88,9 @@ public class Items {
     public static final DeferredItem<Item> LYRE_OF_ECHOES = ITEMS.register("lyre_of_echoes",
             () -> new LyreOfEchoes(new Item.Properties()));
 
+    public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
+            () -> new Dragonbone(new Item.Properties()));
+
     public static final DeferredItem<Item> HEXED_DICE = ITEMS.register("hexed_dice",
             () -> new HexedDice(new Item.Properties()));
 
