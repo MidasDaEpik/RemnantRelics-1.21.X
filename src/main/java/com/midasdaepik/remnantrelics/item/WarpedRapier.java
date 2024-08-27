@@ -1,10 +1,10 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
-import com.midasdaepik.remnantrelics.registries.Items;
-import com.midasdaepik.remnantrelics.registries.Sounds;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRItems;
+import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -59,7 +59,7 @@ public class WarpedRapier extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.ENDER_PEARL);
             }
-        }, pProperties.attributes(WarpedRapier.createAttributes()).rarity(EnumExtensions.RARITY_WARPED_RAPIER.getValue()));
+        }, pProperties.attributes(WarpedRapier.createAttributes()).rarity(RREnumExtensions.RARITY_WARPED_RAPIER.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -101,10 +101,10 @@ public class WarpedRapier extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
 
-                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
-            BlockHitResult raytrace = ItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+            BlockHitResult raytrace = RRItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
             BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
             pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
             pLivingEntity.fallDistance = pLivingEntity.fallDistance - 5.0F;
@@ -114,7 +114,7 @@ public class WarpedRapier extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
 
-                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
             pItemStack.hurtAndBreak(3, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
@@ -123,12 +123,12 @@ public class WarpedRapier extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 160);
-                pPlayer.getCooldowns().addCooldown(Items.WARPING_WITHER.get(), 160);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPING_WITHER.get(), 160);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(Items.WARPING_WITHER.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPING_WITHER.get(), 10);
             }
         }
     }
@@ -151,7 +151,7 @@ public class WarpedRapier extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warped_rapier.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warped_rapier.shift_desc_2"));
         } else {

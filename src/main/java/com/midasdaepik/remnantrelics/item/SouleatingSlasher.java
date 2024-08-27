@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.*;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -65,7 +65,7 @@ public class SouleatingSlasher extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(SouleatingSlasher.createAttributes()).rarity(EnumExtensions.RARITY_SOULEATING_SLASHER.getValue()));
+        }, pProperties.fireResistant().attributes(SouleatingSlasher.createAttributes()).rarity(RREnumExtensions.RARITY_SOULEATING_SLASHER.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -118,7 +118,7 @@ public class SouleatingSlasher extends SwordItem {
                             pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
                         }
                     }
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 0.8f,0);
+                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 0.8f,0);
                 }
             }
         } else {
@@ -130,7 +130,7 @@ public class SouleatingSlasher extends SwordItem {
                         pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
                     }
                 }
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 0.8f,0);
+                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 0.8f,0);
             }
         }
 
@@ -145,10 +145,10 @@ public class SouleatingSlasher extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.SOUL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.5, 0.5, 0.5, 0.02);
                 pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.3, 0.3, 0.3, 0.1);
 
-                ItemUtil.ParticleSphere(pServerLevel, ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1.6);
+                RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1.6);
             }
 
-            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
+            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
             float AbsorptionShield = pLivingEntity.getAbsorptionAmount() + 3;
             if (AbsorptionShield > 6) {
@@ -156,10 +156,10 @@ public class SouleatingSlasher extends SwordItem {
             }
 
             int BulwarkEffectLevel = 3 - Mth.floor(pLivingEntity.getAbsorptionAmount() + 3 - AbsorptionShield);
-            if (pLivingEntity.hasEffect(Effects.BULWARK)) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, pLivingEntity.getEffect(Effects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
+            if (pLivingEntity.hasEffect(RREffects.BULWARK)) {
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, pLivingEntity.getEffect(RREffects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
             } else {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
             }
 
             if (pLivingEntity.getAbsorptionAmount() < AbsorptionShield) {
@@ -190,10 +190,10 @@ public class SouleatingSlasher extends SwordItem {
             }
 
             BulwarkEffectLevel = WitherTargets - Mth.floor(pLivingEntity.getAbsorptionAmount() + WitherTargets - AbsorptionShield);
-            if (pLivingEntity.hasEffect(Effects.BULWARK)) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, pLivingEntity.getEffect(Effects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
+            if (pLivingEntity.hasEffect(RREffects.BULWARK)) {
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, pLivingEntity.getEffect(RREffects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
             } else {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
             }
 
             if (pLivingEntity.getAbsorptionAmount() < AbsorptionShield) {
@@ -206,12 +206,12 @@ public class SouleatingSlasher extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 400);
-                pPlayer.getCooldowns().addCooldown(Items.OBSIDIAN_BULWARK.get(), 400);
+                pPlayer.getCooldowns().addCooldown(RRItems.OBSIDIAN_BULWARK.get(), 400);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(Items.OBSIDIAN_BULWARK.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.OBSIDIAN_BULWARK.get(), 10);
             }
         }
     }
@@ -233,14 +233,14 @@ public class SouleatingSlasher extends SwordItem {
     public void inventoryTick(ItemStack pItemStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (pEntity instanceof LivingEntity pLivingEntity && pIsSelected) {
             if (!pLivingEntity.getOffhandItem().isEmpty()) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.UNWIELDY, 1, 0, true, false, false));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.UNWIELDY, 1, 0, true, false, false));
             }
         }
     }
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_1"));

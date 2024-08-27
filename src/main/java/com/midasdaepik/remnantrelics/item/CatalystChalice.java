@@ -1,8 +1,8 @@
 package com.midasdaepik.remnantrelics.item;
 
-import com.midasdaepik.remnantrelics.registries.DataComponents;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRDataComponents;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class CatalystChalice extends Item {
     public CatalystChalice(Properties pProperties) {
-        super(pProperties.stacksTo(1).rarity(EnumExtensions.RARITY_SCULK.getValue()).component(DataComponents.EXPERIENCE.get(), 0).component(DataComponents.MAXIMUM_EXPERIENCE.get(), 1395).component(DataComponents.CHALICE_STATE.get(), true));
+        super(pProperties.stacksTo(1).rarity(RREnumExtensions.RARITY_SCULK.getValue()).component(RRDataComponents.EXPERIENCE.get(), 0).component(RRDataComponents.MAXIMUM_EXPERIENCE.get(), 1395).component(RRDataComponents.CHALICE_STATE.get(), true));
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CatalystChalice extends Item {
 
     @Override
     public UseAnim getUseAnimation(ItemStack pItemStack) {
-        if (pItemStack.getOrDefault(DataComponents.CHALICE_STATE, true)) {
+        if (pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true)) {
             return UseAnim.BOW;
         } else {
             return UseAnim.DRINK;
@@ -56,31 +56,31 @@ public class CatalystChalice extends Item {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
 
         if (pLivingEntity instanceof Player pPlayer) {
-            int ItemExperience = pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue();
-            int ItemMaxExperience = pItemStack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue();
-            boolean ItemAssimilationState = pItemStack.getOrDefault(DataComponents.CHALICE_STATE, true);
-            int PlayerExperience = ItemUtil.getPlayerXP(pPlayer);
+            int ItemExperience = pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue();
+            int ItemMaxExperience = pItemStack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue();
+            boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true);
+            int PlayerExperience = RRItemUtil.getPlayerXP(pPlayer);
             int XPDrainPercent = this.XPModifyPercent(pPlayer);
 
             if (ItemAssimilationState) {
                 if (PlayerExperience >= XPDrainPercent) {
                     if (ItemExperience + XPDrainPercent > ItemMaxExperience) {
                         int XPDrain = ItemMaxExperience - ItemExperience;
-                        ItemUtil.modifyPlayerXP(pPlayer, XPDrain * -1);
-                        pItemStack.set(DataComponents.EXPERIENCE, ItemExperience + XPDrain);
+                        RRItemUtil.modifyPlayerXP(pPlayer, XPDrain * -1);
+                        pItemStack.set(RRDataComponents.EXPERIENCE, ItemExperience + XPDrain);
                     } else {
-                        ItemUtil.modifyPlayerXP(pPlayer, XPDrainPercent * -1);
-                        pItemStack.set(DataComponents.EXPERIENCE, ItemExperience + XPDrainPercent);
+                        RRItemUtil.modifyPlayerXP(pPlayer, XPDrainPercent * -1);
+                        pItemStack.set(RRDataComponents.EXPERIENCE, ItemExperience + XPDrainPercent);
                     }
 
                 } else if (PlayerExperience > 0) {
                     if (ItemExperience + PlayerExperience > ItemMaxExperience) {
                         int XPDrain = ItemMaxExperience - ItemExperience;
-                        ItemUtil.modifyPlayerXP(pPlayer, XPDrain * -1);
-                        pItemStack.set(DataComponents.EXPERIENCE, ItemExperience + XPDrain);
+                        RRItemUtil.modifyPlayerXP(pPlayer, XPDrain * -1);
+                        pItemStack.set(RRDataComponents.EXPERIENCE, ItemExperience + XPDrain);
                     } else {
-                        ItemUtil.modifyPlayerXP(pPlayer, PlayerExperience * -1);
-                        pItemStack.set(DataComponents.EXPERIENCE, ItemExperience + PlayerExperience);
+                        RRItemUtil.modifyPlayerXP(pPlayer, PlayerExperience * -1);
+                        pItemStack.set(RRDataComponents.EXPERIENCE, ItemExperience + PlayerExperience);
                     }
 
                 } else {
@@ -89,12 +89,12 @@ public class CatalystChalice extends Item {
                 }
             } else {
                 if (ItemExperience >= XPDrainPercent) {
-                    pItemStack.set(DataComponents.EXPERIENCE, ItemExperience - XPDrainPercent);
-                    ItemUtil.modifyPlayerXP(pPlayer, XPDrainPercent);
+                    pItemStack.set(RRDataComponents.EXPERIENCE, ItemExperience - XPDrainPercent);
+                    RRItemUtil.modifyPlayerXP(pPlayer, XPDrainPercent);
 
                 } else if (ItemExperience > 0) {
-                    pItemStack.set(DataComponents.EXPERIENCE, 0);
-                    ItemUtil.modifyPlayerXP(pPlayer, ItemExperience);
+                    pItemStack.set(RRDataComponents.EXPERIENCE, 0);
+                    RRItemUtil.modifyPlayerXP(pPlayer, ItemExperience);
 
                 } else {
                     pPlayer.getCooldowns().addCooldown(this, 10);
@@ -107,16 +107,16 @@ public class CatalystChalice extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack pItemStack = pPlayer.getItemInHand(pHand);
-        int ItemExperience = pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue();
-        boolean ItemAssimilationState = pItemStack.getOrDefault(DataComponents.CHALICE_STATE, true);
-        int PlayerExperience = ItemUtil.getPlayerXP(pPlayer);
+        int ItemExperience = pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue();
+        boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true);
+        int PlayerExperience = RRItemUtil.getPlayerXP(pPlayer);
         int XPDrainPercent = this.XPModifyPercent(pPlayer);
 
         if (pPlayer.isCrouching()) {
             if (ItemAssimilationState) {
-                pItemStack.set(DataComponents.CHALICE_STATE, false);
+                pItemStack.set(RRDataComponents.CHALICE_STATE, false);
             } else {
-                pItemStack.set(DataComponents.CHALICE_STATE, true);
+                pItemStack.set(RRDataComponents.CHALICE_STATE, true);
             }
             pPlayer.getCooldowns().addCooldown(this, 10);
             return InteractionResultHolder.pass(pPlayer.getItemInHand(pHand));
@@ -145,12 +145,12 @@ public class CatalystChalice extends Item {
     }
 
     private int XPModifyPercent(Player pPlayer) {
-        return Mth.ceil((float) (ItemUtil.getExperienceForLevel(pPlayer.experienceLevel + 1) - ItemUtil.getExperienceForLevel(pPlayer.experienceLevel)) / 8);
+        return Mth.ceil((float) (RRItemUtil.getExperienceForLevel(pPlayer.experienceLevel + 1) - RRItemUtil.getExperienceForLevel(pPlayer.experienceLevel)) / 8);
     }
 
     @Override
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_2"));
@@ -159,11 +159,11 @@ public class CatalystChalice extends Item {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_4"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.shift_desc_5"));
         } else {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_1", pItemStack.getOrDefault(DataComponents.CHALICE_STATE, true) ? "§cAssimilation" : "§aDischarge"));
-            if (ItemUtil.ItemKeys.isHoldingSpace()) {
-                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_levels", "§a" + ItemUtil.getLevelForExperience(pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue()), "§a" + ItemUtil.getLevelForExperience(pItemStack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue())));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_1", pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true) ? "§cAssimilation" : "§aDischarge"));
+            if (RRItemUtil.ItemKeys.isHoldingSpace()) {
+                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_levels", "§a" + RRItemUtil.getLevelForExperience(pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue()), "§a" + RRItemUtil.getLevelForExperience(pItemStack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue())));
             } else {
-                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2", "§a" + pItemStack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue(), "§a" + pItemStack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue()));
+                pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2", "§a" + pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue(), "§a" + pItemStack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue()));
                 pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_info"));
             }
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));

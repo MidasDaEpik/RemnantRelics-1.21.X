@@ -1,22 +1,18 @@
 package com.midasdaepik.remnantrelics.entity.custom;
 
-import com.midasdaepik.remnantrelics.registries.Entities;
+import com.midasdaepik.remnantrelics.registries.RREntities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Fireball;
-import net.minecraft.world.entity.projectile.ProjectileDeflection;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-
-import javax.annotation.Nullable;
 
 public class NoDamageFireball extends Fireball {
     public int DespawnDuration = 400;
@@ -28,11 +24,11 @@ public class NoDamageFireball extends Fireball {
     }
 
     public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3) {
-        super(Entities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
+        super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
     }
 
     public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3, int pDespawnDuration, int pFlyDuration, int pExplosionPower) {
-        super(Entities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
+        super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
         this.DespawnDuration = pDespawnDuration;
         this.FlyDuration = pFlyDuration;
         this.explosionPower = pExplosionPower;

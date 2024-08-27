@@ -14,16 +14,18 @@ public class RemnantRelics {
     public static final Logger LOGGER = LoggerFactory.getLogger(RemnantRelics.class);
 
     public RemnantRelics(IEventBus eventBus) {
-        Tags.initTags();
+        RRTags.initTags();
 
-        ArmorMaterials.register(eventBus);
-        CreativeTabs.register(eventBus);
-        DataComponents.register(eventBus);
-        Effects.register(eventBus);
-        Entities.register(eventBus);
-        GlobalLootModifers.register(eventBus);
-        Items.register(eventBus);
-        Sounds.register(eventBus);
+        eventBus.addListener(RRPacketHandler::registerNetworking);
+
+        RRArmorMaterials.register(eventBus);
+        RRCreativeTabs.register(eventBus);
+        RRDataComponents.register(eventBus);
+        RREffects.register(eventBus);
+        RREntities.register(eventBus);
+        RRGlobalLootModifers.register(eventBus);
+        RRItems.register(eventBus);
+        RRSounds.register(eventBus);
 
         eventBus.addListener(FMLClientSetupEvent.class, (fmlClientSetupEvent -> {
             fmlClientSetupEvent.enqueueWork(() -> {

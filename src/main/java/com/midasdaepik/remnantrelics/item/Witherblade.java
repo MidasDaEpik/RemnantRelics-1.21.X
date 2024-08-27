@@ -1,8 +1,8 @@
 package com.midasdaepik.remnantrelics.item;
 
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
-import com.midasdaepik.remnantrelics.registries.Sounds;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -50,7 +50,7 @@ public class Witherblade extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(Items.BLACKSTONE);
             }
-        }, pProperties.fireResistant().attributes(Witherblade.createAttributes()).rarity(EnumExtensions.RARITY_WITHERBLADE.getValue()));
+        }, pProperties.fireResistant().attributes(Witherblade.createAttributes()).rarity(RREnumExtensions.RARITY_WITHERBLADE.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -70,13 +70,13 @@ public class Witherblade extends SwordItem {
             if (pPlayer.getAttackStrengthScale(0) >= 0.9F) {
                 if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
                     pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, false, true));
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1f,0);
                 }
             }
         } else {
             if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
                 pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, false, true));
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
+                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1f,0);
             }
         }
 
@@ -85,7 +85,7 @@ public class Witherblade extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.witherblade.shift_desc_1"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));

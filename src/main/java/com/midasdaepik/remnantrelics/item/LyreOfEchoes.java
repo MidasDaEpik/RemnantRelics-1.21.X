@@ -1,8 +1,8 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -28,7 +28,7 @@ import java.util.Set;
 
 public class LyreOfEchoes extends Item {
     public LyreOfEchoes(Properties pProperties) {
-        super(pProperties.durability(128).rarity(EnumExtensions.RARITY_SCULK.getValue()));
+        super(pProperties.durability(128).rarity(RREnumExtensions.RARITY_SCULK.getValue()));
     }
 
     @Override
@@ -139,7 +139,7 @@ public class LyreOfEchoes extends Item {
 
     @Override
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_3"));

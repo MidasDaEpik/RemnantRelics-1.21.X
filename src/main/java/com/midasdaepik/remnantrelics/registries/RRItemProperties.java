@@ -3,16 +3,16 @@ package com.midasdaepik.remnantrelics.registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-public class ItemProperties {
+public class RRItemProperties {
     public static void addCustomItemProperties() {
-        ChaliceState(Items.CATALYST_CHALICE.get());
-        Experience(Items.CATALYST_CHALICE.get());
-        Pull(Items.CHARYBDIS.get());
-        Pulling(Items.CHARYBDIS.get());
-        Pull(Items.LYRE_OF_ECHOES.get());
-        Pulling(Items.LYRE_OF_ECHOES.get());
-        Pull(Items.WHISPERWIND.get());
-        Pulling(Items.WHISPERWIND.get());
+        ChaliceState(RRItems.CATALYST_CHALICE.get());
+        Experience(RRItems.CATALYST_CHALICE.get());
+        Pull(RRItems.CHARYBDIS.get());
+        Pulling(RRItems.CHARYBDIS.get());
+        Pull(RRItems.LYRE_OF_ECHOES.get());
+        Pulling(RRItems.LYRE_OF_ECHOES.get());
+        Pull(RRItems.WHISPERWIND.get());
+        Pulling(RRItems.WHISPERWIND.get());
     }
 
     private static void Pull(Item pItem) {
@@ -43,7 +43,7 @@ public class ItemProperties {
                 ResourceLocation.withDefaultNamespace("experience"),
                 (pItemstack, pLevel, pLivingEntity, pSeed) -> {
                     if (pLivingEntity != null) {
-                        return (float) pItemstack.getOrDefault(DataComponents.EXPERIENCE, 0.0).intValue() / pItemstack.getOrDefault(DataComponents.MAXIMUM_EXPERIENCE, 1.0).intValue();
+                        return (float) pItemstack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue() / pItemstack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 1.0).intValue();
                     } else {
                         return 0.0f;
                     }
@@ -57,7 +57,7 @@ public class ItemProperties {
                 ResourceLocation.withDefaultNamespace("chalice_state"),
                 (pItemstack, pLevel, pLivingEntity, pSeed) -> {
                     if (pLivingEntity != null) {
-                        return pItemstack.getOrDefault(DataComponents.CHALICE_STATE, true) ? 1.0f : 0.0f;
+                        return pItemstack.getOrDefault(RRDataComponents.CHALICE_STATE, true) ? 1.0f : 0.0f;
                     } else {
                         return 1.0f;
                     }

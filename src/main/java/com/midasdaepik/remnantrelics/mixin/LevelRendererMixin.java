@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class LevelRendererMixin {
     @WrapOperation(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getTeamColor()I"))
     private int modifyTeamColor(Entity pEntity, Operation<Integer> pOriginal) {
-        if (pEntity instanceof ItemEntity pItemEntity && pItemEntity.getItem().getItem() == Items.MOD_ICON.get()) {
+        if (pEntity instanceof ItemEntity pItemEntity && pItemEntity.getItem().getItem() == RRItems.MOD_ICON.get()) {
             return 13719531;
         } else {
             return pOriginal.call(pEntity);

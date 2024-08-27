@@ -5,7 +5,7 @@
       "name": "REMNANTRELICS_HEART_FROSTBITE",
       "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/ClientEnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RRClientEnumExtensions",
         "field": "HEART_FROSTBITE"
       }
     },
@@ -14,7 +14,7 @@
       "name": "REMNANTRELICS_RARITY_ELDER",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_ELDER"
       }
     },
@@ -23,7 +23,7 @@
       "name": "REMNANTRELICS_RARITY_WIND",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_WIND"
       }
     },
@@ -32,7 +32,7 @@
       "name": "REMNANTRELICS_RARITY_BLAZE",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_BLAZE"
       }
     },
@@ -41,7 +41,7 @@
       "name": "REMNANTRELICS_RARITY_GOLD",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_GOLD"
       }
     },
@@ -50,7 +50,7 @@
       "name": "REMNANTRELICS_RARITY_WARPED_RAPIER",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_WARPED_RAPIER"
       }
     },
@@ -59,7 +59,7 @@
       "name": "REMNANTRELICS_RARITY_WITHERBLADE",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_WITHERBLADE"
       }
     },
@@ -68,7 +68,7 @@
       "name": "REMNANTRELICS_RARITY_CREEPING_CRIMSON",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_CREEPING_CRIMSON"
       }
     },
@@ -77,7 +77,7 @@
       "name": "REMNANTRELICS_RARITY_SOULEATING_SLASHER",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_SOULEATING_SLASHER"
       }
     },
@@ -86,7 +86,7 @@
       "name": "REMNANTRELICS_RARITY_WARPING_WITHER",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_WARPING_WITHER"
       }
     },
@@ -95,7 +95,7 @@
       "name": "REMNANTRELICS_RARITY_SCULK",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "com/midasdaepik/remnantrelics/registries/EnumExtensions",
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_SCULK"
       }
     }

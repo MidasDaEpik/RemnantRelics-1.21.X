@@ -1,8 +1,8 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.entity.custom.NoDamageFireball;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class SearingStaff extends Item {
     public SearingStaff(Properties pProperties) {
-        super(pProperties.durability(128).rarity(EnumExtensions.RARITY_BLAZE.getValue()));
+        super(pProperties.durability(128).rarity(RREnumExtensions.RARITY_BLAZE.getValue()));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class SearingStaff extends Item {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.searing_staff.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.searing_staff.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.searing_staff.shift_desc_3"));

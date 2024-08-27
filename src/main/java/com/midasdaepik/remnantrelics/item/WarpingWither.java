@@ -1,10 +1,10 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
-import com.midasdaepik.remnantrelics.registries.Items;
-import com.midasdaepik.remnantrelics.registries.Sounds;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRItems;
+import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -69,7 +69,7 @@ public class WarpingWither extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(WarpingWither.createAttributes()).rarity(EnumExtensions.RARITY_WARPING_WITHER.getValue()));
+        }, pProperties.fireResistant().attributes(WarpingWither.createAttributes()).rarity(RREnumExtensions.RARITY_WARPING_WITHER.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -108,13 +108,13 @@ public class WarpingWither extends SwordItem {
             if (pLivingEntity.getAttackStrengthScale(0) >= 0.9F) {
                 if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 2));
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1.2f,0);
+                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 1.2f,0);
                 }
             }
         } else {
             if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                 pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 120, 2));
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, Sounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1.2f,0);
+                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 1.2f,0);
             }
         }
 
@@ -132,10 +132,10 @@ public class WarpingWither extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.RAID_OMEN, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
 
-                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WITHERBLADE_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
-            BlockHitResult raytrace = ItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+            BlockHitResult raytrace = RRItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
             BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
             pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
             pLivingEntity.fallDistance = pLivingEntity.fallDistance - 10.0F;
@@ -155,7 +155,7 @@ public class WarpingWither extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.RAID_OMEN, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
 
-                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WITHERBLADE_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
             pItemStack.hurtAndBreak(3, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
@@ -164,12 +164,12 @@ public class WarpingWither extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 140);
-                pPlayer.getCooldowns().addCooldown(Items.WARPED_RAPIER.get(), 140);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPED_RAPIER.get(), 140);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(Items.WARPED_RAPIER.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPED_RAPIER.get(), 10);
             }
         }
     }
@@ -192,7 +192,7 @@ public class WarpingWither extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_2"));

@@ -5,11 +5,10 @@ import com.midasdaepik.remnantrelics.client.model.ElderChestplateModel;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateRetractedModel;
 import com.midasdaepik.remnantrelics.entity.renderer.FirestormRenderer;
 import com.midasdaepik.remnantrelics.entity.renderer.SonicBlastRenderer;
-import com.midasdaepik.remnantrelics.registries.Entities;
-import com.midasdaepik.remnantrelics.registries.ItemProperties;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RREntities;
+import com.midasdaepik.remnantrelics.registries.RRItemProperties;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -29,7 +28,6 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.Map;
@@ -38,15 +36,15 @@ import java.util.Map;
 public class ClientModEvents {
     @SubscribeEvent
     private static void clientSetup(FMLClientSetupEvent pEvent) {
-        EntityRenderers.register(Entities.NO_DAMAGE_FIREBALL.get(), ThrownItemRenderer::new);
+        EntityRenderers.register(RREntities.NO_DAMAGE_FIREBALL.get(), ThrownItemRenderer::new);
 
-        ItemProperties.addCustomItemProperties();
+        RRItemProperties.addCustomItemProperties();
     }
 
     @SubscribeEvent
     private static void entityRenderers(EntityRenderersEvent.RegisterRenderers pEvent) {
-        pEvent.registerEntityRenderer(Entities.SONIC_BLAST.get(), SonicBlastRenderer::new);
-        pEvent.registerEntityRenderer(Entities.FIRESTORM.get(), FirestormRenderer::new);
+        pEvent.registerEntityRenderer(RREntities.SONIC_BLAST.get(), SonicBlastRenderer::new);
+        pEvent.registerEntityRenderer(RREntities.FIRESTORM.get(), FirestormRenderer::new);
     }
 
     @SubscribeEvent
@@ -59,7 +57,7 @@ public class ClientModEvents {
     public static void onRegisterColorHandlersEventItem(RegisterColorHandlersEvent.Item pEvent) {
         pEvent.register(
                 (pItemStack, pTintIndex) ->  pTintIndex == 1 ? DyedItemColor.getOrDefault(pItemStack, 6448520) : -1,
-                Items.ELDER_CHESTPLATE
+                RRItems.ELDER_CHESTPLATE
         );
     }
 
@@ -105,7 +103,7 @@ public class ClientModEvents {
                         }
                     }
                 },
-                Items.ELDER_CHESTPLATE.get()
+                RRItems.ELDER_CHESTPLATE.get()
         );
     }
 }

@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +16,7 @@ public class GameRendererMixin {
         float f = pOriginal.call(pInstance);
         ItemStack itemstack = pInstance.getUseItem();
         if (pInstance.isUsingItem()) {
-            if (itemstack.is(Items.WHISPERWIND)) {
+            if (itemstack.is(RRItems.WHISPERWIND)) {
                 int i = pInstance.getTicksUsingItem();
                 float f1 = (float)i / 15.0F;
                 if (f1 > 1.0F) {

@@ -8,7 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class Items {
+public class RRItems {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(RemnantRelics.MOD_ID);
 
@@ -19,7 +19,7 @@ public class Items {
             () -> new Cutlass(new Item.Properties()));
 
     public static final DeferredItem<Item> ELDER_SPINE = ITEMS.register("elder_spine",
-            () -> new Item(new Item.Properties().rarity(EnumExtensions.RARITY_ELDER.getValue())));
+            () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_ELDER.getValue())));
 
     public static final DeferredItem<Item> CHARYBDIS = ITEMS.register("charybdis",
             () -> new Charybdis(new Item.Properties()));
@@ -36,7 +36,7 @@ public class Items {
             () -> new PiglinWaraxe(new Item.Properties()));
 
     public static final DeferredItem<Item> BLAZE_CORE = ITEMS.register("blaze_core",
-            () -> new FuelItem(new Item.Properties().rarity(EnumExtensions.RARITY_BLAZE.getValue()), 12800));
+            () -> new FuelItem(new Item.Properties().rarity(RREnumExtensions.RARITY_BLAZE.getValue()), 12800));
     public static final DeferredItem<Item> FIRESTORM_KATANA = ITEMS.register("firestorm_katana",
             () -> new FirestormKatana(new Item.Properties()));
     public static final DeferredItem<Item> SEARING_STAFF = ITEMS.register("searing_staff",
@@ -74,12 +74,12 @@ public class Items {
             () -> new WarpingWither(new Item.Properties()));
 
     public static final DeferredItem<Item> RESEARCHERS_NOTES_SCULK = ITEMS.register("researchers_notes_sculk",
-            () -> new Item(new Item.Properties().rarity(EnumExtensions.RARITY_SCULK.getValue())));
+            () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue())));
     public static final DeferredItem<Item> RESEARCHERS_MEMOIR_SCULK = ITEMS.register("researchers_memoir_sculk",
             AncientKnowledgeItem::createResearchersMemoirSculk);
 
     public static final DeferredItem<Item> ECHO_GEM = ITEMS.register("echo_gem",
-            () -> new Item(new Item.Properties().rarity(EnumExtensions.RARITY_SCULK.getValue())));
+            () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue())));
 
     public static final DeferredItem<Item> CATALYST_CHALICE = ITEMS.register("catalyst_chalice",
             () -> new CatalystChalice(new Item.Properties()));

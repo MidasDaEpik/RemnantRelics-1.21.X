@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.*;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -57,7 +57,7 @@ public class ObsidianBulwark extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.OBSIDIAN);
             }
-        }, pProperties.attributes(ObsidianBulwark.createAttributes()).rarity(EnumExtensions.RARITY_GOLD.getValue()));
+        }, pProperties.attributes(ObsidianBulwark.createAttributes()).rarity(RREnumExtensions.RARITY_GOLD.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -107,7 +107,7 @@ public class ObsidianBulwark extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.WAX_ON, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.5, 0.5, 0.5, 0);
             }
 
-            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, Sounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
+            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
             float AbsorptionShield = pLivingEntity.getAbsorptionAmount() + 2;
             if (AbsorptionShield > 6) {
@@ -115,10 +115,10 @@ public class ObsidianBulwark extends SwordItem {
             }
 
             int BulwarkEffectLevel = 2 - Mth.floor(pLivingEntity.getAbsorptionAmount() + 2 - AbsorptionShield);
-            if (pLivingEntity.hasEffect(Effects.BULWARK)) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, pLivingEntity.getEffect(Effects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
+            if (pLivingEntity.hasEffect(RREffects.BULWARK)) {
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, pLivingEntity.getEffect(RREffects.BULWARK).getAmplifier() + BulwarkEffectLevel, true, true));
             } else {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.BULWARK, 1200, BulwarkEffectLevel - 1, true, true));
             }
 
             if (pLivingEntity.getAbsorptionAmount() < AbsorptionShield) {
@@ -131,12 +131,12 @@ public class ObsidianBulwark extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 300);
-                pPlayer.getCooldowns().addCooldown(Items.SOULEATING_SLASHER.get(), 300);
+                pPlayer.getCooldowns().addCooldown(RRItems.SOULEATING_SLASHER.get(), 300);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(Items.SOULEATING_SLASHER.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.SOULEATING_SLASHER.get(), 10);
             }
         }
     }
@@ -158,14 +158,14 @@ public class ObsidianBulwark extends SwordItem {
     public void inventoryTick(ItemStack pItemStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (pEntity instanceof LivingEntity pLivingEntity && pIsSelected) {
             if (!pLivingEntity.getOffhandItem().isEmpty()) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.UNWIELDY, 1, 0, true, false, false));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.UNWIELDY, 1, 0, true, false, false));
             }
         }
     }
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.obsidian_bulwark.shift_desc_1"));

@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import org.lwjgl.glfw.GLFW;
 
-public class ItemUtil {
+public class RRItemUtil {
     public static class ItemKeys {
         private static final long WINDOW = Minecraft.getInstance().getWindow().getWindow();
 

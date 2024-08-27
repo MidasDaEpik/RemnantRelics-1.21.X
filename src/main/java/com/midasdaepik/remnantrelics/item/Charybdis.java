@@ -1,8 +1,8 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.particles.DustColorTransitionOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -69,7 +69,7 @@ public class Charybdis extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(Items.PRISMARINE_CRYSTALS);
             }
-        }, pProperties.attributes(Charybdis.createAttributes()).rarity(EnumExtensions.RARITY_ELDER.getValue()));
+        }, pProperties.attributes(Charybdis.createAttributes()).rarity(RREnumExtensions.RARITY_ELDER.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -186,8 +186,8 @@ public class Charybdis extends SwordItem {
         if (pLevel instanceof ServerLevel pServerLevel) {
             pServerLevel.sendParticles(ParticleTypes.BUBBLE, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, 3, 4, 1, 4, 0);
 
-            ItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y + 0.25, pLivingEntity.getEyePosition().z, 12);
-            ItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y - 0.75, pLivingEntity.getEyePosition().z, 12);
+            RRItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y + 0.25, pLivingEntity.getEyePosition().z, 12);
+            RRItemUtil.ParticleCircle(pServerLevel, new DustColorTransitionOptions(new Vector3f(0f,0.4f,0.8f), new Vector3f(0,0.2f,0.4f), 1), pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y - 0.75, pLivingEntity.getEyePosition().z, 12);
         }
 
         if (pLevel instanceof ClientLevel pClientLevel) {
@@ -210,7 +210,7 @@ public class Charybdis extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_3"));

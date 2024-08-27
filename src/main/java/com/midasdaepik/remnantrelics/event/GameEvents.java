@@ -1,7 +1,7 @@
 package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -24,13 +24,13 @@ public class GameEvents {
     @SubscribeEvent
     public static void onLivingDamageEventPost(LivingDamageEvent.Post pEvent) {
         LivingEntity pLivingEntity = pEvent.getEntity();
-        if (pLivingEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() == Items.ELDER_CHESTPLATE.get() && pLivingEntity.level() instanceof ServerLevel pServerLevel) {
+        if (pLivingEntity.getItemBySlot(EquipmentSlot.CHEST).getItem() == RRItems.ELDER_CHESTPLATE.get() && pLivingEntity.level() instanceof ServerLevel pServerLevel) {
             Entity pDamageSourceEntity = pEvent.getSource().getEntity();
             if (pDamageSourceEntity instanceof LivingEntity pDamageSourceLivingEntity && !pDamageSourceLivingEntity.isInvulnerable()) {
                 if (pLivingEntity instanceof Player pPlayer) {
-                    if (!pPlayer.getCooldowns().isOnCooldown(Items.ELDER_CHESTPLATE.get())) {
+                    if (!pPlayer.getCooldowns().isOnCooldown(RRItems.ELDER_CHESTPLATE.get())) {
                         pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.8f);
-                        pPlayer.getCooldowns().addCooldown(Items.ELDER_CHESTPLATE.get(), 80);
+                        pPlayer.getCooldowns().addCooldown(RRItems.ELDER_CHESTPLATE.get(), 80);
                     }
                 } else if (Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
                     pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.8f);
@@ -45,12 +45,12 @@ public class GameEvents {
             Entity pEntity = pEvent.getEntity();
             if (pEntity instanceof PiglinBrute pPiglinBrute) {
                 if (pPiglinBrute.getMainHandItem().getItem() == net.minecraft.world.item.Items.GOLDEN_AXE && Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
-                    pPiglinBrute.setItemSlot(EquipmentSlot.MAINHAND, Items.PIGLIN_WARAXE.toStack());
+                    pPiglinBrute.setItemSlot(EquipmentSlot.MAINHAND, RRItems.PIGLIN_WARAXE.toStack());
                     pPiglinBrute.setDropChance(EquipmentSlot.MAINHAND, 0.2f);
                 }
             } else if (pEntity instanceof WitherSkeleton pWitherSkeleton) {
                 if (pWitherSkeleton.getMainHandItem().getItem() == net.minecraft.world.item.Items.STONE_SWORD && Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
-                    pWitherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, Items.WITHERBLADE.toStack());
+                    pWitherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, RRItems.WITHERBLADE.toStack());
                     pWitherSkeleton.setDropChance(EquipmentSlot.MAINHAND, 0.15f);
                 }
             }

@@ -1,8 +1,9 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.event.EventHooks;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +33,7 @@ import java.util.function.Predicate;
 
 public class Whisperwind extends ProjectileWeaponItem {
     public Whisperwind(Properties pProperties) {
-        super(pProperties.durability(500).attributes(Whisperwind.createAttributes()).rarity(EnumExtensions.RARITY_WIND.getValue()));
+        super(pProperties.durability(500).attributes(Whisperwind.createAttributes()).rarity(RREnumExtensions.RARITY_WIND.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -50,6 +52,11 @@ public class Whisperwind extends ProjectileWeaponItem {
     @Override
     public boolean isValidRepairItem(ItemStack pItemstack, ItemStack pRepairCandidate) {
         return pRepairCandidate.is(Items.BREEZE_ROD);
+    }
+
+    @Override
+    public boolean canAttackBlock(BlockState pBlockState, Level pLevel, BlockPos pBlockPos, Player pPlayer) {
+        return false;
     }
 
     @Override
@@ -163,8 +170,10 @@ public class Whisperwind extends ProjectileWeaponItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_2"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

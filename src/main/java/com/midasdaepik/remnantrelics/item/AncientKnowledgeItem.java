@@ -1,7 +1,7 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -27,19 +27,19 @@ public class AncientKnowledgeItem extends Item {
     }
 
     public static AncientKnowledgeItem createAncientTabletForging() {
-        return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_WITHERBLADE.getValue()), 1);
+        return new AncientKnowledgeItem(new Properties().rarity(RREnumExtensions.RARITY_WITHERBLADE.getValue()), 1);
     }
 
     public static AncientKnowledgeItem createAncientTabletInfusion() {
-        return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_BLAZE.getValue()), 2);
+        return new AncientKnowledgeItem(new Properties().rarity(RREnumExtensions.RARITY_BLAZE.getValue()), 2);
     }
 
     public static AncientKnowledgeItem createAncientTabletRefining() {
-        return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_GOLD.getValue()), 3);
+        return new AncientKnowledgeItem(new Properties().rarity(RREnumExtensions.RARITY_GOLD.getValue()), 3);
     }
 
     public static AncientKnowledgeItem createResearchersMemoirSculk() {
-        return new AncientKnowledgeItem(new Properties().rarity(EnumExtensions.RARITY_SCULK.getValue()), 4);
+        return new AncientKnowledgeItem(new Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue()), 4);
     }
 
     @Override

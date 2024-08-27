@@ -1,6 +1,6 @@
 package com.midasdaepik.remnantrelics.mixin;
 
-import com.midasdaepik.remnantrelics.registries.Items;
+import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.Level;
@@ -20,7 +20,7 @@ public class EnderDragonMixin {
         Level pLevel = pDragon.level();
         Vec3 pPodium = pLevel.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING, EndPodiumFeature.getLocation(pDragon.getFightOrigin())).getCenter();
 
-        ItemEntity pDragonLoot = new ItemEntity(pLevel, pPodium.x, pPodium.y + 4, pPodium.z, Items.DRAGONBONE.toStack());
+        ItemEntity pDragonLoot = new ItemEntity(pLevel, pPodium.x, pPodium.y + 4, pPodium.z, RRItems.DRAGONBONE.toStack());
         pDragonLoot.setDeltaMovement(0.0, 0.0, 0.0);
         pDragonLoot.setGlowingTag(true);
         pDragonLoot.setNoGravity(true);

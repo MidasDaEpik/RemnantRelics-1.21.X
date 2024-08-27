@@ -1,9 +1,9 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.Effects;
-import com.midasdaepik.remnantrelics.registries.EnumExtensions;
-import com.midasdaepik.remnantrelics.registries.ItemUtil;
+import com.midasdaepik.remnantrelics.registries.RREffects;
+import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -49,7 +49,7 @@ public class PiglinWaraxe extends AxeItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(Items.GOLD_BLOCK);
             }
-        }, pProperties.attributes(PiglinWaraxe.createAttributes()).rarity(EnumExtensions.RARITY_GOLD.getValue()));
+        }, pProperties.attributes(PiglinWaraxe.createAttributes()).rarity(RREnumExtensions.RARITY_GOLD.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -70,14 +70,14 @@ public class PiglinWaraxe extends AxeItem {
     public void inventoryTick(ItemStack pItemStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if (pEntity instanceof LivingEntity pLivingEntity && pIsSelected) {
             if (!pLivingEntity.getOffhandItem().isEmpty()) {
-                pLivingEntity.addEffect(new MobEffectInstance(Effects.UNWIELDY, 1, 0, true, false, false));
+                pLivingEntity.addEffect(new MobEffectInstance(RREffects.UNWIELDY, 1, 0, true, false, false));
             }
         }
     }
 
     @Override
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (ItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));

@@ -1,7 +1,7 @@
 package com.midasdaepik.remnantrelics.entity.custom;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.registries.Entities;
+import com.midasdaepik.remnantrelics.registries.RREntities;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -30,13 +30,13 @@ public class SonicBlast extends Projectile {
     }
 
     public SonicBlast(Level pLevel, LivingEntity pShooter, int pDuration) {
-        super(Entities.SONIC_BLAST.get(), pLevel);
+        super(RREntities.SONIC_BLAST.get(), pLevel);
         this.setOwner(pShooter);
         this.Duration = pDuration;
     }
 
     public SonicBlast(Level pLevel, LivingEntity pShooter, int pDuration, int pAttackDamage) {
-        super(Entities.SONIC_BLAST.get(), pLevel);
+        super(RREntities.SONIC_BLAST.get(), pLevel);
         this.setOwner(pShooter);
         this.Duration = pDuration;
         this.AttackDamage = pAttackDamage;
