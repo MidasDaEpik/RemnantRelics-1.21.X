@@ -46,4 +46,8 @@ public class RREnumExtensions {
     public static final EnumProxy<Rarity> RARITY_SCULK = new EnumProxy<>(
             Rarity.class, -1, "remnantrelics:sculk", (UnaryOperator<Style>) style -> style.withColor(356730)
     );
+
+    public static final EnumProxy<Rarity> RARITY_DRAGON = new EnumProxy<>(
+            Rarity.class, -1, "remnantrelics:dragon", (UnaryOperator<Style>) style -> style.withColor(13719531)
+    );
 }

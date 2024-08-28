@@ -98,6 +98,15 @@
         "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
         "field": "RARITY_SCULK"
       }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_DRAGON",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
+        "field": "RARITY_DRAGON"
+      }
     }
   ]
 }

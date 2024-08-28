@@ -15,6 +15,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.windcharge.WindCharge;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
@@ -63,11 +64,11 @@ public record WhisperwindC2SPacket() implements CustomPacketPayload {
                     pMainhandItem.hurtAndBreak(1, pServerPlayer, EquipmentSlot.MAINHAND);
 
                     pServerPlayer.getCooldowns().addCooldown(pMainhandItem.getItem(), 10);
+                    pServerPlayer.getCooldowns().addCooldown(Items.WIND_CHARGE, 10);
                     pServerPlayer.awardStat(Stats.ITEM_USED.get(pMainhandItem.getItem()));
                 }
             }
         });
-
         return true;
     }
 }

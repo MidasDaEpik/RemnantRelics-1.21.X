@@ -89,7 +89,7 @@ public class RRItems {
             () -> new LyreOfEchoes(new Item.Properties()));
 
     public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
-            () -> new Dragonbone(new Item.Properties()));
+            () -> new Dragonbone(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue())));
 
     public static final DeferredItem<Item> HEXED_DICE = ITEMS.register("hexed_dice",
             () -> new HexedDice(new Item.Properties()));

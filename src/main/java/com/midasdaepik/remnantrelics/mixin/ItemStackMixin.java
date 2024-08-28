@@ -16,12 +16,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemStack.class)
-public class ItemUseMixin {
+public class ItemStackMixin {
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void stopItemUse(Level pLevel, Player pPlayer, InteractionHand pHand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> pReturn) {
         if (pPlayer != null) {
             if (pPlayer.getMainHandItem().is(RRTags.DUAL_WIELDED_WEAPONS) && pHand == InteractionHand.OFF_HAND) {
                 pReturn.setReturnValue(InteractionResultHolder.fail(pPlayer.getItemInHand(pHand)));
+                return;
             }
 
             if (pPlayer.getItemInHand(pHand).getItem() == Items.WIND_CHARGE) {

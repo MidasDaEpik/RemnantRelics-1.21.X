@@ -13,10 +13,15 @@ import org.spongepowered.asm.mixin.injection.At;
 public class LevelRendererMixin {
     @WrapOperation(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getTeamColor()I"))
     private int modifyTeamColor(Entity pEntity, Operation<Integer> pOriginal) {
+        int pOriginalValue = pOriginal.call(pEntity);
         if (pEntity instanceof ItemEntity pItemEntity && pItemEntity.getItem().getItem() == RRItems.MOD_ICON.get()) {
-            return 13719531;
+            if (pOriginalValue == 16777215) {
+                return 13719531;
+            } else {
+                return pOriginalValue;
+            }
         } else {
-            return pOriginal.call(pEntity);
+            return pOriginalValue;
         }
     }
 }

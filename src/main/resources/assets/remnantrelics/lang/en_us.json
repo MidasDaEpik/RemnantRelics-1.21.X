@@ -21,8 +21,8 @@
   "item.remnantrelics.elder_chestplate.shift_desc_2": "§84s Cooldown",
 
   "item.remnantrelics.whisperwind": "Whisperwind",
-  "item.remnantrelics.whisperwind.shift_desc_1": "§6[Attack] §7fires a wind charge from the user's inventory.",
-  "item.remnantrelics.whisperwind.shift_desc_2": "§7Has increased draw speed but decreased range, and damage.",
+  "item.remnantrelics.whisperwind.shift_desc_1": "§7Has increased draw speed but decreased range, and damage.",
+  "item.remnantrelics.whisperwind.shift_desc_2": "§6[Attack] §7fires a wind charge from the user's inventory.",
 
   "item.remnantrelics.ancient_weapon_fragment": "Ancient Weapon Fragment",
 
@@ -145,6 +145,8 @@
   "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a long line in front of the user,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer it is charged.",
+
+  "item.remnantrelics.dragonbone": "Dragonbone",
 
   "item.remnantrelics.hexed_dice": "Hexed Dice",
   "item.remnantrelics.hexed_dice.shift_desc_1": "§6[Use] to roll the dice for a random temporary effect:",
