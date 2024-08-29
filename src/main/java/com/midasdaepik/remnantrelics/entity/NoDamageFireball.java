@@ -1,4 +1,4 @@
-package com.midasdaepik.remnantrelics.entity.custom;
+package com.midasdaepik.remnantrelics.entity;
 
 import com.midasdaepik.remnantrelics.registries.RREntities;
 import net.minecraft.nbt.CompoundTag;

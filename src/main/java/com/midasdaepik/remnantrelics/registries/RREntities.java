@@ -1,9 +1,9 @@
 package com.midasdaepik.remnantrelics.registries;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.entity.custom.Firestorm;
-import com.midasdaepik.remnantrelics.entity.custom.NoDamageFireball;
-import com.midasdaepik.remnantrelics.entity.custom.DragonsBreath;
+import com.midasdaepik.remnantrelics.entity.Firestorm;
+import com.midasdaepik.remnantrelics.entity.NoDamageFireball;
+import com.midasdaepik.remnantrelics.entity.DragonsBreath;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

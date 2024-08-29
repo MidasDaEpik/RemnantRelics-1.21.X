@@ -1,6 +1,6 @@
-package com.midasdaepik.remnantrelics.entity.renderer;
+package com.midasdaepik.remnantrelics.renderer.entity;
 
-import com.midasdaepik.remnantrelics.entity.custom.DragonsBreath;
+import com.midasdaepik.remnantrelics.entity.DragonsBreath;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;

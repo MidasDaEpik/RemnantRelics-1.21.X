@@ -1,6 +1,6 @@
 package com.midasdaepik.remnantrelics.item;
 
-import com.midasdaepik.remnantrelics.entity.custom.NoDamageFireball;
+import com.midasdaepik.remnantrelics.entity.NoDamageFireball;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import net.minecraft.network.chat.Component;

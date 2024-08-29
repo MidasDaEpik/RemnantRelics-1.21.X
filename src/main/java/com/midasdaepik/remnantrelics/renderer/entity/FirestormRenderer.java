@@ -1,6 +1,6 @@
-package com.midasdaepik.remnantrelics.entity.renderer;
+package com.midasdaepik.remnantrelics.renderer.entity;
 
-import com.midasdaepik.remnantrelics.entity.custom.Firestorm;
+import com.midasdaepik.remnantrelics.entity.Firestorm;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;

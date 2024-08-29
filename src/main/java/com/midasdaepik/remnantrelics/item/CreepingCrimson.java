@@ -1,7 +1,7 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.entity.custom.Firestorm;
+import com.midasdaepik.remnantrelics.entity.Firestorm;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;

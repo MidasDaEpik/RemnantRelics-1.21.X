@@ -1,11 +1,10 @@
 package com.midasdaepik.remnantrelics.item;
 
-import com.midasdaepik.remnantrelics.entity.custom.DragonsBreath;
+import com.midasdaepik.remnantrelics.entity.DragonsBreath;
 import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
