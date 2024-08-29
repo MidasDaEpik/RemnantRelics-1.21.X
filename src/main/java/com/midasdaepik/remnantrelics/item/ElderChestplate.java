@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ElderChestplate extends ArmorItem {
     public ElderChestplate(Properties pProperties) {
-        super(RRArmorMaterials.ELDER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, pProperties.durability(ArmorItem.Type.CHESTPLATE.getDurability(32)).attributes(ElderChestplate.createAttributes()).rarity(RREnumExtensions.RARITY_ELDER.getValue()));
+        super(RRArmorMaterials.ELDER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, pProperties.durability(ArmorItem.Type.CHESTPLATE.getDurability(35)).attributes(ElderChestplate.createAttributes()).rarity(RREnumExtensions.RARITY_ELDER.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {

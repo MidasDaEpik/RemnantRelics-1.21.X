@@ -84,8 +84,7 @@ public class Scylla extends SwordItem {
             }
         }
 
-        boolean retval = super.hurtEnemy(pStack, pTarget, pAttacker);
-        return retval;
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
     @Override

@@ -19,6 +19,7 @@ public class RemnantRelics {
         eventBus.addListener(RRPacketHandler::registerNetworking);
 
         RRArmorMaterials.register(eventBus);
+        RRAttachmentTypes.register(eventBus);
         RRCreativeTabs.register(eventBus);
         RRDataComponents.register(eventBus);
         RREffects.register(eventBus);

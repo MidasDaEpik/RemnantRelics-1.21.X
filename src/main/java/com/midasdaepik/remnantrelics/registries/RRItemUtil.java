@@ -46,7 +46,7 @@ public class RRItemUtil {
         float Z = Mth.cos(-YRot * ((float)Math.PI / 180F) - (float)Math.PI) * XZMult;
 
         Vec3 vec31 = vec3.add((double)X * pRange, (double)Y * pRange, (double)Z * pRange);
-        return pLevel.clip(new ClipContext(vec3, vec31, ClipContext.Block.OUTLINE, pFluidMode, pLivingEntity));
+        return pLevel.clip(new ClipContext(vec3, vec31, ClipContext.Block.COLLIDER, pFluidMode, pLivingEntity));
     }
 
     public static int getPlayerXP(Player pPlayer) {

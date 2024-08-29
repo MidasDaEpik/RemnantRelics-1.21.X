@@ -3,7 +3,7 @@ package com.midasdaepik.remnantrelics.registries;
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.entity.custom.Firestorm;
 import com.midasdaepik.remnantrelics.entity.custom.NoDamageFireball;
-import com.midasdaepik.remnantrelics.entity.custom.SonicBlast;
+import com.midasdaepik.remnantrelics.entity.custom.DragonsBreath;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -18,11 +18,11 @@ public class RREntities {
 
     public static final Supplier<EntityType<NoDamageFireball>> NO_DAMAGE_FIREBALL = ENTITY_TYPES.register("no_damage_fireball",
             () -> EntityType.Builder.<NoDamageFireball>of(NoDamageFireball::new, MobCategory.MISC)
-                    .sized(0.5f,0.5f).clientTrackingRange(8).updateInterval(20).build("no_damage_fireball"));
+                    .sized(0.5f,0.5f).clientTrackingRange(4).updateInterval(10).build("no_damage_fireball"));
 
-    public static final Supplier<EntityType<SonicBlast>> SONIC_BLAST = ENTITY_TYPES.register("sonic_blast",
-            () -> EntityType.Builder.<SonicBlast>of(SonicBlast::new, MobCategory.MISC)
-                    .sized(1f,1f).clientTrackingRange(4).updateInterval(20).build("sonic_blast"));
+    public static final Supplier<EntityType<DragonsBreath>> DRAGONS_BREATH = ENTITY_TYPES.register("dragons_breath",
+            () -> EntityType.Builder.<DragonsBreath>of(DragonsBreath::new, MobCategory.MISC)
+                    .sized(1f,1f).clientTrackingRange(4).updateInterval(10).build("dragons_breath"));
 
     public static final Supplier<EntityType<Firestorm>> FIRESTORM = ENTITY_TYPES.register("firestorm",
             () -> EntityType.Builder.<Firestorm>of(Firestorm::new, MobCategory.MISC)

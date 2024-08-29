@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -43,15 +44,23 @@ public class Firestorm extends Projectile {
     }
 
     @Override
+    public boolean isOnFire() {
+        return false;
+    }
+
+    @Override
     public void tick() {
-        super.tick();
+        Entity pOwner = this.getOwner();
+        if (this.level().isClientSide || (pOwner == null || !pOwner.isRemoved()) && this.level().hasChunkAt(this.blockPosition())) {
+            super.tick();
 
-        this.AttackTick();
+            if (this.level() instanceof ServerLevel pServerLevel) {
+                this.AttackTick(pServerLevel);
 
-        if (this.level() instanceof ServerLevel pServerLevel) {
-            this.Duration = this.Duration - 1;
-            if (this.Duration <= 0) {
-                this.discard();
+                this.Duration = this.Duration - 1;
+                if (this.Duration <= 0) {
+                    this.discard();
+                }
             }
 
             HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity, ClipContext.Block.COLLIDER);
@@ -64,46 +73,44 @@ public class Firestorm extends Projectile {
             double d0 = this.getX() + vec3.x * 0.1;
             double d1 = this.getY() + vec3.y * 0.05;
             double d2 = this.getZ() + vec3.z * 0.1;
-            this.setPos(d0, d1, d2);
-
             ProjectileUtil.rotateTowardsMovement(this, 0.4F);
+
+            this.setPos(d0, d1, d2);
         }
     }
 
-    protected void AttackTick() {
-        if (this.level() instanceof ServerLevel pServerLevel) {
-            if (this.WitherSpore) {
-                pServerLevel.sendParticles(ParticleTypes.CRIMSON_SPORE, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
-                pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
-            } else {
-                pServerLevel.sendParticles(ParticleTypes.FLAME, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
-                pServerLevel.sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
-            }
+    protected void AttackTick(ServerLevel pServerLevel) {
+        if (this.WitherSpore) {
+            pServerLevel.sendParticles(ParticleTypes.CRIMSON_SPORE, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
+            pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
+        } else {
+            pServerLevel.sendParticles(ParticleTypes.FLAME, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
+            pServerLevel.sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
+        }
 
-            if (this.Duration % 20 == 0) {
-                pServerLevel.playSeededSound(null, this.getX(), this.getY() + 0.25, this.getZ(), SoundEvents.BLAZE_SHOOT, SoundSource.NEUTRAL, 1f, 0.9f,0);
+        if (this.Duration % 20 == 0) {
+            pServerLevel.playSeededSound(null, this.getX(), this.getY() + 0.25, this.getZ(), SoundEvents.BLAZE_SHOOT, SoundSource.NEUTRAL, 1f, 0.9f,0);
 
-                final Vec3 AABBCenter = new Vec3(this.getX(), this.getY() + 0.25, this.getZ());
-                List<LivingEntity> pFoundTarget = pServerLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(5d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
-                for (LivingEntity pEntityIterator : pFoundTarget) {
-                    if (pEntityIterator != this.getOwner()) {
-                        if (this.WitherSpore) {
-                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, this.EffectDuration, 2));
-                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
-                        } else {
-                            if (pEntityIterator.getRemainingFireTicks() < this.EffectDuration) {
-                                pEntityIterator.setRemainingFireTicks(this.EffectDuration);
-                            }
-                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
+            final Vec3 AABBCenter = new Vec3(this.getX(), this.getY() + 0.25, this.getZ());
+            List<LivingEntity> pFoundTarget = pServerLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(5d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
+            for (LivingEntity pEntityIterator : pFoundTarget) {
+                if (pEntityIterator != this.getOwner()) {
+                    if (this.WitherSpore) {
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, this.EffectDuration, 2));
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
+                    } else {
+                        if (pEntityIterator.getRemainingFireTicks() < this.EffectDuration) {
+                            pEntityIterator.setRemainingFireTicks(this.EffectDuration);
                         }
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
                     }
                 }
+            }
 
-                if (this.WitherSpore) {
-                    RRItemUtil.ParticleSphere(pServerLevel, new DustColorTransitionOptions(new Vector3f(0.772f,0.203f,0.223f), new Vector3f(0.482f,0f,0f), 0.9f), this.getX(), this.getY(), this.getZ(), 1);
-                } else {
-                    RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 1);
-                }
+            if (this.WitherSpore) {
+                RRItemUtil.ParticleSphere(pServerLevel, new DustColorTransitionOptions(new Vector3f(0.772f,0.203f,0.223f), new Vector3f(0.482f,0f,0f), 0.9f), this.getX(), this.getY(), this.getZ(), 1);
+            } else {
+                RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 1);
             }
         }
     }

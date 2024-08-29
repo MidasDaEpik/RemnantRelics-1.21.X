@@ -4,7 +4,7 @@ import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateModel;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateRetractedModel;
 import com.midasdaepik.remnantrelics.entity.renderer.FirestormRenderer;
-import com.midasdaepik.remnantrelics.entity.renderer.SonicBlastRenderer;
+import com.midasdaepik.remnantrelics.entity.renderer.DragonsBreathRenderer;
 import com.midasdaepik.remnantrelics.registries.RREntities;
 import com.midasdaepik.remnantrelics.registries.RRItemProperties;
 import com.midasdaepik.remnantrelics.registries.RRItems;
@@ -43,7 +43,7 @@ public class ClientModEvents {
 
     @SubscribeEvent
     private static void entityRenderers(EntityRenderersEvent.RegisterRenderers pEvent) {
-        pEvent.registerEntityRenderer(RREntities.SONIC_BLAST.get(), SonicBlastRenderer::new);
+        pEvent.registerEntityRenderer(RREntities.DRAGONS_BREATH.get(), DragonsBreathRenderer::new);
         pEvent.registerEntityRenderer(RREntities.FIRESTORM.get(), FirestormRenderer::new);
     }
 

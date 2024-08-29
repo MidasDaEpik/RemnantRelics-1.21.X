@@ -91,6 +91,9 @@ public class RRItems {
     public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
             () -> new Dragonbone(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue())));
 
+    public static final DeferredItem<Item> DRAGONS_RAGE = ITEMS.register("dragons_rage",
+            () -> new DragonsRage(new Item.Properties()));
+
     public static final DeferredItem<Item> HEXED_DICE = ITEMS.register("hexed_dice",
             () -> new HexedDice(new Item.Properties()));
 

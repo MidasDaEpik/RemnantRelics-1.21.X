@@ -35,6 +35,27 @@ public class NoDamageFireball extends Fireball {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        if (this.level() instanceof ServerLevel pServerLevel) {
+            if (this.DespawnDuration <= 0) {
+                this.setDeltaMovement(0, -0.1, 0);
+            }
+
+            if (this.FlyDuration <= 0) {
+                this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionPower, false, Level.ExplosionInteraction.NONE);
+                this.discard();
+            }
+
+            if (this.getDeltaMovement().x <= 0.01 && this.getDeltaMovement().y <= 0.01 && this.getDeltaMovement().z <= 0.01) {
+                this.DespawnDuration = this.DespawnDuration - 1;
+            } else {
+                this.FlyDuration = this.FlyDuration - 1;
+            }
+        }
+    }
+
+    @Override
     protected void onHit(HitResult pResult) {
         super.onHit(pResult);
         if (!this.level().isClientSide) {
@@ -52,27 +73,6 @@ public class NoDamageFireball extends Fireball {
             DamageSource $$5 = this.damageSources().fireball(this, $$4);
             entity1.hurt($$5, 6.0F);
             EnchantmentHelper.doPostAttackEffects(serverlevel, entity1, $$5);
-        }
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (!this.level().isClientSide) {
-            if (this.DespawnDuration <= 0) {
-                this.setDeltaMovement(0, -0.1, 0);
-            }
-
-            if (this.FlyDuration <= 0) {
-                this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionPower, false, Level.ExplosionInteraction.NONE);
-                this.discard();
-            }
-
-            if (this.getDeltaMovement().x <= 0.01 && this.getDeltaMovement().y <= 0.01 && this.getDeltaMovement().z <= 0.01) {
-                this.DespawnDuration = this.DespawnDuration - 1;
-            } else {
-                this.FlyDuration = this.FlyDuration - 1;
-            }
         }
     }
 

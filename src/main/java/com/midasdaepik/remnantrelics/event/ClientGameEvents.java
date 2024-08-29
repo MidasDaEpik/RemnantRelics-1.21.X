@@ -68,7 +68,7 @@ public class ClientGameEvents {
             return;
         }
 
-        boolean pKeyAttack = pMinecraft.options.keyAttack.consumeClick();
+        boolean pKeyAttack = pMinecraft.options.keyAttack.isDown();
         boolean pKeyUse = pMinecraft.options.keyUse.isDown();
 
         if (pKeyAttack) {

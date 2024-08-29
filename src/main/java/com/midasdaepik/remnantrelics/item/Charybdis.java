@@ -47,7 +47,7 @@ public class Charybdis extends SwordItem {
     public Charybdis(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 2150;
+                return 1796;
             }
 
             public float getSpeed() {
@@ -106,11 +106,11 @@ public class Charybdis extends SwordItem {
     public void releaseUsing(ItemStack pItemStack, Level pLevel, LivingEntity pLivingEntity, int pTimeLeft) {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
         if (pLivingEntity instanceof Player pPlayer) {
-            pItemStack.hurtAndBreak(pTimeUsing, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+            pItemStack.hurtAndBreak(pTimeUsing / 10, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
 
             pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
-            pPlayer.getCooldowns().addCooldown(this, pTimeUsing * 1);
+            pPlayer.getCooldowns().addCooldown(this, pTimeUsing * 2);
         }
     }
 
@@ -179,7 +179,7 @@ public class Charybdis extends SwordItem {
         List<LivingEntity> pFoundTarget2 = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
         for (LivingEntity pEntityIterator : pFoundTarget2) {
             if (!(pEntityIterator == pLivingEntity) && pTimeUsing % 20 == 0) {
-                pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "whirlpool"))), pLivingEntity), 12);
+                pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "whirlpool"))), pLivingEntity), 5);
             }
         }
 
