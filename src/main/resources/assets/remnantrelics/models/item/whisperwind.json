@@ -8,21 +8,21 @@
             "predicate": {
                 "pulling": 1
             },
-            "model": "remnantrelics:item/whisperwind/charge_0"
+            "model": "remnantrelics:item/whisperwind/pulling_0"
         },
         {
             "predicate": {
                 "pulling": 1,
                 "pull": 0.3
             },
-            "model": "remnantrelics:item/whisperwind/charge_1"
+            "model": "remnantrelics:item/whisperwind/pulling_1"
         },
         {
             "predicate": {
                 "pulling": 1,
                 "pull": 0.5
             },
-            "model": "remnantrelics:item/whisperwind/charge_2"
+            "model": "remnantrelics:item/whisperwind/pulling_2"
         }
     ]
 }

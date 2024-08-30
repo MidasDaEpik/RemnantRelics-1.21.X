@@ -93,6 +93,8 @@ public class RRItems {
 
     public static final DeferredItem<Item> DRAGONS_RAGE = ITEMS.register("dragons_rage",
             () -> new DragonsRage(new Item.Properties()));
+    public static final DeferredItem<Item> DRAGONS_BREATH_ARBALEST = ITEMS.register("dragons_breath_arbalest",
+            () -> new DragonsBreathArbalest(new Item.Properties()));
 
     public static final DeferredItem<Item> HEXED_DICE = ITEMS.register("hexed_dice",
             () -> new HexedDice(new Item.Properties()));

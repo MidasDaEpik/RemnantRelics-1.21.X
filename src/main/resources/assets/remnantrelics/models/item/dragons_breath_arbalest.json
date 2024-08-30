@@ -1,0 +1,62 @@
+{
+  "parent": "minecraft:item/crossbow",
+  "textures": {
+    "layer0": "remnantrelics:item/dragons_breath_arbalest"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pulling": 1
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.2
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.45
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_2"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.7
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_3"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_4"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 1
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_5"
+    },
+    {
+      "predicate": {
+        "charged": 1
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/arrow"
+    },
+    {
+      "predicate": {
+        "charged": 1,
+        "firework": 1
+      },
+      "model": "remnantrelics:item/dragons_breath_arbalest/firework"
+    }
+  ]
+}

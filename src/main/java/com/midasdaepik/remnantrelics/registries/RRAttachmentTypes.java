@@ -21,6 +21,10 @@ public class RRAttachmentTypes {
             "dragons_rage_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );
 
+    public static final Supplier<AttachmentType<Integer>> SPECIAL_ARROW_TYPE = ATTACHMENT_TYPES.register(
+            "special_arrow_type", () -> AttachmentType.builder(() -> -1).serialize(Codec.INT).build()
+    );
+
     public static void register(IEventBus eventBus) {
         ATTACHMENT_TYPES.register(eventBus);
     }

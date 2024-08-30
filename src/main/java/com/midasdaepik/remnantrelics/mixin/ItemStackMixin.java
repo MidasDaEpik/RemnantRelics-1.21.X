@@ -22,9 +22,13 @@ public class ItemStackMixin {
         if (pPlayer != null) {
             if (pPlayer.getMainHandItem().is(RRTags.DUAL_WIELDED_WEAPONS) && pHand == InteractionHand.OFF_HAND) {
                 pReturn.setReturnValue(InteractionResultHolder.fail(pPlayer.getItemInHand(pHand)));
-                return;
             }
+        }
+    }
 
+    @Inject(method = "use", at = @At("RETURN"))
+    private void stopItemUseReturn(Level pLevel, Player pPlayer, InteractionHand pHand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> pReturn) {
+        if (pPlayer != null) {
             if (pPlayer.getItemInHand(pHand).getItem() == Items.WIND_CHARGE) {
                 pPlayer.getCooldowns().addCooldown(RRItems.WHISPERWIND.get(), 10);
             }

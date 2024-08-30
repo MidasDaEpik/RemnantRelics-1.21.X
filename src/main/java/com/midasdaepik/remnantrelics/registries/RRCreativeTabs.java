@@ -68,6 +68,11 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.SCYLLA.get());
                         pOutput.accept(RRItems.LYRE_OF_ECHOES.get());
 
+                        pOutput.accept(RRItems.DRAGONBONE.get());
+
+                        pOutput.accept(RRItems.DRAGONS_RAGE.get());
+                        pOutput.accept(RRItems.DRAGONS_BREATH_ARBALEST.get());
+
                         pOutput.accept(RRItems.HEXED_DICE.get());
                     })
                     .build()
