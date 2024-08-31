@@ -5,10 +5,13 @@ import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
+import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -127,10 +130,12 @@ public class DragonsRage extends SwordItem {
                     pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                     PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
 
-                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 40, 6);
+                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 40, 8);
                     dragonsBreath.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
-                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.2f, 0.5f, 1.0f);
+                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.1f, 0.3f, 1.5f);
                     pLevel.addFreshEntity(dragonsBreath);
+
+                    pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, SoundEvents.ENDER_DRAGON_SHOOT, SoundSource.PLAYERS, 2f, 1.2f,0);
 
                     if (RageCharge < 120) {
                         pPlayer.stopUsingItem();

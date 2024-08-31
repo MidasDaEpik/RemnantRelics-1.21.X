@@ -24,6 +24,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -38,22 +39,27 @@ public class DragonsRageBreath extends Projectile {
         this.noCulling = true;
     }
 
-    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pduration) {
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration) {
         super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
-        this.duration = pduration;
+        this.duration = pDuration;
     }
 
-    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pduration, int pattackDamage) {
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration, int pAttackDamage) {
         super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
-        this.duration = pduration;
-        this.attackDamage = pattackDamage;
+        this.duration = pDuration;
+        this.attackDamage = pAttackDamage;
     }
 
     @Override
     public boolean isOnFire() {
         return false;
+    }
+
+    @Override
+    public PushReaction getPistonPushReaction() {
+        return PushReaction.IGNORE;
     }
 
     @Override

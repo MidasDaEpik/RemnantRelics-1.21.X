@@ -27,10 +27,10 @@ public class NoDamageFireball extends Fireball {
         super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
     }
 
-    public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3, int pdespawnDuration, int pflyDuration, int pExplosionPower) {
-        super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
-        this.despawnDuration = pdespawnDuration;
-        this.flyDuration = pflyDuration;
+    public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3, int pDespawnDuration, int pFlyDuration, int pExplosionPower) {
+        this(pLevel, pShooter, pVec3);
+        this.despawnDuration = pDespawnDuration;
+        this.flyDuration = pFlyDuration;
         this.explosionPower = pExplosionPower;
     }
 

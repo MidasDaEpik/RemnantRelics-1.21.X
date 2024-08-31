@@ -74,8 +74,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
 
     //Modify Charge Time Here
     public static int getChargeDuration(ItemStack stack, LivingEntity shooter) {
-        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 1.25F);
-        return Mth.floor(f * 40.0F);
+        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 2.0F);
+        return Mth.floor(f * 30.0F);
     }
 
     //Modify Velocity Here
@@ -155,7 +155,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
     protected Projectile createProjectile(Level level, LivingEntity shooter, ItemStack weapon, ItemStack ammo, boolean isCrit) {
         Projectile projectile = super.createProjectile(level, shooter, weapon, ammo, isCrit);
         if (projectile instanceof AbstractArrow abstractarrow) {
-            abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 1.6);
+            abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 2);
             abstractarrow.setData(SPECIAL_ARROW_TYPE, 0);
         }
         return projectile;

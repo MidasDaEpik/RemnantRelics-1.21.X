@@ -18,6 +18,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -35,17 +36,22 @@ public class Firestorm extends Projectile {
         super(pEntityType, pLevel);
     }
 
-    public Firestorm(Level pLevel, LivingEntity pShooter, int pduration, int peffectDuration, boolean pwitherSpore) {
+    public Firestorm(Level pLevel, LivingEntity pShooter, int pDuration, int pEffectDuration, boolean pWitherSpore) {
         super(RREntities.FIRESTORM.get(), pLevel);
         this.setOwner(pShooter);
-        this.duration = pduration;
-        this.effectDuration = peffectDuration;
-        this.witherSpore = pwitherSpore;
+        this.duration = pDuration;
+        this.effectDuration = pEffectDuration;
+        this.witherSpore = pWitherSpore;
     }
 
     @Override
     public boolean isOnFire() {
         return false;
+    }
+
+    @Override
+    public PushReaction getPistonPushReaction() {
+        return PushReaction.IGNORE;
     }
 
     @Override

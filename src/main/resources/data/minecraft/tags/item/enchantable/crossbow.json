@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "remnantrelics:dragons_breath_arbalest",
+      "required": false
+    }
+  ]
+}

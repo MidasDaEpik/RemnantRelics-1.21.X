@@ -35,25 +35,16 @@ public class SearingStaff extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (!pLevel.isClientSide) {
-            NoDamageFireball fireballMid = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0));
+            NoDamageFireball fireballMid = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0), 400, 400, 2);
             fireballMid.setPos(pPlayer.getX() + Mth.sin(pPlayer.getYRot() * ((float)Math.PI / 180F) - (float)Math.PI) * 2, pPlayer.getY() + 1.25, pPlayer.getZ() + Mth.cos(pPlayer.getYRot() * ((float)Math.PI / 180F) - (float)Math.PI) * -2);
-            fireballMid.DespawnDuration = 400;
-            fireballMid.FlyDuration = 400;
-            fireballMid.explosionPower = 2f;
             pLevel.addFreshEntity(fireballMid);
 
-            NoDamageFireball fireballPos45 = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0));
+            NoDamageFireball fireballPos45 = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0), 400, 400, 2);
             fireballPos45.setPos(pPlayer.getX() + Mth.sin((pPlayer.getYRot() + 45) * ((float)Math.PI / 180F) - (float)Math.PI) * 2, pPlayer.getY() + 1.25, pPlayer.getZ() + Mth.cos((pPlayer.getYRot() + 45) * ((float)Math.PI / 180F) - (float)Math.PI) * -2);
-            fireballPos45.DespawnDuration = 400;
-            fireballPos45.FlyDuration = 400;
-            fireballPos45.explosionPower = 2f;
             pLevel.addFreshEntity(fireballPos45);
 
-            NoDamageFireball fireballNeg45 = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0));
+            NoDamageFireball fireballNeg45 = new NoDamageFireball(pLevel, pPlayer, new Vec3(0, 0, 0), 400, 400, 2);
             fireballNeg45.setPos(pPlayer.getX() + Mth.sin((pPlayer.getYRot() - 45) * ((float)Math.PI / 180F) - (float)Math.PI) * 2, pPlayer.getY() + 1.25, pPlayer.getZ() + Mth.cos((pPlayer.getYRot() - 45) * ((float)Math.PI / 180F) - (float)Math.PI) * -2);
-            fireballNeg45.DespawnDuration = 400;
-            fireballNeg45.FlyDuration = 400;
-            fireballNeg45.explosionPower = 2f;
             pLevel.addFreshEntity(fireballNeg45);
         }
 

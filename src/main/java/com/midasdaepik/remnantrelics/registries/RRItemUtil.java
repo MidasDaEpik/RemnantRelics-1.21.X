@@ -3,8 +3,10 @@ package com.midasdaepik.remnantrelics.registries;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
@@ -111,46 +113,15 @@ public class RRItemUtil {
     }
 
     public static void ParticleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {
-        pServerLevel.sendParticles(pParticle, pX + 1 * pScale, pY, pZ, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 1 * pScale, pY, pZ, 1, 0, 0, 0, 0);
+        RRItemUtil.ParticleCircle(pServerLevel, pParticle, pX, pY, pZ, pScale, 2);
+    }
 
-        pServerLevel.sendParticles(pParticle, pX, pY, pZ + 1 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX, pY, pZ - 1 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.707 * pScale, pY, pZ + 0.707 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.707 * pScale, pY, pZ + 0.707 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.707 * pScale, pY, pZ - 0.707 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.707 * pScale, pY, pZ - 0.707 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.382 * pScale, pY, pZ + 0.923 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.382 * pScale, pY, pZ + 0.923 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.382 * pScale, pY, pZ - 0.923 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.382 * pScale, pY, pZ - 0.923 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.923 * pScale, pY, pZ + 0.382 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.923 * pScale, pY, pZ + 0.382 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.923 * pScale, pY, pZ - 0.382 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.923 * pScale, pY, pZ - 0.382 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.195 * pScale, pY, pZ + 0.980 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.195 * pScale, pY, pZ + 0.980 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.195 * pScale, pY, pZ - 0.980 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.195 * pScale, pY, pZ - 0.980 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.980 * pScale, pY, pZ + 0.195 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.980 * pScale, pY, pZ + 0.195 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.980 * pScale, pY, pZ - 0.195 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.980 * pScale, pY, pZ - 0.195 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.555 * pScale, pY, pZ + 0.831 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.555 * pScale, pY, pZ + 0.831 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.555 * pScale, pY, pZ - 0.831 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.555 * pScale, pY, pZ - 0.831 * pScale, 1, 0, 0, 0, 0);
-
-        pServerLevel.sendParticles(pParticle, pX + 0.831 * pScale, pY, pZ + 0.555 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.831 * pScale, pY, pZ + 0.555 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX + 0.831 * pScale, pY, pZ - 0.555 * pScale, 1, 0, 0, 0, 0);
-        pServerLevel.sendParticles(pParticle, pX - 0.831 * pScale, pY, pZ - 0.555 * pScale, 1, 0, 0, 0, 0);
+    public static void ParticleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale, int pDefinition) {
+        int Count = Mth.ceil(Math.pow(2, pDefinition + 2));
+        float Degrees = 360f / Count;
+        for (int Loop = 1; Loop <= Count; Loop++) {
+            pServerLevel.sendParticles(pParticle, pX + Mth.cos((float) (Degrees * Loop * Math.PI / 180)) * pScale, pY, pZ + Mth.sin((float) (Degrees * Loop * Math.PI / 180)) * pScale, 1, 0, 0, 0, 0);
+        }
     }
 
     public static void ParticleSphere(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {

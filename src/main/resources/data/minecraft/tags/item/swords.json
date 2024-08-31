@@ -40,6 +40,10 @@
     {
       "id": "remnantrelics:scylla",
       "required": false
+    },
+    {
+      "id": "remnantrelics:dragons_rage",
+      "required": false
     }
   ]
 }
