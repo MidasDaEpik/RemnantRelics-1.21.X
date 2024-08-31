@@ -15,8 +15,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class NoDamageFireball extends Fireball {
-    public int DespawnDuration = 400;
-    public int FlyDuration = 400;
+    public int despawnDuration = 400;
+    public int flyDuration = 400;
     public float explosionPower = 1;
 
     public NoDamageFireball(EntityType<? extends NoDamageFireball> pEntityType, Level pLevel) {
@@ -27,10 +27,10 @@ public class NoDamageFireball extends Fireball {
         super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
     }
 
-    public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3, int pDespawnDuration, int pFlyDuration, int pExplosionPower) {
+    public NoDamageFireball(Level pLevel, LivingEntity pShooter, Vec3 pVec3, int pdespawnDuration, int pflyDuration, int pExplosionPower) {
         super(RREntities.NO_DAMAGE_FIREBALL.get(), pShooter, pVec3, pLevel);
-        this.DespawnDuration = pDespawnDuration;
-        this.FlyDuration = pFlyDuration;
+        this.despawnDuration = pdespawnDuration;
+        this.flyDuration = pflyDuration;
         this.explosionPower = pExplosionPower;
     }
 
@@ -38,19 +38,19 @@ public class NoDamageFireball extends Fireball {
     public void tick() {
         super.tick();
         if (this.level() instanceof ServerLevel pServerLevel) {
-            if (this.DespawnDuration <= 0) {
+            if (this.despawnDuration <= 0) {
                 this.setDeltaMovement(0, -0.1, 0);
             }
 
-            if (this.FlyDuration <= 0) {
+            if (this.flyDuration <= 0) {
                 this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionPower, false, Level.ExplosionInteraction.NONE);
                 this.discard();
             }
 
             if (this.getDeltaMovement().x <= 0.01 && this.getDeltaMovement().y <= 0.01 && this.getDeltaMovement().z <= 0.01) {
-                this.DespawnDuration = this.DespawnDuration - 1;
+                this.despawnDuration = this.despawnDuration - 1;
             } else {
-                this.FlyDuration = this.FlyDuration - 1;
+                this.flyDuration = this.flyDuration - 1;
             }
         }
     }
@@ -79,16 +79,16 @@ public class NoDamageFireball extends Fireball {
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
-        this.DespawnDuration = pCompound.getInt("DespawnDuration");
-        this.FlyDuration = pCompound.getInt("FlyDuration");
+        this.despawnDuration = pCompound.getInt("DespawnDuration");
+        this.flyDuration = pCompound.getInt("FlyDuration");
         this.explosionPower = pCompound.getFloat("ExplosionPower");
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
-        pCompound.putInt("DespawnDuration", this.DespawnDuration);
-        pCompound.putInt("FlyDuration", this.FlyDuration);
+        pCompound.putInt("DespawnDuration", this.despawnDuration);
+        pCompound.putInt("FlyDuration", this.flyDuration);
         pCompound.putFloat("ExplosionPower", this.explosionPower);
     }
 }

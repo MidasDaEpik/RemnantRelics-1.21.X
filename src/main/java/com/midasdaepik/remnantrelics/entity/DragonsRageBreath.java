@@ -30,25 +30,25 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class DragonsRageBreath extends Projectile {
-    public int Duration = 40;
-    public int AttackDamage = 6;
+    public int duration = 40;
+    public int attackDamage = 6;
 
     public DragonsRageBreath(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.noCulling = true;
     }
 
-    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration) {
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pduration) {
         super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
-        this.Duration = pDuration;
+        this.duration = pduration;
     }
 
-    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration, int pAttackDamage) {
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pduration, int pattackDamage) {
         super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
-        this.Duration = pDuration;
-        this.AttackDamage = pAttackDamage;
+        this.duration = pduration;
+        this.attackDamage = pattackDamage;
     }
 
     @Override
@@ -63,16 +63,16 @@ public class DragonsRageBreath extends Projectile {
             super.tick();
 
             if (this.level() instanceof ServerLevel pServerLevel) {
-                this.Duration = this.Duration - 1;
+                this.duration = this.duration - 1;
                 if (this.isInWater()) {
-                    this.Duration = this.Duration - 2;
+                    this.duration = this.duration - 2;
                 }
-                if (this.Duration <= 0) {
+                if (this.duration <= 0) {
                     this.discard();
                 }
             }
 
-            if (this.level() instanceof ClientLevel pClientLevel && this.Duration % 4 == 0) {
+            if (this.level() instanceof ClientLevel pClientLevel && this.duration % 4 == 0) {
                 int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
                 float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
 
@@ -102,7 +102,7 @@ public class DragonsRageBreath extends Projectile {
         super.onHitEntity(pResult);
         if (this.level() instanceof ServerLevel pServerLevel) {
             Entity pTarget = pResult.getEntity();
-            pTarget.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), this.getOwner()), this.AttackDamage);
+            pTarget.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), this.getOwner()), this.attackDamage);
         }
     }
 
@@ -129,13 +129,13 @@ public class DragonsRageBreath extends Projectile {
     }
 
     public void readAdditionalSaveData(CompoundTag pCompound) {
-        this.Duration = pCompound.getInt("Duration");
-        this.AttackDamage = pCompound.getInt("AttackDamage");
+        this.duration = pCompound.getInt("Duration");
+        this.attackDamage = pCompound.getInt("AttackDamage");
     }
 
     public void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putInt("Duration", this.Duration);
-        pCompound.putInt("AttackDamage", this.AttackDamage);
+        pCompound.putInt("Duration", this.duration);
+        pCompound.putInt("AttackDamage", this.attackDamage);
     }
 
     @Override

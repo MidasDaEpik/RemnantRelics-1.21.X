@@ -27,20 +27,20 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Firestorm extends Projectile {
-    public int Duration = 200;
-    public int EffectDuration = 40;
-    public boolean WitherSpore = false;
+    public int duration = 200;
+    public int effectDuration = 40;
+    public boolean witherSpore = false;
 
     public Firestorm(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public Firestorm(Level pLevel, LivingEntity pShooter, int pDuration, int pEffectDuration, boolean pWitherSpore) {
+    public Firestorm(Level pLevel, LivingEntity pShooter, int pduration, int peffectDuration, boolean pwitherSpore) {
         super(RREntities.FIRESTORM.get(), pLevel);
         this.setOwner(pShooter);
-        this.Duration = pDuration;
-        this.EffectDuration = pEffectDuration;
-        this.WitherSpore = pWitherSpore;
+        this.duration = pduration;
+        this.effectDuration = peffectDuration;
+        this.witherSpore = pwitherSpore;
     }
 
     @Override
@@ -57,8 +57,8 @@ public class Firestorm extends Projectile {
             if (this.level() instanceof ServerLevel pServerLevel) {
                 this.AttackTick(pServerLevel);
 
-                this.Duration = this.Duration - 1;
-                if (this.Duration <= 0) {
+                this.duration = this.duration - 1;
+                if (this.duration <= 0) {
                     this.discard();
                 }
             }
@@ -80,7 +80,7 @@ public class Firestorm extends Projectile {
     }
 
     protected void AttackTick(ServerLevel pServerLevel) {
-        if (this.WitherSpore) {
+        if (this.witherSpore) {
             pServerLevel.sendParticles(ParticleTypes.CRIMSON_SPORE, this.getX(), this.getY() + 0.25, this.getZ(), 2, 1.6, 1.6, 1.6, 0.02);
             pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
         } else {
@@ -88,26 +88,26 @@ public class Firestorm extends Projectile {
             pServerLevel.sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY() + 0.25, this.getZ(), 1, 1.6, 1.6, 1.6, 0.02);
         }
 
-        if (this.Duration % 20 == 0) {
+        if (this.duration % 20 == 0) {
             pServerLevel.playSeededSound(null, this.getX(), this.getY() + 0.25, this.getZ(), SoundEvents.BLAZE_SHOOT, SoundSource.NEUTRAL, 1f, 0.9f,0);
 
             final Vec3 AABBCenter = new Vec3(this.getX(), this.getY() + 0.25, this.getZ());
             List<LivingEntity> pFoundTarget = pServerLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(5d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
             for (LivingEntity pEntityIterator : pFoundTarget) {
                 if (pEntityIterator != this.getOwner()) {
-                    if (this.WitherSpore) {
-                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, this.EffectDuration, 2));
-                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
+                    if (this.witherSpore) {
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, this.effectDuration, 2));
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.effectDuration, 0));
                     } else {
-                        if (pEntityIterator.getRemainingFireTicks() < this.EffectDuration) {
-                            pEntityIterator.setRemainingFireTicks(this.EffectDuration);
+                        if (pEntityIterator.getRemainingFireTicks() < this.effectDuration) {
+                            pEntityIterator.setRemainingFireTicks(this.effectDuration);
                         }
-                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.EffectDuration, 0));
+                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.effectDuration, 0));
                     }
                 }
             }
 
-            if (this.WitherSpore) {
+            if (this.witherSpore) {
                 RRItemUtil.ParticleSphere(pServerLevel, new DustColorTransitionOptions(new Vector3f(0.772f,0.203f,0.223f), new Vector3f(0.482f,0f,0f), 0.9f), this.getX(), this.getY(), this.getZ(), 1);
             } else {
                 RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 1);
@@ -119,14 +119,14 @@ public class Firestorm extends Projectile {
     }
 
     public void readAdditionalSaveData(CompoundTag pCompound) {
-        this.Duration = pCompound.getInt("Duration");
-        this.EffectDuration = pCompound.getInt("EffectDuration");
-        this.WitherSpore = pCompound.getBoolean("WitherSpore");
+        this.duration = pCompound.getInt("Duration");
+        this.effectDuration = pCompound.getInt("EffectDuration");
+        this.witherSpore = pCompound.getBoolean("WitherSpore");
     }
 
     public void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putInt("Duration", this.Duration);
-        pCompound.putInt("EffectDuration", this.EffectDuration);
-        pCompound.putBoolean("WitherSpore", this.WitherSpore);
+        pCompound.putInt("Duration", this.duration);
+        pCompound.putInt("EffectDuration", this.effectDuration);
+        pCompound.putBoolean("WitherSpore", this.witherSpore);
     }
 }
