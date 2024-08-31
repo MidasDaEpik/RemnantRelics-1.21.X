@@ -1,6 +1,6 @@
 package com.midasdaepik.remnantrelics.item;
 
-import com.midasdaepik.remnantrelics.entity.DragonsBreath;
+import com.midasdaepik.remnantrelics.entity.DragonsRageBreath;
 import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
@@ -45,7 +45,7 @@ public class DragonsRage extends SwordItem {
             }
 
             public float getAttackDamageBonus() {
-                return 6f;
+                return 5f;
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
@@ -65,7 +65,7 @@ public class DragonsRage extends SwordItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  6, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.4, AttributeModifier.Operation.ADD_VALUE),
@@ -94,8 +94,8 @@ public class DragonsRage extends SwordItem {
         if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
                 int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-                if (RageCharge < 1200) {
-                    RageCharge = Mth.clamp(RageCharge + 100, 100, 1200);
+                if (RageCharge < 1800) {
+                    RageCharge = Mth.clamp(RageCharge + 120, 100, 1800);
                 }
                 pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
@@ -122,19 +122,19 @@ public class DragonsRage extends SwordItem {
         if (pLivingEntity instanceof Player pPlayer) {
             int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                if (pTimeUsing % 10 == 0) {
-                    RageCharge = Mth.clamp(RageCharge - 60, -100, 1200);
+                if (pTimeUsing % 8 == 0) {
+                    RageCharge = Mth.clamp(RageCharge - 120, 0, 1800);
                     pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                     PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
 
-                    if (RageCharge <= 0) {
+                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 40, 6);
+                    dragonsBreath.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
+                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.2f, 0.5f, 1.0f);
+                    pLevel.addFreshEntity(dragonsBreath);
+
+                    if (RageCharge < 120) {
                         pPlayer.stopUsingItem();
                     }
-
-                    DragonsBreath dragonsBreath = new DragonsBreath(pLevel, pLivingEntity, 60, 8);
-                    dragonsBreath.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
-                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.2f, 0.3f, 1.0f);
-                    pLevel.addFreshEntity(dragonsBreath);
                 }
 
             } else if (pLevel instanceof ClientLevel pClientLevel) {

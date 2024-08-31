@@ -4,15 +4,17 @@ import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateModel;
 import com.midasdaepik.remnantrelics.client.model.ElderChestplateRetractedModel;
 import com.midasdaepik.remnantrelics.renderer.entity.FirestormRenderer;
-import com.midasdaepik.remnantrelics.renderer.entity.DragonsBreathRenderer;
+import com.midasdaepik.remnantrelics.renderer.entity.DragonsRageBreathRenderer;
 import com.midasdaepik.remnantrelics.registries.RREntities;
 import com.midasdaepik.remnantrelics.registries.RRItemProperties;
 import com.midasdaepik.remnantrelics.registries.RRItems;
+import com.midasdaepik.remnantrelics.renderer.hud.WeaponAbilityHudOverlay;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -26,6 +28,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
@@ -43,8 +46,13 @@ public class ClientModEvents {
 
     @SubscribeEvent
     private static void entityRenderers(EntityRenderersEvent.RegisterRenderers pEvent) {
-        pEvent.registerEntityRenderer(RREntities.DRAGONS_BREATH.get(), DragonsBreathRenderer::new);
+        pEvent.registerEntityRenderer(RREntities.DRAGONS_RAGE_BREATH.get(), DragonsRageBreathRenderer::new);
         pEvent.registerEntityRenderer(RREntities.FIRESTORM.get(), FirestormRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterGuiLayersEvent(RegisterGuiLayersEvent pEvent) {
+        pEvent.registerAboveAll(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "weapon_ability_hud_overlay"), new WeaponAbilityHudOverlay(Minecraft.getInstance()));
     }
 
     @SubscribeEvent
@@ -56,7 +64,7 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onRegisterColorHandlersEventItem(RegisterColorHandlersEvent.Item pEvent) {
         pEvent.register(
-                (pItemStack, pTintIndex) ->  pTintIndex == 1 ? DyedItemColor.getOrDefault(pItemStack, 6448520) : -1,
+                (pItemStack, pTintIndex) -> pTintIndex == 1 ? DyedItemColor.getOrDefault(pItemStack, 6448520) : -1,
                 RRItems.ELDER_CHESTPLATE
         );
     }

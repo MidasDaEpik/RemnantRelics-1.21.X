@@ -29,23 +29,23 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class DragonsBreath extends Projectile {
-    public int Duration = 60;
-    public int AttackDamage = 8;
+public class DragonsRageBreath extends Projectile {
+    public int Duration = 40;
+    public int AttackDamage = 6;
 
-    public DragonsBreath(EntityType<? extends Projectile> pEntityType, Level pLevel) {
+    public DragonsRageBreath(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.noCulling = true;
     }
 
-    public DragonsBreath(Level pLevel, LivingEntity pShooter, int pDuration) {
-        super(RREntities.DRAGONS_BREATH.get(), pLevel);
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration) {
+        super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
         this.Duration = pDuration;
     }
 
-    public DragonsBreath(Level pLevel, LivingEntity pShooter, int pDuration, int pAttackDamage) {
-        super(RREntities.DRAGONS_BREATH.get(), pLevel);
+    public DragonsRageBreath(Level pLevel, LivingEntity pShooter, int pDuration, int pAttackDamage) {
+        super(RREntities.DRAGONS_RAGE_BREATH.get(), pLevel);
         this.setOwner(pShooter);
         this.Duration = pDuration;
         this.AttackDamage = pAttackDamage;
@@ -73,12 +73,10 @@ public class DragonsBreath extends Projectile {
             }
 
             if (this.level() instanceof ClientLevel pClientLevel && this.Duration % 4 == 0) {
-                for (int Loop = 1; Loop <= 2; Loop++) {
-                    int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
-                    float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
+                int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
+                float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
 
-                    pClientLevel.addParticle(ParticleTypes.DRAGON_BREATH, this.getX() + Mth.cos(XZDegrees) * XZRange, this.getY() + Mth.nextFloat(RandomSource.create(), 0.25f, 0.75f), this.getZ() + Math.sin(XZDegrees) * XZRange, this.getDeltaMovement().x * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().y * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().z * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f));
-                }
+                pClientLevel.addParticle(ParticleTypes.DRAGON_BREATH, this.getX() + Mth.cos(XZDegrees) * XZRange, this.getY() + Mth.nextFloat(RandomSource.create(), 0.25f, 0.75f), this.getZ() + Math.sin(XZDegrees) * XZRange, this.getDeltaMovement().x * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().y * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().z * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f));
             }
 
             HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity, ClipContext.Block.COLLIDER);

@@ -3,10 +3,7 @@ package com.midasdaepik.remnantrelics.event;
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RRItems;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
@@ -19,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -91,39 +87,10 @@ public class GameEvents {
             pPlayer.setData(TIME_SINCE_LAST_ATTACK, pPlayer.getData(TIME_SINCE_LAST_ATTACK) + 1);
 
             int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-            if (TimeSinceLastAttack >= 100 && RageCharge > -100) {
-                RageCharge = Mth.clamp(RageCharge - 3, -100, 1200);
+            if (TimeSinceLastAttack >= 200 && RageCharge > -100) {
+                RageCharge = Mth.clamp(RageCharge - 6, -100, 1800);
                 pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
-            }
-        }
-
-        if (pLevel instanceof ClientLevel pClientLevel) {
-            ItemStack pMainHandItem = pPlayer.getMainHandItem();
-
-            int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-            if (pMainHandItem.getItem() == RRItems.DRAGONS_RAGE.get() && RageCharge > -100) {
-                int PercentageRageCharge = Mth.clamp(Mth.ceil((float) RageCharge / 100), 0, 12);
-
-                String Full_Charges = "";
-                for (int Loop = 1; Loop <= PercentageRageCharge; Loop++) {
-                    if (Loop == 1) {
-                        Full_Charges = Full_Charges.concat("\uD83D\uDDE1");
-                    } else {
-                        Full_Charges = Full_Charges.concat(" \uD83D\uDDE1");
-                    }
-                }
-
-                String Blank_Charges = "";
-                for (int Loop = 1; Loop <= 12 - PercentageRageCharge; Loop++) {
-                    if (PercentageRageCharge == 0 && Loop == 1) {
-                        Blank_Charges = Blank_Charges.concat("\uD83D\uDDE1");
-                    } else {
-                        Blank_Charges = Blank_Charges.concat(" \uD83D\uDDE1");
-                    }
-                }
-
-                pPlayer.displayClientMessage(Component.literal(Full_Charges).withColor(13719531).append(Component.literal(Blank_Charges).withStyle(ChatFormatting.DARK_GRAY)), true);
             }
         }
     }

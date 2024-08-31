@@ -3,7 +3,7 @@ package com.midasdaepik.remnantrelics.registries;
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.entity.Firestorm;
 import com.midasdaepik.remnantrelics.entity.NoDamageFireball;
-import com.midasdaepik.remnantrelics.entity.DragonsBreath;
+import com.midasdaepik.remnantrelics.entity.DragonsRageBreath;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -20,9 +20,9 @@ public class RREntities {
             () -> EntityType.Builder.<NoDamageFireball>of(NoDamageFireball::new, MobCategory.MISC)
                     .sized(0.5f,0.5f).clientTrackingRange(4).updateInterval(10).build("no_damage_fireball"));
 
-    public static final Supplier<EntityType<DragonsBreath>> DRAGONS_BREATH = ENTITY_TYPES.register("dragons_breath",
-            () -> EntityType.Builder.<DragonsBreath>of(DragonsBreath::new, MobCategory.MISC)
-                    .sized(1f,1f).clientTrackingRange(4).updateInterval(10).build("dragons_breath"));
+    public static final Supplier<EntityType<DragonsRageBreath>> DRAGONS_RAGE_BREATH = ENTITY_TYPES.register("dragons_rage_breath",
+            () -> EntityType.Builder.<DragonsRageBreath>of(DragonsRageBreath::new, MobCategory.MISC)
+                    .sized(1f,1f).clientTrackingRange(4).updateInterval(10).build("dragons_rage_breath"));
 
     public static final Supplier<EntityType<Firestorm>> FIRESTORM = ENTITY_TYPES.register("firestorm",
             () -> EntityType.Builder.<Firestorm>of(Firestorm::new, MobCategory.MISC)

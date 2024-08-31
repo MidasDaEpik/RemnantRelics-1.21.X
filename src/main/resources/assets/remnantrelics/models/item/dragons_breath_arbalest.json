@@ -13,37 +13,23 @@
     {
       "predicate": {
         "pulling": 1,
-        "pull": 0.2
+        "pull": 0.3
       },
       "model": "remnantrelics:item/dragons_breath_arbalest/pulling_1"
     },
     {
       "predicate": {
         "pulling": 1,
-        "pull": 0.45
+        "pull": 0.65
       },
       "model": "remnantrelics:item/dragons_breath_arbalest/pulling_2"
     },
     {
       "predicate": {
         "pulling": 1,
-        "pull": 0.7
+        "pull": 1.0
       },
       "model": "remnantrelics:item/dragons_breath_arbalest/pulling_3"
-    },
-    {
-      "predicate": {
-        "pulling": 1,
-        "pull": 0.9
-      },
-      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_4"
-    },
-    {
-      "predicate": {
-        "pulling": 1,
-        "pull": 1
-      },
-      "model": "remnantrelics:item/dragons_breath_arbalest/pulling_5"
     },
     {
       "predicate": {
