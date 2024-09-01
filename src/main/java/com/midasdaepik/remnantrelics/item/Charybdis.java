@@ -2,7 +2,6 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.networking.CharybdisSyncS2CPacket;
-import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -48,7 +47,6 @@ import java.util.List;
 import java.util.Set;
 
 import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.CHARYBDIS_CHARGE;
-import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.DRAGONS_RAGE_CHARGE;
 
 public class Charybdis extends SwordItem {
     public Charybdis(Properties pProperties) {
@@ -124,8 +122,8 @@ public class Charybdis extends SwordItem {
         if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
                 int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
-                if (CharybdisCharge < 1300) {
-                    CharybdisCharge = Mth.clamp(CharybdisCharge + 50, 0, 1300);
+                if (CharybdisCharge < 1400) {
+                    CharybdisCharge = Mth.clamp(CharybdisCharge + 50, 0, 1400);
                 }
                 pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
@@ -143,7 +141,7 @@ public class Charybdis extends SwordItem {
             int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
 
             if (pLevel instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                CharybdisCharge = Mth.clamp(CharybdisCharge - 4, 0, 1300);
+                CharybdisCharge = Mth.clamp(CharybdisCharge - 5, 0, 1400);
                 pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
 

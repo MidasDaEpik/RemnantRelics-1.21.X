@@ -95,7 +95,7 @@ public class GameEvents {
 
             int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
             if (TimeSinceLastAttack >= 400 && CharybdisCharge > 0) {
-                CharybdisCharge = Mth.clamp(CharybdisCharge - 2, 0, 1300);
+                CharybdisCharge = Mth.clamp(CharybdisCharge - 2, 0, 1400);
                 pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
             }

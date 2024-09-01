@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing_trim",
-  "addition": {
-    "tag": "minecraft:trim_materials"
+  "template": {
+    "item": "remnantrelics:wither_armor_trim_smithing_template"
   },
   "base": {
     "tag": "minecraft:trimmable_armor"
   },
-  "template": {
-    "item": "remnantrelics:wither_armor_trim_smithing_template"
+  "addition": {
+    "tag": "minecraft:trim_materials"
   }
 }
