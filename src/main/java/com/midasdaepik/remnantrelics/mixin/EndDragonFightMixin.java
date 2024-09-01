@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EndDragonFight.class)
-public class EnderDragonMixin {
+public class EndDragonFightMixin {
     @Inject(method = "setDragonKilled", at = @At("HEAD"))
     private void spawnBossLoot(EnderDragon pDragon, CallbackInfo pCallbackInfo) {
         Level pLevel = pDragon.level();
