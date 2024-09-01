@@ -93,22 +93,6 @@ public class DragonsRage extends SwordItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-            if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-                if (RageCharge < 1800) {
-                    RageCharge = Mth.clamp(RageCharge + 120, 100, 1800);
-                }
-                pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
-                PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
-            }
-        }
-
-        return super.hurtEnemy(pStack, pTarget, pAttacker);
-    }
-
-    @Override
     public void releaseUsing(ItemStack pItemStack, Level pLevel, LivingEntity pLivingEntity, int pTimeLeft) {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
         if (pLivingEntity instanceof Player pPlayer) {
@@ -119,20 +103,37 @@ public class DragonsRage extends SwordItem {
     }
 
     @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
+            if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
+                int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
+                if (RageCharge < 1800) {
+                    RageCharge = Mth.clamp(RageCharge + 120, 0, 1800);
+                }
+                pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
+                PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
+            }
+        }
+
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
+    }
+
+    @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pItemStack, int pTimeLeft) {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
 
         if (pLivingEntity instanceof Player pPlayer) {
             int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
+
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                if (pTimeUsing % 8 == 0) {
-                    RageCharge = Mth.clamp(RageCharge - 120, 0, 1800);
+                if (pTimeUsing % 5 == 0) {
+                    RageCharge = Mth.clamp(RageCharge - 75, 0, 1800);
                     pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                     PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
 
-                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 40, 8);
+                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 30, 6);
                     dragonsBreath.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
-                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.1f, 0.3f, 1.5f);
+                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.1f, 0.7f, 1.5f);
                     pLevel.addFreshEntity(dragonsBreath);
 
                     pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, SoundEvents.ENDER_DRAGON_SHOOT, SoundSource.PLAYERS, 2f, 1.2f,0);
@@ -143,7 +144,7 @@ public class DragonsRage extends SwordItem {
                 }
 
             } else if (pLevel instanceof ClientLevel pClientLevel) {
-                if (RageCharge <= 0) {
+                if (RageCharge < 120) {
                     pPlayer.stopUsingItem();
                 }
             }

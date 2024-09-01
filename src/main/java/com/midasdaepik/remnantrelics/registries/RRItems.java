@@ -12,14 +12,14 @@ public class RRItems {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(RemnantRelics.MOD_ID);
 
-    public static final DeferredItem<Item> BLUEPRINT_SCROLL_ELDER = ITEMS.register("blueprint_scroll_elder",
-            UpgradeTemplateItem::createScrollElder);
-
     public static final DeferredItem<Item> CUTLASS = ITEMS.register("cutlass",
             () -> new Cutlass(new Item.Properties()));
 
     public static final DeferredItem<Item> ELDER_SPINE = ITEMS.register("elder_spine",
             () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_ELDER.getValue())));
+
+    public static final DeferredItem<Item> BLUEPRINT_SCROLL_ELDER = ITEMS.register("elder_upgrade_smithing_template",
+            UpgradeTemplateItem::createElderUpgradeTemplate);
 
     public static final DeferredItem<Item> CHARYBDIS = ITEMS.register("charybdis",
             () -> new Charybdis(new Item.Properties()));

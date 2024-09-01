@@ -1,6 +1,7 @@
 package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.networking.CharybdisSyncS2CPacket;
 import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.core.registries.Registries;
@@ -26,8 +27,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 
-import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.DRAGONS_RAGE_CHARGE;
-import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.TIME_SINCE_LAST_ATTACK;
+import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.*;
 
 @EventBusSubscriber(modid = RemnantRelics.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class GameEvents {
@@ -87,10 +87,17 @@ public class GameEvents {
             pPlayer.setData(TIME_SINCE_LAST_ATTACK, pPlayer.getData(TIME_SINCE_LAST_ATTACK) + 1);
 
             int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-            if (TimeSinceLastAttack >= 200 && RageCharge > -100) {
-                RageCharge = Mth.clamp(RageCharge - 6, -100, 1800);
+            if (TimeSinceLastAttack >= 200 && RageCharge > 0) {
+                RageCharge = Mth.clamp(RageCharge - 6, 0, 1800);
                 pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                 PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
+            }
+
+            int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
+            if (TimeSinceLastAttack >= 400 && CharybdisCharge > 0) {
+                CharybdisCharge = Mth.clamp(CharybdisCharge - 2, 0, 1300);
+                pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
+                PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
             }
         }
     }
@@ -102,6 +109,7 @@ public class GameEvents {
 
         if (pLevel instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
             PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(pServerPlayer.getData(DRAGONS_RAGE_CHARGE)));
+            PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(pServerPlayer.getData(CHARYBDIS_CHARGE)));
         }
     }
 }

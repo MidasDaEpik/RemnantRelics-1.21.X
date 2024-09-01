@@ -12,9 +12,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 
+import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.CHARYBDIS_CHARGE;
 import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.DRAGONS_RAGE_CHARGE;
 
 public class WeaponAbilityHudOverlay implements LayeredDraw.Layer {
+	private static final ResourceLocation CHARYBDIS_BACKGROUND_SPRITE = ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "hud/charybdis_bar_background");
+	private static final ResourceLocation CHARYBDIS_PROGRESS_SPRITE = ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "hud/charybdis_bar_progress");
+
 	private static final ResourceLocation DRAGONS_RAGE_BACKGROUND_SPRITE = ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "hud/dragons_rage_bar_background");
 	private static final ResourceLocation DRAGONS_RAGE_PROGRESS_SPRITE = ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "hud/dragons_rage_bar_progress");
 	private static final ResourceLocation DRAGONS_RAGE_FULL_0_SPRITE = ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "hud/dragons_rage_bar_full_0");
@@ -33,40 +37,57 @@ public class WeaponAbilityHudOverlay implements LayeredDraw.Layer {
 	public void render(GuiGraphics pGuiGraphics, DeltaTracker pDeltaTracker) {
 		Player pPlayer = this.minecraft.player;
 		ClientLevel pLevel = this.minecraft.level;
-		if (pPlayer != null && pPlayer.getMainHandItem().getItem() == RRItems.DRAGONS_RAGE.get() && pLevel != null) {
-			int x = pGuiGraphics.guiWidth() / 2;
-			int y = pGuiGraphics.guiHeight() - 39 - 32;
-			int DragonsRageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-			int height = 30 - Mth.floor(DragonsRageCharge / 100f);
-			if (DragonsRageCharge > 0) {
-				height -= 1;
-			}
-			this.minecraft.getProfiler().push("dragons_rage_hud_overlay");
+		if (pPlayer != null && pLevel != null) {
+			if (pPlayer.getMainHandItem().getItem() == RRItems.DRAGONS_RAGE.get()) {
+				int x = pGuiGraphics.guiWidth() / 2;
+				int y = pGuiGraphics.guiHeight() - 39 - 32;
+				int DragonsRageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
+				int height = 30 - Mth.clamp(Mth.floor(DragonsRageCharge / 100f), 0, 18);
+				if (DragonsRageCharge > 0) {
+					height -= 1;
+				}
+				this.minecraft.getProfiler().push("weapon_ability_hud_overlay");
 
-			RenderSystem.enableBlend();
-			if (DragonsRageCharge == 1800) {
-				double Timer = pLevel.getGameTime();
-				if (Timer % 29 == 0 || Timer % 29 == 1) {
-					pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_0_SPRITE, x - 10, y, 20, 32);
-				} else if (Timer % 29 == 2 || Timer % 29 == 3) {
-					pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_1_SPRITE, x - 10, y, 20, 32);
-				} else if (Timer % 29 == 4 || Timer % 29 == 5) {
-					pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_2_SPRITE, x - 10, y, 20, 32);
-				} else if (Timer % 29 == 6 || Timer % 29 == 7) {
-					pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_3_SPRITE, x - 10, y, 20, 32);
-				} else if (Timer % 29 == 8 || Timer % 29 == 9) {
-					pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_4_SPRITE, x - 10, y, 20, 32);
+				RenderSystem.enableBlend();
+				if (DragonsRageCharge == 1800) {
+					double Timer = pLevel.getGameTime();
+					if (Timer % 29 == 0 || Timer % 29 == 1) {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_0_SPRITE, x - 10, y, 20, 32);
+					} else if (Timer % 29 == 2 || Timer % 29 == 3) {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_1_SPRITE, x - 10, y, 20, 32);
+					} else if (Timer % 29 == 4 || Timer % 29 == 5) {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_2_SPRITE, x - 10, y, 20, 32);
+					} else if (Timer % 29 == 6 || Timer % 29 == 7) {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_3_SPRITE, x - 10, y, 20, 32);
+					} else if (Timer % 29 == 8 || Timer % 29 == 9) {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_FULL_4_SPRITE, x - 10, y, 20, 32);
+					} else {
+						pGuiGraphics.blitSprite(DRAGONS_RAGE_PROGRESS_SPRITE, x - 8, y, 16, 32);
+					}
+
 				} else {
 					pGuiGraphics.blitSprite(DRAGONS_RAGE_PROGRESS_SPRITE, x - 8, y, 16, 32);
+					pGuiGraphics.blitSprite(DRAGONS_RAGE_BACKGROUND_SPRITE, 16, 32, 0, 0, x - 8, y, 16, height);
 				}
+				RenderSystem.disableBlend();
 
-			} else {
-				pGuiGraphics.blitSprite(DRAGONS_RAGE_PROGRESS_SPRITE, x - 8, y, 16, 32);
-				pGuiGraphics.blitSprite(DRAGONS_RAGE_BACKGROUND_SPRITE, 16, 32, 0, 0, x - 8, y, 16, height);
+				this.minecraft.getProfiler().pop();
+
+			} else if (pPlayer.getMainHandItem().getItem() == RRItems.CHARYBDIS.get()) {
+				int x = pGuiGraphics.guiWidth() / 2;
+				int y = pGuiGraphics.guiHeight() - 39 - 16;
+				int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
+				int height = 14 - Mth.clamp(Mth.floor(CharybdisCharge / 100f), 0, 13);
+
+				this.minecraft.getProfiler().push("weapon_ability_hud_overlay");
+
+				RenderSystem.enableBlend();
+				pGuiGraphics.blitSprite(CHARYBDIS_PROGRESS_SPRITE, x - 8, y, 16, 16);
+				pGuiGraphics.blitSprite(CHARYBDIS_BACKGROUND_SPRITE, 16, 16, 0, 0, x - 8, y, 16, height);
+				RenderSystem.disableBlend();
+
+				this.minecraft.getProfiler().pop();
 			}
-			RenderSystem.disableBlend();
-
-			this.minecraft.getProfiler().pop();
 		}
 	}
 }

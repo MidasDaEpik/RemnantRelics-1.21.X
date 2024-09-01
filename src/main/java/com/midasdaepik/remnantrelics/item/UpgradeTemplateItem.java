@@ -16,11 +16,11 @@ public class UpgradeTemplateItem extends SmithingTemplateItem {
     private static final Component WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.base_slot_description");
     private static final Component WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.additions_slot_description");
 
-    private static final Component BLUEPRINT_SCROLL_ELDER = Component.translatable("item.remnantrelics.blueprint_scroll_elder_desc").withStyle(ChatFormatting.GRAY);
-    private static final Component BLUEPRINT_SCROLL_ELDER_APPLIES_TO = Component.translatable("smithing_template.blueprint_scroll_elder.applies_to").withStyle(ChatFormatting.BLUE);
-    private static final Component BLUEPRINT_SCROLL_ELDER_INGREDIENTS = Component.translatable("smithing_template.blueprint_scroll_elder.ingredients").withStyle(ChatFormatting.BLUE);
-    private static final Component BLUEPRINT_SCROLL_ELDER_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_elder.base_slot_description");
-    private static final Component BLUEPRINT_SCROLL_ELDER_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.blueprint_scroll_elder.additions_slot_description");
+    private static final Component ELDER_UPGRADE = Component.translatable("item.remnantrelics.elder_upgrade_smithing_template_desc").withStyle(ChatFormatting.GRAY);
+    private static final Component ELDER_UPGRADE_APPLIES_TO = Component.translatable("smithing_template.elder_upgrade_smithing_template.applies_to").withStyle(ChatFormatting.BLUE);
+    private static final Component ELDER_UPGRADE_INGREDIENTS = Component.translatable("smithing_template.elder_upgrade_smithing_template.ingredients").withStyle(ChatFormatting.BLUE);
+    private static final Component ELDER_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.elder_upgrade_smithing_template.base_slot_description");
+    private static final Component ELDER_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.elder_upgrade_smithing_template.additions_slot_description");
 
     private static final ResourceLocation EMPTY_SLOT_HELMET = ResourceLocation.parse("item/empty_armor_slot_helmet");
     private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = ResourceLocation.parse("item/empty_armor_slot_chestplate");
@@ -59,15 +59,15 @@ public class UpgradeTemplateItem extends SmithingTemplateItem {
         return List.of(EMPTY_SLOT_NETHER_STAR);
     }
 
-    public static UpgradeTemplateItem createScrollElder() {
-        return new UpgradeTemplateItem(BLUEPRINT_SCROLL_ELDER_APPLIES_TO, BLUEPRINT_SCROLL_ELDER_INGREDIENTS, BLUEPRINT_SCROLL_ELDER, BLUEPRINT_SCROLL_ELDER_BASE_SLOT_DESCRIPTION, BLUEPRINT_SCROLL_ELDER_ADDITIONS_SLOT_DESCRIPTION, createBlueprintScrollElderIconList(), createBlueprintScrollElderMaterialList());
+    public static UpgradeTemplateItem createElderUpgradeTemplate() {
+        return new UpgradeTemplateItem(ELDER_UPGRADE_APPLIES_TO, ELDER_UPGRADE_INGREDIENTS, ELDER_UPGRADE, ELDER_UPGRADE_BASE_SLOT_DESCRIPTION, ELDER_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createElderUpgradeIconList(), createElderUpgradeMaterialList());
     }
 
-    private static List<ResourceLocation> createBlueprintScrollElderIconList() {
+    private static List<ResourceLocation> createElderUpgradeIconList() {
         return List.of(EMPTY_SLOT_SWORD, EMPTY_SLOT_CHESTPLATE);
     }
 
-    private static List<ResourceLocation> createBlueprintScrollElderMaterialList() {
+    private static List<ResourceLocation> createElderUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_ELDER_SPINE);
     }
 

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pPp",
+    "PHP",
+    "pPp"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "P": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "p": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:elder_upgrade_smithing_template"
+  }
+}

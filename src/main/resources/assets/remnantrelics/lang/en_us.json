@@ -4,17 +4,18 @@
 
   "item.remnantrelics.two_handed": "§7This weapon's capabilities are reduced if any items are in the user's offhand.",
 
-  "item.remnantrelics.blueprint_scroll_elder": "Ancient Scroll",
-  "item.remnantrelics.blueprint_scroll_elder_desc": "Elder Blueprints",
-
   "item.remnantrelics.cutlass": "Cutlass",
 
   "item.remnantrelics.elder_spine": "Elder Spine",
 
+  "item.remnantrelics.elder_upgrade_smithing_template": "Ancient Scroll",
+  "item.remnantrelics.elder_upgrade_smithing_template_desc": "Elder Blueprints",
+
   "item.remnantrelics.charybdis": "Charybdis",
-  "item.remnantrelics.charybdis.shift_desc_1": "§6[Use] §7conjures a maelstrom around the user,",
-  "item.remnantrelics.charybdis.shift_desc_2": "§7dealing damage to targets near the center.",
-  "item.remnantrelics.charybdis.shift_desc_3": "§82x Use Time Cooldown",
+  "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting enemies.",
+
+  "item.remnantrelics.charybdis.shift_desc_2": "§6[Use] §7consumes §3Vortex §7to conjure a maelstrom around the user,",
+  "item.remnantrelics.charybdis.shift_desc_3": "§7pulling nearby entities dealing damage to targets near the center.",
 
   "item.remnantrelics.elder_chestplate": "Elder Chestplate",
   "item.remnantrelics.elder_chestplate.shift_desc_1": "§7Reflects a portion of damage taken by the user.",
@@ -227,15 +228,15 @@
 
 
 
+  "smithing_template.elder_upgrade_smithing_template.applies_to": "Cutlass, Diamond Chestplate",
+  "smithing_template.elder_upgrade_smithing_template.ingredients": "Elder Spine",
+  "smithing_template.elder_upgrade_smithing_template.base_slot_description": "Add Cutlass, or Diamond Chestplate",
+  "smithing_template.elder_upgrade_smithing_template.additions_slot_description": "Add Elder Spine",
+
   "smithing_template.witherblade_upgrade_smithing_template.applies_to": "Witherblade Precursors",
   "smithing_template.witherblade_upgrade_smithing_template.ingredients": "Witherblade",
-  "smithing_template.witherblade_upgrade_smithing_template.base_slot_description": "Add Crimson Blazeblade, Warped Rapier, or Obsidian Bulwark",
+  "smithing_template.witherblade_upgrade_smithing_template.base_slot_description": "Add Firestorm Katana, Obsidian Bulwark, or Warped Rapier",
   "smithing_template.witherblade_upgrade_smithing_template.additions_slot_description": "Add Witherblade",
-
-  "smithing_template.blueprint_scroll_elder.applies_to": "Cutlass, Diamond Chestplate",
-  "smithing_template.blueprint_scroll_elder.ingredients": "Elder Spine",
-  "smithing_template.blueprint_scroll_elder.base_slot_description": "Add Cutlass, or Diamond Chestplate",
-  "smithing_template.blueprint_scroll_elder.additions_slot_description": "Add Elder Spine",
 
 
 
