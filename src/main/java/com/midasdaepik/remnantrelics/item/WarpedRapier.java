@@ -102,14 +102,12 @@ public class WarpedRapier extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
 
                 pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
-            }
 
-            BlockHitResult raytrace = RRItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
-            BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
-            pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
-            pLivingEntity.fallDistance = pLivingEntity.fallDistance - 5.0F;
+                BlockHitResult raytrace = RRItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+                BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
+                pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
+                pLivingEntity.fallDistance = pLivingEntity.fallDistance - 5.0F;
 
-            if (pLevel instanceof ServerLevel pServerLevel) {
                 pServerLevel.sendParticles(ParticleTypes.REVERSE_PORTAL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.5, 0.5, 0.5, 0.02);
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8, 0.5, 0.5, 0.5, 0.01);
                 pServerLevel.sendParticles(ParticleTypes.FLASH, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0, 0, 0, 0);
@@ -117,9 +115,9 @@ public class WarpedRapier extends SwordItem {
                 pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
             }
 
-            pItemStack.hurtAndBreak(3, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-
             if (pLivingEntity instanceof Player pPlayer) {
+                pItemStack.hurtAndBreak(3, pLivingEntity, pLivingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 160);

@@ -73,8 +73,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
     }
 
     //Modify Charge Time Here
-    public static int getChargeDuration(ItemStack stack, LivingEntity shooter) {
-        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 2.0F);
+    public static int getChargeDuration(ItemStack stack, LivingEntity pLivingEntity) {
+        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, pLivingEntity, 2.5F);
         return Mth.floor(f * 20.0F);
     }
 
@@ -106,8 +106,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
         }
     }
 
-    private static boolean tryLoadProjectiles(LivingEntity shooter, ItemStack crossbowStack) {
-        List<ItemStack> list = draw(crossbowStack, shooter.getProjectile(crossbowStack), shooter);
+    private static boolean tryLoadProjectiles(LivingEntity pLivingEntity, ItemStack crossbowStack) {
+        List<ItemStack> list = draw(crossbowStack, pLivingEntity.getProjectile(crossbowStack), pLivingEntity);
         if (!list.isEmpty()) {
             crossbowStack.set(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.of(list));
             return true;
@@ -123,26 +123,27 @@ public class DragonsBreathArbalest extends CrossbowItem {
 
     //Modify Firing Sound Here
     public void performShooting(
-            Level level, LivingEntity shooter, InteractionHand hand, ItemStack weapon, float velocity, float inaccuracy, @Nullable LivingEntity target
+            Level level, LivingEntity pLivingEntity, InteractionHand pHand, ItemStack pItemStack, float velocity, float inaccuracy, @Nullable LivingEntity target
     ) {
         if (level instanceof ServerLevel serverlevel) {
-            if (shooter instanceof Player player && net.neoforged.neoforge.event.EventHooks.onArrowLoose(weapon, shooter.level(), player, 1, true) < 0) return;
-            ChargedProjectiles chargedprojectiles = weapon.set(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY);
+            if (pLivingEntity instanceof Player pPlayer && net.neoforged.neoforge.event.EventHooks.onArrowLoose(pItemStack, pLivingEntity.level(), pPlayer, 1, true) < 0) return;
+            ChargedProjectiles chargedprojectiles = pItemStack.set(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY);
             if (chargedprojectiles != null && !chargedprojectiles.isEmpty()) {
-                this.shoot(serverlevel, shooter, hand, weapon, chargedprojectiles.getItems(), velocity, inaccuracy, shooter instanceof Player, target);
-                if (shooter instanceof ServerPlayer serverplayer) {
-                    CriteriaTriggers.SHOT_CROSSBOW.trigger(serverplayer, weapon);
-                    serverplayer.awardStat(Stats.ITEM_USED.get(weapon.getItem()));
+                this.shoot(serverlevel, pLivingEntity, pHand, pItemStack, chargedprojectiles.getItems(), velocity, inaccuracy, pLivingEntity instanceof Player, target);
+                if (pLivingEntity instanceof ServerPlayer pServerPlayer) {
+                    CriteriaTriggers.SHOT_CROSSBOW.trigger(pServerPlayer, pItemStack);
+                    pServerPlayer.awardStat(Stats.ITEM_USED.get(pItemStack.getItem()));
+                    pServerPlayer.getCooldowns().addCooldown(this, 20);
                 }
             }
         }
     }
 
-    private static Vector3f getProjectileShotVector(LivingEntity shooter, Vec3 distance, float angle) {
+    private static Vector3f getProjectileShotVector(LivingEntity pLivingEntity, Vec3 distance, float angle) {
         Vector3f vector3f = distance.toVector3f().normalize();
         Vector3f vector3f1 = new Vector3f(vector3f).cross(new Vector3f(0.0F, 1.0F, 0.0F));
         if ((double)vector3f1.lengthSquared() <= 1.0E-7) {
-            Vec3 vec3 = shooter.getUpVector(1.0F);
+            Vec3 vec3 = pLivingEntity.getUpVector(1.0F);
             vector3f1 = new Vector3f(vector3f).cross(vec3.toVector3f());
         }
 
@@ -152,8 +153,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
 
     //Modify Projectile Here
     @Override
-    protected Projectile createProjectile(Level level, LivingEntity shooter, ItemStack weapon, ItemStack ammo, boolean isCrit) {
-        Projectile projectile = super.createProjectile(level, shooter, weapon, ammo, isCrit);
+    protected Projectile createProjectile(Level level, LivingEntity pLivingEntity, ItemStack pItemStack, ItemStack ammo, boolean isCrit) {
+        Projectile projectile = super.createProjectile(level, pLivingEntity, pItemStack, ammo, isCrit);
         if (projectile instanceof AbstractArrow abstractarrow) {
             abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 1.6);
             abstractarrow.setData(SPECIAL_ARROW_TYPE, 0);
@@ -163,25 +164,25 @@ public class DragonsBreathArbalest extends CrossbowItem {
 
     @Override
     protected void shootProjectile(
-            LivingEntity shooter, Projectile projectile, int index, float velocity, float inaccuracy, float angle, @Nullable LivingEntity target
+            LivingEntity pLivingEntity, Projectile projectile, int index, float velocity, float inaccuracy, float angle, @Nullable LivingEntity target
     ) {
         Vector3f vector3f;
         if (target != null) {
-            double d0 = target.getX() - shooter.getX();
-            double d1 = target.getZ() - shooter.getZ();
+            double d0 = target.getX() - pLivingEntity.getX();
+            double d1 = target.getZ() - pLivingEntity.getZ();
             double d2 = Math.sqrt(d0 * d0 + d1 * d1);
             double d3 = target.getY(0.3333333333333333) - projectile.getY() + d2 * 0.2F;
-            vector3f = getProjectileShotVector(shooter, new Vec3(d0, d3, d1), angle);
+            vector3f = getProjectileShotVector(pLivingEntity, new Vec3(d0, d3, d1), angle);
         } else {
-            Vec3 vec3 = shooter.getUpVector(1.0F);
+            Vec3 vec3 = pLivingEntity.getUpVector(1.0F);
             Quaternionf quaternionf = new Quaternionf().setAngleAxis((double)(angle * (float) (Math.PI / 180.0)), vec3.x, vec3.y, vec3.z);
-            Vec3 vec31 = shooter.getViewVector(1.0F);
+            Vec3 vec31 = pLivingEntity.getViewVector(1.0F);
             vector3f = vec31.toVector3f().rotate(quaternionf);
         }
 
         projectile.shoot(vector3f.x(), vector3f.y(), vector3f.z(), velocity, inaccuracy);
-        float f = getShotPitch(shooter.getRandom(), index);
-        shooter.level().playSound(null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.CROSSBOW_SHOOT, shooter.getSoundSource(), 1.0F, f);
+        float f = getShotPitch(pLivingEntity.getRandom(), index);
+        pLivingEntity.level().playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), SoundEvents.CROSSBOW_SHOOT, pLivingEntity.getSoundSource(), 1.0F, f);
     }
 
     private static float getShotPitch(RandomSource random, int index) {
@@ -193,8 +194,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
         return 1.0F / (random.nextFloat() * 0.5F + 1.8F) + f;
     }
 
-    private static float getPowerForTime(int timeLeft, ItemStack stack, LivingEntity shooter) {
-        float f = (float)timeLeft / (float)getChargeDuration(stack, shooter);
+    private static float getPowerForTime(int timeLeft, ItemStack stack, LivingEntity pLivingEntity) {
+        float f = (float)timeLeft / (float)getChargeDuration(stack, pLivingEntity);
         if (f > 1.0F) {
             f = 1.0F;
         }
@@ -240,16 +241,16 @@ public class DragonsBreathArbalest extends CrossbowItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
+    public InteractionResultHolder<ItemStack> use(Level level, Player pPlayer, InteractionHand pHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
         ChargedProjectiles chargedprojectiles = itemstack.get(DataComponents.CHARGED_PROJECTILES);
         if (chargedprojectiles != null && !chargedprojectiles.isEmpty()) {
-            this.performShooting(level, player, hand, itemstack, getShootingPower(chargedprojectiles), 1.0F, null);
+            this.performShooting(level, pPlayer, pHand, itemstack, getShootingPower(chargedprojectiles), 1.0F, null);
             return InteractionResultHolder.consume(itemstack);
-        } else if (!player.getProjectile(itemstack).isEmpty()) {
+        } else if (!pPlayer.getProjectile(itemstack).isEmpty()) {
             this.startSoundPlayed = false;
             this.midLoadSoundPlayed = false;
-            player.startUsingItem(hand);
+            pPlayer.startUsingItem(pHand);
             return InteractionResultHolder.consume(itemstack);
         } else {
             return InteractionResultHolder.fail(itemstack);
@@ -261,7 +262,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
         if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_2"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_4"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_5"));
@@ -270,7 +271,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
         }
         ChargedProjectiles pChargedProjectiles = pItemstack.get(DataComponents.CHARGED_PROJECTILES);
         if ((pChargedProjectiles != null && !pChargedProjectiles.isEmpty()) || pItemstack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemstack, pContext, pTooltipComponents, pIsAdvanced);
     }

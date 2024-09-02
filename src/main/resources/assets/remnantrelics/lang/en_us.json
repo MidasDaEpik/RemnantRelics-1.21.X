@@ -19,7 +19,7 @@
 
   "item.remnantrelics.elder_chestplate": "Elder Chestplate",
   "item.remnantrelics.elder_chestplate.shift_desc_1": "§7Reflects a portion of damage taken by the user.",
-  "item.remnantrelics.elder_chestplate.shift_desc_2": "§84s Cooldown",
+  "item.remnantrelics.elder_chestplate.shift_desc_2": "§82s Cooldown",
 
   "item.remnantrelics.whisperwind": "Whisperwind",
   "item.remnantrelics.whisperwind.shift_desc_1": "§7Has increased draw speed but decreased range, and damage.",
@@ -161,7 +161,7 @@
 
   "item.remnantrelics.dragons_breath_arbalest.shift_desc_3": "§6[Attack] §7detonates nearby dragon breath clouds,",
   "item.remnantrelics.dragons_breath_arbalest.shift_desc_4": "§7launching targets up and applying §5Plunging§7.",
-  "item.remnantrelics.dragons_breath_arbalest.shift_desc_5": "§85s Cooldown",
+  "item.remnantrelics.dragons_breath_arbalest.shift_desc_5": "§84s Cooldown",
 
   "item.remnantrelics.hexed_dice": "Hexed Dice",
   "item.remnantrelics.hexed_dice.shift_desc_1": "§6[Use] to roll the dice for a random temporary effect:",

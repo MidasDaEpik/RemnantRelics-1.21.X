@@ -39,11 +39,11 @@ public class GameEvents {
             if (pDamageSourceEntity instanceof LivingEntity pDamageSourceLivingEntity && !pDamageSourceLivingEntity.isInvulnerable()) {
                 if (pLivingEntity instanceof Player pPlayer) {
                     if (!pPlayer.getCooldowns().isOnCooldown(RRItems.ELDER_CHESTPLATE.get())) {
-                        pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.8f);
-                        pPlayer.getCooldowns().addCooldown(RRItems.ELDER_CHESTPLATE.get(), 80);
+                        pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.6f);
+                        pPlayer.getCooldowns().addCooldown(RRItems.ELDER_CHESTPLATE.get(), 40);
                     }
-                } else if (Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
-                    pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.8f);
+                } else if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                    pDamageSourceLivingEntity.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), pLivingEntity), pEvent.getOriginalDamage() * 0.6f);
                 }
             }
         }

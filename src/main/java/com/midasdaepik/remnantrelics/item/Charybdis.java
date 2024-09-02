@@ -227,18 +227,20 @@ public class Charybdis extends SwordItem {
                     pPlayer.stopUsingItem();
                 }
 
-            } else if (pLevel instanceof ClientLevel pClientLevel) {
-                for (int Loop = 1; Loop <= 2; Loop++) {
-                    int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
-                    float XZRange = Mth.nextFloat(RandomSource.create(), 2.0f, 12.0f);
-                    float YRange = Mth.nextFloat(RandomSource.create(), -1.75f, 1.25f);
-                    float PullSpeed = Mth.nextFloat(RandomSource.create(), 1.0f, 0.4f);
+            } else if (pLevel.isClientSide) {
+                if (pLevel instanceof ClientLevel pClientLevel) {
+                    for (int Loop = 1; Loop <= 2; Loop++) {
+                        int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
+                        float XZRange = Mth.nextFloat(RandomSource.create(), 2.0f, 12.0f);
+                        float YRange = Mth.nextFloat(RandomSource.create(), -1.75f, 1.25f);
+                        float PullSpeed = Mth.nextFloat(RandomSource.create(), 1.0f, 0.4f);
 
-                    pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), YRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), Math.sin(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f));
-                }
+                        pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), YRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), Math.sin(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f));
+                    }
 
-                if (CharybdisCharge < 4) {
-                    pPlayer.stopUsingItem();
+                    if (CharybdisCharge < 4) {
+                        pPlayer.stopUsingItem();
+                    }
                 }
             }
         }

@@ -31,8 +31,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class DragonsRageBreath extends Projectile {
-    public int duration = 40;
-    public int attackDamage = 6;
+    public int duration = 20;
+    public int attackDamage = 8;
 
     public DragonsRageBreath(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -78,11 +78,13 @@ public class DragonsRageBreath extends Projectile {
                 }
             }
 
-            if (this.level() instanceof ClientLevel pClientLevel) {
-                int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
-                float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
+            if (this.level().isClientSide) {
+                if (this.level() instanceof ClientLevel pClientLevel) {
+                    int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
+                    float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
 
-                pClientLevel.addParticle(ParticleTypes.DRAGON_BREATH, this.getX() + Mth.cos(XZDegrees) * XZRange, this.getY() + Mth.nextFloat(RandomSource.create(), 0.25f, 0.75f), this.getZ() + Math.sin(XZDegrees) * XZRange, this.getDeltaMovement().x * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().y * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().z * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f));
+                    pClientLevel.addParticle(ParticleTypes.DRAGON_BREATH, this.getX() + Mth.cos(XZDegrees) * XZRange, this.getY() + Mth.nextFloat(RandomSource.create(), 0.25f, 0.75f), this.getZ() + Math.sin(XZDegrees) * XZRange, this.getDeltaMovement().x * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().y * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f), this.getDeltaMovement().z * 1.5 + Mth.nextFloat(RandomSource.create(), -0.05f, 0.05f));
+                }
             }
 
             HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity, ClipContext.Block.COLLIDER);

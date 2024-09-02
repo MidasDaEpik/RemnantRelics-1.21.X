@@ -126,13 +126,13 @@ public class DragonsRage extends SwordItem {
 
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
                 if (pTimeUsing % 5 == 0) {
-                    RageCharge = Mth.clamp(RageCharge - 75, 0, 1800);
+                    RageCharge = Mth.clamp(RageCharge - 60, 0, 1800);
                     pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                     PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
 
-                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 30, 6);
+                    DragonsRageBreath dragonsBreath = new DragonsRageBreath(pLevel, pLivingEntity, 20, 8);
                     dragonsBreath.setPos(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
-                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.1f, 0.7f, 1.5f);
+                    dragonsBreath.shootFromRotation(pLivingEntity, pLivingEntity.getXRot(), pLivingEntity.getYRot(), 0.1f, 0.8f, 1.5f);
                     pLevel.addFreshEntity(dragonsBreath);
 
                     pServerLevel.playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, SoundEvents.ENDER_DRAGON_SHOOT, SoundSource.PLAYERS, 1.5f, 1.3f,0);
@@ -142,7 +142,7 @@ public class DragonsRage extends SwordItem {
                     }
                 }
 
-            } else if (pLevel instanceof ClientLevel pClientLevel) {
+            } else if (pLevel.isClientSide) {
                 if (RageCharge < 120) {
                     pPlayer.stopUsingItem();
                 }

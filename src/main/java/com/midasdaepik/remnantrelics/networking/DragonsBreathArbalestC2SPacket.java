@@ -60,7 +60,7 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
                         Set<LivingEntity> pEntityIteratorFoundTarget = new HashSet<>(pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(EntityIteratorAABBCenter, EntityIteratorAABBCenter).inflate(2.5d, 2.5d, 2.5d), e -> true));
                         for (LivingEntity pEntityIterator : pEntityIteratorFoundTarget) {
                             pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), pDragonsBreathEntityIterator.getOwner()), pDragonsBreathEntityIterator.getAttackDamage() * 1.5f);
-                            pEntityIterator.setDeltaMovement(pEntityIterator.getDeltaMovement().x, pEntityIterator.getDeltaMovement().y + pDragonsBreathEntityIterator.getAttackDamage() * 0.05 - 0.1, pEntityIterator.getDeltaMovement().z);
+                            pEntityIterator.setDeltaMovement(pEntityIterator.getDeltaMovement().x, pEntityIterator.getDeltaMovement().y + pDragonsBreathEntityIterator.getAttackDamage() * 0.1 + 0.2, pEntityIterator.getDeltaMovement().z);
                             pEntityIterator.addEffect(new MobEffectInstance(RREffects.PLUNGING, 80, 0));
                         }
 
@@ -74,7 +74,7 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
 
                 pMainhandItem.hurtAndBreak(2, pServerPlayer, EquipmentSlot.MAINHAND);
 
-                pServerPlayer.getCooldowns().addCooldown(pMainhandItem.getItem(), 100);
+                pServerPlayer.getCooldowns().addCooldown(pMainhandItem.getItem(), 80);
                 pServerPlayer.awardStat(Stats.ITEM_USED.get(pMainhandItem.getItem()));
             }
         });

@@ -75,9 +75,9 @@ public class DragonsBreath extends Entity implements TraceableEntity {
                     boolean pSuccess = pEntityIterator.hurt(new DamageSource(pServerLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), pOwner), this.attackDamage);
                     if (pSuccess) {
                         this.duration += this.durationOnUse;
-                    }
-                    if (this.duration <= 0) {
-                        this.discard();
+                        if (this.duration <= 0) {
+                            this.discard();
+                        }
                     }
                 }
 

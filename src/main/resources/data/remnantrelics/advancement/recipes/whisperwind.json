@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_breeze_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:breeze_rod"
+          }
+        ]
+      }
+    },
+    "has_heavy_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:heavy_core"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "remnantrelics:whisperwind"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_breeze_rod",
+      "has_heavy_core"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "remnantrelics:whisperwind"
+    ]
+  }
+}
