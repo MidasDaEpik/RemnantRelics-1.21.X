@@ -75,7 +75,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
     //Modify Charge Time Here
     public static int getChargeDuration(ItemStack stack, LivingEntity shooter) {
         float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 2.0F);
-        return Mth.floor(f * 30.0F);
+        return Mth.floor(f * 20.0F);
     }
 
     //Modify Velocity Here
@@ -155,7 +155,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
     protected Projectile createProjectile(Level level, LivingEntity shooter, ItemStack weapon, ItemStack ammo, boolean isCrit) {
         Projectile projectile = super.createProjectile(level, shooter, weapon, ammo, isCrit);
         if (projectile instanceof AbstractArrow abstractarrow) {
-            abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 2);
+            abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 1.6);
             abstractarrow.setData(SPECIAL_ARROW_TYPE, 0);
         }
         return projectile;
@@ -263,6 +263,8 @@ public class DragonsBreathArbalest extends CrossbowItem {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_breath_arbalest.shift_desc_5"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

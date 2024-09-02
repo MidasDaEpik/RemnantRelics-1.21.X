@@ -59,7 +59,6 @@ public class LyreOfEchoes extends Item {
         }
 
         if (pTimeUsing >= 60) {
-            //Vec3 AABBCenter = new Vec3(pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z);
             double AABBCenterX = pLivingEntity.getEyePosition().x + pLivingEntity.getLookAngle().x;
             double AABBCenterY = pLivingEntity.getEyePosition().y + pLivingEntity.getLookAngle().y;
             double AABBCenterZ = pLivingEntity.getEyePosition().z + pLivingEntity.getLookAngle().z;
@@ -71,7 +70,6 @@ public class LyreOfEchoes extends Item {
                     pServerLevel.sendParticles(ParticleTypes.SONIC_BOOM, AABBCenterX, AABBCenterY, AABBCenterZ, 1, 0, 0, 0, 0);
                 }
 
-                //AABBCenter.add(pLivingEntity.getLookAngle().x * 0.5d, pLivingEntity.getLookAngle().y * 0.5d, pLivingEntity.getLookAngle().z * 0.5d);
                 AABBCenterX += pLivingEntity.getLookAngle().x * 0.5;
                 AABBCenterY += pLivingEntity.getLookAngle().y * 0.5;
                 AABBCenterZ += pLivingEntity.getLookAngle().z * 0.5;

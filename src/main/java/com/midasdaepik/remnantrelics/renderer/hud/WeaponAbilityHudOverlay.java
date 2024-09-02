@@ -75,15 +75,15 @@ public class WeaponAbilityHudOverlay implements LayeredDraw.Layer {
 
 			} else if (pPlayer.getMainHandItem().getItem() == RRItems.CHARYBDIS.get()) {
 				int x = pGuiGraphics.guiWidth() / 2;
-				int y = pGuiGraphics.guiHeight() - 39 - 16 - 8;
+				int y = pGuiGraphics.guiHeight() - 39 - 16 - 4;
 				int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
 				int height = 15 - Mth.clamp(Mth.floor(CharybdisCharge / 100f), 0, 14);
 
 				this.minecraft.getProfiler().push("weapon_ability_hud_overlay");
 
 				RenderSystem.enableBlend();
-				pGuiGraphics.blitSprite(CHARYBDIS_PROGRESS_SPRITE, x - 8, y, 18, 18);
-				pGuiGraphics.blitSprite(CHARYBDIS_BACKGROUND_SPRITE, 18, 18, 0, 0, x - 8, y, 18, height);
+				pGuiGraphics.blitSprite(CHARYBDIS_PROGRESS_SPRITE, x - 9, y, 18, 18);
+				pGuiGraphics.blitSprite(CHARYBDIS_BACKGROUND_SPRITE, 18, 18, 0, 0, x - 9, y, 18, height);
 				RenderSystem.disableBlend();
 
 				this.minecraft.getProfiler().pop();

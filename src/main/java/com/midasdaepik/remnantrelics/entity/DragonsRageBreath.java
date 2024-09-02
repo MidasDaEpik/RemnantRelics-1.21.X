@@ -78,7 +78,7 @@ public class DragonsRageBreath extends Projectile {
                 }
             }
 
-            if (this.level() instanceof ClientLevel pClientLevel && this.duration % 4 == 0) {
+            if (this.level() instanceof ClientLevel pClientLevel) {
                 int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
                 float XZRange = Mth.nextFloat(RandomSource.create(), 0f, 0.5f);
 

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "remnantrelics:item/blueprint_scroll_elder"
+        "layer0": "remnantrelics:item/elder_upgrade_smithing_template"
     }
 }

@@ -1,6 +1,7 @@
 package com.midasdaepik.remnantrelics.event;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.networking.DragonsBreathArbalestC2SPacket;
 import com.midasdaepik.remnantrelics.networking.WhisperwindC2SPacket;
 import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.client.Minecraft;
@@ -60,7 +61,7 @@ public class ClientGameEvents {
     }
 
     @SubscribeEvent
-    public static void onPlayerADS(InputEvent.MouseButton.Post pEvent) {
+    public static void onInteractionKeyMappingTriggered(InputEvent.InteractionKeyMappingTriggered pEvent) {
         Minecraft pMinecraft = Minecraft.getInstance();
         Player pClientPlayer = pMinecraft.player;
 
@@ -68,8 +69,7 @@ public class ClientGameEvents {
             return;
         }
 
-        boolean pKeyAttack = pMinecraft.options.keyAttack.isDown();
-        boolean pKeyUse = pMinecraft.options.keyUse.isDown();
+        boolean pKeyAttack = pEvent.isAttack();
 
         if (pKeyAttack) {
             ItemStack pMainhandItem = pClientPlayer.getMainHandItem();
@@ -91,6 +91,8 @@ public class ClientGameEvents {
                 if (pClientPlayer.hasInfiniteMaterials() || !ProjectileItemStack.isEmpty()) {
                     PacketDistributor.sendToServer(new WhisperwindC2SPacket());
                 }
+            } else if (pMainhandItem.getItem() == RRItems.DRAGONS_BREATH_ARBALEST.get() && !pClientPlayer.getCooldowns().isOnCooldown(RRItems.DRAGONS_BREATH_ARBALEST.get())) {
+                PacketDistributor.sendToServer(new DragonsBreathArbalestC2SPacket());
             }
         }
     }

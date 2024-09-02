@@ -117,6 +117,10 @@ public class DragonsBreath extends Entity implements TraceableEntity {
         this.ownerUUID = owner == null ? null : owner.getUUID();
     }
 
+    public int getAttackDamage() {
+        return this.attackDamage;
+    }
+
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
 
