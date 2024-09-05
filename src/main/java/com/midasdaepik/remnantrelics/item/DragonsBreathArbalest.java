@@ -74,7 +74,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
 
     //Modify Charge Time Here
     public static int getChargeDuration(ItemStack stack, LivingEntity pLivingEntity) {
-        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, pLivingEntity, 2.5F);
+        float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, pLivingEntity, 2.0F);
         return Mth.floor(f * 20.0F);
     }
 

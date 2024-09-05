@@ -53,14 +53,14 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
                 pLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pServerPlayer.getEyePosition().x, pServerPlayer.getEyePosition().y, pServerPlayer.getEyePosition().z, 24, 0.3, 0.3, 0.3, 0.03);
 
                 final Vec3 AABBCenter = new Vec3(pServerPlayer.getX(), pServerPlayer.getY(), pServerPlayer.getZ());
-                Set<DragonsBreath> pFoundTarget = new HashSet<>(pLevel.getEntitiesOfClass(DragonsBreath.class, new AABB(AABBCenter, AABBCenter).inflate(12d, 12d, 12d), e -> true));
+                Set<DragonsBreath> pFoundTarget = new HashSet<>(pLevel.getEntitiesOfClass(DragonsBreath.class, new AABB(AABBCenter, AABBCenter).inflate(16d, 16d, 16d), e -> true));
                 for (DragonsBreath pDragonsBreathEntityIterator : pFoundTarget) {
                     if (pDragonsBreathEntityIterator.getOwner() == pServerPlayer) {
                         final Vec3 EntityIteratorAABBCenter = new Vec3(pDragonsBreathEntityIterator.getX(), pDragonsBreathEntityIterator.getY(), pDragonsBreathEntityIterator.getZ());
                         Set<LivingEntity> pEntityIteratorFoundTarget = new HashSet<>(pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(EntityIteratorAABBCenter, EntityIteratorAABBCenter).inflate(2.5d, 2.5d, 2.5d), e -> true));
                         for (LivingEntity pEntityIterator : pEntityIteratorFoundTarget) {
                             pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), pDragonsBreathEntityIterator.getOwner()), pDragonsBreathEntityIterator.getAttackDamage() * 1.5f);
-                            pEntityIterator.setDeltaMovement(pEntityIterator.getDeltaMovement().x, pEntityIterator.getDeltaMovement().y + pDragonsBreathEntityIterator.getAttackDamage() * 0.1 + 0.2, pEntityIterator.getDeltaMovement().z);
+                            pEntityIterator.setDeltaMovement(pEntityIterator.getDeltaMovement().x, getyVelocity(pDragonsBreathEntityIterator, pEntityIterator), pEntityIterator.getDeltaMovement().z);
                             pEntityIterator.addEffect(new MobEffectInstance(RREffects.PLUNGING, 80, 0));
                         }
 
@@ -79,5 +79,17 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
             }
         });
         return true;
+    }
+
+    private static double getyVelocity(DragonsBreath pDragonsBreathEntityIterator, LivingEntity pEntityIterator) {
+        double yVelocityModifier = pDragonsBreathEntityIterator.getAttackDamage() * 0.1 + 0.2;
+        double yVelocity = pEntityIterator.getDeltaMovement().y;
+        if (yVelocity < yVelocityModifier) {
+            yVelocity += yVelocityModifier;
+            if (yVelocity > yVelocityModifier * 1.5) {
+                yVelocity = yVelocityModifier * 1.5;
+            }
+        }
+        return yVelocity;
     }
 }

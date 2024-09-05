@@ -16,6 +16,10 @@
     {
       "id": "remnantrelics:whisperwind",
       "required": false
+    },
+    {
+      "id": "remnantrelics:dragons_breath_arbalest",
+      "required": false
     }
   ]
 }

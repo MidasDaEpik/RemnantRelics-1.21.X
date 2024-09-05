@@ -248,7 +248,7 @@ public class Charybdis extends SwordItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        if (pPlayer.getData(CHARYBDIS_CHARGE) > 0) {
+        if (pPlayer.getData(CHARYBDIS_CHARGE) > 0 && pPlayer.isCrouching()) {
             pPlayer.startUsingItem(pHand);
             return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
         } else {

@@ -14,7 +14,7 @@
   "item.remnantrelics.charybdis": "Charybdis",
   "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting enemies.",
 
-  "item.remnantrelics.charybdis.shift_desc_2": "§6[Use] §7consumes §3Vortex §7to conjure a maelstrom around the user,",
+  "item.remnantrelics.charybdis.shift_desc_2": "§6[Sneak + Use] §7consumes §3Vortex §7to conjure a maelstrom around the user,",
   "item.remnantrelics.charybdis.shift_desc_3": "§7pulling nearby entities dealing damage to targets near the center.",
 
   "item.remnantrelics.elder_chestplate": "Elder Chestplate",
@@ -153,7 +153,7 @@
   "item.remnantrelics.dragons_rage": "Dragon's Rage",
   "item.remnantrelics.dragons_rage.shift_desc_1": "§7Gain §dRage §7upon hitting enemies.",
 
-  "item.remnantrelics.dragons_rage.shift_desc_2": "§6[Use] §7consumes §dRage §7to spew dragon's breath.",
+  "item.remnantrelics.dragons_rage.shift_desc_2": "§6[Sneak + Use] §7consumes §dRage §7to spew dragon's breath.",
 
   "item.remnantrelics.dragons_breath_arbalest": "Dragon's Breath Arbalest",
   "item.remnantrelics.dragons_breath_arbalest.shift_desc_1": "§7Has decreased draw speed but increased damage,",

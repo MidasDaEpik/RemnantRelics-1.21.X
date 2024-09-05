@@ -14,6 +14,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,11 +23,14 @@ import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.SPECIAL
 
 @Mixin(AbstractArrow.class)
 public class AbstractArrowMixin {
+    @Shadow
+    protected boolean inGround;
+
     @Inject(method = "tick", at = @At("HEAD"))
     private void SpecialArrowTick(CallbackInfo ci) {
         AbstractArrow pThis = (AbstractArrow) (Object) this;
         if (pThis.getData(SPECIAL_ARROW_TYPE) == 0) {
-            if (pThis.level() instanceof ServerLevel pServerLevel && !pThis.onGround()) {
+            if (pThis.level() instanceof ServerLevel pServerLevel && !this.inGround) {
                 pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pThis.getX(), pThis.getY(), pThis.getZ(), 1, 0, 0, 0, 0);
             }
         }

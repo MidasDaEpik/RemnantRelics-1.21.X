@@ -55,7 +55,7 @@ public class WarpingWither extends SwordItem {
             }
 
             public float getAttackDamageBonus() {
-                return 5f;
+                return 5.5f;
             }
 
             public TagKey<Block> getIncorrectBlocksForDrops() {
@@ -75,7 +75,7 @@ public class WarpingWither extends SwordItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5.5, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.2, AttributeModifier.Operation.ADD_VALUE),

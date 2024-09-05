@@ -5,7 +5,6 @@ import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -152,7 +151,7 @@ public class DragonsRage extends SwordItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        if (pPlayer.getData(DRAGONS_RAGE_CHARGE) > 0) {
+        if (pPlayer.getData(DRAGONS_RAGE_CHARGE) > 0 && pPlayer.isCrouching()) {
             pPlayer.startUsingItem(pHand);
             return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
         } else {
