@@ -64,7 +64,7 @@ public class LyreOfEchoes extends Item {
             double AABBCenterZ = pLivingEntity.getEyePosition().z + pLivingEntity.getLookAngle().z;
             Set<LivingEntity> pFoundTarget = new HashSet<>(Set.of());
             for (int Loop = 1; Loop <= pTimeUsing / 5 + 20; Loop++) {
-                pFoundTarget.addAll(new HashSet<>(pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenterX, AABBCenterY, AABBCenterZ, AABBCenterX, AABBCenterY, AABBCenterZ).inflate(1d))));
+                pFoundTarget.addAll(new HashSet<>(pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenterX, AABBCenterY, AABBCenterZ, AABBCenterX, AABBCenterY, AABBCenterZ).inflate(1.5d))));
 
                 if (pLevel instanceof ServerLevel pServerLevel && Loop % 4 == 0) {
                     pServerLevel.sendParticles(ParticleTypes.SONIC_BOOM, AABBCenterX, AABBCenterY, AABBCenterZ, 1, 0, 0, 0, 0);
@@ -75,7 +75,7 @@ public class LyreOfEchoes extends Item {
                 AABBCenterZ += pLivingEntity.getLookAngle().z * 0.5;
             }
 
-            int pDamage = pTimeUsing / 12 + 10;
+            int pDamage = pTimeUsing / 10 + 10;
             for (LivingEntity pEntityIterator : pFoundTarget) {
                 pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "sonic_boom"))), pLivingEntity), pDamage);
             }

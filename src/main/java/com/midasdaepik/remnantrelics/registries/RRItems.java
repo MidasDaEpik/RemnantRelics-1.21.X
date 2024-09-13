@@ -51,12 +51,12 @@ public class RRItems {
     public static final DeferredItem<Item> WITHERBLADE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("witherblade_upgrade_smithing_template",
             UpgradeTemplateItem::createWitherbladeUpgradeTemplate);
 
-    public static final DeferredItem<Item> ANCIENT_TABLET_FORGING = ITEMS.register("ancient_tablet_forging",
-            AncientKnowledgeItem::createAncientTabletForging);
-    public static final DeferredItem<Item> ANCIENT_TABLET_INFUSION = ITEMS.register("ancient_tablet_infusion",
-            AncientKnowledgeItem::createAncientTabletInfusion);
-    public static final DeferredItem<Item> ANCIENT_TABLET_REFINING = ITEMS.register("ancient_tablet_refining",
-            AncientKnowledgeItem::createAncientTabletRefining);
+    public static final DeferredItem<Item> ANCIENT_TABLET_FUSION = ITEMS.register("ancient_tablet_fusion",
+            AncientKnowledgeItem::createAncientTabletFusion);
+    public static final DeferredItem<Item> ANCIENT_TABLET_IMBUEMENT = ITEMS.register("ancient_tablet_imbuement",
+            AncientKnowledgeItem::createAncientTabletImbuement);
+    public static final DeferredItem<Item> ANCIENT_TABLET_REINFORCEMENT = ITEMS.register("ancient_tablet_reinforcement",
+            AncientKnowledgeItem::createAncientTabletReinforcement);
 
     public static final DeferredItem<Item> WITHER_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("wither_armor_trim_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:wither")));

@@ -3,12 +3,12 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:chests/nether_bridge"
+      "loot_table_id": "minecraft:chests/ancient_city"
     },
     {
       "condition": "minecraft:random_chance",
-      "chance": 0.08
+      "chance": 0.05
     }
   ],
-  "item": "remnantrelics:ancient_tablet_infusion"
+  "item": "remnantrelics:researchers_notes_sculk"
 }

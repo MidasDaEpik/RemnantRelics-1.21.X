@@ -46,9 +46,9 @@ public class RRCreativeTabs {
 
                         pOutput.accept(RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
 
-                        pOutput.accept(RRItems.ANCIENT_TABLET_FORGING.get());
-                        pOutput.accept(RRItems.ANCIENT_TABLET_INFUSION.get());
-                        pOutput.accept(RRItems.ANCIENT_TABLET_REFINING.get());
+                        pOutput.accept(RRItems.ANCIENT_TABLET_IMBUEMENT.get());
+                        pOutput.accept(RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
+                        pOutput.accept(RRItems.ANCIENT_TABLET_FUSION.get());
 
                         pOutput.accept(RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 

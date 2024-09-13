@@ -54,30 +54,30 @@
   "item.remnantrelics.witherblade_upgrade_smithing_template": "Smithing Template",
   "item.remnantrelics.witherblade_upgrade_smithing_template_desc": "Witherblade Upgrade",
 
-  "item.remnantrelics.ancient_tablet_forging": "Ancient Tablet - Forging",
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_2": "§8Consumed on Use",
+  "item.remnantrelics.ancient_tablet_imbuement": "Ancient Tablet - Imbuement",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_2": "§8Consumed on Use",
 
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_forging.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_3": "§7Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_4": "§5 Firestorm Katana",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_5": "§5 Searing Staff",
 
-  "item.remnantrelics.ancient_tablet_infusion": "Ancient Tablet - Infusion",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_2": "§8Consumed on Use",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_6": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_7": "§5 Witherblade Upgrade Smithing Template",
 
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_3": "§7Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_4": "§5 Firestorm Katana",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_5": "§5 Searing Staff",
+  "item.remnantrelics.ancient_tablet_reinforcement": "Ancient Tablet - Reinforcement",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_2": "§8Consumed on Use",
 
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_6": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_infusion.shift_desc_7": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_3": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
 
-  "item.remnantrelics.ancient_tablet_refining": "Ancient Tablet - Refining",
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_2": "§8Consumed on Use",
+  "item.remnantrelics.ancient_tablet_fusion": "Ancient Tablet - Fusion",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_2": "§8Consumed on Use",
 
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_refining.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_3": "§7Partially Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 
@@ -285,17 +285,14 @@
 
 
 
-  "advancements.remnantrelics.ancient_tablet_forging.title": "Ancient Tablet - Forging",
-  "advancements.remnantrelics.ancient_tablet_forging.description": "Learn the ancient nether forging techniques",
+  "advancements.remnantrelics.ancient_tablet_imbuement.title": "Ancient Tablet - Imbuement",
+  "advancements.remnantrelics.ancient_tablet_imbuement.description": "Learn the principle of infusion from the fortress",
 
-  "advancements.remnantrelics.ancient_tablet_infusion.title": "Ancient Tablet - Infusion",
-  "advancements.remnantrelics.ancient_tablet_infusion.description": "Learn how to infuse magic into weapons",
+  "advancements.remnantrelics.ancient_tablet_reinforcement.title": "Ancient Tablet - Reinforcement",
+  "advancements.remnantrelics.ancient_tablet_reinforcement.description": "Learn the principle of stability from the bastions",
 
-  "advancements.remnantrelics.ancient_tablet_refining.title": "Ancient Tablet - Refining",
-  "advancements.remnantrelics.ancient_tablet_refining.description": "Learn to refine weapons to handle magic",
-
-  "advancements.remnantrelics.witherblades.title": "The Witherblades",
-  "advancements.remnantrelics.witherblades.description": "Gain the collective knowledge of the ancient nether civilizations",
+  "advancements.remnantrelics.ancient_tablet_fusion.title": "Ancient Tablet - Fusion",
+  "advancements.remnantrelics.ancient_tablet_fusion.description": "Learn the principle of fusibility from the ancient forge",
 
   "advancements.remnantrelics.all_witherblades.title": "I Am... Inevitable",
   "advancements.remnantrelics.all_witherblades.description": "Obtain all 3 witherblades",

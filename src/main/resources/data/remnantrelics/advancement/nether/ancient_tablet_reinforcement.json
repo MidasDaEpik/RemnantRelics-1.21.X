@@ -1,14 +1,14 @@
 {
   "display": {
     "icon": {
-      "id": "remnantrelics:ancient_tablet_forging",
+      "id": "remnantrelics:ancient_tablet_reinforcement",
       "count": 1
     },
     "title": {
-      "translate": "advancements.remnantrelics.ancient_tablet_forging.title"
+      "translate": "advancements.remnantrelics.ancient_tablet_reinforcement.title"
     },
     "description": {
-      "translate": "advancements.remnantrelics.ancient_tablet_forging.description"
+      "translate": "advancements.remnantrelics.ancient_tablet_reinforcement.description"
     }
   },
   "parent": "minecraft:nether/loot_bastion",

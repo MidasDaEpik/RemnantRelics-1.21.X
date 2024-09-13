@@ -19,25 +19,73 @@ public interface RecipeCraftingHolderMixin {
     private void restrictCustomRecipe(Level pLevel, ServerPlayer pPlayer, RecipeHolder<?> pRecipe, CallbackInfoReturnable<Boolean> pReturn) {
         if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "firestorm_katana"))) {
             ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_infusion"));
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_imbuement"));
             if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
                 pReturn.setReturnValue(false);
             }
         }
         if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "searing_staff"))) {
             ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_infusion"));
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_imbuement"));
             if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
                 pReturn.setReturnValue(false);
             }
         }
         if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "witherblade_upgrade_smithing_template"))) {
             ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/witherblades"));
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_imbuement"));
             if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
                 pReturn.setReturnValue(false);
             }
         }
+
+
+
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:creeping_crimson"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:creeping_crimson_reverse"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:souleating_slasher"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:souleating_slasher_reverse"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:warping_wither"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "remnantrelics:warping_wither_reverse"))) {
+            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
+            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "nether/ancient_tablet_fusion"));
+            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
+                pReturn.setReturnValue(false);
+            }
+        }
+
+
+
         if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "catalyst_chalice"))) {
             ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
             AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "adventure/researchers_memoir_sculk"));

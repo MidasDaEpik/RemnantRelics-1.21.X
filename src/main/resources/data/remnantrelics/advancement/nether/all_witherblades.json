@@ -13,7 +13,7 @@
     "frame": "challenge",
     "hidden": true
   },
-  "parent": "remnantrelics:nether/witherblades",
+  "parent": "minecraft:nether/summon_wither",
   "criteria": {
     "creeping_crimson": {
       "trigger": "minecraft:inventory_changed",

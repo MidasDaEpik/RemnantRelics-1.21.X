@@ -1,14 +1,14 @@
 {
   "display": {
     "icon": {
-      "id": "remnantrelics:ancient_tablet_infusion",
+      "id": "remnantrelics:ancient_tablet_imbuement",
       "count": 1
     },
     "title": {
-      "translate": "advancements.remnantrelics.ancient_tablet_infusion.title"
+      "translate": "advancements.remnantrelics.ancient_tablet_imbuement.title"
     },
     "description": {
-      "translate": "advancements.remnantrelics.ancient_tablet_infusion.description"
+      "translate": "advancements.remnantrelics.ancient_tablet_imbuement.description"
     }
   },
   "parent": "minecraft:nether/find_fortress",
@@ -25,7 +25,8 @@
   "rewards": {
     "recipes": [
       "remnantrelics:firestorm_katana",
-      "remnantrelics:searing_staff"
+      "remnantrelics:searing_staff",
+      "remnantrelics:witherblade_upgrade_smithing_template"
     ]
   },
   "sends_telemetry_event": true

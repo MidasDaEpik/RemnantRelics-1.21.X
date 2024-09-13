@@ -1,11 +1,11 @@
 {
   "replace": false,
   "entries": [
-    "remnantrelics:ancient_tablet_infusion/nether_bridge",
-    "remnantrelics:ancient_tablet_refining/bastion_bridge",
-    "remnantrelics:ancient_tablet_refining/bastion_hoglin_stable",
-    "remnantrelics:ancient_tablet_refining/bastion_other",
-    "remnantrelics:ancient_tablet_refining/bastion_treasure",
+    "remnantrelics:ancient_tablet_imbuement/nether_bridge",
+    "remnantrelics:ancient_tablet_fusion/bastion_bridge",
+    "remnantrelics:ancient_tablet_fusion/bastion_hoglin_stable",
+    "remnantrelics:ancient_tablet_fusion/bastion_other",
+    "remnantrelics:ancient_tablet_fusion/bastion_treasure",
     "remnantrelics:ancient_weapon_fragment/bastion_bridge",
     "remnantrelics:ancient_weapon_fragment/bastion_hoglin_stable",
     "remnantrelics:ancient_weapon_fragment/bastion_other",
@@ -14,6 +14,7 @@
     "remnantrelics:cutlass/shipwreck_supply",
     "remnantrelics:cutlass/shipwreck_treasure",
     "remnantrelics:elder_spine/elder_guardian",
+    "remnantrelics:researchers_notes_sculk/ancient_city",
     "remnantrelics:wither_armor_trim_smithing_template/wither"
   ]
 }
