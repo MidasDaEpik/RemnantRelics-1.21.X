@@ -78,7 +78,7 @@ public class CreepingCrimson extends SwordItem {
                     firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                     pAttacker.level().addFreshEntity(firestorm);
 
-                    pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_AURA.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                    pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_CLOUD.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
                     pPlayer.getCooldowns().addCooldown(this, 160);
                     pPlayer.getCooldowns().addCooldown(RRItems.FIRESTORM_KATANA.get(), 160);
@@ -90,7 +90,7 @@ public class CreepingCrimson extends SwordItem {
                 firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                 pAttacker.level().addFreshEntity(firestorm);
 
-                pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_AURA.get(), SoundSource.HOSTILE, 1f, 1f,0);
+                pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_CLOUD.get(), SoundSource.HOSTILE, 1f, 1f,0);
             }
         }
 

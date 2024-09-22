@@ -148,7 +148,7 @@ public class SouleatingSlasher extends SwordItem {
                 RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1.6);
             }
 
-            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
+            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_SHIELD.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
             float AbsorptionShield = pLivingEntity.getAbsorptionAmount() + 3;
             if (AbsorptionShield > 6) {

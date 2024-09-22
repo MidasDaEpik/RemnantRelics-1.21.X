@@ -78,7 +78,7 @@ public class FirestormKatana extends SwordItem {
                     firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                     pAttacker.level().addFreshEntity(firestorm);
 
-                    pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_FIRESTORM_KATANA_ABILITY.get(), SoundSource.PLAYERS, 1f, 1f,0);
+                    pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_FIRESTORM_KATANA_CLOUD.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
                     pPlayer.getCooldowns().addCooldown(this, 280);
                     pPlayer.getCooldowns().addCooldown(RRItems.CREEPING_CRIMSON.get(), 280);
@@ -90,7 +90,7 @@ public class FirestormKatana extends SwordItem {
                 firestorm.setPos(pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z);
                 pAttacker.level().addFreshEntity(firestorm);
 
-                pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_FIRESTORM_KATANA_ABILITY.get(), SoundSource.HOSTILE, 1f, 1f,0);
+                pAttacker.level().playSeededSound(null, pAttacker.getEyePosition().x, pAttacker.getEyePosition().y, pAttacker.getEyePosition().z, RRSounds.ITEM_FIRESTORM_KATANA_CLOUD.get(), SoundSource.HOSTILE, 1f, 1f,0);
             }
         }
 

@@ -107,7 +107,7 @@ public class ObsidianBulwark extends SwordItem {
                 pServerLevel.sendParticles(ParticleTypes.WAX_ON, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 16, 0.5, 0.5, 0.5, 0);
             }
 
-            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_ABSORPTION.get(), SoundSource.PLAYERS, 1f, 1f,0);
+            pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_OBSIDIAN_BULWARK_SHIELD.get(), SoundSource.PLAYERS, 1.2f, 1f,0);
 
             float AbsorptionShield = pLivingEntity.getAbsorptionAmount() + 2;
             if (AbsorptionShield > 6) {

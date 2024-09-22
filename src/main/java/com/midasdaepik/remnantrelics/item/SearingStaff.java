@@ -3,7 +3,9 @@ package com.midasdaepik.remnantrelics.item;
 import com.midasdaepik.remnantrelics.entity.NoDamageFireball;
 import com.midasdaepik.remnantrelics.registries.RRItemUtil;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
+import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -47,6 +49,8 @@ public class SearingStaff extends Item {
             fireballNeg45.setPos(pPlayer.getX() + Mth.sin((pPlayer.getYRot() - 45) * ((float)Math.PI / 180F) - (float)Math.PI) * 2, pPlayer.getY() + 1.25, pPlayer.getZ() + Mth.cos((pPlayer.getYRot() - 45) * ((float)Math.PI / 180F) - (float)Math.PI) * -2);
             pLevel.addFreshEntity(fireballNeg45);
         }
+
+        pPlayer.level().playSeededSound(null, pPlayer.getEyePosition().x, pPlayer.getEyePosition().y, pPlayer.getEyePosition().z, RRSounds.ITEM_SEARING_STAFF_SUMMON.get(), SoundSource.PLAYERS, 1f, 1f,0);
 
         pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, pUsedHand == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND);
 

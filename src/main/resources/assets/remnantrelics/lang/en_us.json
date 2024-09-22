@@ -218,14 +218,20 @@
 
 
 
-  "subtitles.item.firestorm_katana.ability": "Firestorm Katana smolders",
+  "subtitles.item.firestorm_katana.cloud": "Firestorm Katana smolders",
+  "subtitles.item.searing_staff.summon": "Searing Staff smolders",
 
-  "subtitles.item.warped_rapier.ability": "Warped Rapier teleports player",
+  "subtitles.item.obsidian_bulwark.shield": "Obsidian Bulwark shields",
 
-  "subtitles.item.witherblade.wither": "Witherblade withers",
-  "subtitles.item.witherblade.aura": "Witherblade smolders",
-  "subtitles.item.witherblade.absorption": "Witherblade shields",
-  "subtitles.item.witherblade.teleport": "Witherblade teleports player",
+  "subtitles.item.warped_rapier.teleport": "Warped Rapier teleports",
+
+  "subtitles.item.witherblade.wither": "Witherblade applies wither",
+  "subtitles.item.witherblade.cloud": "Witherblade disperses spores",
+  "subtitles.item.witherblade.shield": "Witherblade shields",
+  "subtitles.item.witherblade.teleport": "Witherblade teleports",
+
+  "subtitles.item.lyre_of_echoes.note": "Lyre of Echoes charges",
+  "subtitles.item.lyre_of_echoes.sonic_boom": "Lyre of Echoes booms",
 
 
 
