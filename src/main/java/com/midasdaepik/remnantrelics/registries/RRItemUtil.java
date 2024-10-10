@@ -3,10 +3,8 @@ package com.midasdaepik.remnantrelics.registries;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
@@ -37,7 +35,7 @@ public class RRItemUtil {
         }
     }
 
-    public static BlockHitResult BlockHitRaycast(Level pLevel, LivingEntity pLivingEntity, ClipContext.Fluid pFluidMode, int pRange) {
+    public static BlockHitResult blockHitRaycast(Level pLevel, LivingEntity pLivingEntity, ClipContext.Fluid pFluidMode, int pRange) {
         float XRot = pLivingEntity.getXRot();
         float YRot = pLivingEntity.getYRot();
         Vec3 vec3 = pLivingEntity.getEyePosition(1.0F);
@@ -112,11 +110,11 @@ public class RRItemUtil {
         return i - 1;
     }
 
-    public static void ParticleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {
-        RRItemUtil.ParticleCircle(pServerLevel, pParticle, pX, pY, pZ, pScale, 2);
+    public static void particleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {
+        RRItemUtil.particleCircle(pServerLevel, pParticle, pX, pY, pZ, pScale, 2);
     }
 
-    public static void ParticleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale, int pDefinition) {
+    public static void particleCircle(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale, int pDefinition) {
         int Count = Mth.ceil(Math.pow(2, pDefinition + 2));
         float Degrees = 360f / Count;
         for (int Loop = 1; Loop <= Count; Loop++) {
@@ -124,7 +122,7 @@ public class RRItemUtil {
         }
     }
 
-    public static void ParticleSphere(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {
+    public static void particleSphere(ServerLevel pServerLevel, ParticleOptions pParticle, double pX, double pY, double pZ, double pScale) {
         pServerLevel.sendParticles(pParticle, pX + 2.74 * pScale, pY + 4.43 * pScale, pZ, 1, 0, 0, 0, 0);
         pServerLevel.sendParticles(pParticle, pX + 2.74 * pScale, pY - 4.43 * pScale, pZ, 1, 0, 0, 0, 0);
         pServerLevel.sendParticles(pParticle, pX - 2.74 * pScale, pY + 4.43 * pScale, pZ, 1, 0, 0, 0, 0);

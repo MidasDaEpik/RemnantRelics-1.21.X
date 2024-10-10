@@ -81,8 +81,8 @@ public class DragonsBreath extends Entity implements TraceableEntity {
                     }
                 }
 
-                RRItemUtil.ParticleCircle(pServerLevel, ParticleTypes.DRAGON_BREATH, this.getX(), this.getY(), this.getZ(), 2.5, 2);
-                RRItemUtil.ParticleCircle(pServerLevel, ParticleTypes.DRAGON_BREATH, this.getX(), this.getY() + 0.5, this.getZ(), 2.5, 2);
+                RRItemUtil.particleCircle(pServerLevel, ParticleTypes.DRAGON_BREATH, this.getX(), this.getY(), this.getZ(), 2.5, 2);
+                RRItemUtil.particleCircle(pServerLevel, ParticleTypes.DRAGON_BREATH, this.getX(), this.getY() + 0.5, this.getZ(), 2.5, 2);
             }
 
             this.duration = this.duration - 1;

@@ -135,7 +135,7 @@ public class WarpingWither extends SwordItem {
 
             pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f, 0);
 
-            BlockHitResult raytrace = RRItemUtil.BlockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+            BlockHitResult raytrace = RRItemUtil.blockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
             BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
             pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
             pLivingEntity.fallDistance = pLivingEntity.fallDistance - 10.0F;

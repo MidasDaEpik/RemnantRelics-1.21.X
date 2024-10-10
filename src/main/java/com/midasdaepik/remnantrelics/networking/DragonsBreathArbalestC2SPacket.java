@@ -66,7 +66,7 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
 
                         pLevel.playSeededSound(null, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f,0);
                         pLevel.sendParticles(ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 16, 0.1, 0.1, 0.1, 0.05);
-                        RRItemUtil.ParticleSphere(pLevel, ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 0.5);
+                        RRItemUtil.particleSphere(pLevel, ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 0.5);
 
                         pDragonsBreathEntityIterator.discard();
                     }

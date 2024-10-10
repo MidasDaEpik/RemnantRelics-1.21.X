@@ -114,9 +114,9 @@ public class Firestorm extends Projectile {
             }
 
             if (this.witherSpore) {
-                RRItemUtil.ParticleSphere(pServerLevel, new DustColorTransitionOptions(new Vector3f(0.772f,0.203f,0.223f), new Vector3f(0.482f,0f,0f), 0.9f), this.getX(), this.getY(), this.getZ(), 1);
+                RRItemUtil.particleSphere(pServerLevel, new DustColorTransitionOptions(new Vector3f(0.772f,0.203f,0.223f), new Vector3f(0.482f,0f,0f), 0.9f), this.getX(), this.getY(), this.getZ(), 1);
             } else {
-                RRItemUtil.ParticleSphere(pServerLevel, ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 1);
+                RRItemUtil.particleSphere(pServerLevel, ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 1);
             }
         }
     }
