@@ -35,18 +35,18 @@ public class RRItemUtil {
         }
     }
 
-    public static BlockHitResult blockHitRaycast(Level pLevel, LivingEntity pLivingEntity, ClipContext.Fluid pFluidMode, int pRange) {
+    public static BlockHitResult blockHitRaycast(Level pLevel, LivingEntity pLivingEntity, ClipContext.Fluid pFluidMode, float pRange) {
         float XRot = pLivingEntity.getXRot();
         float YRot = pLivingEntity.getYRot();
-        Vec3 vec3 = pLivingEntity.getEyePosition(1.0F);
+        Vec3 OriginVec3d = pLivingEntity.getEyePosition(1.0F);
 
         float XZMult = -Mth.cos(-XRot * ((float)Math.PI / 180F));
         float X = Mth.sin(-YRot * ((float)Math.PI / 180F) - (float)Math.PI) * XZMult;
         float Y = Mth.sin(-XRot * ((float)Math.PI / 180F));
         float Z = Mth.cos(-YRot * ((float)Math.PI / 180F) - (float)Math.PI) * XZMult;
 
-        Vec3 vec31 = vec3.add((double)X * pRange, (double)Y * pRange, (double)Z * pRange);
-        return pLevel.clip(new ClipContext(vec3, vec31, ClipContext.Block.COLLIDER, pFluidMode, pLivingEntity));
+        Vec3 TargetVec3d = OriginVec3d.add((double)X * pRange, (double)Y * pRange, (double)Z * pRange);
+        return pLevel.clip(new ClipContext(OriginVec3d, TargetVec3d, ClipContext.Block.COLLIDER, pFluidMode, pLivingEntity));
     }
 
     public static int getPlayerXP(Player pPlayer) {

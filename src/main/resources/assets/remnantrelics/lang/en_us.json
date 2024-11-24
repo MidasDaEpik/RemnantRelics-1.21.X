@@ -1,10 +1,9 @@
 {
-  "item.remnantrelics.shift_desc_info": "§7Hold §6[Shift] §7to show extra information",
-  "item.remnantrelics.empty": " ",
+  "item.remnantrelics.shift_desc_info": "§7Hold §6[Shift] §7to reveal additional information",
 
   "item.remnantrelics.two_handed": "§7This weapon's capabilities are reduced if any items are in the user's offhand.",
 
-  "item.remnantrelics.cutlass": "Cutlass",
+  "item.remnantrelics.cutlass": "Corroded Cutlass",
 
   "item.remnantrelics.elder_spine": "Elder Spine",
 
@@ -140,12 +139,9 @@
   "item.remnantrelics.scylla.shift_desc_1": "§7Inflicts §3Echo §7on targets,",
   "item.remnantrelics.scylla.shift_desc_2": "§7dealing secondary damage after a delay.",
 
-  "item.remnantrelics.sonic_recurve": "Sonic Recurve",
-  "item.remnantrelics.sonic_recurve.shift_desc_1": "§7???",
-
   "item.remnantrelics.lyre_of_echoes": "Lyre of Echoes",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast,",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a long line in front of the user,",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast that can penetrate walls,",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a straight line ahead,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer it is charged.",
 
   "item.remnantrelics.dragonbone": "Dragonbone",

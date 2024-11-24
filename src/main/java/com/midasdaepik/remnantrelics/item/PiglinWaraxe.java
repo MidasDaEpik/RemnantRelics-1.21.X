@@ -83,7 +83,7 @@ public class PiglinWaraxe extends AxeItem {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pItemStack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }

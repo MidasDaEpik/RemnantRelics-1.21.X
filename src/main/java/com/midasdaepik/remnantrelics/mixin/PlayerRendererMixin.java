@@ -1,6 +1,5 @@
 package com.midasdaepik.remnantrelics.mixin;
 
-import com.midasdaepik.remnantrelics.item.DragonsBreathArbalest;
 import com.midasdaepik.remnantrelics.registries.RRTags;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.AbstractClientPlayer;

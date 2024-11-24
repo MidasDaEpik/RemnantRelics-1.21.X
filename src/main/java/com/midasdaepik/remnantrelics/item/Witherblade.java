@@ -91,7 +91,7 @@ public class Witherblade extends SwordItem {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pItemstack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemstack, pContext, pTooltipComponents, pIsAdvanced);
     }

@@ -194,7 +194,7 @@ public class WarpingWither extends SwordItem {
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_4"));
@@ -202,7 +202,7 @@ public class WarpingWither extends SwordItem {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pItemstack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemstack, pContext, pTooltipComponents, pIsAdvanced);
     }

@@ -120,13 +120,13 @@ public class Whisperwind extends BowItem {
     public void appendHoverText(ItemStack pItemstack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_2"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pItemstack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemstack, pContext, pTooltipComponents, pIsAdvanced);
     }

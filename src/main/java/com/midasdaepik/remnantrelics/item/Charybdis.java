@@ -260,14 +260,14 @@ public class Charybdis extends SwordItem {
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRItemUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_3"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pItemStack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }

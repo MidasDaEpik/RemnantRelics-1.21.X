@@ -96,7 +96,7 @@ public class Scylla extends SwordItem {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
         if (pStack.isEnchanted()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pStack, pContext, pTooltipComponents, pIsAdvanced);
     }

@@ -49,7 +49,7 @@ public class ElderChestplate extends ArmorItem {
         }
         ArmorTrim pComponent = pItemStack.get(DataComponents.TRIM);
         if (pItemStack.isEnchanted() || (pComponent != null && pComponent.pattern().isBound())) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.empty"));
+            pTooltipComponents.add(Component.empty());
         }
         super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }
