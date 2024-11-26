@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    " A ",
-    "BAB",
-    " R "
+    "B ",
+    "BA",
+    "A "
   ],
   "key": {
     "A": {
@@ -12,9 +12,6 @@
     },
     "B": {
       "item": "remnantrelics:blaze_core"
-    },
-    "R": {
-      "item": "minecraft:blaze_rod"
     }
   },
   "result": {

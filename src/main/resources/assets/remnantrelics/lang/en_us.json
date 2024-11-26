@@ -60,23 +60,23 @@
   "item.remnantrelics.ancient_tablet_imbuement.shift_desc_3": "§7Unlocked Recipes:",
   "item.remnantrelics.ancient_tablet_imbuement.shift_desc_4": "§5 Firestorm Katana",
   "item.remnantrelics.ancient_tablet_imbuement.shift_desc_5": "§5 Searing Staff",
-
-  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_6": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_7": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_imbuement.shift_desc_6": "§5 Witherblade Upgrade Smithing Template",
 
   "item.remnantrelics.ancient_tablet_reinforcement": "Ancient Tablet - Reinforcement",
   "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
   "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_2": "§8Consumed on Use",
 
-  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_3": "§7Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_reinforcement.shift_desc_4": "§5 Refined Witherblade",
 
   "item.remnantrelics.ancient_tablet_fusion": "Ancient Tablet - Fusion",
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_1": "§6[Use] §7to analyze the contents of the tablet.",
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_2": "§8Consumed on Use",
 
-  "item.remnantrelics.ancient_tablet_fusion.shift_desc_3": "§7Partially Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_fusion.shift_desc_4": "§5 Witherblade Upgrade Smithing Template",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_3": "§7Unlocked Recipes:",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_4": "§5 Creeping Crimson",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_5": "§5 Souleating Slasher",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_6": "§5 Warping Wither",
 
   "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
 

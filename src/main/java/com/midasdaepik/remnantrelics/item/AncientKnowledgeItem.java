@@ -97,21 +97,24 @@ public class AncientKnowledgeItem extends Item {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_imbuement.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_imbuement.shift_desc_4"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_imbuement.shift_desc_5"));
-            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_imbuement.shift_desc_6"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_imbuement.shift_desc_7"));
+
         } else if (this.KnowledgeTypeKey == 2) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_reinforcement.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_reinforcement.shift_desc_2"));
             pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_reinforcement.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_reinforcement.shift_desc_4"));
+
         } else if (this.KnowledgeTypeKey == 3) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_2"));
             pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_3"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_5"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.ancient_tablet_fusion.shift_desc_6"));
+
         } else if (this.KnowledgeTypeKey == 4) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.researchers_memoir_sculk.shift_desc_2"));
