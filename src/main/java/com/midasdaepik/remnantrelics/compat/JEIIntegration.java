@@ -1,0 +1,51 @@
+package com.midasdaepik.remnantrelics.compat;
+
+import com.midasdaepik.remnantrelics.RemnantRelics;
+import com.midasdaepik.remnantrelics.registries.RRItems;
+import mezz.jei.api.IModPlugin;
+import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.registration.IRecipeRegistration;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+
+@JeiPlugin
+public class JEIIntegration implements IModPlugin {
+    @Override
+    public ResourceLocation getPluginUid() {
+        return ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "jei_plugin");
+    }
+
+    @Override
+    public void registerRecipes(@NotNull IRecipeRegistration pRegistration) {
+        addInfo(pRegistration, RRItems.ELDER_SPINE.get());
+
+        addInfo(pRegistration, RRItems.PIGLIN_WARAXE.get());
+
+        addInfo(pRegistration, RRItems.FIRESTORM_KATANA.get());
+        addInfo(pRegistration, RRItems.SEARING_STAFF.get());
+        addInfo(pRegistration, RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
+
+        addInfo(pRegistration, RRItems.WITHERBLADE.get());
+        addInfo(pRegistration, RRItems.REFINED_WITHERBLADE.get());
+
+        addInfo(pRegistration, RRItems.CREEPING_CRIMSON.get());
+        addInfo(pRegistration, RRItems.SOULEATING_SLASHER.get());
+        addInfo(pRegistration, RRItems.WARPING_WITHER.get());
+
+        addInfo(pRegistration, RRItems.CATALYST_CHALICE.get());
+        addInfo(pRegistration, RRItems.SCYLLA.get());
+        addInfo(pRegistration, RRItems.LYRE_OF_ECHOES.get());
+    }
+
+    public static void addInfo(IRecipeRegistration pRegistration, Item pItem) {
+        pRegistration.addIngredientInfo(
+                new ItemStack(pItem),
+                VanillaTypes.ITEM_STACK,
+                Component.translatable("hint." + RemnantRelics.MOD_ID + "." + BuiltInRegistries.ITEM.getKey(pItem).getPath()));
+    }
+}
