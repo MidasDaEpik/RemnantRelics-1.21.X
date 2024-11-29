@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -118,7 +118,7 @@ public class Whisperwind extends BowItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_1"));
             pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.whisperwind.shift_desc_2"));

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "ABA",
+    "NBN",
     " R ",
-    " R "
+    " N "
   ],
   "key": {
-    "A": {
-      "item": "remnantrelics:ancient_weapon_fragment"
+    "N": {
+      "item": "minecraft:netherite_scrap"
     },
     "B": {
       "item": "remnantrelics:blaze_core"

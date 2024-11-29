@@ -29,9 +29,6 @@ public class RRItems {
     public static final DeferredItem<Item> WHISPERWIND = ITEMS.register("whisperwind",
             () -> new Whisperwind(new Item.Properties()));
 
-    public static final DeferredItem<Item> ANCIENT_WEAPON_FRAGMENT = ITEMS.register("ancient_weapon_fragment",
-            () -> new Item(new Item.Properties().fireResistant().stacksTo(16).rarity(Rarity.UNCOMMON)));
-
     public static final DeferredItem<Item> PIGLIN_WARAXE = ITEMS.register("piglin_waraxe",
             () -> new PiglinWaraxe(new Item.Properties()));
 

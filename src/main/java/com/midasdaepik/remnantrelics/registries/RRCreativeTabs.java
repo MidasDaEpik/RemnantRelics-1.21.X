@@ -31,8 +31,6 @@ public class RRCreativeTabs {
 
                         pOutput.accept(RRItems.WHISPERWIND.get());
 
-                        pOutput.accept(RRItems.ANCIENT_WEAPON_FRAGMENT.get());
-
                         pOutput.accept(RRItems.PIGLIN_WARAXE.get());
 
                         pOutput.accept(RRItems.BLAZE_CORE.get());

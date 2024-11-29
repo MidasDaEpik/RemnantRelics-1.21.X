@@ -15,13 +15,23 @@ import net.minecraft.world.item.Item;
 public class REIIntegration implements REIClientPlugin {
     @Override
     public void registerDisplays(DisplayRegistry pDisplayRegistry) {
+        addInfo(RRItems.CUTLASS.get());
+
         addInfo(RRItems.ELDER_SPINE.get());
 
         addInfo(RRItems.PIGLIN_WARAXE.get());
 
+        addInfo(RRItems.BLAZE_CORE.get());
+
         addInfo(RRItems.FIRESTORM_KATANA.get());
         addInfo(RRItems.SEARING_STAFF.get());
         addInfo(RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
+
+        addInfo(RRItems.ANCIENT_TABLET_IMBUEMENT.get());
+        addInfo(RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
+        addInfo(RRItems.ANCIENT_TABLET_FUSION.get());
+
+        addInfo(RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(RRItems.WITHERBLADE.get());
         addInfo(RRItems.REFINED_WITHERBLADE.get());
@@ -33,6 +43,8 @@ public class REIIntegration implements REIClientPlugin {
         addInfo(RRItems.CATALYST_CHALICE.get());
         addInfo(RRItems.SCYLLA.get());
         addInfo(RRItems.LYRE_OF_ECHOES.get());
+
+        addInfo(RRItems.DRAGONBONE.get());
     }
 
     private static void addInfo(Item pItem) {

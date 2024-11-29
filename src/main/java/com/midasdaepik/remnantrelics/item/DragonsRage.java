@@ -3,7 +3,7 @@ package com.midasdaepik.remnantrelics.item;
 import com.midasdaepik.remnantrelics.entity.DragonsRageBreath;
 import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -161,7 +161,7 @@ public class DragonsRage extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_rage.shift_desc_1"));
             pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.dragons_rage.shift_desc_2"));

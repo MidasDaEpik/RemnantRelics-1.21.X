@@ -25,8 +25,6 @@
 
   "item.remnantrelics.whisperwind.shift_desc_2": "§6[Attack] §7fires a wind charge from the user's inventory.",
 
-  "item.remnantrelics.ancient_weapon_fragment": "Ancient Weapon Fragment",
-
   "item.remnantrelics.piglin_waraxe": "Piglin Waraxe",
 
   "item.remnantrelics.blaze_core": "Blaze Core",
@@ -300,5 +298,38 @@
   "advancements.remnantrelics.all_witherblades.description": "Obtain all 3 witherblades",
 
   "advancements.remnantrelics.researchers_memoir_sculk.title": "Researcher's Memoir - Sculk",
-  "advancements.remnantrelics.researchers_memoir_sculk.description": "Study the works of a long departed ancient city researcher"
+  "advancements.remnantrelics.researchers_memoir_sculk.description": "Study the works of a long departed ancient city researcher",
+
+
+
+  "hint.remnantrelics.cutlass": "Found in shipwreck chests.",
+
+  "hint.remnantrelics.elder_spine": "Dropped from Elder Guardians, found in ocean monuments.",
+
+  "hint.remnantrelics.piglin_waraxe": "Dropped from Piglin Brutes equipped with it, found in bastions.",
+
+  "hint.remnantrelics.blaze_core": "Rarely dropped by Blazes, found in fortresses",
+
+  "hint.remnantrelics.firestorm_katana": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Imbuement found in fortresses.",
+  "hint.remnantrelics.searing_staff": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Imbuement found in fortresses.",
+  "hint.remnantrelics.witherblade_upgrade_smithing_template": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Imbuement found in fortresses.",
+
+  "hint.remnantrelics.ancient_tablet_imbuement": "Found in nether fortress chests.",
+  "hint.remnantrelics.ancient_tablet_reinforcement": "Found in bastion chests.",
+  "hint.remnantrelics.ancient_tablet_fusion": "Found in ancient forge chests.",
+
+  "hint.remnantrelics.wither_armor_trim_smithing_template": "Rarely dropped by The Wither.",
+
+  "hint.remnantrelics.witherblade": "Dropped from Wither Skeletons equipped with it, found in nether fortresses.",
+  "hint.remnantrelics.refined_witherblade": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Reinforcement found in bastions.",
+
+  "hint.remnantrelics.creeping_crimson": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+  "hint.remnantrelics.souleating_slasher": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+  "hint.remnantrelics.warping_wither": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+
+  "hint.remnantrelics.catalyst_chalice": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
+  "hint.remnantrelics.scylla": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
+  "hint.remnantrelics.lyre_of_echoes": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
+
+  "hint.remnantrelics.dragonbone": "Dropped by The Ender Dragon"
 }

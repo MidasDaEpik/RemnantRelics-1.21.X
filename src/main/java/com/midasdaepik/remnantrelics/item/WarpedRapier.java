@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
 import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.core.BlockPos;
@@ -104,7 +104,7 @@ public class WarpedRapier extends SwordItem {
 
             pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f, 0);
 
-            BlockHitResult raytrace = RRItemUtil.blockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+            BlockHitResult raytrace = RRUtil.blockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
             BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
             pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
             pLivingEntity.fallDistance = pLivingEntity.fallDistance - 5.0F;
@@ -149,7 +149,7 @@ public class WarpedRapier extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warped_rapier.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.warped_rapier.shift_desc_2"));
         } else {

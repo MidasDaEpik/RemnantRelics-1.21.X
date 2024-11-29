@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.registries.RREffects;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -89,7 +89,7 @@ public class Scylla extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.scylla.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.scylla.shift_desc_2"));
         } else {

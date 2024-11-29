@@ -2,7 +2,7 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import com.midasdaepik.remnantrelics.registries.RRSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -137,7 +137,7 @@ public class LyreOfEchoes extends Item {
 
     @Override
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.lyre_of_echoes.shift_desc_3"));

@@ -22,13 +22,23 @@ public class JEIIntegration implements IModPlugin {
 
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration pRegistration) {
+        addInfo(pRegistration, RRItems.CUTLASS.get());
+
         addInfo(pRegistration, RRItems.ELDER_SPINE.get());
 
         addInfo(pRegistration, RRItems.PIGLIN_WARAXE.get());
 
+        addInfo(pRegistration, RRItems.BLAZE_CORE.get());
+
         addInfo(pRegistration, RRItems.FIRESTORM_KATANA.get());
         addInfo(pRegistration, RRItems.SEARING_STAFF.get());
         addInfo(pRegistration, RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE.get());
+
+        addInfo(pRegistration, RRItems.ANCIENT_TABLET_IMBUEMENT.get());
+        addInfo(pRegistration, RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
+        addInfo(pRegistration, RRItems.ANCIENT_TABLET_FUSION.get());
+
+        addInfo(pRegistration, RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(pRegistration, RRItems.WITHERBLADE.get());
         addInfo(pRegistration, RRItems.REFINED_WITHERBLADE.get());
@@ -40,6 +50,8 @@ public class JEIIntegration implements IModPlugin {
         addInfo(pRegistration, RRItems.CATALYST_CHALICE.get());
         addInfo(pRegistration, RRItems.SCYLLA.get());
         addInfo(pRegistration, RRItems.LYRE_OF_ECHOES.get());
+
+        addInfo(pRegistration, RRItems.DRAGONBONE.get());
     }
 
     public static void addInfo(IRecipeRegistration pRegistration, Item pItem) {

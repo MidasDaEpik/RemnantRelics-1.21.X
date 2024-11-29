@@ -1,7 +1,7 @@
 package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.registries.RREffects;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -58,7 +58,7 @@ public class HexedDice extends Item {
 
     @Override
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if (RRItemUtil.ItemKeys.isHoldingShift()) {
+        if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.hexed_dice.shift_desc_1"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.hexed_dice.shift_desc_2"));
             pTooltipComponents.add(Component.translatable("item.remnantrelics.hexed_dice.shift_desc_3"));

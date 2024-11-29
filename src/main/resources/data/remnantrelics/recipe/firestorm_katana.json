@@ -3,12 +3,12 @@
   "category": "equipment",
   "pattern": [
     "B ",
-    "BA",
-    "A "
+    "BN",
+    "N "
   ],
   "key": {
-    "A": {
-      "item": "remnantrelics:ancient_weapon_fragment"
+    "N": {
+      "item": "minecraft:netherite_scrap"
     },
     "B": {
       "item": "remnantrelics:blaze_core"

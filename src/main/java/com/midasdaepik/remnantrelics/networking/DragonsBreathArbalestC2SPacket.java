@@ -3,7 +3,7 @@ package com.midasdaepik.remnantrelics.networking;
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.entity.DragonsBreath;
 import com.midasdaepik.remnantrelics.registries.RREffects;
-import com.midasdaepik.remnantrelics.registries.RRItemUtil;
+import com.midasdaepik.remnantrelics.registries.RRUtil;
 import com.midasdaepik.remnantrelics.registries.RRItems;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.core.particles.ParticleTypes;
@@ -66,7 +66,7 @@ public record DragonsBreathArbalestC2SPacket() implements CustomPacketPayload {
 
                         pLevel.playSeededSound(null, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f,0);
                         pLevel.sendParticles(ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 16, 0.1, 0.1, 0.1, 0.05);
-                        RRItemUtil.particleSphere(pLevel, ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 0.5);
+                        RRUtil.particleSphere(pLevel, ParticleTypes.DRAGON_BREATH, EntityIteratorAABBCenter.x, EntityIteratorAABBCenter.y, EntityIteratorAABBCenter.z, 0.5);
 
                         pDragonsBreathEntityIterator.discard();
                     }
