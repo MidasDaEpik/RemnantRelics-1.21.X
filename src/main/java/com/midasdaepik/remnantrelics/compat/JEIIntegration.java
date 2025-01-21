@@ -38,7 +38,7 @@ public class JEIIntegration implements IModPlugin {
         addInfo(pRegistration, RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
         addInfo(pRegistration, RRItems.ANCIENT_TABLET_FUSION.get());
 
-        addInfo(pRegistration, RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
+        addInfo(pRegistration, RRItems.ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(pRegistration, RRItems.WITHERBLADE.get());
         addInfo(pRegistration, RRItems.REFINED_WITHERBLADE.get());
@@ -52,6 +52,8 @@ public class JEIIntegration implements IModPlugin {
         addInfo(pRegistration, RRItems.CATALYST_CHALICE.get());
         addInfo(pRegistration, RRItems.SCYLLA.get());
         addInfo(pRegistration, RRItems.LYRE_OF_ECHOES.get());
+
+        addInfo(pRegistration, RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(pRegistration, RRItems.DRAGONBONE.get());
     }

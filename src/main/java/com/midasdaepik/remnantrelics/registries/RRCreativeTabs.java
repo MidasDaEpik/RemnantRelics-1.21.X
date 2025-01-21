@@ -48,7 +48,7 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
                         pOutput.accept(RRItems.ANCIENT_TABLET_FUSION.get());
 
-                        pOutput.accept(RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
+                        pOutput.accept(RRItems.ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
                         pOutput.accept(RRItems.WITHERBLADE.get());
                         pOutput.accept(RRItems.REFINED_WITHERBLADE.get());
@@ -65,6 +65,8 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.CATALYST_CHALICE.get());
                         pOutput.accept(RRItems.SCYLLA.get());
                         pOutput.accept(RRItems.LYRE_OF_ECHOES.get());
+
+                        pOutput.accept(RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
                         pOutput.accept(RRItems.DRAGONBONE.get());
 

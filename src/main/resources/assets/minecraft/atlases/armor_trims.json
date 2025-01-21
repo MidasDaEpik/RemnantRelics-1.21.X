@@ -36,8 +36,10 @@
         "trims/models/armor/raiser_leggings",
         "trims/models/armor/host",
         "trims/models/armor/host_leggings",
-        "remnantrelics:trims/models/armor/wither",
-        "remnantrelics:trims/models/armor/wither_leggings"
+        "remnantrelics:trims/models/armor/atrophy",
+        "remnantrelics:trims/models/armor/atrophy_leggings",
+        "remnantrelics:trims/models/armor/tyrant",
+        "remnantrelics:trims/models/armor/tyrant_leggings"
       ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

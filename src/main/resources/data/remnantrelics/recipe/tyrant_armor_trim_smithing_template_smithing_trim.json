@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_trim",
   "template": {
-    "item": "remnantrelics:wither_armor_trim_smithing_template"
+    "item": "remnantrelics:tyrant_armor_trim_smithing_template"
   },
   "base": {
     "tag": "minecraft:trimmable_armor"

@@ -55,8 +55,8 @@ public class RRItems {
     public static final DeferredItem<Item> ANCIENT_TABLET_REINFORCEMENT = ITEMS.register("ancient_tablet_reinforcement",
             AncientKnowledgeItem::createAncientTabletReinforcement);
 
-    public static final DeferredItem<Item> WITHER_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("wither_armor_trim_smithing_template",
-            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:wither")));
+    public static final DeferredItem<Item> ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("atrophy_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:atrophy")));
 
     public static final DeferredItem<Item> WITHERBLADE = ITEMS.register("witherblade",
             () -> new Witherblade(new Item.Properties()));
@@ -84,6 +84,9 @@ public class RRItems {
             () -> new Scylla(new Item.Properties()));
     public static final DeferredItem<Item> LYRE_OF_ECHOES = ITEMS.register("lyre_of_echoes",
             () -> new LyreOfEchoes(new Item.Properties()));
+
+    public static final DeferredItem<Item> TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("tyrant_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:tyrant")));
 
     public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
             () -> new Dragonbone(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue())));

@@ -31,7 +31,7 @@ public class REIIntegration implements REIClientPlugin {
         addInfo(RRItems.ANCIENT_TABLET_REINFORCEMENT.get());
         addInfo(RRItems.ANCIENT_TABLET_FUSION.get());
 
-        addInfo(RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE.get());
+        addInfo(RRItems.ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(RRItems.WITHERBLADE.get());
         addInfo(RRItems.REFINED_WITHERBLADE.get());
@@ -45,6 +45,8 @@ public class REIIntegration implements REIClientPlugin {
         addInfo(RRItems.CATALYST_CHALICE.get());
         addInfo(RRItems.SCYLLA.get());
         addInfo(RRItems.LYRE_OF_ECHOES.get());
+
+        addInfo(RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE.get());
 
         addInfo(RRItems.DRAGONBONE.get());
     }

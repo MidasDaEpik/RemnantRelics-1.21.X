@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:netherrack"
+    },
+    "S": {
+      "item": "remnantrelics:atrophy_armor_trim_smithing_template"
+    }
+  },
+  "result": {
+    "id": "remnantrelics:atrophy_armor_trim_smithing_template",
+    "count": 2
+  }
+}

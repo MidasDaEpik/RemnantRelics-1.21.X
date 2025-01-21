@@ -12,11 +12,15 @@ import net.minecraft.world.item.armortrim.TrimPattern;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class RRTrimPatterns {
-    public static final ResourceKey<TrimPattern> WITHER = ResourceKey.create(Registries.TRIM_PATTERN,
-            ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "wither"));
+    public static final ResourceKey<TrimPattern> ATROPHY = ResourceKey.create(Registries.TRIM_PATTERN,
+            ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "atrophy"));
+
+    public static final ResourceKey<TrimPattern> TYRANT = ResourceKey.create(Registries.TRIM_PATTERN,
+            ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "tyrant"));
 
     public static void bootstrap(BootstrapContext<TrimPattern> context) {
-        register(context, RRItems.WITHER_ARMOR_TRIM_SMITHING_TEMPLATE, WITHER);
+        register(context, RRItems.ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE, ATROPHY);
+        register(context, RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE, TYRANT);
     }
 
     public static void register(BootstrapContext<TrimPattern> context, DeferredItem<Item> item, ResourceKey<TrimPattern> key) {

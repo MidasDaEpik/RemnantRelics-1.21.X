@@ -14,11 +14,11 @@
       "item": "minecraft:netherrack"
     },
     "S": {
-      "item": "remnantrelics:wither_armor_trim_smithing_template"
+      "item": "remnantrelics:tyrant_armor_trim_smithing_template"
     }
   },
   "result": {
-    "id": "remnantrelics:wither_armor_trim_smithing_template",
+    "id": "remnantrelics:tyrant_armor_trim_smithing_template",
     "count": 2
   }
 }

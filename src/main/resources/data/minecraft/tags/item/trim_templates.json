@@ -2,7 +2,11 @@
   "replace": false,
   "values": [
     {
-      "id": "remnantrelics:wither_armor_trim_smithing_template",
+      "id": "remnantrelics:atrophy_armor_trim_smithing_template",
+      "required": false
+    },
+    {
+      "id": "remnantrelics:tyrant_armor_trim_smithing_template",
       "required": false
     }
   ]

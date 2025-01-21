@@ -76,7 +76,7 @@
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_5": "§5 Souleating Slasher",
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_6": "§5 Warping Wither",
 
-  "item.remnantrelics.wither_armor_trim_smithing_template": "Smithing Template",
+  "item.remnantrelics.atrophy_armor_trim_smithing_template": "Smithing Template",
 
   "item.remnantrelics.witherblade": "Witherblade",
   "item.remnantrelics.witherblade.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
@@ -141,6 +141,8 @@
   "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast that can penetrate walls,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a straight line ahead,",
   "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer it is charged.",
+
+  "item.remnantrelics.tyrant_armor_trim_smithing_template": "Smithing Template",
 
   "item.remnantrelics.dragonbone": "Dragonbone",
 
@@ -241,7 +243,9 @@
 
 
 
-  "trim_pattern.remnantrelics.wither": "Wither Armor Trim",
+  "trim_pattern.remnantrelics.atrophy": "Atrophy Armor Trim",
+
+  "trim_pattern.remnantrelics.tyrant": "Tyrant Armor Trim",
 
 
 
@@ -318,7 +322,7 @@
   "hint.remnantrelics.ancient_tablet_reinforcement": "Found in bastion remnant chests.",
   "hint.remnantrelics.ancient_tablet_fusion": "Found in ancient forge chests.",
 
-  "hint.remnantrelics.wither_armor_trim_smithing_template": "Rarely dropped by The Wither.",
+  "hint.remnantrelics.atrophy_armor_trim_smithing_template": "Rarely dropped by The Wither.",
 
   "hint.remnantrelics.witherblade": "Dropped from Wither Skeletons equipped with it, found in nether fortresses.",
   "hint.remnantrelics.refined_witherblade": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Reinforcement found in bastions.",
@@ -333,5 +337,7 @@
   "hint.remnantrelics.scylla": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
   "hint.remnantrelics.lyre_of_echoes": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
 
-  "hint.remnantrelics.dragonbone": "Dropped by The Ender Dragon"
+  "hint.remnantrelics.tyrant_armor_trim_smithing_template": "Rarely dropped by The Ender Dragon.",
+
+  "hint.remnantrelics.dragonbone": "Dropped by The Ender Dragon."
 }
