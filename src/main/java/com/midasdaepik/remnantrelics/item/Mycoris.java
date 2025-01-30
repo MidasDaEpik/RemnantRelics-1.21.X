@@ -26,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class CreepingCrimson extends SwordItem {
-    public CreepingCrimson(Properties pProperties) {
+public class Mycoris extends SwordItem {
+    public Mycoris(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
                 return 1777;
@@ -52,7 +52,7 @@ public class CreepingCrimson extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(CreepingCrimson.createAttributes()).rarity(RREnumExtensions.RARITY_CREEPING_CRIMSON.getValue()));
+        }, pProperties.fireResistant().attributes(Mycoris.createAttributes()).rarity(RREnumExtensions.RARITY_MYCORIS.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -100,9 +100,9 @@ public class CreepingCrimson extends SwordItem {
     @Override
     public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRUtil.ItemKeys.isHoldingShift()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.creeping_crimson.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.creeping_crimson.shift_desc_2"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.creeping_crimson.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.mycoris.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.mycoris.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.mycoris.shift_desc_3"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

@@ -43,9 +43,9 @@ public class JEIIntegration implements IModPlugin {
         addInfo(pRegistration, RRItems.WITHERBLADE.get());
         addInfo(pRegistration, RRItems.REFINED_WITHERBLADE.get());
 
-        addInfo(pRegistration, RRItems.CREEPING_CRIMSON.get());
-        addInfo(pRegistration, RRItems.SOULEATING_SLASHER.get());
-        addInfo(pRegistration, RRItems.WARPING_WITHER.get());
+        addInfo(pRegistration, RRItems.MYCORIS.get());
+        addInfo(pRegistration, RRItems.SOULGORGE.get());
+        addInfo(pRegistration, RRItems.WARPTHISTLE.get());
 
         addInfo(pRegistration, RRItems.RESEARCHERS_NOTES_SCULK.get());
 

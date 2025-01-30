@@ -131,12 +131,12 @@ public class ObsidianBulwark extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 300);
-                pPlayer.getCooldowns().addCooldown(RRItems.SOULEATING_SLASHER.get(), 300);
+                pPlayer.getCooldowns().addCooldown(RRItems.SOULGORGE.get(), 300);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(RRItems.SOULEATING_SLASHER.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.SOULGORGE.get(), 10);
             }
         }
     }

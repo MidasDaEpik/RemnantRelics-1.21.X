@@ -123,12 +123,12 @@ public class WarpedRapier extends SwordItem {
                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
                 pPlayer.getCooldowns().addCooldown(this, 160);
-                pPlayer.getCooldowns().addCooldown(RRItems.WARPING_WITHER.get(), 160);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPTHISTLE.get(), 160);
             }
         } else {
             if (pLivingEntity instanceof Player pPlayer) {
                 pPlayer.getCooldowns().addCooldown(this, 10);
-                pPlayer.getCooldowns().addCooldown(RRItems.WARPING_WITHER.get(), 10);
+                pPlayer.getCooldowns().addCooldown(RRItems.WARPTHISTLE.get(), 10);
             }
         }
     }

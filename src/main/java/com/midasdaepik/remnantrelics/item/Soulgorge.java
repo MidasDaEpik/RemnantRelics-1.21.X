@@ -39,8 +39,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 import java.util.List;
 
-public class SouleatingSlasher extends SwordItem {
-    public SouleatingSlasher(Properties pProperties) {
+public class Soulgorge extends SwordItem {
+    public Soulgorge(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
                 return 1270;
@@ -65,7 +65,7 @@ public class SouleatingSlasher extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(SouleatingSlasher.createAttributes()).rarity(RREnumExtensions.RARITY_SOULEATING_SLASHER.getValue()));
+        }, pProperties.fireResistant().attributes(Soulgorge.createAttributes()).rarity(RREnumExtensions.RARITY_SOULGORGE.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -74,7 +74,7 @@ public class SouleatingSlasher extends SwordItem {
                         new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  13, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
-                        new AttributeModifier(BASE_ATTACK_SPEED_ID,  -3, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_SPEED_ID,  -3.2, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ARMOR,
                         new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "armor"), 6, AttributeModifier.Operation.ADD_VALUE),
@@ -243,13 +243,13 @@ public class SouleatingSlasher extends SwordItem {
         if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
             pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_2"));
             pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_3"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_4"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_5"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.souleating_slasher.shift_desc_6"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_5"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_6"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

@@ -43,8 +43,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 import java.util.List;
 
-public class WarpingWither extends SwordItem {
-    public WarpingWither(Properties pProperties) {
+public class Warpthistle extends SwordItem {
+    public Warpthistle(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
                 return 2285;
@@ -69,7 +69,7 @@ public class WarpingWither extends SwordItem {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(WarpingWither.createAttributes()).rarity(RREnumExtensions.RARITY_WARPING_WITHER.getValue()));
+        }, pProperties.fireResistant().attributes(Warpthistle.createAttributes()).rarity(RREnumExtensions.RARITY_WARPTHISTLE.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -191,11 +191,11 @@ public class WarpingWither extends SwordItem {
     @Override
     public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRUtil.ItemKeys.isHoldingShift()) {
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_1"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.warpthistle.shift_desc_1"));
             pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_2"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_3"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.warping_wither.shift_desc_4"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.warpthistle.shift_desc_2"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.warpthistle.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.warpthistle.shift_desc_4"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

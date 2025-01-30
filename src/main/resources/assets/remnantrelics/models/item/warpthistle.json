@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "remnantrelics:item/souleating_slasher"
+        "layer0": "remnantrelics:item/warpthistle"
     }
 }

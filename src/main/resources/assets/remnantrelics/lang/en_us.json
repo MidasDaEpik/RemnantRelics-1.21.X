@@ -84,26 +84,26 @@
   "item.remnantrelics.refined_witherblade": "Refined Witherblade",
   "item.remnantrelics.refined_witherblade.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
 
-  "item.remnantrelics.creeping_crimson": "§4Creeping Crimson",
-  "item.remnantrelics.creeping_crimson.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
-  "item.remnantrelics.creeping_crimson.shift_desc_2": "§7inflicting §8Weakness I§7, and §8Wither III §7to entities caught in it.",
-  "item.remnantrelics.creeping_crimson.shift_desc_3": "§88s Cooldown",
+  "item.remnantrelics.mycoris": "Mycoris",
+  "item.remnantrelics.mycoris.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
+  "item.remnantrelics.mycoris.shift_desc_2": "§7inflicting §8Weakness I§7, and §8Wither III §7to entities caught in it.",
+  "item.remnantrelics.mycoris.shift_desc_3": "§88s Cooldown",
 
-  "item.remnantrelics.souleating_slasher": "Souleater Claymore",
-  "item.remnantrelics.souleating_slasher.shift_desc_1": "§7Has a chance to create withering explosions on hit,",
-  "item.remnantrelics.souleating_slasher.shift_desc_2": "§7inflicting §8Wither II §7on nearby entities.",
+  "item.remnantrelics.soulgorge": "Soulgorge",
+  "item.remnantrelics.soulgorge.shift_desc_1": "§7Has a chance to create withering explosions on hit,",
+  "item.remnantrelics.soulgorge.shift_desc_2": "§7inflicting §8Wither II §7on nearby entities.",
 
-  "item.remnantrelics.souleating_slasher.shift_desc_3": "§6[Use] §7grants the user an §6Absorption §7shield,",
-  "item.remnantrelics.souleating_slasher.shift_desc_4": "§7and consumes the §8Wither §7effect of nearby entities,",
-  "item.remnantrelics.souleating_slasher.shift_desc_5": "§7damaging them to increase the users' §6Absorption §7shield.",
-  "item.remnantrelics.souleating_slasher.shift_desc_6": "§820s Cooldown",
+  "item.remnantrelics.soulgorge.shift_desc_3": "§6[Use] §7grants the user an §6Absorption §7shield,",
+  "item.remnantrelics.soulgorge.shift_desc_4": "§7and consumes the §8Wither §7effect of nearby entities,",
+  "item.remnantrelics.soulgorge.shift_desc_5": "§7damaging them to increase the users' §6Absorption §7shield.",
+  "item.remnantrelics.soulgorge.shift_desc_6": "§820s Cooldown",
 
-  "item.remnantrelics.warping_wither": "Warping Wither",
-  "item.remnantrelics.warping_wither.shift_desc_1": "§7Has a chance to inflict §8Wither III §7on targets.",
+  "item.remnantrelics.warpthistle": "Warpthistle",
+  "item.remnantrelics.warpthistle.shift_desc_1": "§7Has a chance to inflict §8Wither III §7on targets.",
 
-  "item.remnantrelics.warping_wither.shift_desc_2": "§6[Use] §7teleports the user a short distance forward,",
-  "item.remnantrelics.warping_wither.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
-  "item.remnantrelics.warping_wither.shift_desc_4": "§87s Cooldown",
+  "item.remnantrelics.warpthistle.shift_desc_2": "§6[Use] §7teleports the user a short distance forward,",
+  "item.remnantrelics.warpthistle.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
+  "item.remnantrelics.warpthistle.shift_desc_4": "§87s Cooldown",
 
   "item.remnantrelics.researchers_notes_sculk": "Researcher's Notes - Sculk",
 
@@ -327,9 +327,9 @@
   "hint.remnantrelics.witherblade": "Dropped from Wither Skeletons equipped with it, found in nether fortresses.",
   "hint.remnantrelics.refined_witherblade": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Reinforcement found in bastions.",
 
-  "hint.remnantrelics.creeping_crimson": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
-  "hint.remnantrelics.souleating_slasher": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
-  "hint.remnantrelics.warping_wither": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+  "hint.remnantrelics.mycoris": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+  "hint.remnantrelics.soulgorge": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
+  "hint.remnantrelics.warpthistle": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
 
   "hint.remnantrelics.researchers_notes_sculk": "Found in ancient city chests.",
 

@@ -53,9 +53,9 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.WITHERBLADE.get());
                         pOutput.accept(RRItems.REFINED_WITHERBLADE.get());
 
-                        pOutput.accept(RRItems.CREEPING_CRIMSON.get());
-                        pOutput.accept(RRItems.SOULEATING_SLASHER.get());
-                        pOutput.accept(RRItems.WARPING_WITHER.get());
+                        pOutput.accept(RRItems.MYCORIS.get());
+                        pOutput.accept(RRItems.SOULGORGE.get());
+                        pOutput.accept(RRItems.WARPTHISTLE.get());
 
                         pOutput.accept(RRItems.RESEARCHERS_NOTES_SCULK.get());
                         pOutput.accept(RRItems.RESEARCHERS_MEMOIR_SCULK.get());

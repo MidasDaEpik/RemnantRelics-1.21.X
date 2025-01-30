@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "remnantrelics:item/creeping_crimson"
+        "layer0": "remnantrelics:item/mycoris"
     }
 }

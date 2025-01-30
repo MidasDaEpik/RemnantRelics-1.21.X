@@ -36,9 +36,9 @@ public class REIIntegration implements REIClientPlugin {
         addInfo(RRItems.WITHERBLADE.get());
         addInfo(RRItems.REFINED_WITHERBLADE.get());
 
-        addInfo(RRItems.CREEPING_CRIMSON.get());
-        addInfo(RRItems.SOULEATING_SLASHER.get());
-        addInfo(RRItems.WARPING_WITHER.get());
+        addInfo(RRItems.MYCORIS.get());
+        addInfo(RRItems.SOULGORGE.get());
+        addInfo(RRItems.WARPTHISTLE.get());
 
         addInfo(RRItems.RESEARCHERS_NOTES_SCULK.get());
 

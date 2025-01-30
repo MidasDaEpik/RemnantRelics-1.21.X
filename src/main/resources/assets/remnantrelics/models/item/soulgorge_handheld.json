@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "remnantrelics:item/souleating_slasher_handheld"
+    "layer0": "remnantrelics:item/soulgorge_handheld"
   },
   "display": {
     "thirdperson_righthand": {

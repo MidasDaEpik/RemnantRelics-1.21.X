@@ -31,16 +31,16 @@ public class RREnumExtensions {
             Rarity.class, -1, "remnantrelics:witherblade", (UnaryOperator<Style>) style -> style.withColor(5458763)
     );
 
-    public static final EnumProxy<Rarity> RARITY_CREEPING_CRIMSON = new EnumProxy<>(
-            Rarity.class, -1, "remnantrelics:creeping_crimson", (UnaryOperator<Style>) style -> style.withColor(8000014)
+    public static final EnumProxy<Rarity> RARITY_MYCORIS = new EnumProxy<>(
+            Rarity.class, -1, "remnantrelics:mycoris", (UnaryOperator<Style>) style -> style.withColor(8000014)
     );
 
-    public static final EnumProxy<Rarity> RARITY_SOULEATING_SLASHER = new EnumProxy<>(
-            Rarity.class, -1, "remnantrelics:souleating_slasher", (UnaryOperator<Style>) style -> style.withColor(435369)
+    public static final EnumProxy<Rarity> RARITY_SOULGORGE = new EnumProxy<>(
+            Rarity.class, -1, "remnantrelics:soulgorge", (UnaryOperator<Style>) style -> style.withColor(435369)
     );
 
-    public static final EnumProxy<Rarity> RARITY_WARPING_WITHER = new EnumProxy<>(
-            Rarity.class, -1, "remnantrelics:warping_wither", (UnaryOperator<Style>) style -> style.withColor(2526073)
+    public static final EnumProxy<Rarity> RARITY_WARPTHISTLE = new EnumProxy<>(
+            Rarity.class, -1, "remnantrelics:warpthistle", (UnaryOperator<Style>) style -> style.withColor(2526073)
     );
 
     public static final EnumProxy<Rarity> RARITY_SCULK = new EnumProxy<>(

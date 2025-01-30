@@ -63,12 +63,12 @@ public class RRItems {
     public static final DeferredItem<Item> REFINED_WITHERBLADE = ITEMS.register("refined_witherblade",
             () -> new RefinedWitherblade(new Item.Properties()));
 
-    public static final DeferredItem<Item> CREEPING_CRIMSON = ITEMS.register("creeping_crimson",
-            () -> new CreepingCrimson(new Item.Properties()));
-    public static final DeferredItem<Item> SOULEATING_SLASHER = ITEMS.register("souleating_slasher",
-            () -> new SouleatingSlasher(new Item.Properties()));
-    public static final DeferredItem<Item> WARPING_WITHER = ITEMS.register("warping_wither",
-            () -> new WarpingWither(new Item.Properties()));
+    public static final DeferredItem<Item> MYCORIS = ITEMS.register("mycoris",
+            () -> new Mycoris(new Item.Properties()));
+    public static final DeferredItem<Item> SOULGORGE = ITEMS.register("soulgorge",
+            () -> new Soulgorge(new Item.Properties()));
+    public static final DeferredItem<Item> WARPTHISTLE = ITEMS.register("warpthistle",
+            () -> new Warpthistle(new Item.Properties()));
 
     public static final DeferredItem<Item> RESEARCHERS_NOTES_SCULK = ITEMS.register("researchers_notes_sculk",
             () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue())));

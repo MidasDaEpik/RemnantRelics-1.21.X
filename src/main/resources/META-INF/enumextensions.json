@@ -65,29 +65,29 @@
     },
     {
       "enum": "net/minecraft/world/item/Rarity",
-      "name": "REMNANTRELICS_RARITY_CREEPING_CRIMSON",
+      "name": "REMNANTRELICS_RARITY_MYCORIS",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
-        "field": "RARITY_CREEPING_CRIMSON"
+        "field": "RARITY_MYCORIS"
       }
     },
     {
       "enum": "net/minecraft/world/item/Rarity",
-      "name": "REMNANTRELICS_RARITY_SOULEATING_SLASHER",
+      "name": "REMNANTRELICS_RARITY_SOULGORGE",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
-        "field": "RARITY_SOULEATING_SLASHER"
+        "field": "RARITY_SOULGORGE"
       }
     },
     {
       "enum": "net/minecraft/world/item/Rarity",
-      "name": "REMNANTRELICS_RARITY_WARPING_WITHER",
+      "name": "REMNANTRELICS_RARITY_WARPTHISTLE",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
-        "field": "RARITY_WARPING_WITHER"
+        "field": "RARITY_WARPTHISTLE"
       }
     },
     {
