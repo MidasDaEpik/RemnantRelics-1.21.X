@@ -20,8 +20,6 @@ public class RRCreativeTabs {
                     //.backgroundTexture(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "textures/gui/container/creative_inventory/background.png"))
                     .displayItems((pParameters, pOutput) -> {
 
-                        pOutput.accept(RRItems.BLUEPRINT_SCROLL_ELDER.get());
-
                         pOutput.accept(RRItems.CUTLASS.get());
 
                         pOutput.accept(RRItems.ELDER_SPINE.get());

@@ -4,10 +4,6 @@
     {
       "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:entities/elder_guardian"
-    },
-    {
-      "condition": "minecraft:random_chance",
-      "chance": 0.35
     }
   ],
   "item": "remnantrelics:elder_spine"

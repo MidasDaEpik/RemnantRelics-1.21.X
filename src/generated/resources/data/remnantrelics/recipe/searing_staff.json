@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "remnantrelics:blaze_core"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "R": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "NBN",
+    " R ",
+    " N "
+  ],
+  "result": {
+    "count": 1,
+    "id": "remnantrelics:searing_staff"
+  }
+}

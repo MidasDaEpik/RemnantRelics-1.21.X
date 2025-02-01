@@ -7,9 +7,6 @@
 
   "item.remnantrelics.elder_spine": "Elder Spine",
 
-  "item.remnantrelics.elder_upgrade_smithing_template": "Smithing Template",
-  "item.remnantrelics.elder_upgrade_smithing_template_desc": "Elder Upgrade",
-
   "item.remnantrelics.charybdis": "Charybdis",
   "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting enemies.",
 
@@ -230,11 +227,6 @@
   "subtitles.item.lyre_of_echoes.sonic_boom": "Lyre of Echoes booms",
 
 
-
-  "smithing_template.elder_upgrade_smithing_template.applies_to": "Cutlass, Diamond Chestplate",
-  "smithing_template.elder_upgrade_smithing_template.ingredients": "Elder Spine",
-  "smithing_template.elder_upgrade_smithing_template.base_slot_description": "Add Cutlass, or Diamond Chestplate",
-  "smithing_template.elder_upgrade_smithing_template.additions_slot_description": "Add Elder Spine",
 
   "smithing_template.witherblade_upgrade_smithing_template.applies_to": "Witherblade Precursors",
   "smithing_template.witherblade_upgrade_smithing_template.ingredients": "Witherblade",

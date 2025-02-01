@@ -16,12 +16,6 @@ public class UpgradeTemplateItem extends SmithingTemplateItem {
     private static final Component WITHERBLADE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.base_slot_description");
     private static final Component WITHERBLADE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.witherblade_upgrade_smithing_template.additions_slot_description");
 
-    private static final Component ELDER_UPGRADE = Component.translatable("item.remnantrelics.elder_upgrade_smithing_template_desc").withStyle(ChatFormatting.GRAY);
-    private static final Component ELDER_UPGRADE_APPLIES_TO = Component.translatable("smithing_template.elder_upgrade_smithing_template.applies_to").withStyle(ChatFormatting.BLUE);
-    private static final Component ELDER_UPGRADE_INGREDIENTS = Component.translatable("smithing_template.elder_upgrade_smithing_template.ingredients").withStyle(ChatFormatting.BLUE);
-    private static final Component ELDER_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("smithing_template.elder_upgrade_smithing_template.base_slot_description");
-    private static final Component ELDER_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable("smithing_template.elder_upgrade_smithing_template.additions_slot_description");
-
     private static final ResourceLocation EMPTY_SLOT_HELMET = ResourceLocation.parse("item/empty_armor_slot_helmet");
     private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = ResourceLocation.parse("item/empty_armor_slot_chestplate");
     private static final ResourceLocation EMPTY_SLOT_LEGGINGS = ResourceLocation.parse("item/empty_armor_slot_leggings");
@@ -41,7 +35,6 @@ public class UpgradeTemplateItem extends SmithingTemplateItem {
     private static final ResourceLocation EMPTY_SLOT_AMETHYST_SHARD = ResourceLocation.parse("item/empty_slot_amethyst_shard");
 
     private static final ResourceLocation EMPTY_SLOT_NETHER_STAR = ResourceLocation.parse("remnantrelics:item/empty_slot_nether_star");
-    private static final ResourceLocation EMPTY_SLOT_ELDER_SPINE = ResourceLocation.parse("remnantrelics:item/empty_slot_elder_spine");
 
     public UpgradeTemplateItem(Component pAppliesTo, Component pIngredients, Component pUpgradeDescription, Component pBaseSlotDescription, Component pAdditionsSlotDescription, List<ResourceLocation> pBaseSlotEmptyIcons, List<ResourceLocation> pAdditonalSlotEmptyIcons) {
         super(pAppliesTo, pIngredients, pUpgradeDescription, pBaseSlotDescription, pAdditionsSlotDescription, pBaseSlotEmptyIcons, pAdditonalSlotEmptyIcons);
@@ -57,18 +50,6 @@ public class UpgradeTemplateItem extends SmithingTemplateItem {
 
     private static List<ResourceLocation> createWitherbladeUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_NETHER_STAR);
-    }
-
-    public static UpgradeTemplateItem createElderUpgradeTemplate() {
-        return new UpgradeTemplateItem(ELDER_UPGRADE_APPLIES_TO, ELDER_UPGRADE_INGREDIENTS, ELDER_UPGRADE, ELDER_UPGRADE_BASE_SLOT_DESCRIPTION, ELDER_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createElderUpgradeIconList(), createElderUpgradeMaterialList());
-    }
-
-    private static List<ResourceLocation> createElderUpgradeIconList() {
-        return List.of(EMPTY_SLOT_SWORD, EMPTY_SLOT_CHESTPLATE);
-    }
-
-    private static List<ResourceLocation> createElderUpgradeMaterialList() {
-        return List.of(EMPTY_SLOT_ELDER_SPINE);
     }
 
     @Override

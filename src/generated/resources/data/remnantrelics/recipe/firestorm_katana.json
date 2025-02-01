@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "remnantrelics:blaze_core"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "B ",
+    "BN",
+    "N "
+  ],
+  "result": {
+    "count": 1,
+    "id": "remnantrelics:firestorm_katana"
+  }
+}

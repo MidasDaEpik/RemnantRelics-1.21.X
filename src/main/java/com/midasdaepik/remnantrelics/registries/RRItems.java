@@ -18,12 +18,9 @@ public class RRItems {
     public static final DeferredItem<Item> ELDER_SPINE = ITEMS.register("elder_spine",
             () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_ELDER.getValue())));
 
-    public static final DeferredItem<Item> BLUEPRINT_SCROLL_ELDER = ITEMS.register("elder_upgrade_smithing_template",
-            UpgradeTemplateItem::createElderUpgradeTemplate);
-
     public static final DeferredItem<Item> CHARYBDIS = ITEMS.register("charybdis",
             () -> new Charybdis(new Item.Properties()));
-    public static final DeferredItem<Item> ELDER_CHESTPLATE = ITEMS.register("elder_chestplate",
+    public static final DeferredItem<ArmorItem> ELDER_CHESTPLATE = ITEMS.register("elder_chestplate",
             () -> new ElderChestplate(new Item.Properties()));
 
     public static final DeferredItem<Item> WHISPERWIND = ITEMS.register("whisperwind",
@@ -56,7 +53,7 @@ public class RRItems {
             AncientKnowledgeItem::createAncientTabletReinforcement);
 
     public static final DeferredItem<Item> ATROPHY_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("atrophy_armor_trim_smithing_template",
-            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:atrophy")));
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "atrophy")));
 
     public static final DeferredItem<Item> WITHERBLADE = ITEMS.register("witherblade",
             () -> new Witherblade(new Item.Properties()));
@@ -86,7 +83,7 @@ public class RRItems {
             () -> new LyreOfEchoes(new Item.Properties()));
 
     public static final DeferredItem<Item> TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("tyrant_armor_trim_smithing_template",
-            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.parse("remnantrelics:tyrant")));
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "tyrant")));
 
     public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
             () -> new Dragonbone(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue())));
