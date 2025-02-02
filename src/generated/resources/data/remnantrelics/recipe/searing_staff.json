@@ -3,18 +3,18 @@
   "category": "equipment",
   "key": {
     "B": {
-      "item": "remnantrelics:blaze_core"
+      "item": "minecraft:blaze_rod"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
     },
     "N": {
       "item": "minecraft:netherite_scrap"
-    },
-    "R": {
-      "item": "minecraft:blaze_rod"
     }
   },
   "pattern": [
-    "NBN",
-    " R ",
+    "NFN",
+    " B ",
     " N "
   ],
   "result": {

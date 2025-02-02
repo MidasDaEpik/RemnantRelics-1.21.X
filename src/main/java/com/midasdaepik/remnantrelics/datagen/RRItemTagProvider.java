@@ -22,6 +22,7 @@ public class RRItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(RRTags.DUAL_WIELDED_WEAPONS)
                 .add(RRItems.PIGLIN_WARAXE.get())
+                .add(RRItems.PYROSWEEP.get())
                 .add(RRItems.OBSIDIAN_BULWARK.get())
                 .add(RRItems.SOULGORGE.get());
 

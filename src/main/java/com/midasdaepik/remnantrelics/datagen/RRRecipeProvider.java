@@ -72,7 +72,7 @@ public class RRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("BN")
                 .pattern("N ")
                 .define('N', Items.NETHERITE_SCRAP)
-                .define('B', RRItems.BLAZE_CORE)
+                .define('B', Items.BLAZE_ROD)
                 .unlockedBy("has_condition", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RRItems.LYRE_OF_ECHOES)
@@ -105,12 +105,12 @@ public class RRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_condition", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RRItems.SEARING_STAFF)
-                .pattern("NBN")
-                .pattern(" R ")
+                .pattern("NFN")
+                .pattern(" B ")
                 .pattern(" N ")
                 .define('N', Items.NETHERITE_SCRAP)
-                .define('B', RRItems.BLAZE_CORE)
-                .define('R', Items.BLAZE_ROD)
+                .define('F', Items.FIRE_CHARGE)
+                .define('B', Items.BLAZE_ROD)
                 .unlockedBy("has_condition", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())).save(pRecipeOutput);
 
         smithingReversible(pRecipeOutput, RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE, RRItems.OBSIDIAN_BULWARK, RRItems.REFINED_WITHERBLADE, RRItems.SOULGORGE, RecipeCategory.COMBAT, CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance()));

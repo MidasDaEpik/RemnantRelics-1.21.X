@@ -31,8 +31,6 @@ public class RRCreativeTabs {
 
                         pOutput.accept(RRItems.PIGLIN_WARAXE.get());
 
-                        pOutput.accept(RRItems.BLAZE_CORE.get());
-
                         pOutput.accept(RRItems.FIRESTORM_KATANA.get());
                         pOutput.accept(RRItems.SEARING_STAFF.get());
 
@@ -52,6 +50,7 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.REFINED_WITHERBLADE.get());
 
                         pOutput.accept(RRItems.MYCORIS.get());
+                        pOutput.accept(RRItems.PYROSWEEP.get());
                         pOutput.accept(RRItems.SOULGORGE.get());
                         pOutput.accept(RRItems.WARPTHISTLE.get());
 

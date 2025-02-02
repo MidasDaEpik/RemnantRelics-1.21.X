@@ -1,4 +1,4 @@
-// 1.21.1	2025-01-31T07:49:03.9432836	Recipes
+// 1.21.1	2025-02-01T12:16:51.9174453	Recipes
 b5eae4c8a2c2a48a8f26a3516315a85e0e565a29 data/remnantrelics/advancement/recipes/combat/dragons_breath_arbalest.json
 5edfdb759393975fc59cf30f437d4ea0c27d7ad3 data/remnantrelics/advancement/recipes/combat/dragons_rage.json
 604404a6db9b2cc2b21d9cd7766a69a814265ac7 data/remnantrelics/advancement/recipes/combat/elder_chestplate.json
@@ -31,13 +31,13 @@ a74c4d790513fa693a9a4cc3edafad8189ac2d47 data/remnantrelics/recipe/dragons_rage.
 7bc0a9a5de4869584007a57615abf4548cf21d70 data/remnantrelics/recipe/echo_gem.json
 8e9aab8ac04de84fe15994f8f091a4f1f68e8c6c data/remnantrelics/recipe/echo_shard_from_echo_gem.json
 9927e754ec890362e99f1a307d791aaccc1bea73 data/remnantrelics/recipe/elder_chestplate.json
-c44d494d5ae5b41747be7866646e0d961027af58 data/remnantrelics/recipe/firestorm_katana.json
+12cf62b4cbf85ace99ab3498961b11f7eefd9d57 data/remnantrelics/recipe/firestorm_katana.json
 df7cdec9d83c137e63106273f3b9ea1d06ec209c data/remnantrelics/recipe/lyre_of_echoes.json
 0b34bcd144120a178d2142bf297c854a0015f78f data/remnantrelics/recipe/mycoris.json
 7343c21d1ef1e23099d0c73c6c8b2c2399b5c7c7 data/remnantrelics/recipe/mycoris_reverse.json
 85fdc70ad7add529e6e36fb6a823e801c5b07574 data/remnantrelics/recipe/obsidian_bulwark.json
 9f15b4f625ac247ff41e461bcb20f45b7f9bfe79 data/remnantrelics/recipe/scylla.json
-e756735e2ea222f3d5720065ed9be161b1bb04e1 data/remnantrelics/recipe/searing_staff.json
+317fbc4a58c59420ce870af76fd3f361ee7bd43e data/remnantrelics/recipe/searing_staff.json
 d1a2a0b04b83e6e59b54470f3e68a48fde69ff88 data/remnantrelics/recipe/soulgorge.json
 bcb79bbfe8c115a37298b1d4288d00edcd54d06c data/remnantrelics/recipe/soulgorge_reverse.json
 34402e3a13c3909c0401a45a6c929c3047aff765 data/remnantrelics/recipe/tyrant_armor_trim_smithing_template.json

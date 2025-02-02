@@ -29,8 +29,6 @@ public class RRItems {
     public static final DeferredItem<Item> PIGLIN_WARAXE = ITEMS.register("piglin_waraxe",
             () -> new PiglinWaraxe(new Item.Properties()));
 
-    public static final DeferredItem<Item> BLAZE_CORE = ITEMS.register("blaze_core",
-            () -> new FuelItem(new Item.Properties().rarity(RREnumExtensions.RARITY_BLAZE.getValue()), 12800));
     public static final DeferredItem<Item> FIRESTORM_KATANA = ITEMS.register("firestorm_katana",
             () -> new FirestormKatana(new Item.Properties()));
     public static final DeferredItem<Item> SEARING_STAFF = ITEMS.register("searing_staff",
@@ -62,6 +60,8 @@ public class RRItems {
 
     public static final DeferredItem<Item> MYCORIS = ITEMS.register("mycoris",
             () -> new Mycoris(new Item.Properties()));
+    public static final DeferredItem<Item> PYROSWEEP = ITEMS.register("pyrosweep",
+            () -> new Pyrosweep(new Item.Properties()));
     public static final DeferredItem<Item> SOULGORGE = ITEMS.register("soulgorge",
             () -> new Soulgorge(new Item.Properties()));
     public static final DeferredItem<Item> WARPTHISTLE = ITEMS.register("warpthistle",

@@ -17,12 +17,16 @@ public class RRAttachmentTypes {
             "time_since_last_attack", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );
 
-    public static final Supplier<AttachmentType<Integer>> DRAGONS_RAGE_CHARGE = ATTACHMENT_TYPES.register(
-            "dragons_rage_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
-    );
-
     public static final Supplier<AttachmentType<Integer>> CHARYBDIS_CHARGE = ATTACHMENT_TYPES.register(
             "charybdis_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
+    );
+
+    public static final Supplier<AttachmentType<Integer>> PYROSWEEP_DASH = ATTACHMENT_TYPES.register(
+            "pyrosweep_dash", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
+    );
+
+    public static final Supplier<AttachmentType<Integer>> DRAGONS_RAGE_CHARGE = ATTACHMENT_TYPES.register(
+            "dragons_rage_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );
 
     public static final Supplier<AttachmentType<Integer>> SPECIAL_ARROW_TYPE = ATTACHMENT_TYPES.register(

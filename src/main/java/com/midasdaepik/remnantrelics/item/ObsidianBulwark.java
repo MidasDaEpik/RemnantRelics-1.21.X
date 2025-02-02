@@ -78,11 +78,6 @@ public class ObsidianBulwark extends SwordItem {
     }
 
     @Override
-    public boolean canDisableShield(ItemStack pItemStack, ItemStack pShieldItem, LivingEntity pLivingEntity, LivingEntity pAttacker) {
-        return true;
-    }
-
-    @Override
     public int getUseDuration(ItemStack pItemstack, LivingEntity pLivingEntity) {
         return 20;
     }

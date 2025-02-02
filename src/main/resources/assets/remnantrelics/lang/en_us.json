@@ -24,8 +24,6 @@
 
   "item.remnantrelics.piglin_waraxe": "Piglin Waraxe",
 
-  "item.remnantrelics.blaze_core": "Blaze Core",
-
   "item.remnantrelics.firestorm_katana": "Firestorm Katana",
   "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit,",
   "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
@@ -85,6 +83,9 @@
   "item.remnantrelics.mycoris.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
   "item.remnantrelics.mycoris.shift_desc_2": "§7inflicting §8Weakness I§7, and §8Wither III §7to entities caught in it.",
   "item.remnantrelics.mycoris.shift_desc_3": "§88s Cooldown",
+
+  "item.remnantrelics.pyrosweep": "Pyrosweep",
+  "item.remnantrelics.pyrosweep.shift_desc_1": "§7???",
 
   "item.remnantrelics.soulgorge": "Soulgorge",
   "item.remnantrelics.soulgorge.shift_desc_1": "§7Has a chance to create withering explosions on hit,",
@@ -260,6 +261,10 @@
 
 
 
+  "death.attack.burn": "%1$s was scorched",
+  "death.attack.burn.player": "%1$s was scorched by %2$s",
+  "death.attack.burn.item": "%1$s was scorched by %2$s using %3$s",
+
   "death.attack.echo": "%1$s could not survive the echo",
   "death.attack.echo.player": "%1$s could not survive %2$s's echo",
 
@@ -303,8 +308,6 @@
   "hint.remnantrelics.elder_spine": "Dropped from Elder Guardians, found in ocean monuments.",
 
   "hint.remnantrelics.piglin_waraxe": "Dropped from Piglin Brutes equipped with it, found in bastions.",
-
-  "hint.remnantrelics.blaze_core": "Rarely dropped by Blazes, found in fortresses",
 
   "hint.remnantrelics.firestorm_katana": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Imbuement found in fortresses.",
   "hint.remnantrelics.searing_staff": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Imbuement found in fortresses.",

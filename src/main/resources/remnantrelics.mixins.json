@@ -5,7 +5,8 @@
   "mixins": [
     "AbstractArrowMixin",
     "EndDragonFightMixin",
-    "ItemStackMixin",
+    "LivingEntityMixin",
+    "PlayerMixin",
     "RecipeCraftingHolderMixin"
   ],
   "injectors": {
@@ -13,7 +14,6 @@
   },
   "minVersion": "0.8",
   "client": [
-    "ItemInHandRendererMixin",
     "LevelRendererMixin",
     "PlayerRendererMixin"
   ]

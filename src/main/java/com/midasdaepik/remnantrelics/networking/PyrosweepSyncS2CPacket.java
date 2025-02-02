@@ -9,16 +9,16 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.CHARYBDIS_CHARGE;
+import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.PYROSWEEP_DASH;
 
-public record CharybdisSyncS2CPacket(int CharybdisCharge) implements CustomPacketPayload {
-    public static final Type<CharybdisSyncS2CPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "charybdis_sync_s2c_packet"));
+public record PyrosweepSyncS2CPacket(int PyrosweepDash) implements CustomPacketPayload {
+    public static final Type<PyrosweepSyncS2CPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "pyrosweep_sync_s2c_packet"));
 
-    public static final StreamCodec<RegistryFriendlyByteBuf, CharybdisSyncS2CPacket> STREAM_CODEC = StreamCodec.composite(
+    public static final StreamCodec<RegistryFriendlyByteBuf, PyrosweepSyncS2CPacket> STREAM_CODEC = StreamCodec.composite(
             ByteBufCodecs.INT,
-            CharybdisSyncS2CPacket::CharybdisCharge,
+            PyrosweepSyncS2CPacket::PyrosweepDash,
 
-            CharybdisSyncS2CPacket::new
+            PyrosweepSyncS2CPacket::new
     );
 
     @Override
@@ -29,7 +29,7 @@ public record CharybdisSyncS2CPacket(int CharybdisCharge) implements CustomPacke
     public boolean handle(IPayloadContext pContext) {
         pContext.enqueueWork(() -> {
             Player pPlayer = pContext.player();
-            pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
+            pPlayer.setData(PYROSWEEP_DASH, PyrosweepDash);
         });
         return true;
     }

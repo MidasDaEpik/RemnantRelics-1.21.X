@@ -105,9 +105,7 @@ public class Firestorm extends Projectile {
                         pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, this.effectDuration, 2));
                         pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.effectDuration, 0));
                     } else {
-                        if (pEntityIterator.getRemainingFireTicks() < this.effectDuration) {
-                            pEntityIterator.setRemainingFireTicks(this.effectDuration);
-                        }
+                        pEntityIterator.igniteForTicks(this.effectDuration);
                         pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, this.effectDuration, 0));
                     }
                 }

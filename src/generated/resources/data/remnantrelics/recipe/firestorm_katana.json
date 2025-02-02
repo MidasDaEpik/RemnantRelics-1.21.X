@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "B": {
-      "item": "remnantrelics:blaze_core"
+      "item": "minecraft:blaze_rod"
     },
     "N": {
       "item": "minecraft:netherite_scrap"

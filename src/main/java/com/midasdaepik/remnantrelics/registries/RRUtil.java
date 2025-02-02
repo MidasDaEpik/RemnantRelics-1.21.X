@@ -14,6 +14,8 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import org.lwjgl.glfw.GLFW;
 
+import javax.swing.text.View;
+
 public class RRUtil {
     public static class ItemKeys {
         private static final long WINDOW = Minecraft.getInstance().getWindow().getWindow();
@@ -36,16 +38,10 @@ public class RRUtil {
     }
 
     public static BlockHitResult blockHitRaycast(Level pLevel, LivingEntity pLivingEntity, ClipContext.Fluid pFluidMode, float pRange) {
-        float XRot = pLivingEntity.getXRot();
-        float YRot = pLivingEntity.getYRot();
         Vec3 OriginVec3d = pLivingEntity.getEyePosition(1.0F);
+        Vec3 ViewDirection = pLivingEntity.getLookAngle();
 
-        float XZMult = -Mth.cos(-XRot * ((float)Math.PI / 180F));
-        float X = Mth.sin(-YRot * ((float)Math.PI / 180F) - (float)Math.PI) * XZMult;
-        float Y = Mth.sin(-XRot * ((float)Math.PI / 180F));
-        float Z = Mth.cos(-YRot * ((float)Math.PI / 180F) - (float)Math.PI) * XZMult;
-
-        Vec3 TargetVec3d = OriginVec3d.add((double)X * pRange, (double)Y * pRange, (double)Z * pRange);
+        Vec3 TargetVec3d = OriginVec3d.add(ViewDirection.x * pRange, ViewDirection.y * pRange, ViewDirection.z * pRange);
         return pLevel.clip(new ClipContext(OriginVec3d, TargetVec3d, ClipContext.Block.COLLIDER, pFluidMode, pLivingEntity));
     }
 

@@ -2,7 +2,6 @@ package com.midasdaepik.remnantrelics.item;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
 import com.midasdaepik.remnantrelics.registries.*;
-import com.midasdaepik.remnantrelics.registries.RRItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -39,8 +38,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 import java.util.List;
 
-public class Soulgorge extends SwordItem {
-    public Soulgorge(Properties pProperties) {
+import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.PYROSWEEP_DASH;
+
+public class Pyrosweep extends SwordItem {
+    public Pyrosweep(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
                 return 1270;
@@ -63,9 +64,9 @@ public class Soulgorge extends SwordItem {
             }
 
             public Ingredient getRepairIngredient() {
-                return Ingredient.of(net.minecraft.world.item.Items.NETHERITE_SCRAP);
+                return Ingredient.of(Items.NETHERITE_SCRAP);
             }
-        }, pProperties.fireResistant().attributes(Soulgorge.createAttributes()).rarity(RREnumExtensions.RARITY_SOULGORGE.getValue()));
+        }, pProperties.fireResistant().attributes(Pyrosweep.createAttributes()).rarity(RREnumExtensions.RARITY_SOULGORGE.getValue()));
     }
 
     public static @NotNull ItemAttributeModifiers createAttributes() {
@@ -76,13 +77,18 @@ public class Soulgorge extends SwordItem {
                 .add(Attributes.ATTACK_SPEED,
                         new AttributeModifier(BASE_ATTACK_SPEED_ID,  -3.2, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
-                .add(Attributes.ARMOR,
-                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "armor"), 6, AttributeModifier.Operation.ADD_VALUE),
+                .add(Attributes.BURNING_TIME,
+                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "burning_time"), -0.5, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
                         EquipmentSlotGroup.MAINHAND)
-                .add(Attributes.KNOCKBACK_RESISTANCE,
-                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "knockback_resistance"), 0.3, AttributeModifier.Operation.ADD_VALUE),
+                .add(Attributes.STEP_HEIGHT,
+                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "step_height"), 0.5, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .build();
+    }
+
+    @Override
+    public boolean canDisableShield(ItemStack pItemStack, ItemStack pShieldItem, LivingEntity pLivingEntity, LivingEntity pAttacker) {
+        return true;
     }
 
     @Override
@@ -169,7 +175,7 @@ public class Soulgorge extends SwordItem {
                 if (pEntityIterator.hasEffect(MobEffects.WITHER)) {
                     WitherTargets = WitherTargets + 1;
                     if (!(pEntityIterator == pLivingEntity)) {
-                        pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), pLivingEntity), (pEntityIterator.getEffect(MobEffects.WITHER).getAmplifier() + 2) * 6);
+                        pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("remnantrelics:magic"))), pLivingEntity), (pEntityIterator.getEffect(MobEffects.WITHER).getAmplifier() + 2) * 6);
                         if (pLevel instanceof ServerLevel pServerLevel) {
                             pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pEntityIterator.getX(), pEntityIterator.getY() + 1, pEntityIterator.getZ(), 10, 0.3, 0.3, 0.3, 0.1);
                         }
@@ -220,7 +226,14 @@ public class Soulgorge extends SwordItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        pPlayer.startUsingItem(pHand);
+        //pPlayer.startUsingItem(pHand);
+        Vec3 pMovement = pPlayer.getDeltaMovement();
+        Float pXRot = pPlayer.getYRot();
+        pPlayer.setDeltaMovement(pMovement.x + Math.sin(pXRot * Math.PI / 180) * -1.5, 0, pMovement.z + Math.cos(pXRot * Math.PI / 180) * 1.5);
+
+        pPlayer.setData(PYROSWEEP_DASH, 10);
+
+        pPlayer.getCooldowns().addCooldown(this, 100);
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
     }
 
@@ -234,17 +247,11 @@ public class Soulgorge extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pItemstack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
             pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_1"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_2"));
-            pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_3"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_4"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_5"));
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.soulgorge.shift_desc_6"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.pyrosweep.shift_desc_1"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }

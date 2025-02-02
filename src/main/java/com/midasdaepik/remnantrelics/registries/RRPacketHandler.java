@@ -1,10 +1,7 @@
 package com.midasdaepik.remnantrelics.registries;
 
 import com.midasdaepik.remnantrelics.RemnantRelics;
-import com.midasdaepik.remnantrelics.networking.CharybdisSyncS2CPacket;
-import com.midasdaepik.remnantrelics.networking.DragonsBreathArbalestC2SPacket;
-import com.midasdaepik.remnantrelics.networking.DragonsRageSyncS2CPacket;
-import com.midasdaepik.remnantrelics.networking.WhisperwindC2SPacket;
+import com.midasdaepik.remnantrelics.networking.*;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
@@ -25,6 +22,7 @@ public class RRPacketHandler {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         pRegistrar.playToClient(CharybdisSyncS2CPacket.TYPE, CharybdisSyncS2CPacket.STREAM_CODEC, CharybdisSyncS2CPacket::handle);
+        pRegistrar.playToClient(PyrosweepSyncS2CPacket.TYPE, PyrosweepSyncS2CPacket.STREAM_CODEC, PyrosweepSyncS2CPacket::handle);
         pRegistrar.playToClient(DragonsRageSyncS2CPacket.TYPE, DragonsRageSyncS2CPacket.STREAM_CODEC, DragonsRageSyncS2CPacket::handle);
     }
 }

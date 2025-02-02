@@ -27,7 +27,7 @@ public class AbstractArrowMixin {
     protected boolean inGround;
 
     @Inject(method = "tick", at = @At("HEAD"))
-    private void SpecialArrowTick(CallbackInfo ci) {
+    private void SpecialArrowTick(CallbackInfo pCallbackInfo) {
         AbstractArrow pThis = (AbstractArrow) (Object) this;
         if (pThis.getData(SPECIAL_ARROW_TYPE) == 0) {
             if (pThis.level() instanceof ServerLevel pServerLevel && !this.inGround) {

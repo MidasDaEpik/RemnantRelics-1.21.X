@@ -26,9 +26,9 @@ public record DragonsRageSyncS2CPacket(int DragonsRageCharge) implements CustomP
         return TYPE;
     }
 
-    public boolean handle(IPayloadContext context) {
-        context.enqueueWork(() -> {
-            Player pPlayer = context.player();
+    public boolean handle(IPayloadContext pContext) {
+        pContext.enqueueWork(() -> {
+            Player pPlayer = pContext.player();
             pPlayer.setData(DRAGONS_RAGE_CHARGE, DragonsRageCharge);
         });
         return true;
