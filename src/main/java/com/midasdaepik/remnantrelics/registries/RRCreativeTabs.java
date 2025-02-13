@@ -54,9 +54,6 @@ public class RRCreativeTabs {
                         pOutput.accept(RRItems.SOULGORGE.get());
                         pOutput.accept(RRItems.WARPTHISTLE.get());
 
-                        pOutput.accept(RRItems.RESEARCHERS_NOTES_SCULK.get());
-                        pOutput.accept(RRItems.RESEARCHERS_MEMOIR_SCULK.get());
-
                         pOutput.accept(RRItems.ECHO_GEM.get());
 
                         pOutput.accept(RRItems.CATALYST_CHALICE.get());

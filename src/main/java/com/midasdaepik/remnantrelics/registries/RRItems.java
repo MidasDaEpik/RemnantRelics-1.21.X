@@ -67,11 +67,6 @@ public class RRItems {
     public static final DeferredItem<Item> WARPTHISTLE = ITEMS.register("warpthistle",
             () -> new Warpthistle(new Item.Properties()));
 
-    public static final DeferredItem<Item> RESEARCHERS_NOTES_SCULK = ITEMS.register("researchers_notes_sculk",
-            () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue())));
-    public static final DeferredItem<Item> RESEARCHERS_MEMOIR_SCULK = ITEMS.register("researchers_memoir_sculk",
-            AncientKnowledgeItem::createResearchersMemoirSculk);
-
     public static final DeferredItem<Item> ECHO_GEM = ITEMS.register("echo_gem",
             () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_SCULK.getValue())));
 

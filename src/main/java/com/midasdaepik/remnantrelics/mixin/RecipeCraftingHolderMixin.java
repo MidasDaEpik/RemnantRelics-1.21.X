@@ -93,29 +93,5 @@ public interface RecipeCraftingHolderMixin {
                 pReturn.setReturnValue(false);
             }
         }
-
-
-
-        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "catalyst_chalice"))) {
-            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "adventure/researchers_memoir_sculk"));
-            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                pReturn.setReturnValue(false);
-            }
-        }
-        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "lyre_of_echoes"))) {
-            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "adventure/researchers_memoir_sculk"));
-            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                pReturn.setReturnValue(false);
-            }
-        }
-        if (pRecipe.id().equals(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "scylla"))) {
-            ServerAdvancementManager pAdvancementManager = pPlayer.server.getAdvancements();
-            AdvancementHolder pAdvancementHolder = pAdvancementManager.get(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "adventure/researchers_memoir_sculk"));
-            if (pAdvancementHolder != null && !pPlayer.getAdvancements().getOrStartProgress(pAdvancementHolder).isDone()) {
-                pReturn.setReturnValue(false);
-            }
-        }
     }
 }

@@ -38,8 +38,6 @@ public class REIIntegration implements REIClientPlugin {
         addInfo(RRItems.SOULGORGE.get());
         addInfo(RRItems.WARPTHISTLE.get());
 
-        addInfo(RRItems.RESEARCHERS_NOTES_SCULK.get());
-
         addInfo(RRItems.CATALYST_CHALICE.get());
         addInfo(RRItems.SCYLLA.get());
         addInfo(RRItems.LYRE_OF_ECHOES.get());

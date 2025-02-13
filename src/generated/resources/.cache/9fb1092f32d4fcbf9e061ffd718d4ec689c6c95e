@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-01T12:16:51.9174453	Recipes
+// 1.21.1	2025-02-13T20:38:53.7698045	Recipes
 b5eae4c8a2c2a48a8f26a3516315a85e0e565a29 data/remnantrelics/advancement/recipes/combat/dragons_breath_arbalest.json
 5edfdb759393975fc59cf30f437d4ea0c27d7ad3 data/remnantrelics/advancement/recipes/combat/dragons_rage.json
 604404a6db9b2cc2b21d9cd7766a69a814265ac7 data/remnantrelics/advancement/recipes/combat/elder_chestplate.json
@@ -7,8 +7,8 @@ a1ebc9139f7f3dbaf6eb5fd2db000a9555102af1 data/remnantrelics/advancement/recipes/
 9b7cb8b12aadbc0f15b87b258002c927c5e9e640 data/remnantrelics/advancement/recipes/combat/mycoris.json
 3759964745dcc35ff5887db9697deb9d4daa1925 data/remnantrelics/advancement/recipes/combat/mycoris_reverse.json
 07244d51d2954dbacdc5f0894f47e7b2bf8ce89d data/remnantrelics/advancement/recipes/combat/obsidian_bulwark.json
-59278d7a6b4f7963a3171e838acd6a6dfe5ff77c data/remnantrelics/advancement/recipes/combat/scylla.json
-e6b08870f1d7cd576ed4f0ebfc9fe74ec414be0c data/remnantrelics/advancement/recipes/combat/searing_staff.json
+f8c8521a441a32b51ad42a09cb1a93d145b58cc5 data/remnantrelics/advancement/recipes/combat/scylla.json
+abe51df19945fd5eb58dc26ba0330ce0576490aa data/remnantrelics/advancement/recipes/combat/searing_staff.json
 71e9a89f37025fa3c1508902abb4204d975ea4c2 data/remnantrelics/advancement/recipes/combat/soulgorge.json
 4e28207dc8581e3341639b68b4de04b4cac7095e data/remnantrelics/advancement/recipes/combat/soulgorge_reverse.json
 e0860a3a4179cb693f9f1f91f8a8f63de98cc59c data/remnantrelics/advancement/recipes/combat/warped_rapier.json

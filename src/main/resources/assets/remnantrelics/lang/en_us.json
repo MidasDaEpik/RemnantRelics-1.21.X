@@ -8,10 +8,11 @@
   "item.remnantrelics.elder_spine": "Elder Spine",
 
   "item.remnantrelics.charybdis": "Charybdis",
-  "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting entities.",
+  "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hit",
+  "item.remnantrelics.charybdis.shift_desc_2": "§7pulling hit targets toward the user.",
 
-  "item.remnantrelics.charybdis.shift_desc_2": "§6[Sneak + Use] §7consumes §3Vortex §7to conjure a maelstrom around the user",
-  "item.remnantrelics.charybdis.shift_desc_3": "§7pulling nearby entities dealing damage to targets near the center.",
+  "item.remnantrelics.charybdis.shift_desc_3": "§6[Sneak + Use] §7consumes §3Vortex §7to conjure a maelstrom around the user",
+  "item.remnantrelics.charybdis.shift_desc_4": "§7pulling nearby entities dealing damage to targets near the center.",
 
   "item.remnantrelics.elder_chestplate": "Elder Chestplate",
   "item.remnantrelics.elder_chestplate.shift_desc_1": "§7Reflects a portion of damage taken by the user.",
@@ -67,9 +68,10 @@
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_2": "§8Consumed on Use",
 
   "item.remnantrelics.ancient_tablet_fusion.shift_desc_3": "§7Unlocked Recipes:",
-  "item.remnantrelics.ancient_tablet_fusion.shift_desc_4": "§5 Creeping Crimson",
-  "item.remnantrelics.ancient_tablet_fusion.shift_desc_5": "§5 Souleating Slasher",
-  "item.remnantrelics.ancient_tablet_fusion.shift_desc_6": "§5 Warping Wither",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_4": "§5 Mycoris",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_5": "§5 Pyrosweep",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_6": "§5 Soulgorge",
+  "item.remnantrelics.ancient_tablet_fusion.shift_desc_7": "§5 Warpthistle",
 
   "item.remnantrelics.atrophy_armor_trim_smithing_template": "Smithing Template",
 
@@ -85,7 +87,7 @@
   "item.remnantrelics.mycoris.shift_desc_3": "§8 8s Cooldown",
 
   "item.remnantrelics.pyrosweep": "Pyrosweep",
-  "item.remnantrelics.pyrosweep.shift_desc_1": "§7Gain §4Heat §7upon hitting entities",
+  "item.remnantrelics.pyrosweep.shift_desc_1": "§7Gain §4Heat §7on hit",
   "item.remnantrelics.pyrosweep.shift_desc_2": "§7dealing extra §cBurn §7damage scaling with §4Heat§7.",
 
   "item.remnantrelics.pyrosweep.shift_desc_3": "§6[Use] §7consumes §4Heat §7to dash forward",
@@ -113,17 +115,6 @@
   "item.remnantrelics.warpthistle.shift_desc_5": "§8 7s Cooldown",
 
   "item.remnantrelics.warpthistle.lore_damage_toggle": "§7Damage Toggle: %1$s",
-
-  "item.remnantrelics.researchers_notes_sculk": "Researcher's Notes - Sculk",
-
-  "item.remnantrelics.researchers_memoir_sculk": "Researcher's Memoir - Sculk",
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_1": "§6[Use] §7to analyze the contents of the memoir.",
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_2": "§8Consumed on Use",
-
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_3": "§7Unlocked Recipes:",
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_4": "§5 Catalyst Chalice",
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_5": "§5 Scylla",
-  "item.remnantrelics.researchers_memoir_sculk.shift_desc_6": "§5 Lyre Of Echoes",
 
   "item.remnantrelics.echo_gem": "Echo Gem",
 
@@ -156,7 +147,7 @@
   "item.remnantrelics.dragonbone": "Dragonbone",
 
   "item.remnantrelics.dragons_rage": "Dragon's Rage",
-  "item.remnantrelics.dragons_rage.shift_desc_1": "§7Gain §dRage §7upon hitting entities.",
+  "item.remnantrelics.dragons_rage.shift_desc_1": "§7Gain §dRage §7on hit.",
 
   "item.remnantrelics.dragons_rage.shift_desc_2": "§6[Sneak + Use] §7consumes §dRage §7to spew dragon's breath.",
 
@@ -277,9 +268,6 @@
   "advancements.remnantrelics.all_witherblades.title": "I Am... Inevitable",
   "advancements.remnantrelics.all_witherblades.description": "Obtain all 3 witherblades",
 
-  "advancements.remnantrelics.researchers_memoir_sculk.title": "Researcher's Memoir - Sculk",
-  "advancements.remnantrelics.researchers_memoir_sculk.description": "Study the works of a long departed ancient city researcher",
-
 
 
   "hint.remnantrelics.cutlass": "Found in shipwreck chests.",
@@ -304,8 +292,6 @@
   "hint.remnantrelics.mycoris": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
   "hint.remnantrelics.soulgorge": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
   "hint.remnantrelics.warpthistle": "Can only be crafted when it's recipe is unlocked through Ancient Tablet - Fusion found in ancient forges.",
-
-  "hint.remnantrelics.researchers_notes_sculk": "Found in ancient city chests.",
 
   "hint.remnantrelics.catalyst_chalice": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",
   "hint.remnantrelics.scylla": "Can only be crafted when it's recipe is unlocked through Researcher's Memoir - Sculk found in ancient cities.",

@@ -45,8 +45,6 @@ public class JEIIntegration implements IModPlugin {
         addInfo(pRegistration, RRItems.SOULGORGE.get());
         addInfo(pRegistration, RRItems.WARPTHISTLE.get());
 
-        addInfo(pRegistration, RRItems.RESEARCHERS_NOTES_SCULK.get());
-
         addInfo(pRegistration, RRItems.CATALYST_CHALICE.get());
         addInfo(pRegistration, RRItems.SCYLLA.get());
         addInfo(pRegistration, RRItems.LYRE_OF_ECHOES.get());

@@ -102,7 +102,7 @@ public class RRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('E', RRItems.ECHO_GEM)
                 .define('e', Items.ECHO_SHARD)
                 .define('B', Items.BONE_BLOCK)
-                .unlockedBy("has_condition", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())).save(pRecipeOutput);
+                .unlockedBy("has_condition", has(Items.ECHO_SHARD)).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RRItems.SEARING_STAFF)
                 .pattern("NFN")
@@ -111,7 +111,7 @@ public class RRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('N', Items.NETHERITE_SCRAP)
                 .define('F', Items.FIRE_CHARGE)
                 .define('B', Items.BLAZE_ROD)
-                .unlockedBy("has_condition", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance())).save(pRecipeOutput);
+                .unlockedBy("has_condition", has(Items.ECHO_SHARD)).save(pRecipeOutput);
 
         smithingReversible(pRecipeOutput, RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE, RRItems.OBSIDIAN_BULWARK, RRItems.REFINED_WITHERBLADE, RRItems.SOULGORGE, RecipeCategory.COMBAT, CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance()));
 

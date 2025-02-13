@@ -169,10 +169,6 @@ public class Charybdis extends SwordItem {
 
                         double dXZNormalized = Math.sqrt(dX * dX + dZ * dZ);
 
-                        //double pAngle = Math.atan2(dZ / dXZNormalized, dX / dXZNormalized) + Math.PI / 4;
-                        //dX = Math.cos(pAngle) * 4;
-                        //dZ = Math.sin(pAngle) * 4;
-
                         double pAngle = Math.PI * 5 / 12;
                         double dXFinal = dX * Math.cos(pAngle) - dZ * Math.sin(pAngle);
                         double dZFinal = dZ * Math.cos(pAngle) + dX * Math.sin(pAngle);
@@ -271,9 +267,10 @@ public class Charybdis extends SwordItem {
     public void appendHoverText(ItemStack pItemStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_1"));
-            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_2"));
+            pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_3"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.charybdis.shift_desc_4"));
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
