@@ -157,7 +157,7 @@ public class DragonsBreathArbalest extends CrossbowItem {
         Projectile projectile = super.createProjectile(level, pLivingEntity, pItemStack, ammo, isCrit);
         if (projectile instanceof AbstractArrow abstractarrow) {
             abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 1.6);
-            abstractarrow.setData(SPECIAL_ARROW_TYPE, 0);
+            abstractarrow.setData(SPECIAL_ARROW_TYPE, 1);
         }
         return projectile;
     }

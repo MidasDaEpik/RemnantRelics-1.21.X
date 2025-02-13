@@ -1,21 +1,21 @@
 {
   "item.remnantrelics.shift_desc_info": "§7Hold §6[Shift] §7to reveal additional information",
 
-  "item.remnantrelics.two_handed": "§7This weapon's capabilities are reduced if any items are in the user's offhand.",
+  "item.remnantrelics.two_handed": "§7Two-Handed",
 
   "item.remnantrelics.cutlass": "Corroded Cutlass",
 
   "item.remnantrelics.elder_spine": "Elder Spine",
 
   "item.remnantrelics.charybdis": "Charybdis",
-  "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting enemies.",
+  "item.remnantrelics.charybdis.shift_desc_1": "§7Gain §3Vortex §7upon hitting entities.",
 
-  "item.remnantrelics.charybdis.shift_desc_2": "§6[Sneak + Use] §7consumes §3Vortex §7to conjure a maelstrom around the user,",
+  "item.remnantrelics.charybdis.shift_desc_2": "§6[Sneak + Use] §7consumes §3Vortex §7to conjure a maelstrom around the user",
   "item.remnantrelics.charybdis.shift_desc_3": "§7pulling nearby entities dealing damage to targets near the center.",
 
   "item.remnantrelics.elder_chestplate": "Elder Chestplate",
   "item.remnantrelics.elder_chestplate.shift_desc_1": "§7Reflects a portion of damage taken by the user.",
-  "item.remnantrelics.elder_chestplate.shift_desc_2": "§82s Cooldown",
+  "item.remnantrelics.elder_chestplate.shift_desc_2": "§8 2s Cooldown",
 
   "item.remnantrelics.whisperwind": "Whisperwind",
   "item.remnantrelics.whisperwind.shift_desc_1": "§7Has increased draw speed but decreased range, and damage.",
@@ -25,23 +25,23 @@
   "item.remnantrelics.piglin_waraxe": "Piglin Waraxe",
 
   "item.remnantrelics.firestorm_katana": "Firestorm Katana",
-  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit,",
+  "item.remnantrelics.firestorm_katana.shift_desc_1": "§7Has a chance to spawn a firestorm on hit",
   "item.remnantrelics.firestorm_katana.shift_desc_2": "§7inflicting §8Weakness I§7, and setting alight entities caught in it.",
-  "item.remnantrelics.firestorm_katana.shift_desc_3": "§814s Cooldown",
+  "item.remnantrelics.firestorm_katana.shift_desc_3": "§8 14s Cooldown",
 
   "item.remnantrelics.searing_staff": "Searing Staff",
-  "item.remnantrelics.searing_staff.shift_desc_1": "§6[Use] §7summons 3 fireballs around the player,",
+  "item.remnantrelics.searing_staff.shift_desc_1": "§6[Use] §7summons 3 fireballs around the player",
   "item.remnantrelics.searing_staff.shift_desc_2": "§7which can be hit to be launched in any direction.",
-  "item.remnantrelics.searing_staff.shift_desc_3": "§8(Fireballs automatically fire downwards after 20 Seconds)",
-  "item.remnantrelics.searing_staff.shift_desc_4": "§88s Cooldown",
+  "item.remnantrelics.searing_staff.shift_desc_3": "§8 Fireballs despawn after 20 Seconds",
+  "item.remnantrelics.searing_staff.shift_desc_4": "§8 8s Cooldown",
 
   "item.remnantrelics.obsidian_bulwark": "Obsidian Bulwark",
   "item.remnantrelics.obsidian_bulwark.shift_desc_1": "§6[Use] §7grants the user an §6Absorption §7shield.",
-  "item.remnantrelics.obsidian_bulwark.shift_desc_2": "§815s Cooldown",
+  "item.remnantrelics.obsidian_bulwark.shift_desc_2": "§8 15s Cooldown",
 
   "item.remnantrelics.warped_rapier": "Warped Rapier",
   "item.remnantrelics.warped_rapier.shift_desc_1": "§6[Use] §7teleports the user a short distance forward.",
-  "item.remnantrelics.warped_rapier.shift_desc_2": "§88s Cooldown",
+  "item.remnantrelics.warped_rapier.shift_desc_2": "§8 8s Cooldown",
 
   "item.remnantrelics.witherblade_upgrade_smithing_template": "Smithing Template",
   "item.remnantrelics.witherblade_upgrade_smithing_template_desc": "Witherblade Upgrade",
@@ -80,28 +80,39 @@
   "item.remnantrelics.refined_witherblade.shift_desc_1": "§7Has a chance to inflict §8Wither II §7on targets.",
 
   "item.remnantrelics.mycoris": "Mycoris",
-  "item.remnantrelics.mycoris.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit,",
+  "item.remnantrelics.mycoris.shift_desc_1": "§7Has a chance to spawn a spore cloud on hit",
   "item.remnantrelics.mycoris.shift_desc_2": "§7inflicting §8Weakness I§7, and §8Wither III §7to entities caught in it.",
-  "item.remnantrelics.mycoris.shift_desc_3": "§88s Cooldown",
+  "item.remnantrelics.mycoris.shift_desc_3": "§8 8s Cooldown",
 
   "item.remnantrelics.pyrosweep": "Pyrosweep",
-  "item.remnantrelics.pyrosweep.shift_desc_1": "§7???",
+  "item.remnantrelics.pyrosweep.shift_desc_1": "§7Gain §4Heat §7upon hitting entities",
+  "item.remnantrelics.pyrosweep.shift_desc_2": "§7dealing extra §cBurn §7damage scaling with §4Heat§7.",
+
+  "item.remnantrelics.pyrosweep.shift_desc_3": "§6[Use] §7consumes §4Heat §7to dash forward",
+  "item.remnantrelics.pyrosweep.shift_desc_4": "§7dealing §cBurn §7damage to entities in the user's path.",
+
+  "item.remnantrelics.pyrosweep.shift_desc_5": "§6[Sneak + Use] §7consumes §4Heat §7to channel",
+  "item.remnantrelics.pyrosweep.shift_desc_6": "§7a column of fire at the spot the user is aiming at",
+  "item.remnantrelics.pyrosweep.shift_desc_7": "§7dealing §cBurn §7damage and launching away entities.",
 
   "item.remnantrelics.soulgorge": "Soulgorge",
-  "item.remnantrelics.soulgorge.shift_desc_1": "§7Has a chance to create withering explosions on hit,",
+  "item.remnantrelics.soulgorge.shift_desc_1": "§7Has a chance to create withering explosions on hit",
   "item.remnantrelics.soulgorge.shift_desc_2": "§7inflicting §8Wither II §7on nearby entities.",
 
-  "item.remnantrelics.soulgorge.shift_desc_3": "§6[Use] §7grants the user an §6Absorption §7shield,",
-  "item.remnantrelics.soulgorge.shift_desc_4": "§7and consumes the §8Wither §7effect of nearby entities,",
+  "item.remnantrelics.soulgorge.shift_desc_3": "§6[Use] §7grants the user an §6Absorption §7shield",
+  "item.remnantrelics.soulgorge.shift_desc_4": "§7and consumes the §8Wither §7effect of nearby entities",
   "item.remnantrelics.soulgorge.shift_desc_5": "§7damaging them to increase the users' §6Absorption §7shield.",
-  "item.remnantrelics.soulgorge.shift_desc_6": "§820s Cooldown",
+  "item.remnantrelics.soulgorge.shift_desc_6": "§8 20s Cooldown",
 
   "item.remnantrelics.warpthistle": "Warpthistle",
   "item.remnantrelics.warpthistle.shift_desc_1": "§7Has a chance to inflict §8Wither III §7on targets.",
 
-  "item.remnantrelics.warpthistle.shift_desc_2": "§6[Use] §7teleports the user a short distance forward,",
+  "item.remnantrelics.warpthistle.shift_desc_2": "§6[Use] §7teleports the user a short distance forward",
   "item.remnantrelics.warpthistle.shift_desc_3": "§7inflicting §3Slowness IV §7and damaging entities near the target location.",
-  "item.remnantrelics.warpthistle.shift_desc_4": "§87s Cooldown",
+  "item.remnantrelics.warpthistle.shift_desc_4": "§8 Right-Click item in inventory to toggle damage",
+  "item.remnantrelics.warpthistle.shift_desc_5": "§8 7s Cooldown",
+
+  "item.remnantrelics.warpthistle.lore_damage_toggle": "§7Damage Toggle: %1$s",
 
   "item.remnantrelics.researchers_notes_sculk": "Researcher's Notes - Sculk",
 
@@ -132,12 +143,12 @@
   "item.remnantrelics.catalyst_chalice.shift_desc_5": "§6[Use] §7releases experience from the chalice.",
 
   "item.remnantrelics.scylla": "Scylla",
-  "item.remnantrelics.scylla.shift_desc_1": "§7Inflicts §3Echo §7on targets,",
+  "item.remnantrelics.scylla.shift_desc_1": "§7Inflicts §3Echo §7on targets",
   "item.remnantrelics.scylla.shift_desc_2": "§7dealing secondary damage after a delay.",
 
   "item.remnantrelics.lyre_of_echoes": "Lyre of Echoes",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast that can penetrate walls,",
-  "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging enemies in a straight line ahead,",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_1": "§6[Use] §7charges a sonic blast that can penetrate walls",
+  "item.remnantrelics.lyre_of_echoes.shift_desc_2": "§7knocking the user back and damaging entities in a straight line ahead",
   "item.remnantrelics.lyre_of_echoes.shift_desc_3": "§7dealing increased damage the longer it is charged.",
 
   "item.remnantrelics.tyrant_armor_trim_smithing_template": "Smithing Template",
@@ -145,17 +156,17 @@
   "item.remnantrelics.dragonbone": "Dragonbone",
 
   "item.remnantrelics.dragons_rage": "Dragon's Rage",
-  "item.remnantrelics.dragons_rage.shift_desc_1": "§7Gain §dRage §7upon hitting enemies.",
+  "item.remnantrelics.dragons_rage.shift_desc_1": "§7Gain §dRage §7upon hitting entities.",
 
   "item.remnantrelics.dragons_rage.shift_desc_2": "§6[Sneak + Use] §7consumes §dRage §7to spew dragon's breath.",
 
   "item.remnantrelics.dragons_breath_arbalest": "Dragon's Breath Arbalest",
-  "item.remnantrelics.dragons_breath_arbalest.shift_desc_1": "§7Has decreased draw speed but increased damage,",
+  "item.remnantrelics.dragons_breath_arbalest.shift_desc_1": "§7Has decreased draw speed but increased damage",
   "item.remnantrelics.dragons_breath_arbalest.shift_desc_2": "§7and arrows spawn dragon breath clouds upon landing.",
 
-  "item.remnantrelics.dragons_breath_arbalest.shift_desc_3": "§6[Attack] §7detonates nearby dragon breath clouds,",
+  "item.remnantrelics.dragons_breath_arbalest.shift_desc_3": "§6[Attack] §7detonates nearby dragon breath clouds",
   "item.remnantrelics.dragons_breath_arbalest.shift_desc_4": "§7launching targets up and applying §5Plunging§7.",
-  "item.remnantrelics.dragons_breath_arbalest.shift_desc_5": "§84s Cooldown",
+  "item.remnantrelics.dragons_breath_arbalest.shift_desc_5": "§8 4s Cooldown",
 
   "item.remnantrelics.hexed_dice": "Hexed Dice",
   "item.remnantrelics.hexed_dice.shift_desc_1": "§6[Use] to roll the dice for a random temporary effect:",
@@ -165,38 +176,6 @@
   "item.remnantrelics.hexed_dice.shift_desc_5": "§74 decreases max health",
   "item.remnantrelics.hexed_dice.shift_desc_6": "§75 decreases attack speed",
   "item.remnantrelics.hexed_dice.shift_desc_7": "§76 decreases reach",
-
-  "item.remnantrelics.wraths_rend": "Wrath's Rend",
-  "item.remnantrelics.wraths_rend.shift_desc_1": "§6[Use] drains a portion of your health,",
-  "item.remnantrelics.wraths_rend.shift_desc_2": "§7creating an armor piercing shockwave.",
-
-  "item.remnantrelics.maws_of_gluttony": "Maws of Gluttony",
-  "item.remnantrelics.maws_of_gluttony.shift_desc_1": "§7Gain levels of Gluttony upon hitting enemies,",
-  "item.remnantrelics.maws_of_gluttony.shift_desc_2": "§7granting a stacking movement and attack speed boost,",
-  "item.remnantrelics.maws_of_gluttony.shift_desc_3": "§7at the cost of extreme hunger.",
-
-  "item.remnantrelics.maws_of_gluttony.shift_desc_4": "§6[Use] consumes levels of gluttony,",
-  "item.remnantrelics.maws_of_gluttony.shift_desc_5": "§7granting a dash and a short movement speed boost.",
-
-  "item.remnantrelics.avarice_slasher": "Avarice Slasher",
-  "item.remnantrelics.avarice_slasher.shift_desc_1": "§7Applies Midas Touch to hit entities and the user,",
-  "item.remnantrelics.avarice_slasher.shift_desc_2": "§7decreasing speed but increasing armor.",
-
-  "item.remnantrelics.grimoire_of_envy": "Grimoire of Envy",
-  "item.remnantrelics.grimoire_of_envy.tooltip_1": "???",
-
-  "item.remnantrelics.prides_judgement": "Pride's Judgement",
-  "item.remnantrelics.prides_judgement.shift_desc_1": "§7Applies Plunging to hit enemies,",
-  "item.remnantrelics.prides_judgement.shift_desc_2": "§7and hitting enemies above half health grants the Pride effect,",
-  "item.remnantrelics.prides_judgement.shift_desc_3": "§7granting increased attack reach but decreased armor.",
-  "item.remnantrelics.prides_judgement.shift_desc_4": "§7and hitting enemies below half health grants the Humbled effect,",
-  "item.remnantrelics.prides_judgement.shift_desc_5": "§7granting increased armor but decreased damage.",
-
-  "item.remnantrelics.prides_judgement.shift_desc_6": "§6[Use] teleports the user to the targeted block,",
-  "item.remnantrelics.prides_judgement.shift_desc_7": "§7but temporarily causing slowness.",
-
-  "item.remnantrelics.lustful_fan_knives": "Lustful Fan Knives",
-  "item.remnantrelics.lustful_fan_knives.tooltip_1": "???",
 
   "item.remnantrelics.mod_icon": "Mod Icon",
 

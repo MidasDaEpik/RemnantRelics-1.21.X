@@ -13,7 +13,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.util.Mth;
+
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -101,19 +101,21 @@ public class DragonsRage extends SwordItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-            if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
-                if (RageCharge < 1800) {
-                    RageCharge = Mth.clamp(RageCharge + 120, 0, 1800);
+    public boolean hurtEnemy(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (pAttacker instanceof Player pPlayer) {
+            if (pPlayer.getAttackStrengthScale(0) >= 0.9F) {
+                if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
+                    int RageCharge = pPlayer.getData(DRAGONS_RAGE_CHARGE);
+                    if (RageCharge < 1800) {
+                        RageCharge = Math.clamp(RageCharge + 120, 0, 1800);
+                        pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
+                        PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
+                    }
                 }
-                pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
-                PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
             }
         }
 
-        return super.hurtEnemy(pStack, pTarget, pAttacker);
+        return super.hurtEnemy(pItemStack, pTarget, pAttacker);
     }
 
     @Override
@@ -125,7 +127,7 @@ public class DragonsRage extends SwordItem {
 
             if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
                 if (pTimeUsing % 5 == 0) {
-                    RageCharge = Mth.clamp(RageCharge - 60, 0, 1800);
+                    RageCharge = Math.clamp(RageCharge - 60, 0, 1800);
                     pPlayer.setData(DRAGONS_RAGE_CHARGE, RageCharge);
                     PacketDistributor.sendToPlayer(pServerPlayer, new DragonsRageSyncS2CPacket(RageCharge));
 

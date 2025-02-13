@@ -21,7 +21,7 @@ public class RRDataComponents {
             () -> DataComponentType.<Integer>builder().persistent(Codec.INT).networkSynchronized(ByteBufCodecs.VAR_INT).build()
     );
 
-    public static DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> CHALICE_STATE = DATA_COMPONENT_TYPES.register("chalice_state",
+    public static DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> ITEM_TOGGLE = DATA_COMPONENT_TYPES.register("item_toggle",
             () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).build()
     );
 

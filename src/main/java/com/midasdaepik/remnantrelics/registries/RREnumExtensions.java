@@ -31,6 +31,10 @@ public class RREnumExtensions {
             Rarity.class, -1, "remnantrelics:witherblade", (UnaryOperator<Style>) style -> style.withColor(5458763)
     );
 
+    public static final EnumProxy<Rarity> RARITY_PYROSWEEP = new EnumProxy<>(
+            Rarity.class, -1, "remnantrelics:pyrosweep", (UnaryOperator<Style>) style -> style.withColor(14892816)
+    );
+
     public static final EnumProxy<Rarity> RARITY_MYCORIS = new EnumProxy<>(
             Rarity.class, -1, "remnantrelics:mycoris", (UnaryOperator<Style>) style -> style.withColor(8000014)
     );

@@ -43,7 +43,7 @@ public class Soulgorge extends SwordItem {
     public Soulgorge(Properties pProperties) {
         super(new Tier() {
             public int getUses() {
-                return 1270;
+                return 1080;
             }
 
             public float getSpeed() {
@@ -86,12 +86,12 @@ public class Soulgorge extends SwordItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack pItemstack, LivingEntity pLivingEntity) {
+    public int getUseDuration(ItemStack pItemStack, LivingEntity pLivingEntity) {
         return 20;
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack pItemstack) {
+    public UseAnim getUseAnimation(ItemStack pItemStack) {
         return UseAnim.BLOCK;
     }
 
@@ -102,34 +102,29 @@ public class Soulgorge extends SwordItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack pItemstack, LivingEntity pTarget, LivingEntity pAttacker) {
+    public boolean hurtEnemy(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (pAttacker instanceof Player pLivingEntity) {
             if (pLivingEntity.getAttackStrengthScale(0) >= 0.9F) {
-                if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                    final Vec3 AABBCenter = new Vec3(pTarget.getX(), pTarget.getY(), pTarget.getZ());
-                    List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(3d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
-                    for (LivingEntity pEntityIterator : pFoundTarget) {
-                        if (!(pEntityIterator == pAttacker)) {
-                            pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
-                        }
-                    }
-                    pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.PLAYERS, 1f, 0.8f,0);
-                }
+                attackEffects(pItemStack, pTarget, pAttacker);
             }
         } else {
-            if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                final Vec3 AABBCenter = new Vec3(pTarget.getX(), pTarget.getY(), pTarget.getZ());
-                List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(3d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
-                for (LivingEntity pEntityIterator : pFoundTarget) {
-                    if (!(pEntityIterator == pAttacker)) {
-                        pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
-                    }
-                }
-                pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 0.8f,0);
-            }
+            attackEffects(pItemStack, pTarget, pAttacker);
         }
 
-        return super.hurtEnemy(pItemstack, pTarget, pAttacker);
+        return super.hurtEnemy(pItemStack, pTarget, pAttacker);
+    }
+
+    public void attackEffects(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (!pAttacker.level().isClientSide() && Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+            final Vec3 AABBCenter = new Vec3(pTarget.getX(), pTarget.getY(), pTarget.getZ());
+            List<LivingEntity> pFoundTarget = pTarget.level().getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(3d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
+            for (LivingEntity pEntityIterator : pFoundTarget) {
+                if (!(pEntityIterator == pAttacker)) {
+                    pEntityIterator.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
+                }
+            }
+            pTarget.level().playSeededSound(null, pTarget.getEyePosition().x, pTarget.getEyePosition().y, pTarget.getEyePosition().z, RRSounds.ITEM_WITHERBLADE_WITHER.get(), SoundSource.HOSTILE, 1f, 0.8f,0);
+        }
     }
 
     @Override
@@ -225,16 +220,7 @@ public class Soulgorge extends SwordItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack pItemStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if (pEntity instanceof LivingEntity pLivingEntity && pIsSelected) {
-            if (!pLivingEntity.getOffhandItem().isEmpty()) {
-                pLivingEntity.addEffect(new MobEffectInstance(RREffects.UNWIELDY, 1, 0, true, false, false));
-            }
-        }
-    }
-
-    @Override
-    public void appendHoverText(ItemStack pItemstack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pItemStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (RRUtil.ItemKeys.isHoldingShift()) {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.two_handed"));
             pTooltipComponents.add(Component.empty());
@@ -248,9 +234,9 @@ public class Soulgorge extends SwordItem {
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
         }
-        if (pItemstack.isEnchanted()) {
+        if (pItemStack.isEnchanted()) {
             pTooltipComponents.add(Component.empty());
         }
-        super.appendHoverText(pItemstack, pContext, pTooltipComponents, pIsAdvanced);
+        super.appendHoverText(pItemStack, pContext, pTooltipComponents, pIsAdvanced);
     }
 }

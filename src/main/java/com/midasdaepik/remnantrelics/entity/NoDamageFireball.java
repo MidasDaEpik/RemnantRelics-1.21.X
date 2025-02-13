@@ -48,9 +48,9 @@ public class NoDamageFireball extends Fireball {
             }
 
             if (this.getDeltaMovement().x <= 0.01 && this.getDeltaMovement().y <= 0.01 && this.getDeltaMovement().z <= 0.01) {
-                this.despawnDuration = this.despawnDuration - 1;
+                this.despawnDuration -= 1;
             } else {
-                this.flyDuration = this.flyDuration - 1;
+                this.flyDuration -= 1;
             }
         }
     }

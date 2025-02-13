@@ -118,19 +118,33 @@ public class Charybdis extends SwordItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        if (pAttacker instanceof Player pPlayer && pPlayer.getAttackStrengthScale(0) >= 0.9F) {
-            if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
-                int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
-                if (CharybdisCharge < 1400) {
-                    CharybdisCharge = Mth.clamp(CharybdisCharge + 50, 0, 1400);
+    public boolean hurtEnemy(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (pAttacker instanceof Player pPlayer) {
+            if (pPlayer.getAttackStrengthScale(0) >= 0.9F) {
+                attackEffects(pItemStack, pTarget, pAttacker);
+
+                if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
+                    int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
+                    if (CharybdisCharge < 1400) {
+                        CharybdisCharge = Mth.clamp(CharybdisCharge + 50, 0, 1400);
+                        pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
+                        PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
+                    }
                 }
-                pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
-                PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
             }
+        } else {
+            attackEffects(pItemStack, pTarget, pAttacker);
         }
 
-        return super.hurtEnemy(pStack, pTarget, pAttacker);
+        return super.hurtEnemy(pItemStack, pTarget, pAttacker);
+    }
+
+    public void attackEffects(ItemStack pItemStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        double dX = pAttacker.getX() - pTarget.getX();
+        double dZ = pAttacker.getZ() - pTarget.getZ();
+        double dXZNormalized = Math.sqrt(dX * dX + dZ * dZ);
+
+        pTarget.setDeltaMovement(pTarget.getDeltaMovement().add(dX / dXZNormalized * 0.8, 0, dZ / dXZNormalized * 0.8));
     }
 
     @Override
@@ -153,16 +167,19 @@ public class Charybdis extends SwordItem {
                         double dY = (pLivingEntity.getY() - pEntityIterator.getY()) * 1.5;
                         double dZ = pLivingEntity.getZ() - pEntityIterator.getZ();
 
-                        if (dX >= 0) {
-                            dX = 12 - dX;
-                            if (dX > 10) {
-                                dX = 0;
-                            }
-                        } else {
-                            dX = -12 - dX;
-                            if (dX < -10) {
-                                dX = 0;
-                            }
+                        double dXZNormalized = Math.sqrt(dX * dX + dZ * dZ);
+
+                        //double pAngle = Math.atan2(dZ / dXZNormalized, dX / dXZNormalized) + Math.PI / 4;
+                        //dX = Math.cos(pAngle) * 4;
+                        //dZ = Math.sin(pAngle) * 4;
+
+                        double pAngle = Math.PI * 5 / 12;
+                        double dXFinal = dX * Math.cos(pAngle) - dZ * Math.sin(pAngle);
+                        double dZFinal = dZ * Math.cos(pAngle) + dX * Math.sin(pAngle);
+
+                        if (dXZNormalized < 1.5) {
+                            dXFinal = 0;
+                            dZFinal = 0;
                         }
 
                         if (dY >= 0) {
@@ -177,35 +194,24 @@ public class Charybdis extends SwordItem {
                             }
                         }
 
-                        if (dZ >= 0) {
-                            dZ = 12 - dZ;
-                            if (dZ > 10) {
-                                dZ = 0;
-                            }
+                        dY = Mth.clamp(dY / 2, -4, 4);
+
+                        double pMult;
+                        if (pEntityIterator instanceof Projectile) {
+                            pMult = 0.1;
+                        } else if (pEntityIterator instanceof ItemEntity) {
+                            pMult = 0.05;
                         } else {
-                            dZ = -12 - dZ;
-                            if (dZ < -10) {
-                                dZ = 0;
-                            }
+                            pMult = 0.05;
                         }
 
-                        if (pEntityIterator instanceof LivingEntity || pEntityIterator instanceof ItemEntity) {
-                            dX = pEntityIterator.getDeltaMovement().x + Mth.clamp(dX, -4, 4) * 0.03;
-                            dY = pEntityIterator.getDeltaMovement().y + Mth.clamp(dY, -4, 4) * 0.03;
-                            dZ = pEntityIterator.getDeltaMovement().z + Mth.clamp(dZ, -4, 4) * 0.03;
-                            pEntityIterator.setDeltaMovement(dX, dY, dZ);
-                        } else {
-                            dX = pEntityIterator.getDeltaMovement().x + Mth.clamp(dX, -4, 4) * 0.06;
-                            dY = pEntityIterator.getDeltaMovement().y + Mth.clamp(dY, -4, 4) * 0.06;
-                            dZ = pEntityIterator.getDeltaMovement().z + Mth.clamp(dZ, -4, 4) * 0.06;
-                            pEntityIterator.setDeltaMovement(dX, dY, dZ);
-                        }
+                        pEntityIterator.setDeltaMovement(dXFinal * pMult, dY * pMult, dZFinal * pMult);
                     }
                 }
 
                 if (pTimeUsing % 20 == 0) {
                     int DamageLimit = 0;
-                    List<LivingEntity> pFoundTarget2 = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(2d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
+                    List<LivingEntity> pFoundTarget2 = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(AABBCenter, AABBCenter).inflate(1.5d), e -> true).stream().sorted(Comparator.comparingDouble(DistanceComparer -> DistanceComparer.distanceToSqr(AABBCenter))).toList();
                     for (LivingEntity pEntityIterator : pFoundTarget2) {
                         if (!(pEntityIterator == pLivingEntity) && DamageLimit <= 6) {
                             boolean pSuccess = pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "whirlpool"))), pLivingEntity), 12);
@@ -227,20 +233,25 @@ public class Charybdis extends SwordItem {
                     pPlayer.stopUsingItem();
                 }
 
-            } else if (pLevel.isClientSide) {
-                if (pLevel instanceof ClientLevel pClientLevel) {
-                    for (int Loop = 1; Loop <= 2; Loop++) {
-                        int XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360);
-                        float XZRange = Mth.nextFloat(RandomSource.create(), 2.0f, 12.0f);
-                        float YRange = Mth.nextFloat(RandomSource.create(), -1.75f, 1.25f);
-                        float PullSpeed = Mth.nextFloat(RandomSource.create(), 1.0f, 0.4f);
+            } else if (pLevel instanceof ClientLevel pClientLevel) {
+                for (int Loop = 1; Loop <= 2; Loop++) {
+                    double XZDegrees = Mth.nextInt(RandomSource.create(), 1, 360) * Math.PI / 180;
+                    float XZRange = Mth.nextFloat(RandomSource.create(), 2.0f, 12.0f);
+                    double dX = pLivingEntity.getEyePosition().x + Math.cos(XZDegrees) * XZRange;
+                    double dZ = pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange;
 
-                        pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, pLivingEntity.getEyePosition().x + Mth.cos(XZDegrees) * XZRange, pLivingEntity.getEyePosition().y + YRange, pLivingEntity.getEyePosition().z + Math.sin(XZDegrees) * XZRange, Mth.cos(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), YRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f), Math.sin(XZDegrees) * XZRange * PullSpeed + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f));
-                    }
+                    float YRange = Mth.nextFloat(RandomSource.create(), -1.75f, 1.25f);
+                    float PullSpeed = Mth.nextFloat(RandomSource.create(), -3.0f, -1.5f);
 
-                    if (CharybdisCharge < 4) {
-                        pPlayer.stopUsingItem();
-                    }
+                    double pAngle = XZDegrees - Math.PI / 3;
+                    double dXSpeed = PullSpeed * Math.cos(pAngle);
+                    double dZSpeed = PullSpeed * Math.sin(pAngle);
+
+                    pClientLevel.addParticle(ParticleTypes.OMINOUS_SPAWNING, dX, pLivingEntity.getEyePosition().y + YRange, dZ, dXSpeed, Mth.nextFloat(RandomSource.create(), -0.25f, 0.25f), dZSpeed);
+                }
+
+                if (CharybdisCharge < 4) {
+                    pPlayer.stopUsingItem();
                 }
             }
         }

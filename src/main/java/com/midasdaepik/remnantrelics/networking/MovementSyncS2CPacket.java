@@ -11,14 +11,14 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.PYROSWEEP_CHARGE;
 
-public record PyrosweepSyncS2CPacket(int PyrosweepCharge) implements CustomPacketPayload {
-    public static final Type<PyrosweepSyncS2CPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "pyrosweep_sync_s2c_packet"));
+public record MovementSyncS2CPacket(int PyrosweepCharge) implements CustomPacketPayload {
+    public static final Type<MovementSyncS2CPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "pyrosweep_sync_s2c_packet"));
 
-    public static final StreamCodec<RegistryFriendlyByteBuf, PyrosweepSyncS2CPacket> STREAM_CODEC = StreamCodec.composite(
+    public static final StreamCodec<RegistryFriendlyByteBuf, MovementSyncS2CPacket> STREAM_CODEC = StreamCodec.composite(
             ByteBufCodecs.INT,
-            PyrosweepSyncS2CPacket::PyrosweepCharge,
+            MovementSyncS2CPacket::PyrosweepCharge,
 
-            PyrosweepSyncS2CPacket::new
+            MovementSyncS2CPacket::new
     );
 
     @Override

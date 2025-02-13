@@ -46,6 +46,7 @@ public class ClientModEvents {
     private static void entityRenderers(EntityRenderersEvent.RegisterRenderers pEvent) {
         pEvent.registerEntityRenderer(RREntities.DRAGONS_BREATH.get(), DragonsBreathRenderer::new);
         pEvent.registerEntityRenderer(RREntities.DRAGONS_RAGE_BREATH.get(), DragonsRageBreathRenderer::new);
+        pEvent.registerEntityRenderer(RREntities.FIRE_COLUMN.get(), FireColumnRenderer::new);
         pEvent.registerEntityRenderer(RREntities.FIRESTORM.get(), FirestormRenderer::new);
     }
 

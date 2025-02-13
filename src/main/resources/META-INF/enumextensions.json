@@ -65,6 +65,15 @@
     },
     {
       "enum": "net/minecraft/world/item/Rarity",
+      "name": "REMNANTRELICS_RARITY_PYROSWEEP",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/midasdaepik/remnantrelics/registries/RREnumExtensions",
+        "field": "RARITY_PYROSWEEP"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
       "name": "REMNANTRELICS_RARITY_MYCORIS",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {

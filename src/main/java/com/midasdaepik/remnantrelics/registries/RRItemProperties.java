@@ -102,7 +102,7 @@ public class RRItemProperties {
                 ResourceLocation.withDefaultNamespace("chalice_state"),
                 (pItemstack, pLevel, pLivingEntity, pSeed) -> {
                     if (pLivingEntity != null) {
-                        return pItemstack.getOrDefault(RRDataComponents.CHALICE_STATE, true) ? 1.0f : 0.0f;
+                        return pItemstack.getOrDefault(RRDataComponents.ITEM_TOGGLE, true) ? 1.0f : 0.0f;
                     } else {
                         return 1.0f;
                     }

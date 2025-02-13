@@ -104,9 +104,9 @@ public class WarpedRapier extends SwordItem {
 
             pLivingEntity.level().playSeededSound(null, pLivingEntity.getEyePosition().x, pLivingEntity.getEyePosition().y, pLivingEntity.getEyePosition().z, RRSounds.ITEM_WARPED_RAPIER_TELEPORT.get(), SoundSource.PLAYERS, 1f, 1f, 0);
 
-            BlockHitResult raytrace = RRUtil.blockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
-            BlockPos lookPos = raytrace.getBlockPos().relative(raytrace.getDirection());
-            pLivingEntity.setPos(lookPos.getX() + 0.5, lookPos.getY(), lookPos.getZ() + 0.5);
+            BlockHitResult pRaytrace = RRUtil.blockHitRaycast(pLevel, pLivingEntity, ClipContext.Fluid.NONE, 12);
+            BlockPos pLookPos = pRaytrace.getBlockPos().relative(pRaytrace.getDirection());
+            pLivingEntity.setPos(pLookPos.getX() + 0.5, pLookPos.getY(), pLookPos.getZ() + 0.5);
             pLivingEntity.fallDistance = pLivingEntity.fallDistance - 5.0F;
 
             if (pLevel instanceof ServerLevel pServerLevel) {

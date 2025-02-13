@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+import static com.midasdaepik.remnantrelics.registries.RRAttachmentTypes.SPECIAL_ARROW_TYPE;
+
 public class Whisperwind extends BowItem {
     public Whisperwind(Properties pProperties) {
         super(pProperties.durability(576).attributes(Whisperwind.createAttributes()).rarity(RREnumExtensions.RARITY_WIND.getValue()));
@@ -96,6 +98,7 @@ public class Whisperwind extends BowItem {
             abstractarrow.setCritArrow(true);
         }
         abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() * 0.66);
+        abstractarrow.setData(SPECIAL_ARROW_TYPE, 0);
 
         return customArrow(abstractarrow, pAmmo, pWeapon);
     }

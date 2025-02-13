@@ -16,7 +16,7 @@ import java.util.List;
 
 public class CatalystChalice extends Item {
     public CatalystChalice(Properties pProperties) {
-        super(pProperties.stacksTo(1).rarity(RREnumExtensions.RARITY_SCULK.getValue()).component(RRDataComponents.EXPERIENCE.get(), 0).component(RRDataComponents.MAXIMUM_EXPERIENCE.get(), 1395).component(RRDataComponents.CHALICE_STATE.get(), true));
+        super(pProperties.stacksTo(1).rarity(RREnumExtensions.RARITY_SCULK.getValue()).component(RRDataComponents.EXPERIENCE.get(), 0).component(RRDataComponents.MAXIMUM_EXPERIENCE.get(), 1395).component(RRDataComponents.ITEM_TOGGLE.get(), true));
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CatalystChalice extends Item {
 
     @Override
     public UseAnim getUseAnimation(ItemStack pItemStack) {
-        if (pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true)) {
+        if (pItemStack.getOrDefault(RRDataComponents.ITEM_TOGGLE, true)) {
             return UseAnim.BOW;
         } else {
             return UseAnim.DRINK;
@@ -58,7 +58,7 @@ public class CatalystChalice extends Item {
         if (pLivingEntity instanceof Player pPlayer) {
             int ItemExperience = pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue();
             int ItemMaxExperience = pItemStack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue();
-            boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true);
+            boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.ITEM_TOGGLE, true);
             int PlayerExperience = RRUtil.getPlayerXP(pPlayer);
             int XPDrainPercent = this.XPModifyPercent(pPlayer);
 
@@ -108,15 +108,15 @@ public class CatalystChalice extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack pItemStack = pPlayer.getItemInHand(pHand);
         int ItemExperience = pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue();
-        boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true);
+        boolean ItemAssimilationState = pItemStack.getOrDefault(RRDataComponents.ITEM_TOGGLE, true);
         int PlayerExperience = RRUtil.getPlayerXP(pPlayer);
         int XPDrainPercent = this.XPModifyPercent(pPlayer);
 
         if (pPlayer.isCrouching()) {
             if (ItemAssimilationState) {
-                pItemStack.set(RRDataComponents.CHALICE_STATE, false);
+                pItemStack.set(RRDataComponents.ITEM_TOGGLE, false);
             } else {
-                pItemStack.set(RRDataComponents.CHALICE_STATE, true);
+                pItemStack.set(RRDataComponents.ITEM_TOGGLE, true);
             }
             pPlayer.getCooldowns().addCooldown(this, 10);
             return InteractionResultHolder.pass(pPlayer.getItemInHand(pHand));
@@ -161,7 +161,7 @@ public class CatalystChalice extends Item {
         } else {
             pTooltipComponents.add(Component.translatable("item.remnantrelics.shift_desc_info"));
             pTooltipComponents.add(Component.empty());
-            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_1", pItemStack.getOrDefault(RRDataComponents.CHALICE_STATE, true) ? "§cAssimilation" : "§aDischarge"));
+            pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_1", pItemStack.getOrDefault(RRDataComponents.ITEM_TOGGLE, true) ? "§cAssimilation" : "§aDischarge"));
             if (RRUtil.ItemKeys.isHoldingSpace()) {
                 pTooltipComponents.add(Component.translatable("item.remnantrelics.catalyst_chalice.lore_desc_2_levels", "§a" + RRUtil.getLevelForExperience(pItemStack.getOrDefault(RRDataComponents.EXPERIENCE, 0.0).intValue()), "§a" + RRUtil.getLevelForExperience(pItemStack.getOrDefault(RRDataComponents.MAXIMUM_EXPERIENCE, 0.0).intValue())));
             } else {

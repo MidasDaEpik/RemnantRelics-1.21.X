@@ -69,9 +69,9 @@ public class DragonsRageBreath extends Projectile {
             super.tick();
 
             if (this.level() instanceof ServerLevel pServerLevel) {
-                this.duration = this.duration - 1;
+                this.duration -= 1;
                 if (this.isInWater()) {
-                    this.duration = this.duration - 2;
+                    this.duration -= 2;
                 }
                 if (this.duration <= 0) {
                     this.discard();

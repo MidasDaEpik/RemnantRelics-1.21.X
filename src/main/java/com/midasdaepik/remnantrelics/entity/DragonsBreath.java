@@ -85,7 +85,7 @@ public class DragonsBreath extends Entity implements TraceableEntity {
                 RRUtil.particleCircle(pServerLevel, ParticleTypes.DRAGON_BREATH, this.getX(), this.getY() + 0.5, this.getZ(), 2.5, 2);
             }
 
-            this.duration = this.duration - 1;
+            this.duration -= 1;
             if (this.duration <= 0) {
                 this.discard();
             }

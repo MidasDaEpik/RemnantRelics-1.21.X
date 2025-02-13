@@ -25,6 +25,10 @@ public class RRAttachmentTypes {
             "pyrosweep_dash", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );
 
+    public static final Supplier<AttachmentType<Integer>> PYROSWEEP_CHARGE = ATTACHMENT_TYPES.register(
+            "pyrosweep_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
+    );
+
     public static final Supplier<AttachmentType<Integer>> DRAGONS_RAGE_CHARGE = ATTACHMENT_TYPES.register(
             "dragons_rage_charge", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );

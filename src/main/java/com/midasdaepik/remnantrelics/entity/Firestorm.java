@@ -63,7 +63,7 @@ public class Firestorm extends Projectile {
             if (this.level() instanceof ServerLevel pServerLevel) {
                 this.AttackTick(pServerLevel);
 
-                this.duration = this.duration - 1;
+                this.duration -= 1;
                 if (this.duration <= 0) {
                     this.discard();
                 }

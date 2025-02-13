@@ -29,9 +29,11 @@ public class AbstractArrowMixin {
     @Inject(method = "tick", at = @At("HEAD"))
     private void SpecialArrowTick(CallbackInfo pCallbackInfo) {
         AbstractArrow pThis = (AbstractArrow) (Object) this;
-        if (pThis.getData(SPECIAL_ARROW_TYPE) == 0) {
-            if (pThis.level() instanceof ServerLevel pServerLevel && !this.inGround) {
-                pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pThis.getX(), pThis.getY(), pThis.getZ(), 1, 0, 0, 0, 0);
+        switch (pThis.getData(SPECIAL_ARROW_TYPE)) {
+            case 1 -> {
+                if (pThis.level() instanceof ServerLevel pServerLevel && !this.inGround) {
+                    pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, pThis.getX(), pThis.getY(), pThis.getZ(), 1, 0, 0, 0, 0);
+                }
             }
         }
     }
@@ -39,23 +41,30 @@ public class AbstractArrowMixin {
     @Inject(method = "onHitEntity", at = @At("HEAD"))
     private void spawnSpecialArrowOnHitEntity(EntityHitResult pResult, CallbackInfo pCallbackInfo) {
         AbstractArrow pThis = (AbstractArrow) (Object) this;
-        if (pThis.getData(SPECIAL_ARROW_TYPE) == 0) {
-            Entity pOwner = pThis.getOwner();
-            if (pThis.level() instanceof ServerLevel pServerLevel && pOwner instanceof LivingEntity pLivingEntityOwner) {
-                Entity Target = pResult.getEntity();
-                Vec3 SpawnLocation = new Vec3(Target.getX(), Target.getY(), Target.getZ());
-
-                ItemStack pWeaponItem = pThis.getWeaponItem();
-                int pProjectileCount = 0;
-                if (pWeaponItem != null) {
-                    pProjectileCount = EnchantmentHelper.processProjectileCount(pServerLevel, pWeaponItem, pLivingEntityOwner, 1) - 1;
+        switch (pThis.getData(SPECIAL_ARROW_TYPE)) {
+            case 0 -> {
+                if (pThis.level() instanceof ServerLevel pServerLevel) {
+                    pServerLevel.sendParticles(ParticleTypes.GUST_EMITTER_SMALL, pThis.getX(), pThis.getY(), pThis.getZ(), 1, 0, 0, 0, 0);
                 }
+            }
+            case 1 -> {
+                Entity pOwner = pThis.getOwner();
+                if (pThis.level() instanceof ServerLevel pServerLevel && pOwner instanceof LivingEntity pLivingEntityOwner) {
+                    Entity Target = pResult.getEntity();
+                    Vec3 SpawnLocation = new Vec3(Target.getX(), Target.getY(), Target.getZ());
 
-                DragonsBreath dragonsBreath = new DragonsBreath(pThis.level(), pLivingEntityOwner, 160, -20, 6 + pThis.getPierceLevel() - pProjectileCount, SpawnLocation);
-                pThis.level().addFreshEntity(dragonsBreath);
+                    ItemStack pWeaponItem = pThis.getWeaponItem();
+                    int pProjectileCount = 0;
+                    if (pWeaponItem != null) {
+                        pProjectileCount = EnchantmentHelper.processProjectileCount(pServerLevel, pWeaponItem, pLivingEntityOwner, 1) - 1;
+                    }
 
-                pServerLevel.playSeededSound(null, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f,0);
-                pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, 16, 0.1, 0.1, 0.1, 0.05);
+                    DragonsBreath dragonsBreath = new DragonsBreath(pThis.level(), pLivingEntityOwner, 160, -20, 6 + pThis.getPierceLevel() - pProjectileCount, SpawnLocation);
+                    pThis.level().addFreshEntity(dragonsBreath);
+
+                    pServerLevel.playSeededSound(null, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f, 0);
+                    pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, 16, 0.1, 0.1, 0.1, 0.05);
+                }
             }
         }
     }
@@ -63,22 +72,29 @@ public class AbstractArrowMixin {
     @Inject(method = "onHitBlock", at = @At("HEAD"))
     private void spawnSpecialArrowOnHitBlock(BlockHitResult pResult, CallbackInfo pCallbackInfo) {
         AbstractArrow pThis = (AbstractArrow) (Object) this;
-        if (pThis.getData(SPECIAL_ARROW_TYPE) == 0) {
-            Entity pOwner = pThis.getOwner();
-            if (pThis.level() instanceof ServerLevel pServerLevel && pOwner instanceof LivingEntity pLivingEntityOwner) {
-                Vec3 SpawnLocation = pResult.getLocation();
-
-                ItemStack pWeaponItem = pThis.getWeaponItem();
-                int pProjectileCount = 0;
-                if (pWeaponItem != null) {
-                    pProjectileCount = EnchantmentHelper.processProjectileCount(pServerLevel, pWeaponItem, pLivingEntityOwner, 1) - 1;
+        switch (pThis.getData(SPECIAL_ARROW_TYPE)) {
+            case 0 -> {
+                if (pThis.level() instanceof ServerLevel pServerLevel) {
+                    pServerLevel.sendParticles(ParticleTypes.GUST_EMITTER_SMALL, pThis.getX(), pThis.getY(), pThis.getZ(), 1, 0, 0, 0, 0);
                 }
+            }
+            case 1 -> {
+                Entity pOwner = pThis.getOwner();
+                if (pThis.level() instanceof ServerLevel pServerLevel && pOwner instanceof LivingEntity pLivingEntityOwner) {
+                    Vec3 SpawnLocation = pResult.getLocation();
 
-                DragonsBreath dragonsBreath = new DragonsBreath(pThis.level(), pLivingEntityOwner, 160, -20, 6 + pThis.getPierceLevel() - pProjectileCount, SpawnLocation);
-                pThis.level().addFreshEntity(dragonsBreath);
+                    ItemStack pWeaponItem = pThis.getWeaponItem();
+                    int pProjectileCount = 0;
+                    if (pWeaponItem != null) {
+                        pProjectileCount = EnchantmentHelper.processProjectileCount(pServerLevel, pWeaponItem, pLivingEntityOwner, 1) - 1;
+                    }
 
-                pServerLevel.playSeededSound(null, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f,0);
-                pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, 16, 0.1, 0.1, 0.1, 0.05);
+                    DragonsBreath dragonsBreath = new DragonsBreath(pThis.level(), pLivingEntityOwner, 160, -20, 6 + pThis.getPierceLevel() - pProjectileCount, SpawnLocation);
+                    pThis.level().addFreshEntity(dragonsBreath);
+
+                    pServerLevel.playSeededSound(null, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.NEUTRAL, 0.8f, 1.2f, 0);
+                    pServerLevel.sendParticles(ParticleTypes.DRAGON_BREATH, SpawnLocation.x, SpawnLocation.y, SpawnLocation.z, 16, 0.1, 0.1, 0.1, 0.05);
+                }
             }
         }
     }
