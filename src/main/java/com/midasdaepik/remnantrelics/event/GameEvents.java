@@ -169,6 +169,9 @@ public class GameEvents {
                 double pZMovement = Math.abs(pMovement.z / pDiagonal * 1.5);
                 pZMovement = Double.isNaN(pZMovement) ? 0 : Math.clamp(pMovement.z, -pZMovement, pZMovement);
                 pPlayer.setDeltaMovement(pXMovement, Math.clamp(pMovement.y, -0.05, 0.05), pZMovement);
+
+                PyrosweepDash = PyrosweepDash - 1;
+                pPlayer.setData(PYROSWEEP_DASH, PyrosweepDash);
             }
         }
     }

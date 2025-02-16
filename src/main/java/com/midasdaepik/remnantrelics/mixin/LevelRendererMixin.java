@@ -14,12 +14,8 @@ public class LevelRendererMixin {
     @WrapOperation(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getTeamColor()I"))
     private int modifyTeamColor(Entity pEntity, Operation<Integer> pOriginal) {
         int pOriginalValue = pOriginal.call(pEntity);
-        if (pEntity instanceof ItemEntity pItemEntity && pItemEntity.getItem().getItem() == RRItems.MOD_ICON.get()) {
-            if (pOriginalValue == 16777215) {
-                return 13719531;
-            } else {
-                return pOriginalValue;
-            }
+        if (pEntity instanceof ItemEntity pItemEntity && pEntity.getTeam() == null && (pItemEntity.getItem().getItem() == RRItems.DRAGONBONE.get() || pItemEntity.getItem().getItem() == RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE.get())) {
+            return 13719531;
         } else {
             return pOriginalValue;
         }

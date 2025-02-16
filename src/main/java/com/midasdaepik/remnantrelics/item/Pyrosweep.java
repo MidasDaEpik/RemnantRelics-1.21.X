@@ -141,7 +141,7 @@ public class Pyrosweep extends SwordItem {
             pTarget.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "burn_no_cooldown"))), pAttacker), BurnDamage);
             pTarget.igniteForTicks(60);
 
-            pServerLevel.sendParticles(ParticleTypes.FLAME, pTarget.getX(), pTarget.getY() + 1, pTarget.getZ(), 6, 0.2, 0.2, 0.2, 0);
+            pServerLevel.sendParticles(ParticleTypes.FLAME, pTarget.getX(), pTarget.getY() + 1, pTarget.getZ(), 6, 0.6, 0.6, 0.6, 0);
         }
     }
 

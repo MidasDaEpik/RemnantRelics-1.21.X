@@ -133,7 +133,7 @@ public class Soulgorge extends SwordItem {
         if (pTimeUsing >= 20) {
             if (pLevel instanceof ServerLevel pServerLevel) {
                 pServerLevel.sendParticles(ParticleTypes.SOUL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.5, 0.5, 0.5, 0.02);
-                pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.3, 0.3, 0.3, 0.1);
+                pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
 
                 RRUtil.particleSphere(pServerLevel, ParticleTypes.SOUL_FIRE_FLAME, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 8);
             }
@@ -166,7 +166,7 @@ public class Soulgorge extends SwordItem {
                     if (!(pEntityIterator == pLivingEntity)) {
                         pEntityIterator.hurt(new DamageSource(pLevel.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "magic"))), pLivingEntity), (pEntityIterator.getEffect(MobEffects.WITHER).getAmplifier() + 2) * 6);
                         if (pLevel instanceof ServerLevel pServerLevel) {
-                            pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pEntityIterator.getX(), pEntityIterator.getY() + 1, pEntityIterator.getZ(), 10, 0.3, 0.3, 0.3, 0.1);
+                            pServerLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pEntityIterator.getX(), pEntityIterator.getY() + 1, pEntityIterator.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
                         }
                     }
                     pEntityIterator.removeEffect(MobEffects.WITHER);

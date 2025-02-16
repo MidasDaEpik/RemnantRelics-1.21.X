@@ -20,6 +20,7 @@ public class RRItemProperties {
         Firework(RRItems.DRAGONS_BREATH_ARBALEST.get());
         Pull(RRItems.LYRE_OF_ECHOES.get());
         Pulling(RRItems.LYRE_OF_ECHOES.get());
+        Pulling(RRItems.WARPTHISTLE.get());
         Pull(RRItems.WHISPERWIND.get());
         Pulling(RRItems.WHISPERWIND.get());
     }

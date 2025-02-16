@@ -1,11 +1,11 @@
 {
   "replace": false,
   "entries": [
-    "remnantrelics:ancient_tablet_imbuement/nether_bridge",
     "remnantrelics:ancient_tablet_fusion/bastion_bridge",
     "remnantrelics:ancient_tablet_fusion/bastion_hoglin_stable",
     "remnantrelics:ancient_tablet_fusion/bastion_other",
     "remnantrelics:ancient_tablet_fusion/bastion_treasure",
+    "remnantrelics:ancient_tablet_imbuement/nether_bridge",
     "remnantrelics:cutlass/shipwreck_supply",
     "remnantrelics:cutlass/shipwreck_treasure",
     "remnantrelics:elder_spine/elder_guardian",

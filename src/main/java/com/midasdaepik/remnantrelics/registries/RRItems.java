@@ -81,7 +81,7 @@ public class RRItems {
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "tyrant")));
 
     public static final DeferredItem<Item> DRAGONBONE = ITEMS.register("dragonbone",
-            () -> new Dragonbone(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue())));
+            () -> new Item(new Item.Properties().rarity(RREnumExtensions.RARITY_DRAGON.getValue()).fireResistant().component(RRDataComponents.NO_GRAVITY, true)));
 
     public static final DeferredItem<Item> DRAGONS_RAGE = ITEMS.register("dragons_rage",
             () -> new DragonsRage(new Item.Properties()));

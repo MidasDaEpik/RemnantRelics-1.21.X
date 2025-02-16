@@ -97,13 +97,13 @@ public class LyreOfEchoes extends Item {
         int pTimeUsing = this.getUseDuration(pItemStack, pLivingEntity) - pTimeLeft;
         if (pLevel instanceof ServerLevel pServerLevel) {
             if (pTimeUsing >= 60 && pTimeUsing <= 180) {
-                pServerLevel.sendParticles(ParticleTypes.SCULK_CHARGE_POP, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.3, 0.3, 0.3, 0.05);
+                pServerLevel.sendParticles(ParticleTypes.SCULK_CHARGE_POP, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.4, 0.4, 0.4, 0.05);
             }
             if (pTimeUsing >= 180) {
-                pServerLevel.sendParticles(ParticleTypes.SCULK_SOUL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.3, 0.3, 0.3, 0.05);
+                pServerLevel.sendParticles(ParticleTypes.SCULK_SOUL, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.4, 0.4, 0.4, 0.05);
             }
             if (pTimeUsing >= 300) {
-                pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.3, 0.3, 0.3, 0);
+                pServerLevel.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER_OMINOUS, pLivingEntity.getX(), pLivingEntity.getY() + 1, pLivingEntity.getZ(), 1, 0.4, 0.4, 0.4, 0);
             }
         }
 
