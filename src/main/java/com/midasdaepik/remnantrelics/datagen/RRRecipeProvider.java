@@ -115,11 +115,18 @@ public class RRRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         smithingReversible(pRecipeOutput, RRItems.WITHERBLADE_UPGRADE_SMITHING_TEMPLATE, RRItems.OBSIDIAN_BULWARK, RRItems.REFINED_WITHERBLADE, RRItems.SOULGORGE, RecipeCategory.COMBAT, CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance()));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.TRIDENT)
+                .pattern(" EE")
+                .pattern(" SE")
+                .pattern("S  ")
+                .define('E', RRItems.ELDER_SPINE)
+                .define('S', Items.PRISMARINE_SHARD)
+                .unlockedBy("has_condition", has(RRItems.ELDER_SPINE)).save(pRecipeOutput, ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "trident"));
+
         copySmithingTemplate(pRecipeOutput, RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE, Items.OBSIDIAN);
 
         trimSmithing(pRecipeOutput, RRItems.TYRANT_ARMOR_TRIM_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "tyrant")
                 .withPath("tyrant_armor_trim_smithing_template_smithing_trim"));
-
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RRItems.WARPED_RAPIER)
                 .pattern(" E")
