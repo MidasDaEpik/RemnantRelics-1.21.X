@@ -7,6 +7,7 @@
     "EndDragonFightMixin",
     "ItemEntityMixin",
     "LivingEntityMixin",
+    "LootContextAccessor",
     "PlayerMixin",
     "RecipeCraftingHolderMixin"
   ],

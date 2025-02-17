@@ -35,20 +35,20 @@ public class AddMultipleLootModifier extends LootModifier {
             )
     );
 
-    public AddMultipleLootModifier(LootItemCondition[] conditionsIn, Item item, Integer min_count, Integer max_count) {
-        super(conditionsIn);
-        this.item = item;
-        this.min_count = min_count;
-        this.max_count = max_count;
+    public AddMultipleLootModifier(LootItemCondition[] pConditionsIn, Item pItem, Integer pMinCount, Integer pMaxCount) {
+        super(pConditionsIn);
+        this.item = pItem;
+        this.min_count = pMinCount;
+        this.max_count = pMaxCount;
     }
 
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> pGeneratedLoot, LootContext pContext) {
         ItemStack itemstack = new ItemStack(this.item);
         itemstack.setCount(Mth.nextInt(RandomSource.create(), this.min_count, this.max_count));
 
-        generatedLoot.add(new ItemStack(this.item));
-        return generatedLoot;
+        pGeneratedLoot.add(new ItemStack(this.item));
+        return pGeneratedLoot;
     }
 
     @Override

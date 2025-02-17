@@ -26,15 +26,15 @@ public class AddLootModifer extends LootModifier {
             )
     );
 
-    public AddLootModifer(LootItemCondition[] conditionsIn, Item item) {
-        super(conditionsIn);
-        this.item = item;
+    public AddLootModifer(LootItemCondition[] pConditionsIn, Item pItem) {
+        super(pConditionsIn);
+        this.item = pItem;
     }
 
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        generatedLoot.add(new ItemStack(this.item));
-        return generatedLoot;
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> pGeneratedLoot, LootContext pContext) {
+        pGeneratedLoot.add(new ItemStack(this.item));
+        return pGeneratedLoot;
     }
 
     @Override
