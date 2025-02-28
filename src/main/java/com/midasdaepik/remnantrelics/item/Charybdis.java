@@ -5,6 +5,7 @@ import com.midasdaepik.remnantrelics.networking.CharybdisSyncS2CPacket;
 import com.midasdaepik.remnantrelics.registries.RREnumExtensions;
 import com.midasdaepik.remnantrelics.registries.RRUtil;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustColorTransitionOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -80,15 +81,20 @@ public class Charybdis extends SwordItem {
     public static @NotNull ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  5, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID,  8, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ATTACK_SPEED,
-                        new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2, AttributeModifier.Operation.ADD_VALUE),
+                        new AttributeModifier(BASE_ATTACK_SPEED_ID,  -2.8, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.SWEEPING_DAMAGE_RATIO,
                         new AttributeModifier(ResourceLocation.fromNamespaceAndPath(RemnantRelics.MOD_ID, "sweeping_damage_ratio"),  0.5, AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
                 .build();
+    }
+
+    @Override
+   public @NotNull AABB getSweepHitBox(ItemStack pItemStack, Player pPlayer, Entity pTarget) {
+        return pTarget.getBoundingBox().inflate((double)1.5F, (double)0.25F, (double)1.5F);
     }
 
     @Override
@@ -126,7 +132,7 @@ public class Charybdis extends SwordItem {
                 if (pPlayer.level() instanceof ServerLevel pServerLevel && pPlayer instanceof ServerPlayer pServerPlayer) {
                     int CharybdisCharge = pPlayer.getData(CHARYBDIS_CHARGE);
                     if (CharybdisCharge < 1400) {
-                        CharybdisCharge = Mth.clamp(CharybdisCharge + 50, 0, 1400);
+                        CharybdisCharge = Mth.clamp(CharybdisCharge + 70, 0, 1400);
                         pPlayer.setData(CHARYBDIS_CHARGE, CharybdisCharge);
                         PacketDistributor.sendToPlayer(pServerPlayer, new CharybdisSyncS2CPacket(CharybdisCharge));
                     }

@@ -1,6 +1,18 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "remnantrelics:item/charybdis/charge_4"
+  "parent": "item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "remnantrelics:item/charybdis/charge_4_handheld"
+  },
+  "perspectives": {
+    "head": {
+      "parent": "remnantrelics:item/charybdis/charge_4_gui"
+    },
+    "gui": {
+      "parent": "remnantrelics:item/charybdis/charge_4_gui"
+    },
+    "fixed": {
+      "parent": "remnantrelics:item/charybdis/charge_4_gui"
     }
+  }
 }
